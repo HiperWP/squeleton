@@ -16517,7 +16517,7 @@ button[data-balloon] {
   font-style: normal;
   font-weight: normal;
   font-display: swap;
-  src: url('fonts/icomoon.woff2?vers41') format('woff2');
+  src: url('fonts/icomoon.woff2?vers43') format('woff2');
 }
 
 [class^="iccon-"],
@@ -16741,6 +16741,10 @@ button[data-balloon] {
 
 .iccon-arrow-right-11:before {
   content: "\e92a";
+}
+
+.iccon-arrow-up-1:before {
+  content: "\e907";
 }
 
 .iccon-arrow-up-2:before {
@@ -17293,6 +17297,10 @@ button[data-balloon] {
 
 .iccon-lock-1:before {
   content: "\e9f0";
+}
+
+.iccon-lock-2:before {
+  content: "\e919";
 }
 
 .iccon-lock-3:before {
