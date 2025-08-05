@@ -1,10 +1,10 @@
-# skeleton-v4
-CSS Skeleton and Vanilla JS - Global CDN Files (Gen4)
+# Squeleton
+Squeleton - Global CDN Files (Gen4)
 
 <h2>STYLESHEET</h2>
 <p><strong>CDN LINKS (Load in Header)</strong></p>
-<p>https://cdn.ej.digital/skeleton.v4.css (Unminified)</p>
-<p>https://cdn.ej.digital/skeleton.v4.min.css (Minified)</p>
+<p>https://cdn.ej.digital/squeleton.v4.css (Unminified)</p>
+<p>https://cdn.ej.digital/squeleton.v4.min.css (Minified)</p>
 
 <h2>JAVASCRIPT</h2>
 <p><strong>CDN LINKS</strong></p>
