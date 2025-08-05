@@ -1,5 +1,5 @@
 # Squeleton
-Squeleton - Global CDN Files (Gen4)
+Boilerplate moderno e enxuto que combina o melhor do CSS utilitário, grid responsivo, animações elegantes e bibliotecas JavaScript essenciais para criar interfaces rápidas, acessíveis e com manutenção simplificada.
 
 <h2>STYLESHEET</h2>
 <p><strong>CDN LINKS (Load in Header)</strong></p>
