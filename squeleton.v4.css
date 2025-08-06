@@ -15731,6 +15731,7 @@ button[aria-label] {
   font-style: normal;
   text-shadow: none;
   font-size: 12px;
+  line-height: 1.3;
   background: rgba(16, 16, 16, 0.95);
   border-radius: 2px;
   color: #fff;
