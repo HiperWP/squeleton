@@ -15765,29 +15765,9 @@ button[aria-label] {
   pointer-events: none;
 }
 
-[aria-label]:not([data-balloon-pos]):after {
-  bottom: 100%;
-  left: 50%;
-  margin-bottom: 10px;
-  transform: translate(-50%, 4px);
-  transform-origin: top;
-}
-
+[aria-label]:not([data-balloon-pos]):after,
 [aria-label]:not([data-balloon-pos]):before {
-  bottom: 100%;
-  left: 50%;
-  transform: translate(-50%, 4px);
-  transform-origin: top;
-}
-
-[aria-label]:not([data-balloon-pos]):hover:after,
-[aria-label]:not([data-balloon-pos])[data-balloon-visible]:after {
-  transform: translate(-50%, 0);
-}
-
-[aria-label]:not([data-balloon-pos]):hover:before,
-[aria-label]:not([data-balloon-pos])[data-balloon-visible]:before {
-  transform: translate(-50%, 0);
+  content: none;
 }
 
 [aria-label][data-balloon-break]:after {
