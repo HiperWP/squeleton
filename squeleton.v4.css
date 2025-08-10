@@ -651,6 +651,30 @@ blockquote ul:last-child {
   flex: 0 1 auto
 }
 
+.f-gap-5 {
+  gap: 5px
+}
+
+.f-gap-10 {
+  gap: 10px
+}
+
+.f-gap-15 {
+  gap: 15px
+}
+
+.f-gap-20 {
+  gap: 20px
+}
+
+.f-gap-25 {
+  gap: 25px
+}
+
+.f-gap-30 {
+  gap: 30px
+}
+
 .hidden,
 .visible-lg,
 .visible-md,
@@ -6267,6 +6291,30 @@ button.vbox-link-btn:hover {
     padding-left: 0
   }
 
+  .md-f-gap-5 {
+    gap: 5px
+  }
+
+  .md-f-gap-10 {
+    gap: 10px
+  }
+
+  .md-f-gap-15 {
+    gap: 15px
+  }
+
+  .md-f-gap-20 {
+    gap: 20px
+  }
+
+  .md-f-gap-25 {
+    gap: 25px
+  }
+
+  .md-f-gap-30 {
+    gap: 30px
+  }
+
   .md-m-1-all {
     margin: 1%
   }
@@ -9454,6 +9502,30 @@ button.vbox-link-btn:hover {
   .sm-gap-0 [class*=c-xs-] {
     padding-right: 0;
     padding-left: 0
+  }
+
+  .sm-f-gap-5 {
+    gap: 5px
+  }
+
+  .sm-f-gap-10 {
+    gap: 10px
+  }
+
+  .sm-f-gap-15 {
+    gap: 15px
+  }
+
+  .sm-f-gap-20 {
+    gap: 20px
+  }
+
+  .sm-f-gap-25 {
+    gap: 25px
+  }
+
+  .sm-f-gap-30 {
+    gap: 30px
   }
 
   .sm-m-1-all {
@@ -12700,6 +12772,30 @@ button.vbox-link-btn:hover {
   .xs-gap-0 [class*=c-xs-] {
     padding-right: 0;
     padding-left: 0
+  }
+
+  .xs-f-gap-5 {
+    gap: 5px
+  }
+
+  .xs-f-gap-10 {
+    gap: 10px
+  }
+
+  .xs-f-gap-15 {
+    gap: 15px
+  }
+
+  .xs-f-gap-20 {
+    gap: 20px
+  }
+
+  .xs-f-gap-25 {
+    gap: 25px
+  }
+
+  .xs-f-gap-30 {
+    gap: 30px
   }
 
   .xs-m-1-all {
