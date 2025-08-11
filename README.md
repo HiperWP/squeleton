@@ -13,4 +13,4 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 
 <h2>ICOMOON</h2>
 <p><strong>ICONS PACK CLASS</strong></p>
-<p>https://ej.digital/icones/</p>
+<p>https://ej.digital/squeleton/icones/</p>
