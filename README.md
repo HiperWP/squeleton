@@ -1,5 +1,5 @@
 # Squeleton
-Boilerplate moderno e enxuto que combina o melhor do CSS utilitário, grid responsivo, animações elegantes e bibliotecas JavaScript essenciais para criar interfaces modernas, intuitivas e com manutenção simplificada.
+Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid responsivo, animações elegantes e bibliotecas JavaScript essenciais para criar interfaces rápidas, intuitivas e com manutenção simplificada.
 
 <h2>STYLESHEET</h2>
 <p><strong>CDN LINKS (Load in Header)</strong></p>
