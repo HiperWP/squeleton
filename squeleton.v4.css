@@ -14,7 +14,7 @@ body {
   margin: 0;
   font-family: sans-serif;
   font-size: 14px;
-  line-height: 1.7;
+  line-height: 1.55;
   color: #0f1419;
   min-height: 100vh
 }
@@ -1705,16 +1705,9 @@ fieldset[disabled] a.btn {
 }
 
 .border-rd-50,
+.border-rd-100,
 .img-circle {
   border-radius: 50%
-}
-
-.border-rd-100 {
-  border-radius: 100%
-}
-
-.border-rd-none {
-  border-radius: 0
 }
 
 .border-rd-4-t {
