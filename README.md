@@ -9,7 +9,7 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 <h2>JAVASCRIPT</h2>
 <p><strong>CDN LINKS</strong></p>
 <p>https://cdn.hiperwp.com.br/squeleton-main.v4.min.js (Load in Header)</p>
-<p>https://cdn.hiperwp.com.br/squeleton-footer.v4.min.js (Load in Footer)</p>
+<p>https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js (Load in Footer)</p>
 
 <h2>ICOMOON</h2>
 <p><strong>ICONS PACK CLASS</strong></p>
