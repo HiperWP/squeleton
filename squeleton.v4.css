@@ -618,6 +618,14 @@ blockquote ul:last-child {
   justify-content: normal
 }
 
+.f-auto-max {
+  flex: 1 1 auto
+}
+
+.f-auto-min {
+  flex: 0 1 auto
+}
+
 .f-grow-1 {
   flex-grow: 1
 }
@@ -644,14 +652,6 @@ blockquote ul:last-child {
 
 .f-basis-0 {
   flex-basis: 0
-}
-
-.f-auto-max {
-  flex: 1 1 auto
-}
-
-.f-auto-min {
-  flex: 0 1 auto
 }
 
 .f-gap-5 {
