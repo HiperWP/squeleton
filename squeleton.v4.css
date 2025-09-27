@@ -5186,7 +5186,6 @@ fieldset[disabled] a.btn {
   margin: auto;
   position: relative;
   user-select: none;
-  -webkit-tap-highlight-color: transparent
 }
 
 .slide__item[class*=c-lg-],
@@ -5219,15 +5218,9 @@ fieldset[disabled] a.btn {
   min-width: 0;
   list-style-type: none;
   transition: opacity .2s ease-in-out 0s;
-  -webkit-tap-highlight-color: transparent
-}
-
-.slide__item img {
-  -webkit-tap-highlight-color: transparent
 }
 
 .slide__button {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, .4);
   -webkit-appearance: none;
   background: rgba(0, 0, 0, .4);
   opacity: .7;
@@ -5288,7 +5281,6 @@ fieldset[disabled] a.btn {
 }
 
 .slide__dot {
-  -webkit-tap-highlight-color: rgba(49, 49, 49, 0.5);
   -webkit-appearance: none;
   appearance: none;
   background-color: transparent;
