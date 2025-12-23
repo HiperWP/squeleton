@@ -365,6 +365,10 @@ blockquote ul:last-child {
   text-transform: uppercase
 }
 
+.text-capitalize {
+  text-transform: capitalize
+}
+
 .container,
 .container-fluid {
   width: 100%;
