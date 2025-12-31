@@ -1,13 +1,13 @@
 # Squeleton
 
 [![Version](https://img.shields.io/badge/version-4.0.1-blue.svg)](https://hiperwp.com.br/squeleton/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](ttps://hiperwp.com.br/squeleton/#guia)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://hiperwp.com.br/squeleton/#guia)
 [![CSS Framework](https://img.shields.io/badge/framework-CSS-1572B6.svg)](https://hiperwp.com.br/squeleton/)
 [![Vanilla JS](https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E.svg)](https://hiperwp.com.br/squeleton/)
 [![HTMX](https://img.shields.io/badge/powered%20by-HTMX-3366CC.svg)](https://htmx.org/)
 [![VanJS](https://img.shields.io/badge/reactive-VanJS-00ADD8.svg)](https://vanjs.org/)
 
-> Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid responsivo, animações elegantes e bibliotecas JavaScript essenciais para criar interfaces rápidas, intuitivas e com manutenção simplificada.
+Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid responsivo, animações elegantes e bibliotecas JavaScript essenciais para criar interfaces rápidas, intuitivas e com manutenção simplificada.
 
 ## Características Principais
 
