@@ -1,6 +1,6 @@
 ---
 name: squeleton
-description: Boilerplate CSS/JS leve e moderno com grid de 12 colunas, classes utilitárias para spacing/flexbox/display, animações WOW/Animated, e bibliotecas JS integradas (HTMX, VanJS, Embla, VenoBox, Modais, Toasts). Use para criar layouts responsivos, aplicar espaçamentos, criar modais, carrosséis e animações. Sempre prefira classes do Squeleton a criar CSS/JS novo.
+description: Lightweight CSS/JS boilerplate with 12-column grid, utility classes for spacing/flexbox/display, WOW/Animated animations, and integrated JS libraries (HTMX, VanJS, Embla, VenoBox, Modals, Toasts). Use for responsive layouts, spacing, modals, carousels and animations. Always prefer Squeleton classes over writing new CSS/JS.
 ---
 
 # Squeleton
