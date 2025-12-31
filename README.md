@@ -1,7 +1,7 @@
 # Squeleton
 
 [![Version](https://img.shields.io/badge/version-4.0.1-blue.svg)](https://hiperwp.com.br/squeleton/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](ttps://hiperwp.com.br/squeleton/#guia)
 [![CSS Framework](https://img.shields.io/badge/framework-CSS-1572B6.svg)](https://hiperwp.com.br/squeleton/)
 [![Vanilla JS](https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E.svg)](https://hiperwp.com.br/squeleton/)
 [![HTMX](https://img.shields.io/badge/powered%20by-HTMX-3366CC.svg)](https://htmx.org/)
@@ -14,7 +14,7 @@
 - **Mobile-First**: Sistema responsivo com 4 breakpoints (xs, sm, md, lg)
 - **Grid Flexível**: 12 colunas com containers responsivos
 - **Utilitários Completos**: Mais de 400 classes para espaçamento, tipografia, layout e cores
-- **JavaScript Pronto**: 9 bibliotecas pré-integradas (HTMX, VanJS, Embla, VenoBox, a11y-dialog, Toastify, Balloon.css, Counter-Up2, js-cookie)
+- **JavaScript Pronto**: 9 bibliotecas pré-integradas (HTMX, VanJS, Embla, VenoBox, a11y-dialog, Toastify, Wow2 Animation, Counter-Up2, js-cookie)
 - **Animações Suaves**: 30+ efeitos com WOW.js + Animated.css
 - **Biblioteca de Ícones**: 300+ ícones vetoriais customizados com IcoMoon
 - **Performance**: Otimizado para 94+ no PageSpeed Insights
@@ -125,15 +125,15 @@ Todas as bibliotecas estão pré-configuradas e otimizadas para funcionar perfei
 
 | Biblioteca | Descrição |
 |-----------|-----------|
-| **HTMX** | Interações AJAX sem JavaScript |
-| **VanJS** | Framework reativo (1KB) |
-| **Embla Carousel** | Carrosséis suaves com swipe |
-| **VenoBox 2** | Lightbox para imagens/vídeos |
-| **a11y-dialog** | Modais acessíveis |
-| **Toastify** | Notificações toast |
-| **Balloon.css** | Tooltips CSS-only |
-| **Counter-Up2** | Animações de contagem |
-| **js-cookie** | Gerenciamento de cookies |
+| **HTMX** | Biblioteca que oferece acesso a AJAX, CSS Transitions, WebSockets e Server Sent Events diretamente no HTML usando atributos, permitindo interfaces modernas com a simplicidade do hypertext. |
+| **VanJS** | O menor framework de interface de usuário reativo do mundo. Incrivelmente poderoso, absurdamente pequeno. |
+| **Embla Carousel** | Biblioteca de carrossel minimalista com movimento fluido e precisão de swipe excepcional. |
+| **VenoBox 2** | Biblioteca JavaScript Lightbox para imagens, vídeos, galerias e iFrames. |
+| **a11y-dialog** | Biblioteca leve e flexível para criação de janelas de diálogo intuitivas. |
+| **Toastify** | Biblioteca JavaScript para mensagens de notificação aprimoradas. |
+| **Wow2 Animation** | Fork otimizado próprio baseado no wow.js para animações on-scroll performáticas. |
+| **Counter-Up2** | Biblioteca leve que conta até um número alvo quando o número se torna visível. |
+| **js-cookie** | Biblioteca JavaScript simples e leve para gerenciamento de cookies do navegador. |
 
 ## FAQ - Perguntas Frequentes
 
