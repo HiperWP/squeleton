@@ -1,6 +1,6 @@
 ---
 name: squeleton
-description: Squeleton é um boilerplate CSS/JS leve e moderno para criação de interfaces web. Use este skill quando precisar criar layouts HTML responsivos, aplicar espaçamentos, trabalhar com flexbox, criar modais, carrosséis, animações ou usar qualquer recurso de interface nos projetos HiperWP/G4. O Squeleton já está integrado nos projetos - prefira usar suas classes utilitárias e bibliotecas integradas ao invés de criar CSS/JS novo sem necessidade.
+description: Boilerplate CSS/JS leve e moderno com grid de 12 colunas, classes utilitárias para spacing/flexbox/display, animações WOW/Animated, e bibliotecas JS integradas (HTMX, VanJS, Embla, VenoBox, Modais, Toasts). Use para criar layouts responsivos, aplicar espaçamentos, criar modais, carrosséis e animações. Sempre prefira classes do Squeleton a criar CSS/JS novo.
 ---
 
 # Squeleton
