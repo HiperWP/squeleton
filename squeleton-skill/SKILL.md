@@ -1,5 +1,5 @@
 ---
-name: squeleton
+name: squeleton-skill
 description: Lightweight CSS/JS boilerplate with 12-column grid, utility classes for spacing/flexbox/display, WOW/Animated animations, and integrated JS libraries (HTMX, VanJS, Embla, VenoBox, Modals, Toasts). Use for responsive layouts, spacing, modals, carousels and animations. Always prefer Squeleton classes over writing new CSS/JS.
 ---
 
