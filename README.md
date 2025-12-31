@@ -20,6 +20,13 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 - **Performance**: Otimizado para 94+ no PageSpeed Insights
 - **Zero Configuração**: Adicione via CDN e comece a usar imediatamente
 
+## Documentação
+
+- **[Documentação Web](https://hiperwp.com.br/squeleton/)** - Guias interativos e exemplos
+- **[Claude Skill](squeleton.skill)** - Skill para desenvolvimento com Claude
+- **[Guias de Referência](claude-skill/SKILL.md)** - 15 guias detalhados sobre cada recurso
+- **[Biblioteca de Ícones](https://hiperwp.com.br/squeleton/icones/)** - Lista de ícones disponíveis
+
 ## Instalação Via CDN
 
 ```html
@@ -60,13 +67,6 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 </body>
 </html>
 ```
-
-## Documentação
-
-- **[Documentação Web](https://hiperwp.com.br/squeleton/)** - Guias interativos e exemplos
-- **[Claude Skill](squeleton.skill)** - Skill para desenvolvimento com Claude
-- **[Guias de Referência](claude-skill/SKILL.md)** - 15 guias detalhados sobre cada recurso
-- **[Biblioteca de Ícones](https://hiperwp.com.br/squeleton/icones/)** - Lista de ícones disponíveis
 
 ## Exemplo Básico
 
@@ -207,12 +207,6 @@ Com mais de 400 classes utilitárias, a melhor forma é explorar:
 O Squeleton segue padrões intuitivos que facilitam a descoberta durante o uso.
 
 </details>
-
-## Links Úteis
-
-- [Documentação Completa](https://hiperwp.com.br/squeleton/)
-- [Ícones IcoMoon](https://hiperwp.com.br/squeleton/icones/)
-- [CSS não-minificado via CDN](https://cdn.hiperwp.com.br/squeleton.v4.css)
 
 ## Licença
 
