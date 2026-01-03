@@ -19,10 +19,10 @@
 	<link rel="icon" href="https://hiperwp.com.br/squeleton/favicon.webp" sizes="256x256" />
 
 	<!-- Squeleton CSS -->
-	<link rel="stylesheet" href="https://cdn.hiperwp.com.br/squeleton.v4.min.css?ver=4.3">
+	<link rel="stylesheet" href="https://cdn.hiperwp.com.br/squeleton.v4.min.css?ver=4.4">
 
 	<!-- Squeleton JavaScript Header -->
-	<script src="https://cdn.hiperwp.com.br/squeleton-main.v4.min.js?ver=4.3"></script>
+	<script src="https://cdn.hiperwp.com.br/squeleton-main.v4.min.js?ver=4.4"></script>
 
 	<!-- Prism.js CSS para syntax highlighting -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
@@ -275,7 +275,7 @@
 			font-weight: 700;
 		}
 
-		.section-header>span {
+		.section-header > span {
 			font-size: 90%;
 			color: var(--main-color);
 		}
@@ -600,7 +600,7 @@
 					<div class="f-grid f-items-center f-justify-center">
 						<i class="squeleton-icon iccon-rocket-1 p-15px-r rocketUp"></i>
 						<h1 class="squeleton-title m-25px-tb animated slideIn">Squeleton</h1>
-						<div class="version-badge animated magnetIn delay-800">v4.3</div>
+						<div class="version-badge animated magnetIn delay-800">v4.4</div>
 					</div>
 					<p class="squeleton-subtitle p-20px-tb xs-p-10px-t animated delay-500 fadeInUp">
 						Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid responsivo, animações
@@ -4144,7 +4144,7 @@ body {
 					<div class="f-grid f-items-center f-justify-center p-25px-b">
 						<span class="iccon-rocket-1 p-10px-r"></span>
 						<h3 class="m-0-b p-5px-r">Squeleton</h3>
-						<span class="version-badge">4.3</span>
+						<span class="version-badge">4.4</span>
 					</div>
 					<p>Um boilerplate leve e funcional para interfaces modernas e intuitivas</p>
 					<p class="minus-15 p-10px-t" style="opacity: 0.7;">
@@ -4156,7 +4156,7 @@ body {
 	</footer>
 
 	<!-- Squeleton JavaScript Footer -->
-	<script src="https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js?ver=4.3"></script>
+	<script src="https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js?ver=4.4"></script>
 
 	<!-- Prism.js para syntax highlighting -->
 	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
@@ -4280,16 +4280,6 @@ body {
 		// START DOM READY
 		document.addEventListener('DOMContentLoaded', function () {
 			"use strict";
-
-			// WOW2 Animation
-			var wow = new WOW({
-				offset: 0,
-				mobile: false,
-				live: true
-			});
-
-			// WOW2 Init
-			wow.init();
 
 			// Scroll To Top
 			var scrollTopArrow = document.querySelector('.scroll-top-arrow');
