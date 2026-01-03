@@ -2978,37 +2978,37 @@ Rodapé sempre no final
 							<h5>JS de configuração</h5>
 							<div class="code-block">
 								<textarea class="prism-code" data-lang="markup">
-									<script>
-										document.addEventListener('DOMContentLoaded', function () {
-											// Referências aos elementos
-											var lgpdElement = document.getElementById('lgpd');
-											var lgpdBg = document.getElementById('lgpd-bg');
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		// Referências aos elementos
+		var lgpdElement = document.getElementById('lgpd');
+		var lgpdBg = document.getElementById('lgpd-bg');
 
-											if (lgpdElement) {
-												// Verifica se o cookie de consentimento já existe
-												if (Cookies.get('lgpd') !== "yes") {
-													// Exibe o banner se o consentimento não foi dado
-													lgpdElement.classList.remove('d-none');
-													lgpdElement.classList.add('animated');
-													lgpdBg.classList.remove('d-none');
-												}
+		if (lgpdElement) {
+			// Verifica se o cookie de consentimento já existe
+			if (Cookies.get('lgpd') !== "yes") {
+				// Exibe o banner se o consentimento não foi dado
+				lgpdElement.classList.remove('d-none');
+				lgpdElement.classList.add('animated');
+				lgpdBg.classList.remove('d-none');
+			}
 
-												// Adiciona evento ao botão de consentimento
-												var lgpdButton = document.querySelector('.lgpd-btn');
-												if (lgpdButton) {
-													lgpdButton.addEventListener('click', function () {
-														// Salva o consentimento por 1 ano
-														Cookies.set('lgpd', 'yes', { expires: 365, path: '/' });
+			// Adiciona evento ao botão de consentimento
+			var lgpdButton = document.querySelector('.lgpd-btn');
+			if (lgpdButton) {
+				lgpdButton.addEventListener('click', function () {
+					// Salva o consentimento por 1 ano
+					Cookies.set('lgpd', 'yes', { expires: 365, path: '/' });
 
-														// Esconde o banner
-														lgpdElement.classList.remove('animated');
-														lgpdElement.classList.add('d-none');
-														lgpdBg.classList.add('d-none');
-													});
-												}
-											}
-										});
-									</script>
+					// Esconde o banner
+					lgpdElement.classList.remove('animated');
+					lgpdElement.classList.add('d-none');
+					lgpdBg.classList.add('d-none');
+				});
+			}
+		}
+	});
+</script>
 								</textarea>
 							</div>
 
@@ -3161,23 +3161,23 @@ Rodapé sempre no final
 
 							<div class="code-block m-40px-b">
 								<textarea class="prism-code" data-lang="javascript">
-									<script>
-										document.addEventListener('DOMContentLoaded', function () {
-											const { span, button } = van.tags
-											const boxCounter1 = document.getElementById('box-counter-1');
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const { span, button } = van.tags
+		const boxCounter1 = document.getElementById('box-counter-1');
 
-											const Counter1 = () => {
-												const counterState = van.state(0)
-												return span(
-													"❤️ ", counterState, " ",
-													button({ onclick: () => ++counter.val }, "👍"),
-													button({ onclick: () => --counter.val }, "👎"),
-												)
-											}
+		const Counter1 = () => {
+			const counterState = van.state(0)
+			return span(
+				"❤️ ", counterState, " ",
+				button({ onclick: () => ++counter.val }, "👍"),
+				button({ onclick: () => --counter.val }, "👎"),
+			)
+		}
 
-											van.add(boxCounter1, Counter1())
-										});
-									</script>
+		van.add(boxCounter1, Counter1())
+	});
+</script>
 								</textarea>
 							</div>
 
@@ -3205,23 +3205,23 @@ Rodapé sempre no final
 
 							<div class="code-block m-40px-b">
 								<textarea class="prism-code" data-lang="javascript">
-									<script>
-										document.addEventListener('DOMContentLoaded', function () {
-											const { span, button } = van.tags
-											const boxCounter2 = document.getElementById('box-counter-2');
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const { span, button } = van.tags
+		const boxCounter2 = document.getElementById('box-counter-2');
 
-											const Counter2 = () => {
-												const counterPersistent = persistentItem("counter_persistent", 0)
-												return span(
-													"❤️ ", counterPersistent, " ",
-													button({ onclick: () => ++counterPersistent.val }, "👍"),
-													button({ onclick: () => --counterPersistent.val }, "👎"),
-												)
-											}
+		const Counter2 = () => {
+			const counterPersistent = persistentItem("counter_persistent", 0)
+			return span(
+				"❤️ ", counterPersistent, " ",
+				button({ onclick: () => ++counterPersistent.val }, "👍"),
+				button({ onclick: () => --counterPersistent.val }, "👎"),
+			)
+		}
 
-											van.add(boxCounter2, Counter2())
-										});
-									</script>
+		van.add(boxCounter2, Counter2())
+	});
+</script>
 								</textarea>
 							</div>
 
@@ -3257,31 +3257,31 @@ Rodapé sempre no final
 
 							<div class="code-block">
 								<textarea class="prism-code" data-lang="markup">
-									<script>
-										document.addEventListener('DOMContentLoaded', function () {
-											const { span, button } = van.tags
-											const boxCounter3 = document.getElementById('box-counter-3');
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const { span, button } = van.tags
+		const boxCounter3 = document.getElementById('box-counter-3');
 
-											const Counter3 = () => {
-												const counters = persistentGroup("counters", {
-													likes: 0,
-													deslikes: 0
-												})
+		const Counter3 = () => {
+			const counters = persistentGroup("counters", {
+				likes: 0,
+				deslikes: 0
+			})
 
-												return span(
-													"👍 ", counters.likes, " ",
-													button({ onclick: () => ++counters.likes.val }, "➕"),
-													" ",
-													"👎 ", counters.deslikes, " ",
-													button({ onclick: () => ++counters.deslikes.val }, "➕"),
-													" ",
-													button({ onclick: () => counters.clearAll() }, "🗑️")
-												)
-											}
+			return span(
+				"👍 ", counters.likes, " ",
+				button({ onclick: () => ++counters.likes.val }, "➕"),
+				" ",
+				"👎 ", counters.deslikes, " ",
+				button({ onclick: () => ++counters.deslikes.val }, "➕"),
+				" ",
+				button({ onclick: () => counters.clearAll() }, "🗑️")
+			)
+		}
 
-											van.add(boxCounter3, Counter3())
-										});
-									</script>
+		van.add(boxCounter3, Counter3())
+	});
+</script>
 								</textarea>
 							</div>
 
@@ -3338,82 +3338,82 @@ Rodapé sempre no final
 							<h5>Marcações HTML</h5>
 							<div class="code-block">
 								<textarea class="prism-code" data-lang="markup">
-									<div class="container">
-										<div class="row">
-												<div class="c-xs-12">
-														<button onclick="showSuccessToast()" class="btn m-10px-r">Sucesso</button>
-														<button onclick="showErrorToast()" class="btn m-10px-r">Erro</button>
-														<button onclick="showInfoToast()" class="btn">Info com Link</button>
-												</div>
-										</div>
-								</div>
+<div class="container">
+	<div class="row">
+			<div class="c-xs-12">
+					<button onclick="showSuccessToast()" class="btn m-10px-r">Sucesso</button>
+					<button onclick="showErrorToast()" class="btn m-10px-r">Erro</button>
+					<button onclick="showInfoToast()" class="btn">Info com Link</button>
+			</div>
+	</div>
+</div>
 								</textarea>
 							</div>
 
 							<h5>JS de configuração</h5>
 							<div class="code-block">
 								<textarea class="prism-code" data-lang="markup">
-									<!-- JavaScript para Toastify -->
-									<script>
-										// Toastify é carregado automaticamente pelo Squeleton
-										function showSuccessToast() {
-											// Toast de sucesso
-											Toastify({
-												text: "Operação realizada com sucesso!",
-												duration: 3000,
-												close: true,
-												gravity: "top",
-												position: "right",
-												style: {
-													background: "linear-gradient(to right, #00b09b, #96c93d)",
-												}
-											}).showToast();
-										}
+<!-- JavaScript para Toastify -->
+<script>
+	// Toastify é carregado automaticamente pelo Squeleton
+	function showSuccessToast() {
+		// Toast de sucesso
+		Toastify({
+			text: "Operação realizada com sucesso!",
+			duration: 3000,
+			close: true,
+			gravity: "top",
+			position: "right",
+			style: {
+				background: "linear-gradient(to right, #00b09b, #96c93d)",
+			}
+		}).showToast();
+	}
 
-										function showErrorToast() {
-											// Toast de erro
-											Toastify({
-												text: "Erro ao processar solicitação",
-												duration: 3000,
-												close: true,
-												gravity: "bottom",
-												position: "center",
-												style: {
-													background: "linear-gradient(to right, #ff5f6d, #ffc371)",
-												}
-											}).showToast();
-										}
+	function showErrorToast() {
+		// Toast de erro
+		Toastify({
+			text: "Erro ao processar solicitação",
+			duration: 3000,
+			close: true,
+			gravity: "bottom",
+			position: "center",
+			style: {
+				background: "linear-gradient(to right, #ff5f6d, #ffc371)",
+			}
+		}).showToast();
+	}
 
-										function showInfoToast() {
-											// Toast com link
-											Toastify({
-												text: "Clique para mais informações",
-												duration: 5000,
-												destination: "https://github.com/apvarun/toastify-js",
-												newWindow: true,
-												close: true,
-												gravity: "bottom",
-												position: "left",
-												stopOnFocus: true,
-												style: {
-													background: "linear-gradient(to right, #4b6cb7, #182848)",
-												},
-												onClick: function () {
-													console.log("Toast clicado");
-												}
-											}).showToast();
-										}
+	function showInfoToast() {
+		// Toast com link
+		Toastify({
+			text: "Clique para mais informações",
+			duration: 5000,
+			destination: "https://github.com/apvarun/toastify-js",
+			newWindow: true,
+			close: true,
+			gravity: "bottom",
+			position: "left",
+			stopOnFocus: true,
+			style: {
+				background: "linear-gradient(to right, #4b6cb7, #182848)",
+			},
+			onClick: function () {
+				console.log("Toast clicado");
+			}
+		}).showToast();
+	}
 
-										// Alternativa com event listeners
-										document.addEventListener('DOMContentLoaded', function () {
-											// Se preferir usar event listeners em vez de onclick inline
-											/* 
-											document.getElementById('btn-toast-success').addEventListener('click', showSuccessToast);
-											document.getElementById('btn-toast-error').addEventListener('click', showErrorToast);
-											document.getElementById('btn-toast-info').addEventListener('click', showInfoToast);
-											*/
-										});
-									</script>
+	// Alternativa com event listeners
+	document.addEventListener('DOMContentLoaded', function () {
+		// Se preferir usar event listeners em vez de onclick inline
+		/* 
+		document.getElementById('btn-toast-success').addEventListener('click', showSuccessToast);
+		document.getElementById('btn-toast-error').addEventListener('click', showErrorToast);
+		document.getElementById('btn-toast-info').addEventListener('click', showInfoToast);
+		*/
+	});
+</script>
 								</textarea>
 							</div>
 
@@ -3488,39 +3488,39 @@ Rodapé sempre no final
 
 							<div class="code-block">
 								<textarea class="prism-code" data-lang="markup">
-									<!-- HTML com exemplos de animações -->
-									<div class="row m-30px-b">
-											<div class="c-xs-6">
-													<div class="demo-box wow fadeInUp">
-															wow fadeInUp
-													</div>
-											</div>
-											<div class="c-xs-6">
-													<div class="demo-box wow bounceIn" data-wow-delay="0.2s">
-															wow bounceIn + delay 0.2s
-													</div>
-											</div>
-											<div class="c-xs-6">
-													<div class="demo-box wow fadeInDown" data-wow-duration="2s">
-															wow fadeInDown + duration 2s
-													</div>
-											</div>
-											<div class="c-xs-6">
-													<div class="demo-box wow pulse" data-wow-iteration="10">
-															wow pulse + iteration 10
-													</div>
-											</div>
-											<div class="c-xs-6">
-													<div class="demo-box animated infinite fadeIn">
-															animated infinite fadeIn
-													</div>
-											</div>
-											<div class="c-xs-6">
-													<div class="demo-box animated zoomIn delay-5000">
-															animated zoomIn delay-5000
-													</div>
-											</div>
-									</div>
+<!-- HTML com exemplos de animações -->
+<div class="row m-30px-b">
+		<div class="c-xs-6">
+				<div class="demo-box wow fadeInUp">
+						wow fadeInUp
+				</div>
+		</div>
+		<div class="c-xs-6">
+				<div class="demo-box wow bounceIn" data-wow-delay="0.2s">
+						wow bounceIn + delay 0.2s
+				</div>
+		</div>
+		<div class="c-xs-6">
+				<div class="demo-box wow fadeInDown" data-wow-duration="2s">
+						wow fadeInDown + duration 2s
+				</div>
+		</div>
+		<div class="c-xs-6">
+				<div class="demo-box wow pulse" data-wow-iteration="10">
+						wow pulse + iteration 10
+				</div>
+		</div>
+		<div class="c-xs-6">
+				<div class="demo-box animated infinite fadeIn">
+						animated infinite fadeIn
+				</div>
+		</div>
+		<div class="c-xs-6">
+				<div class="demo-box animated zoomIn delay-5000">
+						animated zoomIn delay-5000
+				</div>
+		</div>
+</div>
 								</textarea>
 							</div>
 
@@ -3550,27 +3550,27 @@ Rodapé sempre no final
 
 							<div class="code-block">
 								<textarea class="prism-code" data-lang="markup">
-									<!-- Exemplo com classe animated direta -->
-									<div class="demo-box animated fadeInUp">
-											Animação imediata
-									</div>
-									<div class="demo-box animated fadeInUp delay-1000">
-											Animação com delay
-									</div>
-									<div class="demo-box animated pulse infinite">
-											Animação infinita
-									</div>
+<!-- Exemplo com classe animated direta -->
+<div class="demo-box animated fadeInUp">
+		Animação imediata
+</div>
+<div class="demo-box animated fadeInUp delay-1000">
+		Animação com delay
+</div>
+<div class="demo-box animated pulse infinite">
+		Animação infinita
+</div>
 
-									<!-- Exemplos com novas classes utilitárias -->
-									<div class="demo-box animated fadeIn duration-2000 delay-500">
-											Animação lenta com delay
-									</div>
-									<div class="demo-box animated bounce repeat-3 alternate">
-											Bounce que vai e volta 3 vezes
-									</div>
-									<div class="demo-box animated slideInUp reverse">
-											Slide reverso (saindo para baixo)
-									</div>
+<!-- Exemplos com novas classes utilitárias -->
+<div class="demo-box animated fadeIn duration-2000 delay-500">
+		Animação lenta com delay
+</div>
+<div class="demo-box animated bounce repeat-3 alternate">
+		Bounce que vai e volta 3 vezes
+</div>
+<div class="demo-box animated slideInUp reverse">
+		Slide reverso (saindo para baixo)
+</div>
 								</textarea>
 							</div>
 
@@ -3636,31 +3636,31 @@ Rodapé sempre no final
 							<h4 class="p-30px-t">Exemplos Combinados</h4>
 							<div class="code-block">
 								<textarea class="prism-code" data-lang="markup">
-									<!-- Animação rápida com delay -->
-									<div class="animated fadeIn duration-500 delay-300">
-											Rápida e com delay
-									</div>
+<!-- Animação rápida com delay -->
+<div class="animated fadeIn duration-500 delay-300">
+		Rápida e com delay
+</div>
 
-									<!-- Animação que pulsa 3 vezes alternando -->
-									<div class="animated pulse repeat-3 alternate duration-1000">
-											Pulso alternado
-									</div>
+<!-- Animação que pulsa 3 vezes alternando -->
+<div class="animated pulse repeat-3 alternate duration-1000">
+		Pulso alternado
+</div>
 
-									<!-- Animação de entrada usada como saída -->
-									<div class="animated slideInLeft reverse duration-2000">
-											Saindo para a esquerda
-									</div>
+<!-- Animação de entrada usada como saída -->
+<div class="animated slideInLeft reverse duration-2000">
+		Saindo para a esquerda
+</div>
 
-									<!-- Controle via JavaScript -->
-									<div class="animated spin infinite paused" id="spinner">
-											Spinner pausado
-									</div>
+<!-- Controle via JavaScript -->
+<div class="animated spin infinite paused" id="spinner">
+		Spinner pausado
+</div>
 
-									<script>
-										// Para controlar via JS
-										document.getElementById('spinner').classList.remove('paused');
-										document.getElementById('spinner').classList.add('running');
-									</script>
+<script>
+	// Para controlar via JS
+	document.getElementById('spinner').classList.remove('paused');
+	document.getElementById('spinner').classList.add('running');
+</script>
 								</textarea>
 							</div>
 						</div>
@@ -3687,30 +3687,30 @@ Rodapé sempre no final
 							</div>
 							<div class="code-block">
 								<textarea class="prism-code" data-lang="markup">
-									<!-- HTML com exemplos de VenoBox -->
-									<a class="btn open-video" data-autoplay="true" 
-											data-vbtype="video" data-gall="veno-demo" data-maxwidth="960px" 
-											href="https://iframe.mediadelivery.net/play/995/181e9ec4-233f-4610-82b7-81c3b69efbac">
-											Abrir Bunny Vídeo
-									</a>
+<!-- HTML com exemplos de VenoBox -->
+<a class="btn open-video" data-autoplay="true" 
+		data-vbtype="video" data-gall="veno-demo" data-maxwidth="960px" 
+		href="https://iframe.mediadelivery.net/play/995/181e9ec4-233f-4610-82b7-81c3b69efbac">
+		Abrir Bunny Vídeo
+</a>
 
-									<a class="btn open-video" data-autoplay="true" 
-											data-vbtype="video" data-gall="veno-demo" data-maxwidth="960px" 
-											href="https://www.youtube.com/watch?v=UYmvFzDuO5k">
-											Abrir YouTube Vídeo
-									</a>
+<a class="btn open-video" data-autoplay="true" 
+		data-vbtype="video" data-gall="veno-demo" data-maxwidth="960px" 
+		href="https://www.youtube.com/watch?v=UYmvFzDuO5k">
+		Abrir YouTube Vídeo
+</a>
 
-									<a class="btn open-gallery" data-gall="veno-demo" 
-											data-title="Foto em Tela Ampliada" 
-											href="https://hiperwp.com.br/app/uploads/2025/08/voice_43.webp">
-											Abrir Imagem Ampliada
-									</a>
+<a class="btn open-gallery" data-gall="veno-demo" 
+		data-title="Foto em Tela Ampliada" 
+		href="https://hiperwp.com.br/app/uploads/2025/08/voice_43.webp">
+		Abrir Imagem Ampliada
+</a>
 
-									<!-- JavaScript automático pelo Squeleton -->
-									<script>
-										// VenoBox é inicializado automaticamente pelo Squeleton
-										// para classes .open-video e .open-gallery
-									</script>
+<!-- JavaScript automático pelo Squeleton -->
+<script>
+	// VenoBox é inicializado automaticamente pelo Squeleton
+	// para classes .open-video e .open-gallery
+</script>
 								</textarea>
 							</div>
 
@@ -3750,50 +3750,51 @@ Rodapé sempre no final
 
 							<h5>Marcação HTML</h5>
 							<div class="code-block">
-								<textarea class="prism-code" data-lang="markup"><div id="view-counter"> 
-									<!-- Viewport da Contagem -->
-									<div class="stat-card">
-											<div class="animated-number">400+</div> <!-- Inicia Contagem -->
-											<div>Classes Utilitárias</div>
-										</div>
-										<div class="stat-card">
-											<div class="animated-number">300+</div> <!-- Inicia Contagem -->
-											<div>Ícones Vetoriais</div>
-										</div>
-									</div>
+								<textarea class="prism-code" data-lang="markup">
+<div id="view-counter"> 
+	<!-- Viewport da Contagem -->
+	<div class="stat-card">
+		<div class="animated-number">400+</div> <!-- Inicia Contagem -->
+		<div>Classes Utilitárias</div>
+	</div>
+	<div class="stat-card">
+		<div class="animated-number">300+</div> <!-- Inicia Contagem -->
+		<div>Ícones Vetoriais</div>
+	</div>
+</div>
 								</textarea>
 							</div>
 
 							<h5>JS de configuração</h5>
 							<div class="code-block">
 								<textarea class="prism-code" data-lang="markup">
-									<script>
-										var viewCounter = document.getElementById('view-counter');
-										if (viewCounter) {
-											const counterUp = window.counterUp.default;
-											const counterCall = entries => {
-												entries.forEach(entry => {
-													const el = entry.target
-													if (entry.isIntersecting && !el.classList.contains('is-visible')) {
-														for (const counter of counters) {
-															counterUp(counter, {
-																duration: 1000,
-																delay: 16,
-															})
-															el.classList.add('is-visible')
-														}
-													}
-												})
-											}
+<script>
+	var viewCounter = document.getElementById('view-counter');
+	if (viewCounter) {
+		const counterUp = window.counterUp.default;
+		const counterCall = entries => {
+			entries.forEach(entry => {
+				const el = entry.target
+				if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+					for (const counter of counters) {
+						counterUp(counter, {
+							duration: 1000,
+							delay: 16,
+						})
+						el.classList.add('is-visible')
+					}
+				}
+			})
+		}
 
-											// Get all animated numbers
-											const counters = document.querySelectorAll('.animated-number');
+		// Get all animated numbers
+		const counters = document.querySelectorAll('.animated-number');
 
-											// Intersection Observer
-											const IO = new IntersectionObserver(counterCall, { threshold: 1 });
-											IO.observe(viewCounter);
-										}
-									</script>
+		// Intersection Observer
+		const IO = new IntersectionObserver(counterCall, { threshold: 1 });
+		IO.observe(viewCounter);
+	}
+</script>
 								</textarea>
 							</div>
 
@@ -3921,25 +3922,25 @@ Rodapé sempre no final
 											<p>Exemplo de personalização de variáveis e aplicação:</p>
 											<div class="code-block">
 												<textarea class="prism-code" data-lang="css">
-													/* main.v4.css - Seu arquivo de personalização */
-												:root {
-														--main-color: #30a1e0;
-														--text-color: #0f1419;
-														--bg-color: #fff;
-														--font-family: 'Inter Tight', sans-serif;
-														--font-weight: 400;
-														--font-size: 14.5px;
-														--line-height: 1.7;
-												}
+/* main.v4.css - Seu arquivo de personalização */
+:root {
+		--main-color: #30a1e0;
+		--text-color: #0f1419;
+		--bg-color: #fff;
+		--font-family: 'Inter Tight', sans-serif;
+		--font-weight: 400;
+		--font-size: 14.5px;
+		--line-height: 1.7;
+}
 
-												body {
-														font-family: var(--font-family);
-														font-size: var(--font-size);
-														color: var(--text-color);
-														background-color: var(--bg-color);
-														font-weight: var(--font-weight);
-														line-height: var(--line-height);
-												}
+body {
+		font-family: var(--font-family);
+		font-size: var(--font-size);
+		color: var(--text-color);
+		background-color: var(--bg-color);
+		font-weight: var(--font-weight);
+		line-height: var(--line-height);
+}
 												</textarea>
 											</div>
 										</div>
@@ -3956,23 +3957,23 @@ Rodapé sempre no final
 											suas próprias seguindo o mesmo padrão:
 											<div class="code-block m-20px-t">
 												<textarea class="prism-code" data-lang="css">
-												/* Defina sua animação com @keyframes */
-												@keyframes minha-animacao {
-													0% { opacity: 0; transform: scale(0.8); }
-													100% { opacity: 1; transform: scale(1); }
-												}
+/* Defina sua animação com @keyframes */
+@keyframes minha-animacao {
+	0% { opacity: 0; transform: scale(0.8); }
+	100% { opacity: 1; transform: scale(1); }
+}
 
-												/* Crie uma classe que aplica a animação */
-												.anima-personalizada {
-													animation-name: minha-animacao;
-													animation-duration: 0.5s;
-													animation-fill-mode: both;
-												}
+/* Crie uma classe que aplica a animação */
+.anima-personalizada {
+	animation-name: minha-animacao;
+	animation-duration: 0.5s;
+	animation-fill-mode: both;
+}
 
-												/* Use com wow para ativar no viewport */
-												<div class="wow anima-personalizada">
-													Conteúdo animado
-												</div>
+/* Use com wow para ativar no viewport */
+<div class="wow anima-personalizada">
+	Conteúdo animado
+</div>
 												</textarea>
 											</div>
 										</div>
@@ -4157,6 +4158,12 @@ Rodapé sempre no final
 	<!-- Squeleton JavaScript Footer -->
 	<script src="https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js?ver=4.3"></script>
 
+	<!-- Prism.js para syntax highlighting -->
+	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+
 	<!-- Squeleton JavaScript Functions -->
 	<script>
 		// Check App Reference
@@ -4283,9 +4290,6 @@ Rodapé sempre no final
 
 			// WOW2 Init
 			wow.init();
-
-			// Match Height Init
-			// matchHeight();
 
 			// Scroll To Top
 			var scrollTopArrow = document.querySelector('.scroll-top-arrow');
@@ -4474,78 +4478,25 @@ Rodapé sempre no final
 				});
 			});
 
-		});
-	</script>
-
-	<!-- Prism.js para syntax highlighting -->
-	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
-
-	<!-- Script para converter textareas em code blocks com Prism.js -->
-	<script>
-		// Função para remover indentação excessiva do código
-		function dedent(text) {
-			const lines = text.split('\n');
-
-			// Remove primeira linha se for vazia
-			if (lines[0].trim() === '') {
-				lines.shift();
-			}
-
-			// Remove última linha se for vazia
-			if (lines[lines.length - 1].trim() === '') {
-				lines.pop();
-			}
-
-			// Encontra a menor indentação (excluindo linhas vazias)
-			const minIndent = lines
-				.filter(line => line.trim().length > 0)
-				.map(line => {
-					const match = line.match(/^\s*/);
-					return match ? match[0].length : 0;
-				})
-				.reduce((min, indent) => Math.min(min, indent), Infinity);
-
-			// Remove a indentação mínima de todas as linhas
-			return lines
-				.map(line => line.slice(minIndent))
-				.join('\n')
-				.trim();
-		}
-
-		// Função para converter textareas em code blocks
-		function convertTextareasToCode() {
-			// Verifica se o Prism está disponível
-			if (typeof Prism === 'undefined') {
-				console.error('Prism.js não está carregado!');
-				return;
-			}
-
-			// Converte todos os textareas
+			// Convert textareas into code blocks
 			document.querySelectorAll('textarea.prism-code').forEach(function (textarea) {
 				const code = document.createElement('code');
 				code.className = 'language-' + textarea.dataset.lang;
-
-				// Remove indentação excessiva antes de passar para o Prism
-				code.textContent = dedent(textarea.value);
+				code.textContent = textarea.value;
 
 				const pre = document.createElement('pre');
 				pre.appendChild(code);
 
 				textarea.parentNode.replaceChild(pre, textarea);
 
-				// Aplica syntax highlighting
+				// Apply syntax highlighting
 				Prism.highlightElement(code);
 			});
 
-			console.log('✅ Conversão de textareas completa com dedent!');
+			// Match Height Init
 			matchHeight();
-		}
 
-		// Aguarda o Prism.js carregar e então converte
-		window.addEventListener('load', convertTextareasToCode);
+		});
 	</script>
 </body>
 
