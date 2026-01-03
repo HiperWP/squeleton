@@ -499,6 +499,8 @@ Prefixo: `iccon-{nome}-{variante}`
 <span class="iccon-user-2"></span>
 ```
 
+**⚠️ IMPORTANTE**: Use APENAS ícones da lista oficial em `references/icons-reference.md`. Ícones inventados ou de outros frameworks NÃO funcionarão. **SEMPRE consulte a referência ANTES de usar qualquer ícone.**
+
 Consulte `references/icons-reference.md` para a lista completa organizada por categoria.
 
 ## Padrões Comuns de Uso
