@@ -1,6 +1,6 @@
 # Squeleton
 
-[![Version](https://img.shields.io/badge/version-4.0.2-blue.svg)](https://hiperwp.com.br/squeleton/)
+[![Version](https://img.shields.io/badge/version-4.3-blue.svg)](https://hiperwp.com.br/squeleton/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://hiperwp.com.br/squeleton/#guia)
 [![CSS Framework](https://img.shields.io/badge/framework-CSS-1572B6.svg)](https://hiperwp.com.br/squeleton/)
 [![Vanilla JS](https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E.svg)](https://hiperwp.com.br/squeleton/)
