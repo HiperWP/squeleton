@@ -2,7 +2,7 @@
 
 Padrão: `{breakpoint-}d-{valor}`
 
-## Classes Base
+## Classes Base - Global
 
 ```
 d-none
@@ -12,6 +12,26 @@ d-inline-block
 d-flex
 d-table
 d-table-cell
+```
+
+## Responsivo - MD (≤1199px)
+
+```
+md-d-none
+md-d-block
+md-d-inline
+md-d-inline-block
+md-d-flex
+```
+
+## Responsivo - SM (≤991px)
+
+```
+sm-d-none
+sm-d-block
+sm-d-inline
+sm-d-inline-block
+sm-d-flex
 ```
 
 ## Responsivo - XS (≤639px)
@@ -24,36 +44,6 @@ xs-d-inline-block
 xs-d-flex
 ```
 
-## Responsivo - SM (≥640px)
-
-```
-sm-d-none
-sm-d-block
-sm-d-inline
-sm-d-inline-block
-sm-d-flex
-```
-
-## Responsivo - MD (≥992px)
-
-```
-md-d-none
-md-d-block
-md-d-inline
-md-d-inline-block
-md-d-flex
-```
-
-## Responsivo - LG (≥1200px)
-
-```
-lg-d-none
-lg-d-block
-lg-d-inline
-lg-d-inline-block
-lg-d-flex
-```
-
 ## Overflow
 
 ```
@@ -64,7 +54,6 @@ ov-scroll
 xs-ov-hidden, xs-ov-auto
 sm-ov-hidden, sm-ov-auto
 md-ov-hidden, md-ov-auto
-lg-ov-hidden, lg-ov-auto
 ```
 
 ## Position
@@ -75,10 +64,9 @@ ps-absolute
 ps-fixed
 ps-sticky
 ps-static
-xs-ps-relative, xs-ps-absolute, xs-ps-fixed, xs-ps-sticky, xs-ps-inherit
-sm-ps-relative, sm-ps-absolute, sm-ps-fixed, sm-ps-sticky
 md-ps-relative, md-ps-absolute, md-ps-fixed, md-ps-sticky
-lg-ps-relative, lg-ps-absolute, lg-ps-fixed, lg-ps-sticky
+sm-ps-relative, sm-ps-absolute, sm-ps-fixed, sm-ps-sticky
+xs-ps-relative, xs-ps-absolute, xs-ps-fixed, xs-ps-sticky
 ```
 
 ## Visibility

@@ -4,9 +4,16 @@
 
 Padrão: `{breakpoint-}h-{valor}px`
 
+### Valores pequenos
+
 ```
-h-1px, h-5px, h-10px
-h-50px, h-100px, h-150px, h-200px, h-220px, h-250px
+h-1px, h-5px, h-10px, h-50px
+```
+
+### 50px até 700px (intervalo de 50px)
+
+```
+h-50px, h-100px, h-150px, h-200px, h-250px
 h-300px, h-350px, h-400px, h-450px, h-500px
 h-550px, h-600px, h-650px, h-700px
 ```
@@ -14,31 +21,28 @@ h-550px, h-600px, h-650px, h-700px
 ### Responsivos
 
 ```
-xs-h-50px, xs-h-100px, xs-h-150px, xs-h-200px, xs-h-250px
-xs-h-300px, xs-h-350px, xs-h-400px, xs-h-450px, xs-h-500px
-xs-h-550px, xs-h-600px, xs-h-650px, xs-h-700px
-
+xs-h-{valor}px (mesmo padrão)
 sm-h-{valor}px (mesmo padrão)
 md-h-{valor}px (mesmo padrão)
-lg-h-{valor}px (mesmo padrão)
 ```
 
 ## Height - Percentual e Especiais
 
+**Importante**: Todas as classes de height percentual usam `min-height` (não `height`) para melhor compatibilidade.
+
 ```
 h-50 (min-height: 50%)
 h-100 (min-height: 100%)
-h-100vh (min-height: 100vh)
-h-auto (min-height: auto)
+h-100vh (min-height: 100vh) - altura total da viewport
+h-auto (min-height: auto) - remove min-height
 ```
 
 ### Responsivos
 
 ```
-xs-h-50, xs-h-100, xs-h-auto
-sm-h-50, sm-h-100, sm-h-auto
 md-h-50, md-h-100, md-h-auto
-lg-h-50, lg-h-100, lg-h-auto
+sm-h-50, sm-h-100, sm-h-auto
+xs-h-50, xs-h-100, xs-h-auto
 ```
 
 ## Exemplos de Uso

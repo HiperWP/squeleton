@@ -3,18 +3,18 @@
 ## Border Completo
 
 ```
-border-all (border: 1px solid #ededed)
+border-all (border: 1px solid)
 ```
 
 ## Border por Lado
 
 ```
-border-top (border-top: 1px solid)
-border-bottom (border-bottom: 1px solid)
-border-left (border-left: 1px solid)
-border-right (border-right: 1px solid)
-border-lr (border-left + border-right: 1px solid)
-border-tb (border-top + border-bottom: 1px solid)
+border-t (border-t: 1px solid)
+border-b (border-b: 1px solid)
+border-l (border-l: 1px solid)
+border-r (border-r: 1px solid)
+border-lr (border-l + border-r: 1px solid)
+border-tb (border-t + border-b: 1px solid)
 ```
 
 ## Border Width
@@ -35,38 +35,24 @@ border-dashed
 border-dotted
 border-none
 border-hidden
-```
-
-## Border Color
-
-```
-border-c-white (#fff)
-border-c-black (#0f1419)
-border-c-extra-dark-gray (#232323)
-border-c-medium-dark-gray (#363636)
-border-c-dark-gray (#939393)
-border-c-extra-medium-gray (#dbdbdb)
-border-c-medium-gray (#e4e4e4)
-border-c-extra-light-gray (#ededed)
-border-c-light-gray (#f5f5f5)
 border-transparent
 ```
 
 ## Remover Border
 
 ```
-no-border-top
-no-border-bottom
-no-border-left
-no-border-right
+border-0-t
+border-0-b
+border-0-l
+border-0-r
+border-0-all
 ```
 
 Responsivos:
 ```
-xs-no-border-top, xs-no-border-bottom, xs-no-border-left, xs-no-border-right, xs-no-border
-sm-no-border-top, sm-no-border-bottom, sm-no-border-left, sm-no-border-right
-md-no-border-top, md-no-border-bottom, md-no-border-left, md-no-border-right
-lg-no-border-top, lg-no-border-bottom, lg-no-border-left, lg-no-border-right
+xs-border-0-t, xs-border-0-b, xs-border-0-l, xs-border-0-r, xs-border-0-all
+sm-border-0-t, sm-border-0-b, sm-border-0-l, sm-border-0-r, sm-border-0-all
+md-border-0-t, md-border-0-b, md-border-0-l, md-border-0-r, md-border-0-all
 ```
 
 ## Border Radius
@@ -84,9 +70,15 @@ border-rd-7 (7px)
 border-rd-8 (8px)
 border-rd-9 (9px)
 border-rd-10 (10px)
+border-rd-11 (11px)
 border-rd-12 (12px)
+border-rd-13 (13px)
 border-rd-14 (14px)
 border-rd-15 (15px)
+border-rd-16 (16px)
+border-rd-17 (17px)
+border-rd-18 (18px)
+border-rd-19 (19px)
 border-rd-20 (20px)
 ```
 
@@ -101,17 +93,21 @@ img-circle (50%)
 ### Cantos Específicos - Top
 
 ```
-border-rd-4-t (top-left + top-right: 4px)
-border-rd-8-t (top-left + top-right: 8px)
-border-rd-10-t (top-left + top-right: 10px)
+border-rd-4-t (top-l + top-r: 4px)
+border-rd-6-t (top-l + top-r: 6px)
+border-rd-8-t (top-l + top-r: 8px)
+border-rd-10-t (top-l + top-r: 10px)
+border-rd-12-t (top-l + top-r: 16px)
 ```
 
 ### Cantos Específicos - Bottom
 
 ```
-border-rd-4-b (bottom-left + bottom-right: 4px)
-border-rd-8-b (bottom-left + bottom-right: 8px)
-border-rd-10-b (bottom-left + bottom-right: 10px)
+border-rd-4-b (bottom-l + bottom-r: 4px)
+border-rd-6-b (bottom-l + bottom-r: 6px)
+border-rd-8-b (bottom-l + bottom-r: 8px)
+border-rd-10-b (bottom-l + bottom-r: 10px)
+border-rd-12-b (bottom-l + bottom-r: 12px)
 ```
 
 ## Opacity
@@ -155,7 +151,7 @@ z-index-4
 z-index-5
 z-index-111
 z-index-1111
-z-index-minus2 (-2)
+z-index-minus-2 (-2)
 ```
 
 ## Exemplos de Uso
@@ -167,15 +163,15 @@ z-index-minus2 (-2)
 </div>
 
 <!-- Borda inferior destacada -->
-<div class="border-bottom border-w-2 border-c-dark-gray">
+<div class="border-b border-w-2">
     Seção
 </div>
 
 <!-- Avatar circular -->
-<img src="avatar.jpg" class="border-rd-100 w-50px h-50px">
+<img src="avatar.jpg" class="border-rd-50 w-50px h-50px">
 
 <!-- Tab com radius só em cima -->
-<div class="border-rd-8-t border-all no-border-bottom">
+<div class="border-rd-8-t border-all border-0-b">
     Tab ativa
 </div>
 

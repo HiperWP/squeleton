@@ -14,10 +14,9 @@ ps-inherit
 
 Responsivos:
 ```
-xs-ps-relative, xs-ps-absolute, xs-ps-fixed, xs-ps-sticky, xs-ps-inherit
-sm-ps-relative, sm-ps-absolute, sm-ps-fixed, sm-ps-sticky
 md-ps-relative, md-ps-absolute, md-ps-fixed, md-ps-sticky
-lg-ps-relative, lg-ps-absolute, lg-ps-fixed, lg-ps-sticky
+sm-ps-relative, sm-ps-absolute, sm-ps-fixed, sm-ps-sticky
+xs-ps-relative, xs-ps-absolute, xs-ps-fixed, xs-ps-sticky
 ```
 
 ## Position Values
@@ -57,6 +56,51 @@ visible-xs, visible-sm, visible-md, visible-lg (display: none por padrão, visí
 
 Nota: Essas classes ficam ocultas por padrão e são exibidas apenas no breakpoint específico via media query.
 
+## Cursor
+
+Classes utilitárias para modificar o cursor em elementos interativos.
+
+```
+cursor-pointer       (hover em botões/cards clicáveis)
+cursor-not-allowed   (estados disabled)
+cursor-wait          (loading states)
+cursor-text          (campos de texto customizados)
+cursor-move          (elementos movíveis/drag & drop)
+cursor-grab          (carrosséis, sliders - antes de arrastar)
+cursor-grabbing      (durante o arrasto)
+cursor-help          (tooltips, ícones de ajuda)
+cursor-zoom-in       (lightbox, zoom de imagens)
+cursor-zoom-out      (lightbox em zoom)
+```
+
+**Nota**: Classes de cursor não possuem variantes responsivas, pois o comportamento do cursor não depende do tamanho da tela.
+
+**Exemplos**:
+```html
+<!-- Botão disabled -->
+<button class="cursor-not-allowed opacity-5" disabled>Indisponível</button>
+
+<!-- Card clicável -->
+<div class="cursor-pointer" onclick="openDetail()">Card interativo</div>
+
+<!-- Carrossel com drag -->
+<div class="slide__row cursor-grab">
+  <div class="slide__item">Slide 1</div>
+</div>
+
+<!-- Durante arrasto (via JavaScript) -->
+<div class="slide__row cursor-grabbing">Arrastando...</div>
+
+<!-- Loading -->
+<div class="cursor-wait">Processando...</div>
+
+<!-- Zoom de imagem -->
+<img class="cursor-zoom-in" onclick="openLightbox()">
+
+<!-- Help icon -->
+<i class="icon-help cursor-help" title="Ajuda"></i>
+```
+
 ## Overflow
 
 ```
@@ -67,10 +111,9 @@ ov-auto (overflow: auto)
 
 Responsivos:
 ```
-xs-ov-hidden, xs-ov-auto
-sm-ov-hidden, sm-ov-auto
 md-ov-hidden, md-ov-auto
-lg-ov-hidden, lg-ov-auto
+sm-ov-hidden, sm-ov-auto
+xs-ov-hidden, xs-ov-auto
 ```
 
 ## Float

@@ -11,10 +11,9 @@ text-justify
 
 Responsivos:
 ```
-xs-text-left, xs-text-center, xs-text-right
-sm-text-left, sm-text-center, sm-text-right
 md-text-left, md-text-center, md-text-right
-lg-text-left, lg-text-center, lg-text-right
+sm-text-left, sm-text-center, sm-text-right
+xs-text-left, xs-text-center, xs-text-right
 ```
 
 ## Text Transform
@@ -25,11 +24,12 @@ text-uppercase
 text-capitalize
 ```
 
-## Text Decoration
+## Text Decoration Line
 
 ```
-text-decoration-underline
-text-decoration-line-through
+underline
+overline
+line-through
 ```
 
 ## Font Weight
@@ -42,6 +42,31 @@ font-wg-600
 font-wg-700
 font-wg-800
 font-wg-900
+```
+
+## Font Size - Tamanhos de Heading (Fluido)
+
+Classes utilitárias para aplicar tamanhos de heading em qualquer elemento. Usam `clamp()` para tipografia fluida e responsiva.
+
+```
+text-sz-h1  (28px → 36px - fluido)
+text-sz-h2  (24px → 30px - fluido)
+text-sz-h3  (20px → 24px - fluido)
+text-sz-h4  (16px → 18px - fluido)
+text-sz-h5  (13px → 14px - fluido)
+text-sz-h6  (11px → 12px - fluido)
+```
+
+**Benefícios**:
+- Escalam automaticamente entre mobile e desktop
+- Não requerem breakpoints responsivos
+- Mantêm proporção visual em todos os tamanhos de tela
+
+**Exemplos**:
+```html
+<p class="text-sz-h1">Parágrafo com tamanho de h1</p>
+<div class="text-sz-h3">Card title</div>
+<span class="text-sz-h5">Small label</span>
 ```
 
 ## Font Size - Redução
@@ -92,16 +117,16 @@ letter-sp-minus-3 (-3px)
 ## Line Height
 
 ```
-line-h-1e0 (1.0)
-line-h-1e1 (1.1)
-line-h-1e2 (1.2)
-line-h-1e3 (1.3)
-line-h-1e4 (1.4)
-line-h-1e5 (1.5)
-line-h-1e6 (1.6)
-line-h-1e7 (1.7)
-line-h-1e8 (1.8)
-line-h-1e9 (1.9)
+line-h-1-0 (1.0)
+line-h-1-1 (1.1)
+line-h-1-2 (1.2)
+line-h-1-3 (1.3)
+line-h-1-4 (1.4)
+line-h-1-5 (1.5)
+line-h-1-6 (1.6)
+line-h-1-7 (1.7)
+line-h-1-8 (1.8)
+line-h-1-9 (1.9)
 ```
 
 ## White Space
@@ -132,7 +157,7 @@ v-align-bottom
 <h1 class="font-wg-700 letter-sp-minus-1">Título Principal</h1>
 
 <!-- Texto menor com line-height ajustado -->
-<p class="minus-10 line-h-1e6">Texto secundário</p>
+<p class="minus-10 line-h-1-6">Texto secundário</p>
 
 <!-- Label uppercase com espaçamento -->
 <span class="text-uppercase letter-sp-2 font-wg-600 minus-20">Label</span>

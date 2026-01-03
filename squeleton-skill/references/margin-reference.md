@@ -87,63 +87,26 @@ m-25-all, m-25-t, m-25-b, m-25-l, m-25-r, m-25-tb, m-25-lr
 m-0e5-all (margin: 0.5%)
 ```
 
-## Responsivo - XS (≤639px)
+## Versões Responsivas
+
+**Todas as classes acima estão disponíveis com prefixos de breakpoint:**
 
 ```
-xs-m-0-all, xs-m-0-t, xs-m-0-b, xs-m-0-l, xs-m-0-r, xs-m-0-tb, xs-m-0-lr
-xs-m-5px-all, xs-m-5px-t, xs-m-5px-b, xs-m-5px-l, xs-m-5px-r, xs-m-5px-tb, xs-m-5px-lr
-xs-m-10px-all, xs-m-10px-t, xs-m-10px-b, xs-m-10px-l, xs-m-10px-r, xs-m-10px-tb, xs-m-10px-lr
-xs-m-15px-all, xs-m-15px-t, xs-m-15px-b, xs-m-15px-l, xs-m-15px-r, xs-m-15px-tb, xs-m-15px-lr
-xs-m-20px-all, xs-m-20px-t, xs-m-20px-b, xs-m-20px-l, xs-m-20px-r, xs-m-20px-tb, xs-m-20px-lr
-xs-m-25px-all, xs-m-25px-t, xs-m-25px-b, xs-m-25px-l, xs-m-25px-r, xs-m-25px-tb, xs-m-25px-lr
-xs-m-30px-all, xs-m-30px-t, xs-m-30px-b, xs-m-30px-l, xs-m-30px-r, xs-m-30px-tb, xs-m-30px-lr
-xs-m-35px-all, xs-m-35px-t, xs-m-35px-b, xs-m-35px-l, xs-m-35px-r, xs-m-35px-tb, xs-m-35px-lr
-xs-m-40px-all, xs-m-40px-t, xs-m-40px-b, xs-m-40px-l, xs-m-40px-r, xs-m-40px-tb, xs-m-40px-lr
-xs-m-45px-all, xs-m-45px-t, xs-m-45px-b, xs-m-45px-l, xs-m-45px-r, xs-m-45px-tb, xs-m-45px-lr
-xs-m-50px-all, xs-m-50px-t, xs-m-50px-b, xs-m-50px-l, xs-m-50px-r, xs-m-50px-tb, xs-m-50px-lr
-xs-m-55px-all, xs-m-55px-t, xs-m-55px-b, xs-m-55px-l, xs-m-55px-r, xs-m-55px-tb, xs-m-55px-lr
-xs-m-60px-all, xs-m-60px-t, xs-m-60px-b, xs-m-60px-l, xs-m-60px-r, xs-m-60px-tb, xs-m-60px-lr
-xs-m-65px-all, xs-m-65px-t, xs-m-65px-b, xs-m-65px-l, xs-m-65px-r, xs-m-65px-tb, xs-m-65px-lr
-xs-m-70px-all, xs-m-70px-t, xs-m-70px-b, xs-m-70px-l, xs-m-70px-r, xs-m-70px-tb, xs-m-70px-lr
-xs-m-75px-all, xs-m-75px-t, xs-m-75px-b, xs-m-75px-l, xs-m-75px-r, xs-m-75px-tb, xs-m-75px-lr
-xs-m-80px-all, xs-m-80px-t, xs-m-80px-b, xs-m-80px-l, xs-m-80px-r, xs-m-80px-tb, xs-m-80px-lr
-xs-m-85px-all, xs-m-85px-t, xs-m-85px-b, xs-m-85px-l, xs-m-85px-r, xs-m-85px-tb, xs-m-85px-lr
-xs-m-90px-all, xs-m-90px-t, xs-m-90px-b, xs-m-90px-l, xs-m-90px-r, xs-m-90px-tb, xs-m-90px-lr
-xs-m-95px-all, xs-m-95px-t, xs-m-95px-b, xs-m-95px-l, xs-m-95px-r, xs-m-95px-tb, xs-m-95px-lr
-xs-m-100px-all, xs-m-100px-t, xs-m-100px-b, xs-m-100px-l, xs-m-100px-r, xs-m-100px-tb, xs-m-100px-lr
+md-m-{valor}{unidade}-{direção}  (≤1199px - max-width)
+sm-m-{valor}{unidade}-{direção}  (≤991px - max-width)
+xs-m-{valor}{unidade}-{direção}  (≤639px - max-width)
 ```
 
-Percentuais XS: `xs-m-{1-25}-{all|t|b|l|r|tb|lr}`
-
-## Responsivo - SM (≥640px)
-
+**Exemplos:**
 ```
-sm-m-0-all, sm-m-0-t, sm-m-0-b, sm-m-0-l, sm-m-0-r, sm-m-0-tb, sm-m-0-lr
-sm-m-5px-all, sm-m-5px-t, sm-m-5px-b, sm-m-5px-l, sm-m-5px-r, sm-m-5px-tb, sm-m-5px-lr
-sm-m-10px-all, sm-m-10px-t, sm-m-10px-b, sm-m-10px-l, sm-m-10px-r, sm-m-10px-tb, sm-m-10px-lr
-...até 100px (mesmo padrão)
+md-m-20px-all    (margin: 20px em ≤1199px)
+sm-m-15px-tb     (margin top/bottom: 15px em ≤991px)
+xs-m-10-all      (margin: 10% em ≤639px)
+md-m-0-b         (margin-bottom: 0 em ≤1199px)
+md-m-lr-auto     (margin-left/right: auto em ≤1199px - centralização)
 ```
 
-Percentuais SM: `sm-m-{1-25}-{all|t|b|l|r|tb|lr}`
-
-## Responsivo - MD (≥992px)
-
-```
-md-m-0-all, md-m-0-t, md-m-0-b, md-m-0-l, md-m-0-r, md-m-0-tb, md-m-0-lr
-md-m-5px-all, md-m-5px-t, md-m-5px-b, md-m-5px-l, md-m-5px-r, md-m-5px-tb, md-m-5px-lr
-md-m-10px-all, md-m-10px-t, md-m-10px-b, md-m-10px-l, md-m-10px-r, md-m-10px-tb, md-m-10px-lr
-...até 100px (mesmo padrão)
-```
-
-Percentuais MD: `md-m-{1-25}-{all|t|b|l|r|tb|lr}`
-
-## Responsivo - LG (≥1200px)
-
-```
-lg-m-0-all, lg-m-0-t, lg-m-0-b, lg-m-0-l, lg-m-0-r, lg-m-0-tb, lg-m-0-lr
-lg-m-5px-all, lg-m-5px-t, lg-m-5px-b, lg-m-5px-l, lg-m-5px-r, lg-m-5px-tb, lg-m-5px-lr
-lg-m-10px-all, lg-m-10px-t, lg-m-10px-b, lg-m-10px-l, lg-m-10px-r, lg-m-10px-tb, lg-m-10px-lr
-...até 100px (mesmo padrão)
-```
-
-Percentuais LG: `lg-m-{1-25}-{all|t|b|l|r|tb|lr}`
+**Padrão de uso:**
+- Use a classe base para o comportamento global
+- Adicione breakpoints para sobrescrever em tamanhos específicos
+- Lembre-se: Squeleton usa `@media (max-width)` para utilitários

@@ -67,7 +67,7 @@ modal-popup (área do conteúdo estilizado)
             <button class="dialog-close" data-modal-hide aria-label="Fechar">
                 <span class="iccon-close-1"></span>
             </button>
-            <div class="modal-popup bg-white border-rd-10 p-30px-all">
+            <div class="modal-popup border-rd-10 p-30px-all">
                 <h3 class="m-15px-b">Título do Modal</h3>
                 <p>Conteúdo do modal aqui...</p>
                 <div class="m-20px-t d-flex f-justify-end f-gap-10">
@@ -124,7 +124,7 @@ Vários elementos podem abrir o mesmo modal:
     <div class="dialog-content">
         <div class="dialog-backdrop" data-modal-hide></div>
         <div class="dialog-inline w-max-400px">
-            <div class="modal-popup bg-white border-rd-10 p-30px-all text-center">
+            <div class="modal-popup border-rd-10 p-30px-all text-center">
                 <span class="iccon-exclamation-1 more-50 m-15px-b d-block"></span>
                 <h4 class="m-10px-b">Confirmar exclusão?</h4>
                 <p class="opacity-7 m-20px-b">Esta ação não pode ser desfeita.</p>
@@ -150,7 +150,7 @@ Vários elementos podem abrir o mesmo modal:
             <button class="dialog-close" data-modal-hide aria-label="Fechar">
                 <span class="iccon-close-1"></span>
             </button>
-            <div class="modal-popup bg-white border-rd-10 p-30px-all">
+            <div class="modal-popup border-rd-10 p-30px-all">
                 <h3 class="m-20px-b">Entre em contato</h3>
                 <form>
                     <div class="m-15px-b">

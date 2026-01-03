@@ -21,7 +21,6 @@ Responsivos:
 xs-f-row, xs-f-col, xs-f-row-reverse, xs-f-col-reverse
 sm-f-row, sm-f-col, sm-f-row-reverse, sm-f-col-reverse
 md-f-row, md-f-col, md-f-row-reverse, md-f-col-reverse
-lg-f-row, lg-f-col, lg-f-row-reverse, lg-f-col-reverse
 ```
 
 ## Wrap
@@ -37,7 +36,6 @@ Responsivos:
 xs-f-wrap, xs-f-nowrap
 sm-f-wrap, sm-f-nowrap
 md-f-wrap, md-f-nowrap
-lg-f-wrap, lg-f-nowrap
 ```
 
 ## Align Items (eixo cruzado)
@@ -58,7 +56,6 @@ Responsivos:
 xs-f-items-start, xs-f-items-end, xs-f-items-center, xs-f-items-stretch
 sm-f-items-start, sm-f-items-end, sm-f-items-center, sm-f-items-stretch
 md-f-items-start, md-f-items-end, md-f-items-center, md-f-items-stretch
-lg-f-items-start, lg-f-items-end, lg-f-items-center, lg-f-items-stretch
 ```
 
 ## Justify Content (eixo principal)
@@ -82,7 +79,6 @@ Responsivos:
 xs-f-justify-start, xs-f-justify-end, xs-f-justify-center, xs-f-justify-between
 sm-f-justify-start, sm-f-justify-end, sm-f-justify-center, sm-f-justify-between
 md-f-justify-start, md-f-justify-end, md-f-justify-center, md-f-justify-between
-lg-f-justify-start, lg-f-justify-end, lg-f-justify-center, lg-f-justify-between
 ```
 
 ## Align Self (item individual)
@@ -117,7 +113,6 @@ f-shrink-2
 
 ```
 f-basis-0
-f-basis-auto
 ```
 
 ## Flex Shorthand
@@ -125,26 +120,71 @@ f-basis-auto
 ```
 f-auto-max (flex: 1 1 auto)
 f-auto-min (flex: 0 1 auto)
-f-none (flex: none)
+```
+
+## Align Content (múltiplas linhas com wrap)
+
+Controla espaçamento entre **linhas** quando `flex-wrap: wrap` cria múltiplas linhas. Diferente de `align-items` que alinha itens **dentro** de cada linha.
+
+```
+f-content-start (flex-start - linhas no início)
+f-content-end (flex-end - linhas no final)
+f-content-center (center - linhas centralizadas)
+f-content-between (space-between - espaço entre linhas)
+f-content-around (space-around - espaço ao redor das linhas)
+f-content-stretch (stretch - linhas esticam para preencher - padrão)
+```
+
+**Quando usar:**
+- Container com `f-wrap` ou `f-grid` (que já tem wrap)
+- Container tem altura definida (`h-400px`, `h-100vh`, etc.)
+- Itens quebram em múltiplas linhas
+
+**Exemplos práticos:**
+
+```html
+<!-- Grid com múltiplas linhas - espaçar verticalmente -->
+<div class="f-grid f-content-between h-400px">
+    <div class="w-50">Item 1</div>
+    <div class="w-50">Item 2</div>
+    <div class="w-50">Item 3</div> <!-- Linha 1 fica no topo -->
+    <div class="w-50">Item 4</div> <!-- Linha 2 fica no bottom -->
+</div>
+
+<!-- Galeria de cards - centralizar linhas verticalmente -->
+<div class="f-grid f-content-center f-gap-20 h-600px">
+    <div class="w-30">Card 1</div>
+    <div class="w-30">Card 2</div>
+    <div class="w-30">Card 3</div>
+    <!-- Linhas ficam centralizadas verticalmente -->
+</div>
+
+<!-- Tags que quebram - espaçamento igual entre linhas -->
+<div class="d-flex f-wrap f-content-around h-200px">
+    <span class="tag">Tag 1</span>
+    <span class="tag">Tag 2</span>
+    <span class="tag">Tag 3</span>
+    <!-- Espaço igual ao redor de cada linha -->
+</div>
 ```
 
 ## Gap (espaçamento entre itens)
 
 ```
-f-gap-5
-f-gap-10
-f-gap-15
-f-gap-20
-f-gap-25
-f-gap-30
+f-gap-0 (sem gap)
+f-gap-5 (5px)
+f-gap-10 (10px)
+f-gap-15 (15px)
+f-gap-20 (20px)
+f-gap-25 (25px)
+f-gap-30 (30px)
 ```
 
 Responsivos:
 ```
-xs-f-gap-5, xs-f-gap-10, xs-f-gap-15, xs-f-gap-20, xs-f-gap-25, xs-f-gap-30
-sm-f-gap-5, sm-f-gap-10, sm-f-gap-15, sm-f-gap-20, sm-f-gap-25, sm-f-gap-30
-md-f-gap-5, md-f-gap-10, md-f-gap-15, md-f-gap-20, md-f-gap-25, md-f-gap-30
-lg-f-gap-5, lg-f-gap-10, lg-f-gap-15, lg-f-gap-20, lg-f-gap-25, lg-f-gap-30
+xs-f-gap-0, xs-f-gap-5, xs-f-gap-10, xs-f-gap-15, xs-f-gap-20, xs-f-gap-25, xs-f-gap-30
+sm-f-gap-0, sm-f-gap-5, sm-f-gap-10, sm-f-gap-15, sm-f-gap-20, sm-f-gap-25, sm-f-gap-30
+md-f-gap-0, md-f-gap-5, md-f-gap-10, md-f-gap-15, md-f-gap-20, md-f-gap-25, md-f-gap-30
 ```
 
 ## Exemplos de Uso

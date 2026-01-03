@@ -4,65 +4,67 @@
 
 Padrão: `{breakpoint-}w-{valor}px`
 
-### Valores 5-100 (intervalo de 5)
+### 5px até 100px (intervalo de 5px)
 
 ```
 w-5px, w-10px, w-15px, w-20px, w-25px
-w-30px, w-35px, w-40px, w-50px, w-55px
-w-60px, w-65px, w-70px, w-75px, w-80px
-w-85px, w-90px, w-100px
+w-30px, w-35px, w-40px, w-45px, w-50px
+w-55px, w-60px, w-65px, w-70px, w-75px
+w-80px, w-85px, w-90px, w-95px, w-100px
 ```
 
-Nota: `w-45px` e `w-95px` não existem.
-
-### Valores acima de 100
+### 100px até 300px (intervalo de 10px)
 
 ```
-w-120px, w-130px, w-150px, w-180px
-w-200px, w-220px, w-230px, w-250px
-w-300px, w-350px, w-400px, w-450px
-w-500px, w-550px, w-600px, w-650px, w-700px
+w-110px, w-120px, w-130px, w-140px, w-150px
+w-160px, w-170px, w-180px, w-190px, w-200px
+w-210px, w-220px, w-230px, w-240px, w-250px
+w-260px, w-270px, w-280px, w-290px, w-300px
+```
+
+### 300px até 700px (intervalo de 50px)
+
+```
+w-350px, w-400px, w-450px, w-500px
+w-550px, w-600px, w-650px, w-700px
 ```
 
 ### Responsivos
 
 ```
-xs-w-50px, xs-w-70px, xs-w-75px, xs-w-80px, xs-w-85px, xs-w-90px, xs-w-95px, xs-w-100px
-xs-w-120px, xs-w-130px, xs-w-150px, xs-w-180px, xs-w-200px, xs-w-220px, xs-w-250px
-xs-w-300px, xs-w-350px, xs-w-400px, xs-w-450px, xs-w-500px
-
-sm-w-{valor}px (mesmo padrão)
 md-w-{valor}px (mesmo padrão)
-lg-w-{valor}px (mesmo padrão)
+sm-w-{valor}px (mesmo padrão)
+xs-w-{valor}px (mesmo padrão)
 ```
 
 ## Width - Percentual
 
-Padrão: `{breakpoint-}w-{valor}`
+Padrão: `{breakpoint-}w-{valor}` (sem unidade = porcentagem)
+
+### 10% até 100% (intervalo de 5%)
 
 ```
-w-5, w-10, w-15, w-20, w-25
-w-30, w-35, w-40, w-45, w-50
-w-55, w-60, w-65, w-70, w-75
-w-80, w-85, w-90, w-95, w-100
+w-10, w-15, w-20, w-25, w-30
+w-35, w-40, w-45, w-50, w-55
+w-60, w-65, w-70, w-75, w-80
+w-85, w-90, w-95, w-100
 ```
 
 ### Responsivos
 
 ```
-xs-w-5, xs-w-10, xs-w-15, xs-w-20, xs-w-25, xs-w-30, xs-w-35, xs-w-40, xs-w-45, xs-w-50
-xs-w-55, xs-w-60, xs-w-65, xs-w-70, xs-w-75, xs-w-80, xs-w-85, xs-w-90, xs-w-95, xs-w-100
-
-sm-w-{valor} (mesmo padrão)
 md-w-{valor} (mesmo padrão)
-lg-w-{valor} (mesmo padrão)
+sm-w-{valor} (mesmo padrão)
+xs-w-{valor} (mesmo padrão)
 ```
 
 ## Width - Auto
 
 ```
 w-auto
-xs-w-auto, sm-w-auto, md-w-auto, lg-w-auto
+md-w-auto
+sm-w-auto
+xs-w-auto
 ```
 
 ## Max-Width
