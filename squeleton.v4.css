@@ -4816,10 +4816,10 @@ fieldset[disabled] a.btn {
   font-size: 150%
 }
 
-[class*="w-"][class*="px"]:not([class*="max-"]),
-[class*="md-w-"][class*="px"]:not([class*="max-"]),
-[class*="sm-w-"][class*="px"]:not([class*="max-"]),
-[class*="xs-w-"][class*="px"]:not([class*="max-"]) {
+[class*=w-][class*=px]:not([class*=max-]),
+[class*=md-w-][class*=px]:not([class*=max-]),
+[class*=sm-w-][class*=px]:not([class*=max-]),
+[class*=xs-w-][class*=px]:not([class*=max-]) {
   max-width: 100%;
 }
 
