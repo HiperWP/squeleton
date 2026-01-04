@@ -4816,11 +4816,11 @@ fieldset[disabled] a.btn {
   font-size: 150%
 }
 
-[class*=w-][class*=px],
-[class*=md-w-][class*=px],
-[class*=sm-w-][class*=px],
-[class*=xs-w-][class*=px] {
-  max-width: 100%
+[class*="w-"][class*="px"]:not([class*="max-"]),
+[class*="md-w-"][class*="px"]:not([class*="max-"]),
+[class*="sm-w-"][class*="px"]:not([class*="max-"]),
+[class*="xs-w-"][class*="px"]:not([class*="max-"]) {
+  max-width: 100%;
 }
 
 .w-5px {
@@ -5011,47 +5011,47 @@ fieldset[disabled] a.btn {
   width: 700px
 }
 
-.w-max-400px {
+.max-w-400px {
   max-width: 400px
 }
 
-.w-max-450px {
+.max-w-450px {
   max-width: 450px
 }
 
-.w-max-500px {
+.max-w-500px {
   max-width: 500px
 }
 
-.w-max-550px {
+.max-w-550px {
   max-width: 550px
 }
 
-.w-max-600px {
+.max-w-600px {
   max-width: 600px
 }
 
-.w-max-650px {
+.max-w-650px {
   max-width: 650px
 }
 
-.w-max-700px {
+.max-w-700px {
   max-width: 700px
 }
 
-.w-max-750px {
+.max-w-750px {
   max-width: 750px
 }
 
-.w-max-800px {
+.max-w-800px {
   max-width: 800px
 }
 
-.w-max-850px {
+.max-w-850px {
   max-width: 850px
 }
 
-.w-max-900px {
+.max-w-900px {
   max-width: 900px
 }
 
