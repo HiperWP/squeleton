@@ -1,6 +1,6 @@
 # Squeleton
 
-[![Version](https://img.shields.io/badge/version-4.3-blue.svg)](https://hiperwp.com.br/squeleton/)
+[![Version](https://img.shields.io/badge/version-4.5-blue.svg)](https://hiperwp.com.br/squeleton/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://hiperwp.com.br/squeleton/#guia)
 [![CSS Framework](https://img.shields.io/badge/framework-CSS-1572B6.svg)](https://hiperwp.com.br/squeleton/)
 [![Vanilla JS](https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E.svg)](https://hiperwp.com.br/squeleton/)
@@ -192,7 +192,7 @@ Use com WOW para ativar no scroll: `<div class="wow anima-personalizada">Conteú
 <details>
 <summary><strong>Por que não há sistema de build/compilação?</strong></summary>
 
-Decisão deliberada baseada em simplicidade: todo o Squeleton (65kb gzip) é menor que uma imagem JPG média. Arquivos unificados facilitam manutenção, otimizam cache em navegação multi-página e eliminam complexidade de ferramentas de build. Para problemas simples, não precisamos emular a complexidade de soluções enterprise.
+Decisão deliberada baseada em simplicidade: todo o Squeleton (65kb gzip) é menor que uma imagem JPG média. Arquivos unificados facilitam manutenção, otimizam cache em navegação multi-página e eliminam complexidade de ferramentas de build.
 
 </details>
 
