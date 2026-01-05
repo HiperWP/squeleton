@@ -228,7 +228,7 @@ Ao instalar esta skill, a IA ganha:
 
 ### Como usar?
 
-1. **Baixe a skill**: [squeleton-skill.zip](https://github.com/HiperWP/squeleton/blob/main/squeleton-skill.zip)
+1. **Baixe a skill**: [squeleton-skill.zip](https://github.com/HiperWP/squeleton/raw/refs/heads/main/squeleton-skill.zip)
 2. **Instale no seu IDE** (Claude for VSCode, Cursor, Windsurf, etc.) seguindo a documentação da ferramenta
 3. **Desenvolva com IA**: A IA agora conhece todo o Squeleton e priorizará suas classes e componentes ao invés de criar CSS e JS personalizado
 
