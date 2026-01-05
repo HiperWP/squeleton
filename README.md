@@ -24,7 +24,7 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 
 - **[Documentação Web](https://hiperwp.com.br/squeleton/)** - Guias interativos e exemplos
 - **[Guias de Referência](squeleton-skill/SKILL.md)** - 15 guias detalhados para Skill sobre cada recurso
-- **[squeleton-skill.zip](https://github.com/HiperWP/squeleton/raw/refs/heads/main/squeleton-skill.zip)** - Arquivo Skill em formato .zip para desenvolvimento com Claude Code, GPT Codex ou outras IAs
+- **[squeleton-skill.zip](https://github.com/HiperWP/squeleton/raw/refs/heads/main/squeleton-skill.zip)** - Arquivo Skill em formato .zip para desenvolvimento com Claude Code ou outras IAs
 - **[Biblioteca de Ícones](https://hiperwp.com.br/squeleton/icones/)** - Lista de ícones disponíveis
 
 ## Instalação Via CDN
