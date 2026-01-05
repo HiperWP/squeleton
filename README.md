@@ -13,18 +13,18 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 
 - **Mobile-First**: Sistema responsivo com 4 breakpoints (xs, sm, md, lg)
 - **Grid Flexível**: 12 colunas com containers responsivos
-- **Utilitários Completos**: Mais de 400 classes para espaçamento, tipografia, layout e cores
-- **JavaScript Pronto**: 9 bibliotecas pré-integradas (HTMX, VanJS, Embla, VenoBox, a11y-dialog, Toastify, Wow2 Animation, Counter-Up2, js-cookie)
-- **Animações Suaves**: 30+ efeitos com WOW.js + Animated.css
+- **Utilitários Completos**: Mais de 400 classes para espaçamento, design e layouts
+- **JavaScript Pronto**: 9 micro-bibliotecas integradas (HTMX, VanJS, Embla, VenoBox, a11y-dialog, Toastify, Wow2 Animation, Counter-Up2, js-cookie)
+- **Animações Suaves**: 30+ efeitos com controle de exibição e repetição
 - **Biblioteca de Ícones**: 300+ ícones vetoriais customizados com IcoMoon
-- **Performance**: Otimizado para 94+ no PageSpeed Insights
+- **Performance**: Otimizado para 99+ no PageSpeed Insights
 - **Zero Configuração**: Adicione via CDN e comece a usar imediatamente
 
 ## Documentação
 
 - **[Documentação Web](https://hiperwp.com.br/squeleton/)** - Guias interativos e exemplos
 - **[Guias de Referência](squeleton-skill/SKILL.md)** - 15 guias detalhados para Skill sobre cada recurso
-- **[squeleton-skill.zip](squeleton-skill.zip)** - Arquivo Skill em formato .zip para desenvolvimento com Claude
+- **[squeleton-skill.zip](https://github.com/HiperWP/squeleton/raw/refs/heads/main/squeleton-skill.zip)** - Arquivo Skill em formato .zip para desenvolvimento com Claude Code, GPT Codex ou outras IAs
 - **[Biblioteca de Ícones](https://hiperwp.com.br/squeleton/icones/)** - Lista de ícones disponíveis
 
 ## Instalação Via CDN
@@ -205,6 +205,34 @@ Com mais de 400 classes utilitárias, a melhor forma é explorar:
 - **Experimentação**: Classes foram projetadas para funcionar em conjunto
 
 O Squeleton segue padrões intuitivos que facilitam a descoberta durante o uso.
+
+</details>
+
+<details>
+<summary><strong>Posso usar o Squeleton com Claude Code, GPT Codex ou outras IAs?</strong></summary>
+
+**Sim!** Foi desenvolvida uma **Skill** específica para desenvolvimento com IA chamada **squeleton-skill**.
+
+### O que são Skills no contexto de IA?
+
+Skills (ou "habilidades") são pacotes de conhecimento especializados que você pode adicionar a assistentes de IA como Claude Code, GitHub Copilot ou outros agentes de código. Funcionam como "plugins de conhecimento" que ensinam a IA sobre frameworks, bibliotecas ou padrões específicos do seu projeto.
+
+### Por que usar a squeleton-skill?
+
+Ao instalar esta skill, a IA ganha:
+- **Conhecimento completo** das 400+ classes utilitárias do Squeleton
+- **Referências detalhadas** de grid, espaçamento, flexbox, animações e ícones
+- **Padrões de uso** e boas práticas específicas do framework
+- **Integração com bibliotecas JS** (HTMX, VanJS, Embla, VenoBox, etc.)
+- **Exemplos práticos** para hero sections, cards, modais, carrosséis e mais
+
+### Como usar?
+
+1. **Baixe a skill**: [squeleton-skill.zip](https://github.com/HiperWP/squeleton/blob/main/squeleton-skill.zip)
+2. **Instale no seu IDE** (Claude for VSCode, Cursor, Windsurf, etc.) seguindo a documentação da ferramenta
+3. **Desenvolva com IA**: A IA agora conhece todo o Squeleton e priorizará suas classes e componentes ao invés de criar CSS e JS personalizado
+
+Para mais detalhes sobre Skills, consulte a [documentação do Claude Agent SDK](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) ou do seu assistente de IA preferido.
 
 </details>
 
