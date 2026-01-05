@@ -130,7 +130,7 @@ Todas as bibliotecas estão pré-configuradas e otimizadas para funcionar perfei
 | **Embla Carousel** | Biblioteca de carrossel minimalista com movimento fluido e precisão de swipe excepcional. |
 | **VenoBox 2** | Biblioteca JavaScript Lightbox para imagens, vídeos, galerias e iFrames. |
 | **a11y-dialog** | Biblioteca leve e flexível para criação de janelas de diálogo intuitivas. |
-| **Toastify** | Biblioteca JavaScript para mensagens de notificação aprimoradas. |
+| **Toastify-js** | Biblioteca JavaScript para mensagens de notificação aprimoradas. |
 | **Wow2 Animation** | Fork otimizado próprio baseado no wow.js para animações on-scroll performáticas. |
 | **Counter-Up2** | Biblioteca leve que conta até um número alvo quando o número se torna visível. |
 | **js-cookie** | Biblioteca JavaScript simples e leve para gerenciamento de cookies do navegador. |
