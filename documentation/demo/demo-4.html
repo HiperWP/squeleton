@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empreendedor Digital - Construa Seu Império Online</title>
+
+    <!-- Squeleton CSS -->
+    <link rel="stylesheet" href="https://cdn.hiperwp.com.br/squeleton.v4.min.css">
+
+    <!-- Squeleton JS Principal (no head) -->
+    <script src="https://cdn.hiperwp.com.br/squeleton-main.v4.min.js"></script>
+
+    <style>
+        :root {
+            --bg-dark: #0a0f1c;
+            --bg-darker: #060a14;
+            --bg-card: #0f172a;
+            --bg-card-hover: #1e293b;
+            --blue: #3b82f6;
+            --blue-light: #60a5fa;
+            --blue-dark: #2563eb;
+            --cyan: #06b6d4;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --gradient-blue: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+            --gradient-dark: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        /* Gradient Text */
+        .text-blue-gradient {
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Header - usando classes Squeleton: ps-fixed border-b z-index-1111 */
+        header {
+            background: rgba(10, 15, 28, 0.95);
+            backdrop-filter: blur(15px);
+            border-color: rgba(59, 130, 246, 0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--blue);
+        }
+
+        .nav-link {
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--blue);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--blue);
+            color: var(--blue);
+        }
+
+        .btn-outline:hover {
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -10%;
+            width: 70%;
+            height: 130%;
+            background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            background: var(--gradient-dark);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--blue);
+        }
+
+        /* Feature Card - usando classes Squeleton: border-all border-rd-12 p-30px-all */
+        .feature-card {
+            background: var(--bg-card);
+            border-color: rgba(59, 130, 246, 0.15);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--blue);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        /* Stats Card - usando classes Squeleton: border-all border-rd-16 p-30px-all */
+        .stat-card {
+            background: var(--gradient-dark);
+            border-color: rgba(59, 130, 246, 0.2);
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            border-color: var(--blue);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--blue);
+            line-height: 1;
+        }
+
+        /* Timeline Item */
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 20px;
+            height: 20px;
+            background: var(--gradient-blue);
+            border-radius: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 9px;
+            top: 28px;
+            width: 2px;
+            height: calc(100% + 20px);
+            background: rgba(59, 130, 246, 0.3);
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        /* Testimonial Card */
+        .testimonial-card {
+            background: var(--bg-card);
+            border-color: rgba(59, 130, 246, 0.15);
+        }
+
+        .stars {
+            color: #fbbf24;
+        }
+
+        /* Video Card */
+        .video-card {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .video-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .video-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .play-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+
+        .video-card:hover .play-button {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-darker);
+            border-top: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        /* Check Icon */
+        .check-icon {
+            width: 24px;
+            height: 24px;
+            background: rgba(59, 130, 246, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blue);
+            font-size: 14px;
+        }
+
+        /* Feature Icon size variant */
+        .feature-icon-50 {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="ps-fixed border-b z-index-1111 w-100">
+    <div class="container">
+        <div class="d-flex f-items-center f-justify-between p-15px-tb">
+            <div class="d-flex f-items-center f-gap-30">
+                <div class="logo">
+                    <span class="iccon-rocket-1 m-5px-r"></span>Empreendedor<span style="font-weight: 400;">Digital</span>
+                </div>
+                <nav class="d-flex f-gap-25 xs-d-none md-d-flex">
+                    <a href="#metodo" class="nav-link">Método</a>
+                    <a href="#modulos" class="nav-link">Módulos</a>
+                    <a href="#resultados" class="nav-link">Resultados</a>
+                    <a href="#bonus" class="nav-link">Bônus</a>
+                </nav>
+            </div>
+            <div class="d-flex f-gap-10 f-shrink-0">
+                <button class="btn btn-outline xs-d-none sm-d-inline-flex">
+                    <span class="iccon-user-1"></span> Login
+                </button>
+                <button class="btn btn-primary">
+                    <span class="iccon-rocket-1"></span>
+                    <span class="xs-d-none sm-d-inline">Quero Começar</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero d-flex f-items-center">
+    <div class="container">
+        <div class="row f-items-center">
+            <div class="c-xs-12 c-lg-7 p-120px-t xs-p-80px-t">
+                <div class="wow fadeInUp">
+                    <span class="badge m-15px-b">
+                        <span class="iccon-diamond-1 m-5px-r"></span> Método validado por +5.000 alunos
+                    </span>
+                </div>
+
+                <h1 class="wow fadeInUp m-0 font-wg-800 line-h-1-1" data-wow-delay="0.1s"
+                    style="font-size: clamp(2.5rem, 5vw, 4rem);">
+                    Construa seu <span class="text-blue-gradient">império digital</span> do zero
+                </h1>
+
+                <p class="wow fadeInUp m-25px-tb opacity-8 more-10" data-wow-delay="0.2s" style="max-width: 580px;">
+                    Aprenda o passo a passo completo para criar, validar e escalar seu negócio online.
+                    Do primeiro cliente aos primeiros R$ 100 mil em faturamento.
+                </p>
+
+                <div class="wow fadeInUp d-flex f-gap-15 f-wrap m-30px-b" data-wow-delay="0.3s">
+                    <button class="btn btn-primary anima-pulse">
+                        <span class="iccon-play-1"></span> Ver Aula Gratuita
+                    </button>
+                    <button class="btn btn-outline">
+                        <span class="iccon-download-1"></span> Baixar Plano de Negócios
+                    </button>
+                </div>
+
+                <div class="wow fadeInUp d-flex f-gap-25 f-wrap opacity-7" data-wow-delay="0.4s">
+                    <div class="d-flex f-items-center f-gap-8">
+                        <span class="iccon-check-1" style="color: var(--blue); font-size: 20px;"></span>
+                        <span class="minus-10">100% online</span>
+                    </div>
+                    <div class="d-flex f-items-center f-gap-8">
+                        <span class="iccon-check-1" style="color: var(--blue); font-size: 20px;"></span>
+                        <span class="minus-10">Suporte vitalício</span>
+                    </div>
+                    <div class="d-flex f-items-center f-gap-8">
+                        <span class="iccon-check-1" style="color: var(--blue); font-size: 20px;"></span>
+                        <span class="minus-10">Comunidade ativa</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-lg-5 xs-p-40px-t lg-p-0-t">
+                <div class="wow fadeInRight ps-relative" data-wow-delay="0.3s">
+                    <div class="video-card border-rd-12">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=700&h=400&fit=crop"
+                             alt="Empreendedorismo">
+                        <div class="play-overlay">
+                            <div class="play-button">
+                                <span class="iccon-play-1" style="font-size: 32px; margin-left: 4px;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="p-80px-tb xs-p-50px-tb" style="background: var(--bg-darker);">
+    <div class="container">
+        <div class="row gap-10">
+            <div class="c-xs-6 c-lg-3 m-15px-b">
+                <div class="stat-card border-all border-rd-16 p-30px-all text-center wow fadeInUp">
+                    <div class="stat-number">
+                        <span class="animated-number">5</span>k+
+                    </div>
+                    <div class="m-10px-t opacity-7">Alunos Ativos</div>
+                </div>
+            </div>
+            <div class="c-xs-6 c-lg-3 m-15px-b">
+                <div class="stat-card border-all border-rd-16 p-30px-all text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="stat-number">
+                        R$ <span class="animated-number">100</span>k
+                    </div>
+                    <div class="m-10px-t opacity-7">Faturamento Médio</div>
+                </div>
+            </div>
+            <div class="c-xs-6 c-lg-3 m-15px-b">
+                <div class="stat-card border-all border-rd-16 p-30px-all text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="stat-number">
+                        <span class="animated-number">97</span>%
+                    </div>
+                    <div class="m-10px-t opacity-7">Aprovação</div>
+                </div>
+            </div>
+            <div class="c-xs-6 c-lg-3 m-15px-b">
+                <div class="stat-card border-all border-rd-16 p-30px-all text-center wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="stat-number">
+                        <span class="animated-number">80</span>h
+                    </div>
+                    <div class="m-10px-t opacity-7">de Conteúdo</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Método Section -->
+<section id="metodo" class="p-100px-tb xs-p-60px-tb">
+    <div class="container">
+        <div class="row f-items-center">
+            <div class="c-xs-12 c-lg-6 m-40px-b lg-m-0-b">
+                <span class="badge wow fadeIn">
+                    <span class="iccon-idea-1 m-5px-r"></span> O Método
+                </span>
+                <h2 class="wow fadeInUp m-15px-t font-wg-800" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">
+                    A jornada do <span class="text-blue-gradient">zero aos 100k</span>
+                </h2>
+                <p class="wow fadeInUp opacity-7 m-20px-b" data-wow-delay="0.1s">
+                    Nosso método foi desenvolvido analisando centenas de negócios de sucesso.
+                    Um passo a passo validado e testado por milhares de empreendedores.
+                </p>
+            </div>
+
+            <div class="c-xs-12 c-lg-6">
+                <div class="d-flex f-col f-gap-25">
+                    <div class="timeline-item wow fadeInUp">
+                        <h4 class="font-wg-700 m-10px-b">1. Mindset Empreendedor</h4>
+                        <p class="opacity-7 minus-10 m-0">
+                            Desenvolva a mentalidade necessária para encarar desafios e tomar decisões estratégicas.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item wow fadeInUp" data-wow-delay="0.1s">
+                        <h4 class="font-wg-700 m-10px-b">2. Validação de Ideia</h4>
+                        <p class="opacity-7 minus-10 m-0">
+                            Aprenda a validar sua ideia antes de investir tempo e dinheiro, evitando erros caros.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item wow fadeInUp" data-wow-delay="0.2s">
+                        <h4 class="font-wg-700 m-10px-b">3. Primeiras Vendas</h4>
+                        <p class="opacity-7 minus-10 m-0">
+                            Estratégias práticas para conquistar seus primeiros clientes e gerar receita rapidamente.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item wow fadeInUp" data-wow-delay="0.3s">
+                        <h4 class="font-wg-700 m-10px-b">4. Escala e Automatização</h4>
+                        <p class="opacity-7 minus-10 m-0">
+                            Sistemas e processos para crescer seu negócio sem aumentar proporcionalmente o trabalho.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Módulos Section -->
+<section id="modulos" class="p-100px-tb xs-p-60px-tb" style="background: var(--bg-darker);">
+    <div class="container">
+        <div class="text-center m-60px-b">
+            <span class="badge wow fadeIn">
+                <span class="iccon-layer-1 m-5px-r"></span> Conteúdo do curso
+            </span>
+            <h2 class="wow fadeInUp m-15px-t font-wg-800" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">
+                O que você vai <span class="text-blue-gradient">dominar</span>
+            </h2>
+            <p class="wow fadeInUp opacity-6 m-0" data-wow-delay="0.1s">
+                10 módulos práticos com ferramentas e templates prontos
+            </p>
+        </div>
+
+        <div class="row gap-10">
+            <div class="c-xs-12 c-md-6 c-lg-4 m-20px-b render-auto wow fadeInUp">
+                <div class="feature-card border-all border-rd-12 p-30px-all h-100">
+                    <div class="feature-icon m-20px-b f-shrink-0">
+                        <span class="iccon-idea-1"></span>
+                    </div>
+                    <h3 class="font-wg-700 m-15px-b">Geração de Ideias</h3>
+                    <p class="opacity-7 minus-10 m-0 line-h-1-6">
+                        Frameworks para identificar oportunidades de negócio e nichos lucrativos no mercado digital.
+                    </p>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 c-lg-4 m-20px-b render-auto wow fadeInUp" data-wow-delay="0.1s">
+                <div class="feature-card border-all border-rd-12 p-30px-all h-100">
+                    <div class="feature-icon m-20px-b f-shrink-0">
+                        <span class="iccon-chart-1"></span>
+                    </div>
+                    <h3 class="font-wg-700 m-15px-b">Modelo de Negócio</h3>
+                    <p class="opacity-7 minus-10 m-0 line-h-1-6">
+                        Desenhe um modelo de negócio rentável usando o Business Model Canvas adaptado ao digital.
+                    </p>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 c-lg-4 m-20px-b render-auto wow fadeInUp" data-wow-delay="0.2s">
+                <div class="feature-card border-all border-rd-12 p-30px-all h-100">
+                    <div class="feature-icon m-20px-b f-shrink-0">
+                        <span class="iccon-user-1"></span>
+                    </div>
+                    <h3 class="font-wg-700 m-15px-b">Persona e Avatar</h3>
+                    <p class="opacity-7 minus-10 m-0 line-h-1-6">
+                        Aprenda a criar personas detalhadas para direcionar suas estratégias de marketing.
+                    </p>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 c-lg-4 m-20px-b render-auto wow fadeInUp" data-wow-delay="0.3s">
+                <div class="feature-card border-all border-rd-12 p-30px-all h-100">
+                    <div class="feature-icon m-20px-b f-shrink-0">
+                        <span class="iccon-laptop-1"></span>
+                    </div>
+                    <h3 class="font-wg-700 m-15px-b">Presença Digital</h3>
+                    <p class="opacity-7 minus-10 m-0 line-h-1-6">
+                        Construa sua presença online com site, redes sociais e estratégias de conteúdo eficazes.
+                    </p>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 c-lg-4 m-20px-b render-auto wow fadeInUp" data-wow-delay="0.4s">
+                <div class="feature-card border-all border-rd-12 p-30px-all h-100">
+                    <div class="feature-icon m-20px-b f-shrink-0">
+                        <span class="iccon-megaphone-1"></span>
+                    </div>
+                    <h3 class="font-wg-700 m-15px-b">Marketing Digital</h3>
+                    <p class="opacity-7 minus-10 m-0 line-h-1-6">
+                        Domine tráfego pago, SEO, e-mail marketing e estratégias de conversão que funcionam.
+                    </p>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 c-lg-4 m-20px-b render-auto wow fadeInUp" data-wow-delay="0.5s">
+                <div class="feature-card border-all border-rd-12 p-30px-all h-100">
+                    <div class="feature-icon m-20px-b f-shrink-0">
+                        <span class="iccon-money-1"></span>
+                    </div>
+                    <h3 class="font-wg-700 m-15px-b">Vendas e Conversão</h3>
+                    <p class="opacity-7 minus-10 m-0 line-h-1-6">
+                        Técnicas de copywriting, funis de vendas e estratégias para aumentar sua taxa de conversão.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Resultados Section -->
+<section id="resultados" class="p-100px-tb xs-p-60px-tb">
+    <div class="container">
+        <div class="text-center m-60px-b">
+            <span class="badge wow fadeIn">
+                <span class="iccon-star-1 m-5px-r"></span> Casos de sucesso
+            </span>
+            <h2 class="wow fadeInUp m-15px-t font-wg-800" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">
+                Alunos que <span class="text-blue-gradient">transformaram</span> suas vidas
+            </h2>
+        </div>
+
+        <div class="row gap-10">
+            <div class="c-xs-12 c-md-4 m-20px-b render-auto wow fadeInUp">
+                <div class="testimonial-card border-all border-rd-12 p-30px-all">
+                    <div class="stars m-15px-b">
+                        <span class="iccon-star-1"></span>
+                        <span class="iccon-star-1"></span>
+                        <span class="iccon-star-1"></span>
+                        <span class="iccon-star-1"></span>
+                        <span class="iccon-star-1"></span>
+                    </div>
+                    <p class="opacity-8 line-h-1-6 m-20px-b">
+                        "Em 6 meses saí do zero para R$ 85 mil de faturamento. O método é claro e funciona mesmo
+                        para quem está começando do zero."
+                    </p>
+                    <div class="d-flex f-items-center f-gap-15">
+                        <img src="https://i.pravatar.cc/48?img=25" class="border-rd-50">
+                        <div>
+                            <div class="font-wg-600">Mariana Santos</div>
+                            <div class="opacity-5 minus-20">Consultora de Marketing</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-4 m-20px-b render-auto wow fadeInUp" data-wow-delay="0.1s">
+                <div class="testimonial-card border-all border-rd-12 p-30px-all">
+                    <div class="stars m-15px-b">
+                        <span class="iccon-star-1"></span>
+                        <span class="iccon-star-1"></span>
+                        <span class="iccon-star-1"></span>
+                        <span class="iccon-star-1"></span>
+                        <span class="iccon-star-1"></span>
+                    </div>
+                    <p class="opacity-8 line-h-1-6 m-20px-b">
+                        "Larguei meu emprego CLT e hoje faturamento mais de R$ 120 mil/mês com minha agência.
+                        Melhor investimento da minha vida!"
+                    </p>
+                    <div class="d-flex f-items-center f-gap-15">
+                        <img src="https://i.pravatar.cc/48?img=13" class="border-rd-50">
+                        <div>
+                            <div class="font-wg-600">Felipe Costa</div>
+                            <div class="opacity-5 minus-20">Dono de Agência Digital</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-4 m-20px-b render-auto wow fadeInUp" data-wow-delay="0.2s">
+                <div class="testimonial-card border-all border-rd-12 p-30px-all">
+                    <div class="stars m-15px-b">
+                        <span class="iccon-star-1"></span>
+                        <span class="iccon-star-1"></span>
+                        <span class="iccon-star-1"></span>
+                        <span class="iccon-star-1"></span>
+                        <span class="iccon-star-1"></span>
+                    </div>
+                    <p class="opacity-8 line-h-1-6 m-20px-b">
+                        "Validei minha ideia em 3 semanas e fiz minha primeira venda em 1 mês. O suporte da
+                        comunidade é incrível!"
+                    </p>
+                    <div class="d-flex f-items-center f-gap-15">
+                        <img src="https://i.pravatar.cc/48?img=41" class="border-rd-50">
+                        <div>
+                            <div class="font-wg-600">Juliana Oliveira</div>
+                            <div class="opacity-5 minus-20">Infoprodutora</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bônus Section -->
+<section id="bonus" class="p-100px-tb xs-p-60px-tb" style="background: var(--bg-darker);">
+    <div class="container">
+        <div class="text-center m-60px-b">
+            <span class="badge wow fadeIn">
+                <span class="iccon-diamond-1 m-5px-r"></span> Bônus exclusivos
+            </span>
+            <h2 class="wow fadeInUp m-15px-t font-wg-800" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">
+                Leve mais <span class="text-blue-gradient">sem pagar nada</span>
+            </h2>
+        </div>
+
+        <div class="row gap-10">
+            <div class="c-xs-12 c-md-6 m-20px-b">
+                <div class="feature-card border-all border-rd-12 p-30px-all wow fadeInUp">
+                    <div class="d-flex f-gap-20 f-items-start">
+                        <div class="feature-icon feature-icon-50 f-shrink-0">
+                            <span class="iccon-file-1"></span>
+                        </div>
+                        <div>
+                            <h4 class="font-wg-700 m-10px-b">Templates Prontos</h4>
+                            <p class="opacity-7 minus-10 m-0">
+                                +50 templates editáveis: contratos, propostas comerciais, planilhas financeiras e mais.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 m-20px-b">
+                <div class="feature-card border-all border-rd-12 p-30px-all wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="d-flex f-gap-20 f-items-start">
+                        <div class="feature-icon feature-icon-50 f-shrink-0">
+                            <span class="iccon-comment-1"></span>
+                        </div>
+                        <div>
+                            <h4 class="font-wg-700 m-10px-b">Comunidade VIP</h4>
+                            <p class="opacity-7 minus-10 m-0">
+                                Acesso vitalício à comunidade exclusiva com networking e mentoria em grupo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 m-20px-b">
+                <div class="feature-card border-all border-rd-12 p-30px-all wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="d-flex f-gap-20 f-items-start">
+                        <div class="feature-icon feature-icon-50 f-shrink-0">
+                            <span class="iccon-calendar-1"></span>
+                        </div>
+                        <div>
+                            <h4 class="font-wg-700 m-10px-b">Lives Mensais</h4>
+                            <p class="opacity-7 minus-10 m-0">
+                                Sessões ao vivo todo mês com convidados especiais e atualização de estratégias.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 m-20px-b">
+                <div class="feature-card border-all border-rd-12 p-30px-all wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="d-flex f-gap-20 f-items-start">
+                        <div class="feature-icon feature-icon-50 f-shrink-0">
+                            <span class="iccon-certificate-1"></span>
+                        </div>
+                        <div>
+                            <h4 class="font-wg-700 m-10px-b">Certificado Digital</h4>
+                            <p class="opacity-7 minus-10 m-0">
+                                Certificado de conclusão reconhecido para validar suas competências no mercado.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Final -->
+<section class="p-100px-tb xs-p-60px-tb text-center"
+         style="background: var(--gradient-dark); border-top: 1px solid rgba(59, 130, 246, 0.2); border-bottom: 1px solid rgba(59, 130, 246, 0.2);">
+    <div class="container">
+        <div class="c-xs-12 c-md-8 c-center">
+            <h2 class="wow fadeInUp m-0 font-wg-800" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">
+                Pronto para <span class="text-blue-gradient">decolar</span> seu negócio?
+            </h2>
+            <p class="wow fadeInUp opacity-7 m-20px-tb more-10" data-wow-delay="0.1s">
+                Mais de 5.000 empreendedores já transformaram suas ideias em negócios lucrativos.
+                Chegou a sua vez!
+            </p>
+            <div class="wow fadeInUp d-flex f-gap-15 f-justify-center f-wrap" data-wow-delay="0.2s">
+                <button class="btn btn-primary anima-pulse">
+                    <span class="iccon-rocket-1"></span> Garantir Minha Vaga
+                </button>
+                <button class="btn btn-outline">
+                    <span class="iccon-whatsapp-1"></span> Falar no WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="p-60px-tb">
+    <div class="container">
+        <div class="row">
+            <div class="c-xs-12 c-md-4 m-30px-b md-m-0-b">
+                <div class="logo m-15px-b">
+                    <span class="iccon-rocket-1 m-5px-r"></span>Empreendedor<span style="font-weight: 400;">Digital</span>
+                </div>
+                <p class="opacity-6 minus-10 m-0" style="max-width: 280px;">
+                    Transformando empreendedores iniciantes em donos de negócios digitais de sucesso.
+                </p>
+            </div>
+
+            <div class="c-xs-6 c-md-2">
+                <h5 class="font-wg-700 m-15px-b">Curso</h5>
+                <div class="d-flex f-col f-gap-10 opacity-6 minus-10">
+                    <a href="#metodo">Método</a>
+                    <a href="#modulos">Módulos</a>
+                    <a href="#resultados">Resultados</a>
+                    <a href="#bonus">Bônus</a>
+                </div>
+            </div>
+
+            <div class="c-xs-6 c-md-2">
+                <h5 class="font-wg-700 m-15px-b">Empresa</h5>
+                <div class="d-flex f-col f-gap-10 opacity-6 minus-10">
+                    <a href="#">Sobre</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Contato</a>
+                    <a href="#">Políticas</a>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-4 m-30px-t md-m-0-t">
+                <h5 class="font-wg-700 m-15px-b">Redes Sociais</h5>
+                <div class="d-flex f-gap-15">
+                    <a href="#" class="opacity-6" style="font-size: 22px;">
+                        <span class="iccon-instagram-1"></span>
+                    </a>
+                    <a href="#" class="opacity-6" style="font-size: 22px;">
+                        <span class="iccon-youtube-1"></span>
+                    </a>
+                    <a href="#" class="opacity-6" style="font-size: 22px;">
+                        <span class="iccon-linkedin-1"></span>
+                    </a>
+                    <a href="#" class="opacity-6" style="font-size: 22px;">
+                        <span class="iccon-facebook-1"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-40px-t p-20px-t text-center opacity-5 minus-20"
+             style="border-top: 1px solid rgba(59, 130, 246, 0.1);">
+            2025 Empreendedor Digital. Feito com Squeleton
+        </div>
+    </div>
+</footer>
+
+<!-- Squeleton Scripts -->
+<script src="https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js"></script>
+
+<script>
+    // DOM Ready
+    document.addEventListener('DOMContentLoaded', function() {
+        "use strict";
+
+        // Counter-up numbers
+        const counterUp = window.counterUp.default;
+        const counterCall = entries => {
+            entries.forEach(entry => {
+                const el = entry.target
+                if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+                    const counters = document.querySelectorAll('.animated-number');
+                    for(const counter of counters) {
+                        counterUp(counter, {
+                            duration: 1500,
+                            delay: 16,
+                        })
+                    }
+                    el.classList.add('is-visible')
+                }
+            })
+        }
+
+        const statsSection = document.querySelector('.stat-card');
+        if (statsSection) {
+            const IO = new IntersectionObserver(counterCall, {threshold: 0.5});
+            IO.observe(statsSection.parentElement);
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

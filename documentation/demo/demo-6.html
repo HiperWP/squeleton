@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PECS - Psicologia do Esporte e Ciência da Superação</title>
+
+    <!-- Squeleton CSS -->
+    <link rel="stylesheet" href="https://cdn.hiperwp.com.br/squeleton.v4.min.css">
+
+    <!-- Squeleton JS Principal (no head) -->
+    <script src="https://cdn.hiperwp.com.br/squeleton-main.v4.min.js"></script>
+
+    <style>
+        :root {
+            /* Rainbow Gradient Colors */
+            --red: #FF1744;
+            --orange: #FF6F00;
+            --yellow: #FFD600;
+            --green: #00E676;
+            --cyan: #00E5FF;
+            --blue: #2979FF;
+            --purple: #D500F9;
+            --pink: #F50057;
+
+            /* Background */
+            --bg-dark: #0a0a0f;
+            --bg-darker: #050508;
+            --bg-card: #15151f;
+
+            /* Text */
+            --text: #ffffff;
+            --text-muted: #b0b0c0;
+
+            /* Gradients */
+            --gradient-rainbow: linear-gradient(135deg, var(--red) 0%, var(--orange) 14%, var(--yellow) 28%, var(--green) 42%, var(--cyan) 56%, var(--blue) 70%, var(--purple) 84%, var(--pink) 100%);
+            --gradient-rainbow-reverse: linear-gradient(135deg, var(--pink) 0%, var(--purple) 14%, var(--blue) 28%, var(--cyan) 42%, var(--green) 56%, var(--yellow) 70%, var(--orange) 84%, var(--red) 100%);
+            --gradient-overlay: linear-gradient(180deg, rgba(10, 10, 15, 0) 0%, rgba(10, 10, 15, 0.8) 100%);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        /* Rainbow Text */
+        .text-rainbow {
+            background: var(--gradient-rainbow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Header */
+        header {
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(15px);
+            border-color: rgba(255, 23, 68, 0.2);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            background: var(--gradient-rainbow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-link {
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-rainbow);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-rainbow {
+            background: var(--gradient-rainbow);
+            color: white;
+            box-shadow: 0 4px 20px rgba(255, 23, 68, 0.4);
+        }
+
+        .btn-rainbow:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(255, 23, 68, 0.6);
+        }
+
+        .btn-outline-rainbow {
+            background: transparent;
+            border: 2px solid;
+            border-image: var(--gradient-rainbow) 1;
+            color: var(--text);
+            position: relative;
+        }
+
+        .btn-outline-rainbow:hover {
+            background: rgba(255, 23, 68, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(ellipse at center, rgba(255, 23, 68, 0.15) 0%, transparent 50%);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -20%;
+            width: 70%;
+            height: 130%;
+            background: radial-gradient(ellipse at center, rgba(41, 121, 255, 0.15) 0%, transparent 50%);
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            background: rgba(255, 23, 68, 0.1);
+            border: 2px solid;
+            border-image: var(--gradient-rainbow) 1;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .badge-text {
+            background: var(--gradient-rainbow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Feature Card */
+        .feature-card {
+            background: var(--bg-card);
+            border: 2px solid transparent;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 2px;
+            background: var(--gradient-rainbow);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 23, 68, 0.3);
+        }
+
+        /* Rainbow Icon */
+        .rainbow-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-rainbow);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(255, 23, 68, 0.4);
+        }
+
+        /* Module Card */
+        .module-card {
+            background: var(--bg-card);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-rainbow);
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .module-number {
+            font-size: 48px;
+            font-weight: 900;
+            background: var(--gradient-rainbow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+
+        /* Stats Card */
+        .stat-card {
+            background: var(--bg-card);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-rainbow);
+        }
+
+        .stat-number {
+            font-size: 56px;
+            font-weight: 900;
+            background: var(--gradient-rainbow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+
+        /* Testimonial Card */
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 2px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            font-size: 80px;
+            font-weight: 900;
+            background: var(--gradient-rainbow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0.3;
+        }
+
+        .stars {
+            color: var(--yellow);
+        }
+
+        /* Benefit Item */
+        .benefit-item {
+            background: var(--bg-card);
+            transition: all 0.3s;
+        }
+
+        .benefit-item:hover {
+            transform: translateX(10px);
+        }
+
+        .check-rainbow {
+            width: 28px;
+            height: 28px;
+            background: var(--gradient-rainbow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(255, 23, 68, 0.1) 0%, rgba(41, 121, 255, 0.1) 100%);
+            border-top: 2px solid;
+            border-bottom: 2px solid;
+            border-image: var(--gradient-rainbow) 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 23, 68, 0.2) 0%, transparent 70%);
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-darker);
+            border-top: 2px solid rgba(255, 23, 68, 0.2);
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            background: var(--gradient-rainbow);
+            transform: translateY(-5px);
+        }
+
+        /* Video Card */
+        .video-card {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            border-radius: 16px;
+            cursor: pointer;
+        }
+
+        .video-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .video-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .play-overlay {
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-overlay);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-button {
+            width: 90px;
+            height: 90px;
+            background: var(--gradient-rainbow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            animation: pulse-play 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-play {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 23, 68, 0.7); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(255, 23, 68, 0); }
+        }
+
+        .video-card:hover .play-button {
+            transform: scale(1.15);
+        }
+
+        /* Price Box */
+        .price-box {
+            background: var(--gradient-rainbow);
+            padding: 2px;
+            border-radius: 16px;
+        }
+
+        .price-inner {
+            background: var(--bg-card);
+            border-radius: 14px;
+            padding: 30px;
+        }
+
+        .price-tag {
+            font-size: 64px;
+            font-weight: 900;
+            background: var(--gradient-rainbow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="ps-fixed border-b z-index-1111 w-100">
+    <div class="container">
+        <div class="d-flex f-items-center f-justify-between p-15px-tb">
+            <div class="d-flex f-items-center f-gap-30">
+                <div class="logo">
+                    <span class="iccon-star-1 m-5px-r"></span>PECS
+                </div>
+                <nav class="d-flex f-gap-25 xs-d-none md-d-flex">
+                    <a href="#curso" class="nav-link">O Curso</a>
+                    <a href="#modulos" class="nav-link">Módulos</a>
+                    <a href="#depoimentos" class="nav-link">Depoimentos</a>
+                    <a href="#bonus" class="nav-link">Bônus</a>
+                </nav>
+            </div>
+            <div class="d-flex f-gap-10 f-shrink-0">
+                <button class="btn btn-rainbow">
+                    <span class="iccon-rocket-1"></span>
+                    <span class="xs-d-none sm-d-inline">Inscreva-se</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero h-100vh d-flex f-items-center ps-relative">
+    <div class="container ps-relative z-index-5">
+        <div class="row f-items-center">
+            <div class="c-xs-12 c-lg-7 p-120px-t xs-p-80px-t">
+                <div class="wow fadeInUp">
+                    <span class="badge">
+                        <span class="badge-text"><span class="iccon-star-1 m-5px-r"></span>O Caminho da Alta Performance</span>
+                    </span>
+                </div>
+
+                <h1 class="wow fadeInUp m-0 font-wg-900 line-h-1-1 m-20px-t" data-wow-delay="0.1s"
+                    style="font-size: clamp(2.5rem, 6vw, 5rem);">
+                    Psicologia do Esporte e <span class="text-rainbow">Ciência da Superação</span>
+                </h1>
+
+                <p class="wow fadeInUp opacity-8 more-20 m-25px-tb" data-wow-delay="0.2s" style="max-width: 600px;">
+                    Descubra os segredos da mente de campeões e aprenda técnicas validadas pela ciência para
+                    transformar sua performance em todas as áreas da vida.
+                </p>
+
+                <div class="wow fadeInUp d-flex f-gap-15 f-wrap m-30px-b" data-wow-delay="0.3s">
+                    <button class="btn btn-rainbow anima-pulse">
+                        <span class="iccon-play-1"></span> Ver Aula Gratuita
+                    </button>
+                    <button class="btn btn-outline-rainbow">
+                        <span class="iccon-download-1"></span> E-book Gratuito
+                    </button>
+                </div>
+
+                <div class="wow fadeInUp d-flex f-gap-25 f-wrap opacity-7" data-wow-delay="0.4s">
+                    <div class="d-flex f-items-center f-gap-8">
+                        <span class="iccon-check-1 text-rainbow" style="font-size: 24px;"></span>
+                        <span>Certificado reconhecido</span>
+                    </div>
+                    <div class="d-flex f-items-center f-gap-8">
+                        <span class="iccon-check-1 text-rainbow" style="font-size: 24px;"></span>
+                        <span>Acesso vitalício</span>
+                    </div>
+                    <div class="d-flex f-items-center f-gap-8">
+                        <span class="iccon-check-1 text-rainbow" style="font-size: 24px;"></span>
+                        <span>Suporte especializado</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-lg-5 xs-p-40px-t lg-p-0-t">
+                <div class="wow fadeInRight ps-relative z-index-5" data-wow-delay="0.3s">
+                    <div class="video-card">
+                        <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&h=450&fit=crop"
+                             alt="Atleta em ação">
+                        <div class="play-overlay">
+                            <div class="play-button">
+                                <span class="iccon-play-1" style="font-size: 36px; margin-left: 5px;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="p-80px-tb xs-p-50px-tb" style="background: var(--bg-darker);">
+    <div class="container">
+        <div class="row gap-10">
+            <div class="c-xs-6 c-lg-3 m-15px-b">
+                <div class="stat-card border-rd-16 p-30px-all text-center wow fadeInUp">
+                    <div class="stat-number">
+                        <span class="animated-number">12</span>k+
+                    </div>
+                    <div class="m-10px-t opacity-7 font-wg-600">Alunos Transformados</div>
+                </div>
+            </div>
+            <div class="c-xs-6 c-lg-3 m-15px-b">
+                <div class="stat-card border-rd-16 p-30px-all text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="stat-number">
+                        <span class="animated-number">98</span>%
+                    </div>
+                    <div class="m-10px-t opacity-7 font-wg-600">Satisfação</div>
+                </div>
+            </div>
+            <div class="c-xs-6 c-lg-3 m-15px-b">
+                <div class="stat-card border-rd-16 p-30px-all text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="stat-number">
+                        <span class="animated-number">150</span>h
+                    </div>
+                    <div class="m-10px-t opacity-7 font-wg-600">de Conteúdo</div>
+                </div>
+            </div>
+            <div class="c-xs-6 c-lg-3 m-15px-b">
+                <div class="stat-card border-rd-16 p-30px-all text-center wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="stat-number">
+                        <span class="animated-number">24</span>/7
+                    </div>
+                    <div class="m-10px-t opacity-7 font-wg-600">Suporte</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- O Curso Section -->
+<section id="curso" class="p-100px-tb xs-p-60px-tb">
+    <div class="container">
+        <div class="text-center m-60px-b">
+            <span class="badge wow fadeIn">
+                <span class="badge-text"><span class="iccon-idea-1 m-5px-r"></span>Método Científico</span>
+            </span>
+            <h2 class="wow fadeInUp m-15px-t font-wg-900" style="font-size: clamp(2rem, 4vw, 3rem);">
+                O que você vai <span class="text-rainbow">dominar</span>
+            </h2>
+            <p class="wow fadeInUp opacity-6 m-0 more-10" data-wow-delay="0.1s">
+                Técnicas validadas por atletas olímpicos e estudos científicos
+            </p>
+        </div>
+
+        <div class="row gap-10">
+            <div class="c-xs-12 c-md-6 c-lg-4 m-20px-b render-auto wow fadeInUp">
+                <div class="feature-card border-rd-16 p-30px-all h-100">
+                    <div class="rainbow-icon">
+                        <span class="iccon-idea-1"></span>
+                    </div>
+                    <h3 class="font-wg-700 m-15px-b text-sz-h4">Mentalidade Vencedora</h3>
+                    <p class="opacity-7 m-0 line-h-1-6">
+                        Desenvolva a mentalidade de campeões e aprenda a transformar pressão em
+                        performance através de técnicas de psicologia esportiva.
+                    </p>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 c-lg-4 m-20px-b render-auto wow fadeInUp" data-wow-delay="0.1s">
+                <div class="feature-card border-rd-16 p-30px-all h-100">
+                    <div class="rainbow-icon">
+                        <span class="iccon-chart-1"></span>
+                    </div>
+                    <h3 class="font-wg-700 m-15px-b text-sz-h4">Foco e Concentração</h3>
+                    <p class="opacity-7 m-0 line-h-1-6">
+                        Domine técnicas avançadas de concentração e aprenda a manter o foco
+                        absoluto nos momentos decisivos da sua jornada.
+                    </p>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 c-lg-4 m-20px-b render-auto wow fadeInUp" data-wow-delay="0.2s">
+                <div class="feature-card border-rd-16 p-30px-all h-100">
+                    <div class="rainbow-icon">
+                        <span class="iccon-rocket-1"></span>
+                    </div>
+                    <h3 class="font-wg-700 m-15px-b text-sz-h4">Gestão de Emoções</h3>
+                    <p class="opacity-7 m-0 line-h-1-6">
+                        Aprenda a controlar ansiedade, medo e estresse, transformando
+                        emoções negativas em energia produtiva.
+                    </p>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 c-lg-4 m-20px-b render-auto wow fadeInUp" data-wow-delay="0.3s">
+                <div class="feature-card border-rd-16 p-30px-all h-100">
+                    <div class="rainbow-icon">
+                        <span class="iccon-chart-1"></span>
+                    </div>
+                    <h3 class="font-wg-700 m-15px-b text-sz-h4">Metas e Objetivos</h3>
+                    <p class="opacity-7 m-0 line-h-1-6">
+                        Estabeleça metas desafiadoras e alcançáveis usando frameworks
+                        comprovados de planejamento estratégico.
+                    </p>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 c-lg-4 m-20px-b render-auto wow fadeInUp" data-wow-delay="0.4s">
+                <div class="feature-card border-rd-16 p-30px-all h-100">
+                    <div class="rainbow-icon">
+                        <span class="iccon-user-7"></span>
+                    </div>
+                    <h3 class="font-wg-700 m-15px-b text-sz-h4">Liderança e Equipe</h3>
+                    <p class="opacity-7 m-0 line-h-1-6">
+                        Desenvolva habilidades de liderança e comunicação para inspirar
+                        e motivar pessoas ao seu redor.
+                    </p>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 c-lg-4 m-20px-b render-auto wow fadeInUp" data-wow-delay="0.5s">
+                <div class="feature-card border-rd-16 p-30px-all h-100">
+                    <div class="rainbow-icon">
+                        <span class="iccon-heart-1"></span>
+                    </div>
+                    <h3 class="font-wg-700 m-15px-b text-sz-h4">Resiliência Mental</h3>
+                    <p class="opacity-7 m-0 line-h-1-6">
+                        Construa resiliência inabalável e aprenda a se recuperar rapidamente
+                        de derrotas e adversidades.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Módulos Section -->
+<section id="modulos" class="p-100px-tb xs-p-60px-tb" style="background: var(--bg-darker);">
+    <div class="container">
+        <div class="text-center m-60px-b">
+            <span class="badge wow fadeIn">
+                <span class="badge-text"><span class="iccon-layer-1 m-5px-r"></span>Conteúdo Programático</span>
+            </span>
+            <h2 class="wow fadeInUp m-15px-t font-wg-900" style="font-size: clamp(2rem, 4vw, 3rem);">
+                8 Módulos <span class="text-rainbow">Transformadores</span>
+            </h2>
+        </div>
+
+        <div class="row gap-10">
+            <div class="c-xs-12 c-md-6 m-20px-b wow fadeInUp">
+                <div class="module-card border-rd-12 p-25px-all">
+                    <div class="module-number m-10px-b">01</div>
+                    <h4 class="font-wg-700 m-10px-b text-sz-h4">Fundamentos da Psicologia Esportiva</h4>
+                    <p class="opacity-7 m-0">
+                        História, conceitos e aplicações práticas da psicologia no esporte de alto rendimento.
+                    </p>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 m-20px-b wow fadeInUp" data-wow-delay="0.1s">
+                <div class="module-card border-rd-12 p-25px-all">
+                    <div class="module-number m-10px-b">02</div>
+                    <h4 class="font-wg-700 m-10px-b text-sz-h4">Neurociência da Alta Performance</h4>
+                    <p class="opacity-7 m-0">
+                        Como o cérebro funciona sob pressão e técnicas para otimizar seu desempenho mental.
+                    </p>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 m-20px-b wow fadeInUp" data-wow-delay="0.2s">
+                <div class="module-card border-rd-12 p-25px-all">
+                    <div class="module-number m-10px-b">03</div>
+                    <h4 class="font-wg-700 m-10px-b text-sz-h4">Técnicas de Visualização</h4>
+                    <p class="opacity-7 m-0">
+                        Pratique visualização criativa e mental rehearsal usados por atletas olímpicos.
+                    </p>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 m-20px-b wow fadeInUp" data-wow-delay="0.3s">
+                <div class="module-card border-rd-12 p-25px-all">
+                    <div class="module-number m-10px-b">04</div>
+                    <h4 class="font-wg-700 m-10px-b text-sz-h4">Controle da Ansiedade</h4>
+                    <p class="opacity-7 m-0">
+                        Estratégias comprovadas para gerenciar ansiedade pré-competição e estresse.
+                    </p>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 m-20px-b wow fadeInUp" data-wow-delay="0.4s">
+                <div class="module-card border-rd-12 p-25px-all">
+                    <div class="module-number m-10px-b">05</div>
+                    <h4 class="font-wg-700 m-10px-b text-sz-h4">Flow State e Zona de Performance</h4>
+                    <p class="opacity-7 m-0">
+                        Aprenda a entrar no estado de flow e acessar seu máximo potencial.
+                    </p>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 m-20px-b wow fadeInUp" data-wow-delay="0.5s">
+                <div class="module-card border-rd-12 p-25px-all">
+                    <div class="module-number m-10px-b">06</div>
+                    <h4 class="font-wg-700 m-10px-b text-sz-h4">Motivação e Propósito</h4>
+                    <p class="opacity-7 m-0">
+                        Descubra sua motivação intrínseca e construa um propósito sólido de vida.
+                    </p>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 m-20px-b wow fadeInUp" data-wow-delay="0.6s">
+                <div class="module-card border-rd-12 p-25px-all">
+                    <div class="module-number m-10px-b">07</div>
+                    <h4 class="font-wg-700 m-10px-b text-sz-h4">Recuperação e Prevenção de Burnout</h4>
+                    <p class="opacity-7 m-0">
+                        Técnicas de recuperação mental e prevenção de esgotamento físico e emocional.
+                    </p>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 m-20px-b wow fadeInUp" data-wow-delay="0.7s">
+                <div class="module-card border-rd-12 p-25px-all">
+                    <div class="module-number m-10px-b">08</div>
+                    <h4 class="font-wg-700 m-10px-b text-sz-h4">Aplicação Prática na Vida</h4>
+                    <p class="opacity-7 m-0">
+                        Transfira os aprendizados para sua carreira, negócios e vida pessoal.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Depoimentos Section -->
+<section id="depoimentos" class="p-100px-tb xs-p-60px-tb">
+    <div class="container">
+        <div class="text-center m-60px-b">
+            <span class="badge wow fadeIn">
+                <span class="badge-text"><span class="iccon-star-1 m-5px-r"></span>Histórias de Sucesso</span>
+            </span>
+            <h2 class="wow fadeInUp m-15px-t font-wg-900" style="font-size: clamp(2rem, 4vw, 3rem);">
+                Vidas <span class="text-rainbow">Transformadas</span>
+            </h2>
+        </div>
+
+        <div class="row gap-10">
+            <div class="c-xs-12 c-md-4 m-20px-b render-auto wow fadeInUp">
+                <div class="testimonial-card border-rd-16 p-30px-all h-100">
+                    <div class="stars m-15px-b">
+                        <span class="iccon-star-1"></span>
+                        <span class="iccon-star-1"></span>
+                        <span class="iccon-star-1"></span>
+                        <span class="iccon-star-1"></span>
+                        <span class="iccon-star-1"></span>
+                    </div>
+                    <p class="opacity-8 line-h-1-6 m-25px-b">
+                        O PECS mudou completamente minha forma de encarar competições. Aprendi a controlar
+                        a ansiedade e hoje consigo performar no meu melhor nível sob pressão.
+                    </p>
+                    <div class="d-flex f-items-center f-gap-15">
+                        <img src="https://i.pravatar.cc/60?img=33" class="border-rd-50">
+                        <div>
+                            <div class="font-wg-700">Ana Silva</div>
+                            <div class="opacity-5 minus-10">Atleta Profissional de Vôlei</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-4 m-20px-b render-auto wow fadeInUp" data-wow-delay="0.1s">
+                <div class="testimonial-card border-rd-16 p-30px-all h-100">
+                    <div class="stars m-15px-b">
+                        <span class="iccon-star-1"></span>
+                        <span class="iccon-star-1"></span>
+                        <span class="iccon-star-1"></span>
+                        <span class="iccon-star-1"></span>
+                        <span class="iccon-star-1"></span>
+                    </div>
+                    <p class="opacity-8 line-h-1-6 m-25px-b">
+                        As técnicas de visualização e foco me ajudaram não só no esporte, mas também
+                        a triplicar minha produtividade nos negócios. Mudança completa de mindset!
+                    </p>
+                    <div class="d-flex f-items-center f-gap-15">
+                        <img src="https://i.pravatar.cc/60?img=14" class="border-rd-50">
+                        <div>
+                            <div class="font-wg-700">Carlos Mendes</div>
+                            <div class="opacity-5 minus-10">Empreendedor e Maratonista</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-4 m-20px-b render-auto wow fadeInUp" data-wow-delay="0.2s">
+                <div class="testimonial-card border-rd-16 p-30px-all h-100">
+                    <div class="stars m-15px-b">
+                        <span class="iccon-star-1"></span>
+                        <span class="iccon-star-1"></span>
+                        <span class="iccon-star-1"></span>
+                        <span class="iccon-star-1"></span>
+                        <span class="iccon-star-1"></span>
+                    </div>
+                    <p class="opacity-8 line-h-1-6 m-25px-b">
+                        Estava à beira do burnout quando encontrei o PECS. As estratégias de recuperação
+                        mental e resiliência salvaram minha carreira e minha saúde mental.
+                    </p>
+                    <div class="d-flex f-items-center f-gap-15">
+                        <img src="https://i.pravatar.cc/60?img=44" class="border-rd-50">
+                        <div>
+                            <div class="font-wg-700">Marina Costa</div>
+                            <div class="opacity-5 minus-10">Nadadora Olímpica</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bônus Section -->
+<section id="bonus" class="p-100px-tb xs-p-60px-tb" style="background: var(--bg-darker);">
+    <div class="container">
+        <div class="text-center m-60px-b">
+            <span class="badge wow fadeIn">
+                <span class="badge-text"><span class="iccon-diamond-1 m-5px-r"></span>Bônus Exclusivos</span>
+            </span>
+            <h2 class="wow fadeInUp m-15px-t font-wg-900" style="font-size: clamp(2rem, 4vw, 3rem);">
+                Ganhe <span class="text-rainbow">Muito Mais</span>
+            </h2>
+        </div>
+
+        <div class="row gap-10">
+            <div class="c-xs-12 c-md-6 m-20px-b wow fadeInUp">
+                <div class="benefit-item border-rd-12 p-25px-all d-flex f-gap-20 f-items-start">
+                    <div class="check-rainbow">
+                        <span class="iccon-check-1"></span>
+                    </div>
+                    <div>
+                        <h4 class="font-wg-700 m-10px-b">Workbook Completo (200+ páginas)</h4>
+                        <p class="opacity-7 m-0">
+                            Material de apoio com exercícios práticos, planilhas de acompanhamento e ferramentas
+                            de autoavaliação para aplicar imediatamente.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 m-20px-b wow fadeInUp" data-wow-delay="0.1s">
+                <div class="benefit-item border-rd-12 p-25px-all d-flex f-gap-20 f-items-start">
+                    <div class="check-rainbow">
+                        <span class="iccon-check-1"></span>
+                    </div>
+                    <div>
+                        <h4 class="font-wg-700 m-10px-b">Biblioteca de Meditações Guiadas</h4>
+                        <p class="opacity-7 m-0">
+                            Acesso a 30+ áudios de meditação focados em performance, recuperação,
+                            foco e gestão de estresse.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 m-20px-b wow fadeInUp" data-wow-delay="0.2s">
+                <div class="benefit-item border-rd-12 p-25px-all d-flex f-gap-20 f-items-start">
+                    <div class="check-rainbow">
+                        <span class="iccon-check-1"></span>
+                    </div>
+                    <div>
+                        <h4 class="font-wg-700 m-10px-b">Comunidade Exclusiva de Alunos</h4>
+                        <p class="opacity-7 m-0">
+                            Networking com outros profissionais de alto desempenho, troca de experiências
+                            e suporte mútuo 24/7.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 m-20px-b wow fadeInUp" data-wow-delay="0.3s">
+                <div class="benefit-item border-rd-12 p-25px-all d-flex f-gap-20 f-items-start">
+                    <div class="check-rainbow">
+                        <span class="iccon-check-1"></span>
+                    </div>
+                    <div>
+                        <h4 class="font-wg-700 m-10px-b">Sessões de Mentoria ao Vivo (Mensais)</h4>
+                        <p class="opacity-7 m-0">
+                            Encontros mensais com especialistas, análise de casos reais e
+                            sessões de perguntas e respostas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 m-20px-b wow fadeInUp" data-wow-delay="0.4s">
+                <div class="benefit-item border-rd-12 p-25px-all d-flex f-gap-20 f-items-start">
+                    <div class="check-rainbow">
+                        <span class="iccon-check-1"></span>
+                    </div>
+                    <div>
+                        <h4 class="font-wg-700 m-10px-b">Kit de Avaliação Psicológica</h4>
+                        <p class="opacity-7 m-0">
+                            Ferramentas profissionais de autoavaliação para mapear seu perfil mental
+                            e monitorar sua evolução.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 m-20px-b wow fadeInUp" data-wow-delay="0.5s">
+                <div class="benefit-item border-rd-12 p-25px-all d-flex f-gap-20 f-items-start">
+                    <div class="check-rainbow">
+                        <span class="iccon-check-1"></span>
+                    </div>
+                    <div>
+                        <h4 class="font-wg-700 m-10px-b">Certificado Internacional Reconhecido</h4>
+                        <p class="opacity-7 m-0">
+                            Certificado digital de conclusão validado por instituições internacionais
+                            de psicologia esportiva.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Final -->
+<section class="cta-section p-100px-tb xs-p-60px-tb text-center ps-relative">
+    <div class="container ps-relative z-index-5">
+        <div class="c-xs-12 c-md-8 c-center">
+            <h2 class="wow fadeInUp m-0 font-wg-900 line-h-1-1" style="font-size: clamp(2rem, 5vw, 3.5rem);">
+                Pronto para <span class="text-rainbow">Superar seus Limites</span>?
+            </h2>
+            <p class="wow fadeInUp opacity-7 m-30px-tb more-15" data-wow-delay="0.1s">
+                Junte-se a mais de 12 mil pessoas que já transformaram suas vidas através da
+                ciência da alta performance. Sua jornada de superação começa agora!
+            </p>
+
+            <div class="wow fadeInUp m-40px-b" data-wow-delay="0.2s">
+                <div class="price-box d-inline-block">
+                    <div class="price-inner text-center">
+                        <div class="opacity-6 minus-10 m-10px-b">De R$ 1.997 por apenas</div>
+                        <div class="price-tag">R$ 997</div>
+                        <div class="opacity-6 minus-10 m-10px-t">ou 12x de R$ 97,00</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wow fadeInUp d-flex f-gap-15 f-justify-center f-wrap" data-wow-delay="0.3s">
+                <button class="btn btn-rainbow anima-pulse">
+                    <span class="iccon-rocket-1"></span> Garantir Minha Vaga Agora
+                </button>
+            </div>
+
+            <div class="wow fadeInUp m-30px-t opacity-6 minus-10" data-wow-delay="0.4s">
+                <span class="iccon-shield-1 m-5px-r text-rainbow"></span>
+                Garantia incondicional de 30 dias ou seu dinheiro de volta
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="p-60px-tb">
+    <div class="container">
+        <div class="row">
+            <div class="c-xs-12 c-md-4 m-30px-b md-m-0-b">
+                <div class="logo m-20px-b" style="font-size: 24px;">
+                    <span class="iccon-star-1 m-5px-r"></span>PECS
+                </div>
+                <p class="opacity-6 m-0" style="max-width: 300px;">
+                    Transformando atletas e profissionais através da ciência da psicologia
+                    esportiva e alta performance.
+                </p>
+            </div>
+
+            <div class="c-xs-6 c-md-2">
+                <h5 class="font-wg-700 m-15px-b">Curso</h5>
+                <div class="d-flex f-col f-gap-10 opacity-6">
+                    <a href="#curso">O que é PECS</a>
+                    <a href="#modulos">Módulos</a>
+                    <a href="#depoimentos">Depoimentos</a>
+                    <a href="#bonus">Bônus</a>
+                </div>
+            </div>
+
+            <div class="c-xs-6 c-md-2">
+                <h5 class="font-wg-700 m-15px-b">Suporte</h5>
+                <div class="d-flex f-col f-gap-10 opacity-6">
+                    <a href="#">FAQ</a>
+                    <a href="#">Contato</a>
+                    <a href="#">Central de Ajuda</a>
+                    <a href="#">Política de Privacidade</a>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-4 m-30px-t md-m-0-t">
+                <h5 class="font-wg-700 m-15px-b">Redes Sociais</h5>
+                <div class="d-flex f-gap-15">
+                    <a href="#" class="social-icon cursor-pointer">
+                        <span class="iccon-instagram-1"></span>
+                    </a>
+                    <a href="#" class="social-icon cursor-pointer">
+                        <span class="iccon-youtube-1"></span>
+                    </a>
+                    <a href="#" class="social-icon cursor-pointer">
+                        <span class="iccon-linkedin-1"></span>
+                    </a>
+                    <a href="#" class="social-icon cursor-pointer">
+                        <span class="iccon-facebook-1"></span>
+                    </a>
+                    <a href="#" class="social-icon cursor-pointer">
+                        <span class="iccon-new-twitter"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-40px-t p-20px-t text-center opacity-5"
+             style="border-top: 1px solid rgba(255, 255, 255, 0.1);">
+            2025 PECS - Psicologia do Esporte e Ciência da Superação. Feito com Squeleton
+        </div>
+    </div>
+</footer>
+
+<!-- Squeleton Scripts -->
+<script src="https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js"></script>
+
+<script>
+    // DOM Ready
+    document.addEventListener('DOMContentLoaded', function() {
+        "use strict";
+
+        // Counter-up numbers
+        const counterUp = window.counterUp.default;
+        const counterCall = entries => {
+            entries.forEach(entry => {
+                const el = entry.target
+                if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+                    const counters = document.querySelectorAll('.animated-number');
+                    for(const counter of counters) {
+                        counterUp(counter, {
+                            duration: 2000,
+                            delay: 16,
+                        })
+                    }
+                    el.classList.add('is-visible')
+                }
+            })
+        }
+
+        const statsSection = document.querySelector('.stat-card');
+        if (statsSection) {
+            const IO = new IntersectionObserver(counterCall, {threshold: 0.5});
+            IO.observe(statsSection.parentElement);
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+
+        // Rainbow gradient animation on scroll
+        const rainbowElements = document.querySelectorAll('.text-rainbow');
+
+        const updateGradient = () => {
+            const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+            const rotation = Math.floor(scrollPercent * 360);
+
+            // Recalcula as cores com base na rotação usando HSL
+            const colors = [
+                `hsl(${(354 + rotation) % 360}, 100%, 62%)`, // red
+                `hsl(${(30 + rotation) % 360}, 100%, 50%)`,  // orange
+                `hsl(${(50 + rotation) % 360}, 100%, 50%)`,  // yellow
+                `hsl(${(145 + rotation) % 360}, 100%, 57%)`, // green
+                `hsl(${(187 + rotation) % 360}, 100%, 50%)`, // cyan
+                `hsl(${(217 + rotation) % 360}, 100%, 57%)`, // blue
+                `hsl(${(290 + rotation) % 360}, 100%, 52%)`, // purple
+                `hsl(${(340 + rotation) % 360}, 100%, 63%)`  // pink
+            ];
+
+            const gradient = `linear-gradient(135deg, ${colors.join(', ')})`;
+
+            rainbowElements.forEach(el => {
+                el.style.setProperty('background', gradient, 'important');
+                el.style.setProperty('-webkit-background-clip', 'text', 'important');
+                el.style.setProperty('background-clip', 'text', 'important');
+                el.style.setProperty('-webkit-text-fill-color', 'transparent', 'important');
+            });
+        };
+
+        // Throttle para melhor performance
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    updateGradient();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        updateGradient(); // Inicializa no carregamento
+    });
+</script>
+
+</body>
+</html>
