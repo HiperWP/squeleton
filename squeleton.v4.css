@@ -44,7 +44,7 @@ video {
 main,
 section {
   display: flex;
-  align-items: center;
+  align-items: normal;
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
