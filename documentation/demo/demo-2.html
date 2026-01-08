@@ -103,7 +103,6 @@
             transition: all 0.3s;
         }
         .course-card:hover {
-            transform: translateY(-8px);
             background: var(--bg-card-hover);
         }
         .course-card:hover .card-thumb::after {
@@ -190,11 +189,11 @@
         
         /* Hero */
         .hero {
-            min-height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
+            padding: 120px 0 80px;
         }
         .hero::before {
             content: '';
@@ -202,7 +201,7 @@
             top: -50%;
             right: -20%;
             width: 80%;
-            height: 150%;
+            height: 100%;
             background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
             pointer-events: none;
         }
@@ -361,7 +360,7 @@
 <section class="hero">
     <div class="container">
         <div class="row f-items-center">
-            <div class="c-xs-12 c-lg-6 p-100px-t xs-p-120px-t">
+            <div class="c-xs-12 c-lg-6">
                 <div class="wow fadeInUp">
                     <span class="section-badge m-15px-b d-inline-block">
                         <span class="iccon-rocket-1 m-5px-r"></span> Nova Plataforma
@@ -427,9 +426,9 @@
 </section>
 
 <!-- Stats Section -->
-<section class="p-80px-tb xs-p-50px-tb" id="view-counter">
+<section class="p-80px-tb xs-p-50px-tb">
     <div class="container">
-        <div class="row gap-10">
+        <div class="row gap-10" id="view-counter">
             <div class="c-xs-6 c-md-3 m-15px-b">
                 <div class="stat-card border-rd-16 p-30px-all text-center wow fadeInUp">
                     <div class="stat-number gradient-text">

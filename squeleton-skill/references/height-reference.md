@@ -52,7 +52,7 @@ xs-h-50, xs-h-100, xs-h-auto
 <div class="h-300px">300px de altura</div>
 
 <!-- Altura 100vh para seção hero -->
-<section class="h-100vh d-flex f-items-center">
+<section class="h-100vh f-items-center">
     Hero Section
 </section>
 

@@ -63,6 +63,70 @@ Somente crie CSS ou JavaScript novo quando **não existir** uma classe ou biblio
 
 ---
 
+## Estrutura Base CSS
+
+O Squeleton define estilos base em elementos HTML que influenciam o comportamento de layout:
+
+### Reset e Box Model
+```css
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+```
+
+### Body como Flex Container
+```css
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+```
+
+### Main e Section como Flex Containers
+```css
+main, section {
+  display: flex;
+  align-items: normal;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+```
+
+### Implicações Práticas
+
+**Importante**: Como `body`, `main` e `section` já são flex containers com `flex-direction: column`:
+
+1. **Classes de alinhamento funcionam no eixo vertical por padrão**:
+   - `f-items-center` em `<section>` → centraliza horizontalmente (cross-axis)
+   - `f-justify-center` em `<section>` → centraliza verticalmente (main-axis)
+
+2. **Para layout horizontal**, adicione `f-row`:
+   ```html
+   <!-- Itens lado a lado dentro de section -->
+   <section class="f-row f-items-center f-justify-between">
+       <div>Esquerda</div>
+       <div>Direita</div>
+   </section>
+   ```
+
+3. **Elementos block dentro de section/main** se empilham naturalmente (comportamento column).
+
+4. **Para centralizar conteúdo em hero sections**:
+   ```html
+   <!-- Correto: section já é flex-column, só precisa de alinhamento -->
+   <section class="h-100vh f-justify-center f-items-center">
+       <h1>Centralizado vertical e horizontalmente</h1>
+   </section>
+   ```
+
+5. **Não é necessário adicionar `d-flex`** em `<body>`, `<main>` ou `<section>` — eles já são flex containers.
+
+---
+
 ## Sistema Responsivo Híbrido
 
 O Squeleton usa uma **abordagem híbrida única**: Grid mobile-first + Utilitários desktop-first.
@@ -254,7 +318,7 @@ Consulte `references/width-reference.md` para lista completa de valores.
 
 ```html
 <!-- Hero section altura total -->
-<section class="h-100vh d-flex f-items-center">Hero</section>
+<section class="h-100vh f-items-center">Hero</section>
 
 <!-- Cards com mesma altura -->
 <div class="row">
@@ -536,7 +600,7 @@ Consulte `references/tooltips-reference.md` para mais opções.
 
 ### Hero Section Full Height
 ```html
-<section class="h-100vh d-flex f-items-center f-justify-center text-center p-30px-all">
+<section class="h-100vh f-items-center f-justify-center text-center p-30px-all">
     <div class="w-max-600px">
         <h1 class="fs-13 fw-700 m-20px-b">Título Principal</h1>
         <p class="fs-9 opacity-8">Subtítulo descritivo</p>

@@ -299,7 +299,7 @@
 <body>
 
     <!-- Hero Section -->
-    <section class="hero h-100vh d-flex f-items-center f-justify-center text-center p-30px-all xs-p-20px-all">
+    <section class="hero h-100vh f-items-center f-justify-center text-center p-30px-all xs-p-20px-all">
         <div class="w-max-900px z-index-2">
             <!-- Logo Breaking Bad estilo tabela periódica -->
             <div class="m-40px-b wow fadeInDown">
@@ -336,15 +336,15 @@
             <!-- Stats -->
             <div class="row gap-10 m-60px-t xs-m-40px-t">
                 <div class="c-xs-12 c-sm-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="stat-number">16</div>
+                    <div class="stat-number" data-count="16">0</div>
                     <div class="fs-5 text-uppercase ls-2 opacity-7">Emmy Awards</div>
                 </div>
                 <div class="c-xs-12 c-sm-4 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="stat-number">5</div>
+                    <div class="stat-number" data-count="5">0</div>
                     <div class="fs-5 text-uppercase ls-2 opacity-7">Seasons</div>
                 </div>
                 <div class="c-xs-12 c-sm-4 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="stat-number">62</div>
+                    <div class="stat-number" data-count="62">0</div>
                     <div class="fs-5 text-uppercase ls-2 opacity-7">Episodes</div>
                 </div>
             </div>
@@ -706,8 +706,9 @@
 
             const observer = new IntersectionObserver(function(entries) {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const target = parseInt(entry.target.innerText);
+                    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                        entry.target.classList.add('counted');
+                        const target = parseInt(entry.target.dataset.count) || 0;
                         animateCount(entry.target, 0, target, 2000);
                         observer.unobserve(entry.target);
                     }
