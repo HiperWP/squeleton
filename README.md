@@ -74,8 +74,8 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 <div class="container">
     <div class="row">
         <!-- Coluna 1: Grid + Espaçamento + Bordas -->
-        <div class="c-xs-12 c-md-6 p-30px-all m-20px-b bg-light border-rd-10">
-            <h2 class="font-w-600 m-0px-t font-sz-120pct">Grid Responsivo</h2>
+        <div class="c-xs-12 c-md-6 p-30px-all m-20px-b border-all border-rd-10">
+            <h2 class="fw-600 m-30px-b more-20">Grid Responsivo</h2>
             <p class="m-15px-tb opacity-8">
                 Coluna adapta de 100% (mobile) para 50% (desktop)
             </p>
@@ -86,20 +86,20 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 
         <!-- Coluna 2: Tipografia + Animações + Flexbox -->
         <div class="c-xs-12 c-md-6 p-30px-all m-20px-b wow fadeIn" data-wow-delay="0.2s">
-            <h2 class="font-w-600 m-0px-t font-sz-120pct">Classes Utilitárias</h2>
+            <h2 class="fw-600 m-30px-b more-20">Classes Utilitárias</h2>
             <p class="m-15px-tb opacity-8">
               Spacing, tipografia e cores sem CSS customizado
             </p>
             <div class="d-flex f-gap-10 m-10px-t">
-              <span class="p-10px-all bg-success border-rd-5 fw-700">Tag 1</span>
-              <span class="p-10px-all bg-info border-rd-5 fw-700">Tag 2</span>
+              <span class="p-10px-all border-all border-rd-5 fw-700">Tag 1</span>
+              <span class="p-10px-all border-all border-rd-5 fw-700">Tag 2</span>
             </div>
         </div>
     </div>
 
     <!-- Exemplo Flexbox: Alinhamento e Distribuição -->
-    <div class="d-flex f-justify-between f-align-center">
-        <i class="iccon-check"></i>
+    <div class="d-flex f-justify-between f-items-center">
+        <i class="iccon-check-1"></i>
         <div class="p-25px-all m-20px-t wow fadeInUp">
             <h3 class="fw-700">Flexbox Utilities</h3>
             <p class="m-5px-t opacity-7">Alinhamento e distribuição simplificados</p>
