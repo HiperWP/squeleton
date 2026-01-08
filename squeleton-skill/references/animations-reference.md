@@ -1,5 +1,7 @@
 # Animations Reference
 
+**WOW já vem inicializado automaticamente** com `offset: 0`, `mobile: false` e `live: true`.
+
 ## Uso com WOW (ativa ao entrar no viewport)
 
 ```html

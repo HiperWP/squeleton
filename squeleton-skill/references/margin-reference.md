@@ -81,12 +81,6 @@ m-24-all, m-24-t, m-24-b, m-24-l, m-24-r, m-24-tb, m-24-lr
 m-25-all, m-25-t, m-25-b, m-25-l, m-25-r, m-25-tb, m-25-lr
 ```
 
-## Valor Especial
-
-```
-m-0e5-all (margin: 0.5%)
-```
-
 ## Versões Responsivas
 
 **Todas as classes acima estão disponíveis com prefixos de breakpoint:**

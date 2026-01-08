@@ -70,6 +70,12 @@ xs-w-auto
 ## Max-Width
 
 ```
+w-max-100px
+w-max-150px
+w-max-200px
+w-max-250px
+w-max-300px
+w-max-350px
 w-max-400px
 w-max-450px
 w-max-500px

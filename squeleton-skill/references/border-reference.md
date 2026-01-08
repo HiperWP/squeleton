@@ -97,7 +97,7 @@ border-rd-4-t (top-l + top-r: 4px)
 border-rd-6-t (top-l + top-r: 6px)
 border-rd-8-t (top-l + top-r: 8px)
 border-rd-10-t (top-l + top-r: 10px)
-border-rd-12-t (top-l + top-r: 16px)
+border-rd-12-t (top-l + top-r: 12px)
 ```
 
 ### Cantos Específicos - Bottom

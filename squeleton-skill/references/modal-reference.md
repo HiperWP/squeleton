@@ -1,6 +1,6 @@
 # Modal Reference (a11y-dialog)
 
-Modais acessíveis com suporte a teclado e leitores de tela.
+Modais acessíveis com suporte a teclado e leitores de tela. **Modais com classe `.modal-dialog` já vêm com scroll lock automático** (eventos show/hide).
 
 Documentação oficial: https://a11y-dialog.netlify.app
 

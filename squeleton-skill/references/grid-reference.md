@@ -6,8 +6,22 @@ Sistema de grid de 12 colunas baseado em Flexbox.
 
 ```
 container (max-width: 1250px, centralizado)
-container-fluid (width: 100%)
+container-fluid (width: 100%, max-width: 1920px em ultra-wide)
 ```
+
+## Quando Usar Cada Container
+
+### `.container` (max-width: 1250px)
+- Conteúdo de texto (blogs, artigos)
+- Grids de cards/produtos
+- Formulários
+- Seções com conteúdo que precisa de foco
+
+### `.container-fluid` (100% width)
+- Grids de imagens/galerias que precisam ocupar 100% da largura
+- Tabelas ou dashboards que precisam de mais espaço horizontal
+- Conteúdo que não deve ter margem lateral (mapas, vídeos full-width)
+- **Nota:** Em telas ≥1920px, limita a max-width: 1920px
 
 ## Row
 
@@ -105,14 +119,17 @@ xs-c-center (responsivo ≤639px)
 gap-0 (0px)
 gap-5 (5px)
 gap-10 (10px)
-gap-15 (padrão, sem classe necessária)
+gap-15 (15px - padrão)
+gap-20 (20px)
+gap-25 (25px)
+gap-30 (30px)
 ```
 
-Responsivos (apenas xs, sm, md - gaps são classes utilitárias):
+Responsivos:
 ```
-xs-gap-0, xs-gap-5, xs-gap-10
-sm-gap-0, sm-gap-5, sm-gap-10
-md-gap-0, md-gap-5, md-gap-10
+xs-gap-{0-30} (intervalo de 5)
+sm-gap-{0-30} (intervalo de 5)
+md-gap-{0-30} (intervalo de 5)
 ```
 
 ## Exemplos de Uso
@@ -168,109 +185,115 @@ md-gap-0, md-gap-5, md-gap-10
 
 ## Otimização de Performance - Content Visibility
 
-Classes para lazy rendering de listas e grids longos usando `content-visibility: auto`. Melhora performance de initial render em 5-7x para listas com 20+ itens.
+Classes para lazy rendering de seções usando `content-visibility: auto`. Melhora performance de initial render em 5-7x.
 
 ### Classes Base (Variantes de Tamanho)
 
 ```
-render-auto        (500px - cards médios padrão)
-render-auto-250px  (250px - cards pequenos/compactos)
-render-auto-800px  (800px - cards grandes/hero sections)
+render-auto-small  (300px - seções compactas: CTAs, banners)
+render-auto        (500px - seções padrão: features, grids)
+render-auto-large  (800px - seções grandes: hero, galerias)
 ```
 
 ### Classes Responsivas (Breakpoints)
 
 ```
-md-render-auto     (450px em ≤1199px - tablet)
-sm-render-auto     (400px em ≤991px - mobile médio)
-xs-render-auto     (300px em ≤639px - mobile compacto)
+md-render-auto-small   (350px em ≤1199px)
+md-render-auto         (550px em ≤1199px)
+md-render-auto-large   (900px em ≤1199px)
+
+sm-render-auto-small   (400px em ≤991px)
+sm-render-auto         (650px em ≤991px)
+sm-render-auto-large   (1000px em ≤991px)
+
+xs-render-auto-small   (450px em ≤639px)
+xs-render-auto         (750px em ≤639px)
+xs-render-auto-large   (1200px em ≤639px)
 ```
 
 ### Quando Usar
 
-Use em elementos repetidos dentro de listas/grids longos:
-- Listas de produtos com 20+ itens
-- Feeds de posts/artigos
-- Galerias de imagens extensas
-- Tabelas com muitas linhas
+Use em **`.container` ou `.container-fluid`**, NÃO em elementos individuais:
+- Containers de conteúdo abaixo da dobra (below-the-fold)
+- Containers com grids de cards
+- Footer e containers finais da página
+- Containers de FAQ, testimonials, features
 
 **Não use** em:
-- Elementos únicos
+- Elementos individuais (cards, items de lista)
 - Conteúdo above-the-fold (primeira tela)
-- Elementos com altura dinâmica crítica
+- Elementos com animações de hover (scale, translate, box-shadow)
+
+### Por que não usar em elementos individuais?
+
+O `content-visibility: auto` aplica implicitamente `contain: size layout paint`, que **corta overflow** de animações. Se um card tem `hover: scale(1.05)`, a parte que extrapola será cortada.
 
 ### Como Escolher a Classe
 
-**Variantes de Tamanho** (`render-auto-250px`, `render-auto`, `render-auto-800px`):
-- Use baseado na altura **natural** do elemento
-- `.render-auto-250px` → Cards compactos (250px)
-- `.render-auto` → Cards médios (500px)
-- `.render-auto-800px` → Cards grandes/hero (800px)
+**Variantes de Tamanho** (`render-auto-small`, `render-auto`, `render-auto-large`):
+- Use baseado na altura **estimada da seção**
+- `.render-auto-small` → Seções compactas (300px)
+- `.render-auto` → Seções médias (500px)
+- `.render-auto-large` → Seções grandes/hero (800px)
 
-**Variantes Responsivas** (`md-render-auto`, `sm-render-auto`, `xs-render-auto`):
-- Use quando o layout **empilha verticalmente** em breakpoints menores
-- Elementos ficam mais altos quando colunas viram linhas
-- `.md-render-auto` → Tablet (≤1199px) - 450px
-- `.sm-render-auto` → Mobile médio (≤991px) - 400px
-- `.xs-render-auto` → Mobile compacto (≤639px) - 300px
+**Variantes Responsivas** (`{md|sm|xs}-render-auto-{small|large}`):
+- Use quando a seção muda de altura em breakpoints menores
+- Padrão: `{breakpoint}-render-auto` para tamanho médio
+- Adicione `-small` ou `-large` conforme a altura da seção no breakpoint
 
 ### Exemplos de Uso
 
 ```html
-<!-- Lista de produtos (cards médios) -->
-<div class="row">
-    <div class="c-xs-12 c-sm-6 c-md-4 render-auto">
-        <div class="card">Produto 1</div>
-    </div>
-    <div class="c-xs-12 c-sm-6 c-md-4 render-auto">
-        <div class="card">Produto 2</div>
-    </div>
-    <!-- ... 20+ itens ... -->
-</div>
-
-<!-- Lista compacta (tags, avatares) -->
-<div class="row">
-    <div class="c-xs-6 c-sm-4 c-md-3 render-auto-250px">
-        <div class="tag">Tag 1</div>
-    </div>
-    <!-- ... -->
-</div>
-
-<!-- Hero sections em grid -->
-<div class="row">
-    <div class="c-xs-12 c-md-6 render-auto-800px">
-        <section class="hero">Hero 1</section>
-    </div>
-    <!-- ... -->
-</div>
-
-<!-- Cards que empilham em mobile (usa responsivo) -->
-<div class="row">
-    <div class="c-xs-12 c-md-6 sm-render-auto">
-        <div class="card">
-            <!-- Em desktop: lado a lado (menor altura)
-                 Em mobile: empilhado (maior altura) -->
+<!-- ✅ CORRETO - render-auto no container -->
+<section>
+    <div class="container render-auto">
+        <div class="row">
+            <div class="c-xs-12 c-sm-6 c-md-4">
+                <div class="card">Produto 1</div>
+            </div>
+            <div class="c-xs-12 c-sm-6 c-md-4">
+                <div class="card">Produto 2</div>
+            </div>
         </div>
     </div>
-</div>
+</section>
 
-<!-- Feed de posts (responsivo para mobile compacto) -->
-<div class="row">
-    <div class="c-xs-12 c-md-8 xs-render-auto">
-        <article>Post completo</article>
+<!-- ✅ Seção compacta (CTA) -->
+<section>
+    <div class="container render-auto-small text-center p-40px-tb">
+        <h2>Pronto para começar?</h2>
+        <button>Cadastre-se</button>
     </div>
+</section>
+
+<!-- ✅ Seção grande (Hero/Galeria) -->
+<section>
+    <div class="container render-auto-large">
+        <div class="row">
+            <div class="c-xs-12 c-md-6">
+                <img src="hero.jpg" class="w-100">
+            </div>
+            <div class="c-xs-12 c-md-6">
+                <h1>Título Hero</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ❌ ERRADO - NÃO use no elemento individual -->
+<div class="c-xs-12 c-md-4 render-auto">
+    <div class="card hover-scale">...</div>
 </div>
 ```
 
 ### Performance Esperada
 
-Com `render-auto` aplicado a 50+ elementos:
+Com `render-auto` aplicado a containers below-the-fold:
 - **Initial render**: 5-7x mais rápido
-- **Scroll performance**: Melhor FPS (elementos renderizam sob demanda)
+- **Scroll performance**: Melhor FPS (seções renderizam sob demanda)
 - **Memória**: Redução de 30-50% no uso inicial
 
 **Observações**:
 - Valores `contain-intrinsic-size` são estimativas, não precisam ser exatos
 - Browser corrige a altura após primeiro render do elemento
 - Funciona automaticamente com scroll (lazy rendering nativo)
-```

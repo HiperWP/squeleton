@@ -1,10 +1,10 @@
 # VenoBox Reference
 
-Lightbox para imagens, vídeos, galerias e iframes.
+Lightbox para imagens, vídeos, galerias e iframes. **Já vem inicializado automaticamente.**
 
 Documentação oficial: https://veno.es/venobox
 
-## Classes de Inicialização Automática
+## Seletores (já inicializados)
 
 ```
 open-gallery (imagens e galerias)
@@ -82,34 +82,11 @@ Use `data-gall` com mesmo valor para agrupar:
 
 | Atributo | Descrição | Valores |
 |----------|-----------|---------|
-| `data-vbtype` | Tipo de conteúdo | `video`, `iframe`, `inline`, `ajax` |
+| `data-vbtype` | Tipo de conteúdo | `video`, `iframe` |
 | `data-gall` | Agrupar em galeria | qualquer string |
 | `data-autoplay` | Autoplay para vídeos | `true`, `false` |
 | `data-maxwidth` | Largura máxima | `800px`, `90%`, etc |
 | `data-title` | Título do lightbox | texto |
-
-## Conteúdo Inline (HTML da página)
-
-```html
-<a class="open-gallery" data-vbtype="inline" href="#conteudo-oculto">
-    Abrir conteúdo
-</a>
-
-<div id="conteudo-oculto" style="display: none;">
-    <div class="p-30px-all">
-        <h3>Título</h3>
-        <p>Conteúdo que aparece no lightbox</p>
-    </div>
-</div>
-```
-
-## Conteúdo via AJAX
-
-```html
-<a class="open-gallery" data-vbtype="ajax" href="/api/conteudo">
-    Carregar conteúdo
-</a>
-```
 
 ## Exemplos Práticos
 

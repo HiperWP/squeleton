@@ -1,6 +1,6 @@
 # Carousel Reference (Embla)
 
-Carrossel com movimento fluido e suporte a swipe.
+Carrossel com movimento fluido e suporte a swipe. **Requer inicialização via JavaScript.**
 
 Documentação oficial: https://www.embla-carousel.com
 
@@ -174,4 +174,54 @@ Aplique gap no `slide__row`:
         </div>
     </div>
 </div>
+```
+
+## Inicialização JavaScript
+
+Embla requer inicialização manual:
+
+```javascript
+// Inicialização básica
+const viewport = document.querySelector('.slide__viewport');
+const embla = EmblaCarousel(viewport, { loop: true });
+
+// Com plugins (ClassNames para estados active/selected)
+const embla = EmblaCarousel(viewport, { loop: true }, [EmblaCarouselClassNames()]);
+```
+
+### Exemplo completo com navegação e dots
+
+```javascript
+document.querySelectorAll('.slide').forEach(slideElement => {
+    const viewport = slideElement.querySelector('.slide__viewport');
+    const prevBtn = slideElement.querySelector('.slide__prev');
+    const nextBtn = slideElement.querySelector('.slide__next');
+    const dotsContainer = slideElement.querySelector('.slide__dots');
+
+    const embla = EmblaCarousel(viewport, { loop: true }, [EmblaCarouselClassNames()]);
+
+    // Navegação
+    if (prevBtn) prevBtn.addEventListener('click', () => embla.scrollPrev());
+    if (nextBtn) nextBtn.addEventListener('click', () => embla.scrollNext());
+
+    // Dots
+    if (dotsContainer) {
+        const slides = embla.slideNodes();
+        slides.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.addEventListener('click', () => embla.scrollTo(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        const updateDots = () => {
+            const selected = embla.selectedScrollSnap();
+            dotsContainer.querySelectorAll('button').forEach((dot, i) => {
+                dot.classList.toggle('is-selected', i === selected);
+            });
+        };
+
+        embla.on('select', updateDots);
+        updateDots();
+    }
+});
 ```

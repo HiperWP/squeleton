@@ -9,14 +9,15 @@ ps-relative
 ps-absolute
 ps-fixed
 ps-sticky
+ps-static
 ps-inherit
 ```
 
 Responsivos:
 ```
-md-ps-relative, md-ps-absolute, md-ps-fixed, md-ps-sticky
-sm-ps-relative, sm-ps-absolute, sm-ps-fixed, sm-ps-sticky
-xs-ps-relative, xs-ps-absolute, xs-ps-fixed, xs-ps-sticky
+md-ps-relative, md-ps-absolute, md-ps-fixed, md-ps-sticky, md-ps-static
+sm-ps-relative, sm-ps-absolute, sm-ps-fixed, sm-ps-sticky, sm-ps-static
+xs-ps-relative, xs-ps-absolute, xs-ps-fixed, xs-ps-sticky, xs-ps-static
 ```
 
 ## Position Values
@@ -172,6 +173,38 @@ bg-ps-x-50 (background-position-x: 50%)
 <div class="video-responsive">
     <iframe src="..."></iframe>
 </div>
+```
+
+## Object Fit
+
+```
+obj-cover (object-fit: cover)
+obj-contain (object-fit: contain)
+obj-fill (object-fit: fill)
+```
+
+## Aspect Ratio
+
+```
+aspect-1-1 (1:1 - quadrado)
+aspect-16-9 (16:9 - vídeo widescreen)
+aspect-4-3 (4:3 - vídeo clássico)
+aspect-3-2 (3:2 - fotografia)
+```
+
+## Text Overflow
+
+```
+truncate (overflow: hidden + text-overflow: ellipsis + white-space: nowrap)
+line-clamp-2 (limita a 2 linhas com ellipsis)
+line-clamp-3 (limita a 3 linhas com ellipsis)
+```
+
+## Pointer Events
+
+```
+pe-none (pointer-events: none - ignora cliques)
+pe-auto (pointer-events: auto - comportamento padrão)
 ```
 
 ## Outros

@@ -1,6 +1,6 @@
 # Squeleton
 
-[![Version](https://img.shields.io/badge/version-4.5-blue.svg)](https://hiperwp.com.br/squeleton/)
+[![Version](https://img.shields.io/badge/version-4.6-blue.svg)](https://hiperwp.com.br/squeleton/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://hiperwp.com.br/squeleton/#guia)
 [![CSS Framework](https://img.shields.io/badge/framework-CSS-1572B6.svg)](https://hiperwp.com.br/squeleton/)
 [![Vanilla JS](https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E.svg)](https://hiperwp.com.br/squeleton/)
@@ -11,7 +11,7 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 
 ## Características Principais
 
-- **Mobile-First**: Sistema responsivo com 4 breakpoints (xs, sm, md, lg)
+- **Hybrid-First**: Abordagem única - Grid mobile-first + Utilitários desktop-first
 - **Grid Flexível**: 12 colunas com containers responsivos
 - **Utilitários Completos**: Mais de 400 classes para espaçamento, design e layouts
 - **JavaScript Pronto**: 9 micro-bibliotecas integradas (HTMX, VanJS, Embla, VenoBox, a11y-dialog, Toastify, Wow2 Animation, Counter-Up2, js-cookie)
@@ -79,7 +79,7 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
             <p class="m-15px-tb opacity-8">
                 Coluna adapta de 100% (mobile) para 50% (desktop)
             </p>
-            <button class="p-15px-lr p-10px-tb border-rd-8 font-wg-600 d-inline-block">
+            <button class="p-15px-lr p-10px-tb border-rd-8 fw-600 d-inline-block">
                 Botão Estilizado
             </button>
         </div>
@@ -91,8 +91,8 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
               Spacing, tipografia e cores sem CSS customizado
             </p>
             <div class="d-flex f-gap-10 m-10px-t">
-              <span class="p-10px-all bg-success border-rd-5 font-wg-700">Tag 1</span>
-              <span class="p-10px-all bg-info border-rd-5 font-wg-700">Tag 2</span>
+              <span class="p-10px-all bg-success border-rd-5 fw-700">Tag 1</span>
+              <span class="p-10px-all bg-info border-rd-5 fw-700">Tag 2</span>
             </div>
         </div>
     </div>
@@ -101,39 +101,49 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
     <div class="d-flex f-justify-between f-align-center">
         <i class="iccon-check"></i>
         <div class="p-25px-all m-20px-t wow fadeInUp">
-            <h3 class="font-wg-700">Flexbox Utilities</h3>
+            <h3 class="fw-700">Flexbox Utilities</h3>
             <p class="m-5px-t opacity-7">Alinhamento e distribuição simplificados</p>
         </div>
     </div>
 </div>
 ```
 
-### Breakpoints Responsivos
+### Sistema Responsivo Híbrido
 
-O Squeleton adota uma abordagem mobile-first, priorizando a experiência em dispositivos menores como base para o design. O CSS do Squeleton aplica o mínimo de estilos necessários para que o layout funcione perfeitamente no menor ponto de interrupção (Extra Small) e, em seguida, sobrepõe progressivamente estilos adicionais para ajustar o design em dispositivos maiores. 
+O Squeleton adota uma **abordagem híbrida única** que combina o melhor dos dois mundos:
 
-| Breakpoint | Largura Mínima | Classe |
-|-----------|---------------|--------|
-| Extra Small | ≤639px | `xs-` |
-| Small | ≥640px | `sm-` |
-| Medium | ≥992px | `md-` |
-| Large | ≥1200px | `lg-` |
+**Grid (Colunas) → Mobile-First** (`min-width`)
+- Comece com `c-xs-12` e expanda: `c-xs-12 c-md-6 c-lg-4`
+- Faz sentido porque layouts empilham em mobile e dividem em desktop
+- Suporta 4 breakpoints: `xs-`, `sm-`, `md-`, `lg-`
+
+**Classes Utilitárias → Desktop-First** (`max-width`)
+- Escreva para desktop primeiro, ajuste para mobile: `p-60px-tb xs-p-30px-tb`
+- Prático porque a maioria do desenvolvimento é feita em desktop
+- Não existe `lg-` para utilitários - desktop já é o padrão
+
+| Breakpoint | Grid (min-width) | Utilitários (max-width) |
+|-----------|------------------|------------------------|
+| Extra Small | `c-xs-` (base) | `xs-` (≤639px) |
+| Small | `c-sm-` (≥640px) | `sm-` (≤991px) |
+| Medium | `c-md-` (≥992px) | `md-` (≤1199px) |
+| Large | `c-lg-` (≥1200px) | — (desktop é padrão) |
 
 ### Bibliotecas JavaScript Integradas
 
-Todas as bibliotecas estão pré-configuradas e otimizadas para funcionar perfeitamente com o Squeleton. Consulte a documentação específica de cada uma para casos de uso avançados.
+Todas as bibliotecas estão pré-configuradas e otimizadas. Consulte a documentação específica de cada uma para casos de uso avançados.
 
 | Biblioteca | Descrição |
 |-----------|-----------|
-| **HTMX** | Biblioteca que oferece acesso a AJAX, CSS Transitions, WebSockets e Server Sent Events diretamente no HTML usando atributos, permitindo interfaces modernas com a simplicidade do hypertext. |
-| **VanJS** | O menor framework de interface de usuário reativo do mundo. Incrivelmente poderoso, absurdamente pequeno. |
-| **Embla Carousel** | Biblioteca de carrossel minimalista com movimento fluido e precisão de swipe excepcional. |
-| **VenoBox 2** | Biblioteca JavaScript Lightbox para imagens, vídeos, galerias e iFrames. |
-| **a11y-dialog** | Biblioteca leve e flexível para criação de janelas de diálogo intuitivas. |
-| **Toastify-js** | Biblioteca JavaScript para mensagens de notificação aprimoradas. |
-| **Wow2 Animation** | Fork otimizado próprio baseado no wow.js para animações on-scroll performáticas. |
-| **Counter-Up2** | Biblioteca leve que conta até um número alvo quando o número se torna visível. |
-| **js-cookie** | Biblioteca JavaScript simples e leve para gerenciamento de cookies do navegador. |
+| HTMX | Biblioteca que oferece acesso a AJAX, CSS Transitions, WebSockets e Server Sent Events diretamente no HTML usando atributos, permitindo interfaces modernas com a simplicidade do hypertext. |
+| VanJS | O menor framework de interface de usuário reativo do mundo. Incrivelmente poderoso, absurdamente pequeno. |
+| Embla Carousel | Biblioteca de carrossel minimalista com movimento fluido e precisão de swipe excepcional. |
+| VenoBox 2 | Biblioteca JavaScript Lightbox para imagens, vídeos, galerias e iFrames. *Auto-inicializado* para `.open-gallery`, `.open-video`, `.open-iframe`. |
+| a11y-dialog | Biblioteca leve e flexível para criação de janelas de diálogo intuitivas. *Scroll lock auto-inicializado* para `.modal-dialog`. |
+| Toastify-js | Biblioteca JavaScript para mensagens de notificação aprimoradas. |
+| Wow2 Animation | Fork otimizado próprio baseado no wow.js para animações on-scroll performáticas. *Auto-inicializado* para classe `.wow`. |
+| Counter-Up2 | Biblioteca leve que conta até um número alvo quando o número se torna visível. |
+| js-cookie | Biblioteca JavaScript simples e leve para gerenciamento de cookies do navegador. |
 
 ## FAQ - Perguntas Frequentes
 
@@ -145,21 +155,21 @@ O Squeleton nasceu da necessidade de simplificar o desenvolvimento web, evitando
 </details>
 
 <details>
-<summary><strong>Como personalizar cores, fontes e tamanhos?</strong></summary>
+<summary><strong>Como personalizar a paleta de cores e família de fontes?</strong></summary>
 
 O Squeleton é intencionalmente neutro. Crie uma folha de estilos separada com variáveis CSS customizadas no `:root`:
 
 ```css
 :root {
-    --main-color: #30a1e0;
-    --text-color: #0f1419;
-    --font-family: 'Inter Tight', sans-serif;
-    --font-size: 14.5px;
+	--text-color: #111;
+	--bg-color: #fff;
+	--font-family: 'Inter Tight', sans-serif;
 }
 
 body {
-    font-family: var(--font-family);
-    color: var(--text-color);
+	color: var(--text-color);
+	background-color: var(--bg-color);
+	font-family: var(--font-family);
 }
 ```
 

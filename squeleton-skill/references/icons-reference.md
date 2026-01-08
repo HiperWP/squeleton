@@ -2,6 +2,8 @@
 
 Uso: `<span class="iccon-{nome}-{variante}"></span>`
 
+**IMPORTANTE**: Use APENAS classes de ícones desta lista oficial. Ícones inventados ou de outros frameworks NÃO funcionarão. **SEMPRE consulte a referência ANTES de usar qualquer ícone.**
+
 ## Interface
 
 ```
@@ -144,21 +146,6 @@ iccon-graduation-1, iccon-graduation-2
 iccon-book-2, iccon-book-3, iccon-book-4
 ```
 
-## Diversos
-
-```
-iccon-idea-1, iccon-idea-2
-iccon-rocket-1, iccon-rocket-2
-iccon-fly-1, iccon-fly-2
-iccon-laptop-1, iccon-laptop-2
-iccon-layer-1, iccon-layer-2
-iccon-link-1, iccon-link-2, iccon-link-3, iccon-link-4, iccon-link-5
-iccon-chart-1, iccon-chart-2, iccon-chart-3
-iccon-speed-1
-iccon-quote-left-1, iccon-quote-left-2
-iccon-quote-right-1, iccon-quote-right-2
-```
-
 ## Redes Sociais
 
 ```
@@ -186,9 +173,19 @@ iccon-apple-1
 iccon-windows-1
 ```
 
-## BB (Bricks Builder)
+## Diversos
 
 ```
+iccon-idea-1, iccon-idea-2
+iccon-rocket-1, iccon-rocket-2
+iccon-fly-1, iccon-fly-2
+iccon-laptop-1, iccon-laptop-2
+iccon-layer-1, iccon-layer-2
+iccon-link-1, iccon-link-2, iccon-link-3, iccon-link-4, iccon-link-5
+iccon-chart-1, iccon-chart-2, iccon-chart-3
+iccon-speed-1
+iccon-quote-left-1, iccon-quote-left-2
+iccon-quote-right-1, iccon-quote-right-2
 iccon-bb-home
 iccon-bb-menu, iccon-bb-menu-left
 iccon-bb-search

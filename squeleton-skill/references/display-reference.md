@@ -10,6 +10,9 @@ d-block
 d-inline
 d-inline-block
 d-flex
+d-inline-flex
+d-grid
+d-contents
 d-table
 d-table-cell
 ```
@@ -22,6 +25,11 @@ md-d-block
 md-d-inline
 md-d-inline-block
 md-d-flex
+md-d-inline-flex
+md-d-grid
+md-d-contents
+md-d-table
+md-d-table-cell
 ```
 
 ## Responsivo - SM (≤991px)
@@ -32,6 +40,11 @@ sm-d-block
 sm-d-inline
 sm-d-inline-block
 sm-d-flex
+sm-d-inline-flex
+sm-d-grid
+sm-d-contents
+sm-d-table
+sm-d-table-cell
 ```
 
 ## Responsivo - XS (≤639px)
@@ -42,6 +55,11 @@ xs-d-block
 xs-d-inline
 xs-d-inline-block
 xs-d-flex
+xs-d-inline-flex
+xs-d-grid
+xs-d-contents
+xs-d-table
+xs-d-table-cell
 ```
 
 ## Overflow
@@ -51,9 +69,9 @@ ov-hidden
 ov-visible
 ov-auto
 ov-scroll
-xs-ov-hidden, xs-ov-auto
-sm-ov-hidden, sm-ov-auto
-md-ov-hidden, md-ov-auto
+xs-ov-hidden, xs-ov-auto, xs-ov-scroll
+sm-ov-hidden, sm-ov-auto, sm-ov-scroll
+md-ov-hidden, md-ov-auto, md-ov-scroll
 ```
 
 ## Position
@@ -64,9 +82,9 @@ ps-absolute
 ps-fixed
 ps-sticky
 ps-static
-md-ps-relative, md-ps-absolute, md-ps-fixed, md-ps-sticky
-sm-ps-relative, sm-ps-absolute, sm-ps-fixed, sm-ps-sticky
-xs-ps-relative, xs-ps-absolute, xs-ps-fixed, xs-ps-sticky
+md-ps-relative, md-ps-absolute, md-ps-fixed, md-ps-sticky, md-ps-static
+sm-ps-relative, sm-ps-absolute, sm-ps-fixed, sm-ps-sticky, sm-ps-static
+xs-ps-relative, xs-ps-absolute, xs-ps-fixed, xs-ps-sticky, xs-ps-static
 ```
 
 ## Visibility

@@ -35,38 +35,44 @@ line-through
 ## Font Weight
 
 ```
-font-wg-300
-font-wg-400
-font-wg-500
-font-wg-600
-font-wg-700
-font-wg-800
-font-wg-900
+fw-300
+fw-400
+fw-500
+fw-600
+fw-700
+fw-800
+fw-900
 ```
 
-## Font Size - Tamanhos de Heading (Fluido)
+## Font Size - Escala Numérica (fs-1 a fs-16)
 
-Classes utilitárias para aplicar tamanhos de heading em qualquer elemento. Usam `clamp()` para tipografia fluida e responsiva.
+Escala completa de tamanhos de fonte. Classes fs-1 a fs-6 são fixas, fs-7 a fs-16 usam `clamp()` para tipografia fluida.
 
 ```
-text-sz-h1  (28px → 36px - fluido)
-text-sz-h2  (24px → 30px - fluido)
-text-sz-h3  (20px → 24px - fluido)
-text-sz-h4  (16px → 18px - fluido)
-text-sz-h5  (13px → 14px - fluido)
-text-sz-h6  (11px → 12px - fluido)
+fs-1   (10px - fixo)         Micro labels
+fs-2   (11px - fixo)         Badges, captions
+fs-3   (12px - fixo)         Small text
+fs-4   (13px - fixo)         Secondary text
+fs-5   (14px - fixo)         Body small
+fs-6   (15px - fixo)         Body alt
+fs-7   (15px → 16px)         Body padrão
+fs-8   (16px → 17px)         Body large
+fs-9   (17px → 18px)         Lead text
+fs-10  (18px → 20px)         Subtítulo
+fs-11  (21px → 24px)         Título pequeno
+fs-12  (24px → 28px)         Título médio
+fs-13  (28px → 32px)         Título grande
+fs-14  (34px → 40px)         Headline
+fs-15  (40px → 48px)         Hero
+fs-16  (52px → 64px)         Display
 ```
-
-**Benefícios**:
-- Escalam automaticamente entre mobile e desktop
-- Não requerem breakpoints responsivos
-- Mantêm proporção visual em todos os tamanhos de tela
 
 **Exemplos**:
 ```html
-<p class="text-sz-h1">Parágrafo com tamanho de h1</p>
-<div class="text-sz-h3">Card title</div>
-<span class="text-sz-h5">Small label</span>
+<span class="fs-1">Badge</span>
+<p class="fs-7">Texto padrão do corpo</p>
+<h2 class="fs-12">Título de seção</h2>
+<h1 class="fs-16">Hero headline</h1>
 ```
 
 ## Font Size - Redução
@@ -77,6 +83,10 @@ minus-15 (font-size: 85%)
 minus-20 (font-size: 80%)
 minus-25 (font-size: 75%)
 minus-30 (font-size: 70%)
+minus-35 (font-size: 65%)
+minus-40 (font-size: 60%)
+minus-45 (font-size: 55%)
+minus-50 (font-size: 50%)
 ```
 
 ## Font Size - Ampliação
@@ -96,37 +106,37 @@ more-50 (font-size: 150%)
 ## Letter Spacing - Positivo
 
 ```
-letter-sp-0 (0)
-letter-sp-1 (1px)
-letter-sp-2 (2px)
-letter-sp-3 (3px)
-letter-sp-4 (4px)
-letter-sp-5 (5px)
+ls-0 (0)
+ls-1 (1px)
+ls-2 (2px)
+ls-3 (3px)
+ls-4 (4px)
+ls-5 (5px)
 ```
 
 ## Letter Spacing - Negativo
 
 ```
-letter-sp-minus-025 (-0.25px)
-letter-sp-minus-05 (-0.5px)
-letter-sp-minus-1 (-1px)
-letter-sp-minus-2 (-2px)
-letter-sp-minus-3 (-3px)
+ls-minus-0-2 (-0.25px)
+ls-minus-0-5 (-0.5px)
+ls-minus-1 (-1px)
+ls-minus-2 (-2px)
+ls-minus-3 (-3px)
 ```
 
 ## Line Height
 
 ```
-line-h-1-0 (1.0)
-line-h-1-1 (1.1)
-line-h-1-2 (1.2)
-line-h-1-3 (1.3)
-line-h-1-4 (1.4)
-line-h-1-5 (1.5)
-line-h-1-6 (1.6)
-line-h-1-7 (1.7)
-line-h-1-8 (1.8)
-line-h-1-9 (1.9)
+lh-1-0 (1.0)
+lh-1-1 (1.1)
+lh-1-2 (1.2)
+lh-1-3 (1.3)
+lh-1-4 (1.4)
+lh-1-5 (1.5)
+lh-1-6 (1.6)
+lh-1-7 (1.7)
+lh-1-8 (1.8)
+lh-1-9 (1.9)
 ```
 
 ## White Space
@@ -154,16 +164,16 @@ v-align-bottom
 
 ```html
 <!-- Título com peso e espaçamento -->
-<h1 class="font-wg-700 letter-sp-minus-1">Título Principal</h1>
+<h1 class="fw-700 ls-minus-1">Título Principal</h1>
 
 <!-- Texto menor com line-height ajustado -->
-<p class="minus-10 line-h-1-6">Texto secundário</p>
+<p class="minus-10 lh-1-6">Texto secundário</p>
 
 <!-- Label uppercase com espaçamento -->
-<span class="text-uppercase letter-sp-2 font-wg-600 minus-20">Label</span>
+<span class="text-uppercase ls-2 fw-600 minus-20">Label</span>
 
 <!-- Preço grande -->
-<span class="more-50 font-wg-700">R$ 99,90</span>
+<span class="more-50 fw-700">R$ 99,90</span>
 
 <!-- Alinhamento responsivo -->
 <p class="xs-text-center md-text-left">

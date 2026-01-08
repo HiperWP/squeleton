@@ -178,13 +178,17 @@ f-gap-15 (15px)
 f-gap-20 (20px)
 f-gap-25 (25px)
 f-gap-30 (30px)
+f-gap-35 (35px)
+f-gap-40 (40px)
+f-gap-45 (45px)
+f-gap-50 (50px)
 ```
 
 Responsivos:
 ```
-xs-f-gap-0, xs-f-gap-5, xs-f-gap-10, xs-f-gap-15, xs-f-gap-20, xs-f-gap-25, xs-f-gap-30
-sm-f-gap-0, sm-f-gap-5, sm-f-gap-10, sm-f-gap-15, sm-f-gap-20, sm-f-gap-25, sm-f-gap-30
-md-f-gap-0, md-f-gap-5, md-f-gap-10, md-f-gap-15, md-f-gap-20, md-f-gap-25, md-f-gap-30
+xs-f-gap-{0-50} (intervalo de 5)
+sm-f-gap-{0-50} (intervalo de 5)
+md-f-gap-{0-50} (intervalo de 5)
 ```
 
 ## Exemplos de Uso

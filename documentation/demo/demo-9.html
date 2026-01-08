@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X Builder - Monte Sua Próxima Máquina</title>
+
+    <!-- Squeleton CSS -->
+    <link rel="stylesheet" href="https://cdn.hiperwp.com.br/squeleton.v4.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Squeleton JavaScript -->
+    <script src="https://cdn.hiperwp.com.br/squeleton-main.v4.min.js"></script>
+
+    <style>
+        :root {
+            --primary-orange: #ff6b00;
+            --primary-orange-light: #ffa500;
+            --bg-dark: #000;
+            --text-light: #e0e0e0;
+            --text-gray: #b0b0b0;
+            --text-dark-gray: #808080;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.7)),
+                url('https://images7.alphacoders.com/810/thumb-1920-810997.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            border-bottom: 1px solid rgba(255, 107, 0, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 1px;
+        }
+
+        .nav-link {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-orange);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-orange);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Typography */
+        .hero-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 72px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 32px;
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 48px;
+            color: #fff;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .category-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            color: var(--primary-orange);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            padding: 18px 50px;
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange-light) 100%);
+            color: #000;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(255, 107, 0, 0.4);
+            font-family: 'Space Grotesk', sans-serif;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 50px rgba(255, 107, 0, 0.6);
+            color: #000;
+        }
+
+        .btn-secondary {
+            padding: 15px 30px;
+            background: transparent;
+            color: var(--primary-orange);
+            border: 1px solid var(--primary-orange);
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 107, 0, 0.1);
+            box-shadow: 0 0 20px rgba(255, 107, 0, 0.3);
+        }
+
+        /* Components */
+        .component-select {
+            width: 100%;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 107, 0, 0.3);
+            color: var(--text-light);
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .component-select:hover,
+        .component-select:focus {
+            border-color: var(--primary-orange);
+            box-shadow: 0 0 15px rgba(255, 107, 0, 0.2);
+            outline: none;
+        }
+
+        .component-select option {
+            background: #000;
+            padding: 10px;
+        }
+
+        /* Cards */
+        .card-dark {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 107, 0, 0.2);
+            transition: all 0.4s;
+        }
+
+        .card-dark:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-orange);
+            box-shadow: 0 15px 50px rgba(255, 107, 0, 0.4);
+        }
+
+        /* Glassmorphism Effect */
+        .glass-card {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 107, 0, 0.2);
+            transition: all 0.4s;
+        }
+
+        .glass-card:hover {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-color: var(--primary-orange);
+            box-shadow: 0 15px 50px rgba(255, 107, 0, 0.4);
+        }
+
+        .build-summary {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 107, 0, 0.3);
+            position: sticky;
+            top: 100px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 107, 0, 0.1);
+            font-size: 14px;
+        }
+
+        .summary-item-name {
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .summary-item-price {
+            color: var(--primary-orange);
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .summary-total-label {
+            font-family: 'Space Grotesk', sans-serif;
+            color: #fff;
+        }
+
+        .summary-total-price {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--primary-orange);
+        }
+
+        /* Game Cards */
+        .game-card {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 107, 0, 0.2);
+            overflow: hidden;
+            transition: all 0.4s;
+        }
+
+        .game-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-orange);
+            box-shadow: 0 15px 50px rgba(255, 107, 0, 0.4);
+        }
+
+        .game-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .game-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .game-fps {
+            font-size: 24px;
+            color: var(--primary-orange);
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .performance-badge {
+            padding: 6px 16px;
+            font-size: 13px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .badge-excellent {
+            background: linear-gradient(135deg, #00ff88 0%, #00d9ff 100%);
+            color: #000;
+        }
+
+        .badge-good {
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange-light) 100%);
+            color: #000;
+        }
+
+        .badge-medium {
+            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+            color: #000;
+        }
+
+        /* Config Cards */
+        .config-card {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 107, 0, 0.2);
+            transition: all 0.4s;
+        }
+
+        .config-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-orange);
+            box-shadow: 0 20px 60px rgba(255, 107, 0, 0.3);
+        }
+
+        .config-tier {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            color: var(--primary-orange);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .config-price {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 36px;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .config-specs {
+            list-style: none;
+        }
+
+        .config-specs li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 107, 0, 0.1);
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        .config-specs li strong {
+            color: var(--primary-orange);
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            border-top: 1px solid rgba(255, 107, 0, 0.3);
+        }
+
+        .footer-section h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            color: var(--primary-orange);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: var(--text-dark-gray);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 14px;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-orange);
+        }
+
+        /* Progress Bar */
+        .progress-bar-container {
+            background: rgba(0, 0, 0, 0.5);
+            height: 8px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-orange) 0%, var(--primary-orange-light) 100%);
+            transition: width 0.5s ease;
+            box-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
+        }
+
+        /* Testimonial Cards */
+        .testimonial-card {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 107, 0, 0.2);
+            padding: 30px;
+            margin: 0 10px;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-orange);
+        }
+
+        /* FAQ Accordion */
+        .faq-item {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 107, 0, 0.2);
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 107, 0, 0.1);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+            color: var(--primary-orange);
+            font-size: 20px;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 20px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 20px 20px 20px;
+        }
+
+        /* Stats Counter */
+        .stats-card {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 107, 0, 0.2);
+        }
+
+        .stats-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary-orange);
+        }
+
+        .stats-label {
+            font-size: 16px;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Tooltip Custom */
+        .tooltip-trigger {
+            position: relative;
+            cursor: help;
+            display: inline-block;
+        }
+
+        /* Gallery Grid */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 107, 0, 0.8);
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Parallax Effect */
+        .parallax-section {
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Video Modal */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Play Button */
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: #000;
+            transition: all 0.3s;
+            box-shadow: 0 0 30px rgba(255, 107, 0, 0.5);
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 50px rgba(255, 107, 0, 0.8);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 42px;
+            }
+
+            .hero-subtitle {
+                font-size: 24px;
+            }
+
+            .build-summary {
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="p-20px-tb">
+        <div class="container">
+            <nav class="d-flex f-items-center f-justify-between">
+                <div class="logo">X BUILDER</div>
+                <ul class="d-flex f-gap-20 xs-d-none" style="list-style: none;">
+                    <li><a href="#home" class="nav-link"><span class="iccon-home-1 m-5px-r"></span>Home</a></li>
+                    <li><a href="#builder" class="nav-link"><span class="iccon-settings-1 m-5px-r"></span>Montar PC</a></li>
+                    <li><a href="#prebuilt" class="nav-link"><span class="iccon-laptop-1 m-5px-r"></span>Pré-Montados</a></li>
+                    <li><a href="#performance" class="nav-link"><span class="iccon-speed-1 m-5px-r"></span>Performance</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="h-100vh d-flex f-items-center f-justify-center p-80px-t ps-relative">
+        <div class="container text-center wow fadeInUp">
+            <h1 class="hero-title m-15px-b animated bounceIn">X BUILDER</h1>
+            <p class="hero-subtitle m-20px-b animated fadeInUp delay-200">CONSTRUA SEU SETUP DO FUTURO</p>
+            <p class="fs-9 m-40px-b animated fadeInUp delay-400 w-max-600px c-center" style="color: #a0a0a0;">Tecnologia de ponta ao alcance de um clique</p>
+            <div class="d-flex f-gap-15 f-justify-center f-wrap animated fadeInUp delay-600">
+                <a href="#builder" class="btn-primary border-rd-4">Começar Agora</a>
+                <button data-modal-show="video-modal" class="btn-secondary border-rd-4 cursor-pointer d-inline-flex f-items-center f-gap-10">
+                    <span class="iccon-play-5"></span>
+                    Ver Como Funciona
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div data-modal="video-modal" class="modal-dialog" aria-modal="true" role="dialog" aria-hidden="true" tabindex="-1">
+        <div class="dialog-content">
+            <div class="dialog-backdrop" data-modal-hide></div>
+            <div class="dialog-inline w-max-800px">
+                <button class="dialog-close" aria-label="Fechar" data-modal-hide style="background: var(--primary-orange); color: #000; border-radius: 50%; width: 40px; height: 40px; border: none; font-size: 24px; cursor: pointer;"></button>
+                <div class="modal-popup border-rd-10 p-30px-all" style="background: rgba(0, 0, 0, 0.95);">
+                    <h3 class="fs-11 m-20px-b text-center" style="color: var(--primary-orange);">Como Funciona o X Builder</h3>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <section class="p-80px-tb" style="background: rgba(0, 0, 0, 0.7);">
+        <div class="container">
+            <div class="row gap-10">
+                <div class="c-xs-12 c-sm-6 c-md-3 wow zoomIn" data-wow-delay="0.1s">
+                    <div class="stats-card border-rd-8">
+                        <div class="stats-number counter" data-count="15000">0</div>
+                        <div class="stats-label m-10px-t">Builds Montadas</div>
+                    </div>
+                </div>
+                <div class="c-xs-12 c-sm-6 c-md-3 wow zoomIn" data-wow-delay="0.2s">
+                    <div class="stats-card border-rd-8">
+                        <div class="stats-number counter" data-count="12500">0</div>
+                        <div class="stats-label m-10px-t">Clientes Satisfeitos</div>
+                    </div>
+                </div>
+                <div class="c-xs-12 c-sm-6 c-md-3 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="stats-card border-rd-8">
+                        <div class="stats-number counter" data-count="98">0</div>
+                        <div class="stats-label m-10px-t">% Aprovação</div>
+                    </div>
+                </div>
+                <div class="c-xs-12 c-sm-6 c-md-3 wow zoomIn" data-wow-delay="0.4s">
+                    <div class="stats-card border-rd-8">
+                        <div class="stats-number counter" data-count="500">0</div>
+                        <div class="stats-label m-10px-t">Componentes Disponíveis</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Builder Section -->
+    <section id="builder" class="p-80px-tb" style="background: rgba(0, 0, 0, 0.5);">
+        <div class="container">
+            <h2 class="section-title text-center m-15px-b wow fadeInUp">Configurador de PC</h2>
+            <p class="fs-9 text-center m-60px-b wow fadeInUp" style="color: #808080;">Selecione cada componente e veja o preço total em tempo real</p>
+
+            <div class="row gap-10">
+                <!-- Components Section -->
+                <div class="c-xs-12 c-lg-8">
+                    <!-- Progress Bar -->
+                    <div class="m-30px-b wow fadeInDown">
+                        <div class="d-flex f-justify-between m-10px-b">
+                            <span style="color: var(--text-gray); font-weight: 600;">Progresso da Build</span>
+                            <span id="progressText" style="color: var(--primary-orange); font-weight: 700;">0/11 componentes</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div id="progressBar" class="progress-bar-fill" style="width: 0%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card border-rd-8 p-30px-all wow fadeInLeft">
+                        <!-- Processador -->
+                        <div class="m-30px-b">
+                            <div class="category-title m-12px-b">
+                                Processador
+                                <span class="tooltip-trigger" data-balloon-pos="right" data-balloon-length="large" aria-label="O cérebro do computador. Responsável por executar todas as instruções e cálculos. Intel e AMD são os principais fabricantes.">ⓘ</span>
+                            </div>
+                            <select class="component-select border-rd-4" id="cpu" onchange="updateBuild()">
+                                <option value="0" data-name="">Selecione um processador</option>
+                                <option value="899" data-name="Intel Core i3-12100F">Intel Core i3-12100F - R$ 899</option>
+                                <option value="1299" data-name="AMD Ryzen 5 5600">AMD Ryzen 5 5600 - R$ 1.299</option>
+                                <option value="1799" data-name="Intel Core i5-13400F">Intel Core i5-13400F - R$ 1.799</option>
+                                <option value="2299" data-name="AMD Ryzen 7 5700X">AMD Ryzen 7 5700X - R$ 2.299</option>
+                                <option value="2899" data-name="Intel Core i7-13700K">Intel Core i7-13700K - R$ 2.899</option>
+                                <option value="3499" data-name="AMD Ryzen 9 7900X">AMD Ryzen 9 7900X - R$ 3.499</option>
+                            </select>
+                        </div>
+
+                        <!-- Placa Mãe -->
+                        <div class="m-30px-b">
+                            <div class="category-title m-12px-b">
+                                Placa Mãe
+                                <span class="tooltip-trigger" data-balloon-pos="right" data-balloon-length="large" aria-label="Conecta todos os componentes do PC. Determina quais processadores, memórias e placas de expansão são compatíveis com seu sistema.">ⓘ</span>
+                            </div>
+                            <select class="component-select border-rd-4" id="motherboard" onchange="updateBuild()">
+                                <option value="0" data-name="">Selecione uma placa mãe</option>
+                                <option value="599" data-name="Asus Prime B450M">Asus Prime B450M - R$ 599</option>
+                                <option value="899" data-name="Gigabyte B550M DS3H">Gigabyte B550M DS3H - R$ 899</option>
+                                <option value="1299" data-name="MSI MAG B660M">MSI MAG B660M - R$ 1.299</option>
+                                <option value="1799" data-name="Asus ROG Strix B650">Asus ROG Strix B650 - R$ 1.799</option>
+                                <option value="2499" data-name="MSI MPG Z790">MSI MPG Z790 - R$ 2.499</option>
+                            </select>
+                        </div>
+
+                        <!-- Placa de Vídeo -->
+                        <div class="m-30px-b">
+                            <div class="category-title m-12px-b">
+                                Placa de Vídeo
+                                <span class="tooltip-trigger" data-balloon-pos="right" data-balloon-length="large" aria-label="Responsável pelo processamento gráfico. Essencial para jogos e aplicações que exigem alta performance visual.">ⓘ</span>
+                            </div>
+                            <select class="component-select border-rd-4" id="gpu" onchange="updateBuild()">
+                                <option value="0" data-name="">Selecione uma placa de vídeo</option>
+                                <option value="1499" data-name="GTX 1650 4GB">GTX 1650 4GB - R$ 1.499</option>
+                                <option value="2299" data-name="RX 6600 8GB">RX 6600 8GB - R$ 2.299</option>
+                                <option value="2899" data-name="RTX 3060 12GB">RTX 3060 12GB - R$ 2.899</option>
+                                <option value="3799" data-name="RX 6700 XT 12GB">RX 6700 XT 12GB - R$ 3.799</option>
+                                <option value="4999" data-name="RTX 4060 Ti 8GB">RTX 4060 Ti 8GB - R$ 4.999</option>
+                                <option value="6499" data-name="RTX 4070 12GB">RTX 4070 12GB - R$ 6.499</option>
+                                <option value="8999" data-name="RTX 4080 16GB">RTX 4080 16GB - R$ 8.999</option>
+                            </select>
+                        </div>
+
+                        <!-- Memória RAM -->
+                        <div class="m-30px-b">
+                            <div class="category-title m-12px-b">
+                                Memória RAM
+                                <span class="tooltip-trigger" data-balloon-pos="right" data-balloon-length="large" aria-label="Memória de acesso rápido que armazena dados temporários. Mais RAM permite executar mais programas simultaneamente e melhora o desempenho geral.">ⓘ</span>
+                            </div>
+                            <select class="component-select border-rd-4" id="ram" onchange="updateBuild()">
+                                <option value="0" data-name="">Selecione a memória RAM</option>
+                                <option value="299" data-name="8GB DDR4 3200MHz">8GB DDR4 3200MHz - R$ 299</option>
+                                <option value="499" data-name="16GB DDR4 3200MHz">16GB DDR4 3200MHz - R$ 499</option>
+                                <option value="799" data-name="32GB DDR4 3600MHz">32GB DDR4 3600MHz - R$ 799</option>
+                                <option value="1199" data-name="32GB DDR5 5600MHz">32GB DDR5 5600MHz - R$ 1.199</option>
+                            </select>
+                        </div>
+
+                        <!-- Armazenamento -->
+                        <div class="m-30px-b">
+                            <div class="category-title m-12px-b">
+                                Armazenamento
+                                <span class="tooltip-trigger" data-balloon-pos="right" data-balloon-length="large" aria-label="Onde ficam salvos seus arquivos, jogos e sistema operacional. SSDs NVMe são os mais rápidos, reduzindo tempo de carregamento.">ⓘ</span>
+                            </div>
+                            <select class="component-select border-rd-4" id="storage" onchange="updateBuild()">
+                                <option value="0" data-name="">Selecione o armazenamento</option>
+                                <option value="299" data-name="SSD 240GB SATA">SSD 240GB SATA - R$ 299</option>
+                                <option value="399" data-name="SSD 480GB SATA">SSD 480GB SATA - R$ 399</option>
+                                <option value="499" data-name="SSD 512GB NVMe">SSD 512GB NVMe - R$ 499</option>
+                                <option value="799" data-name="SSD 1TB NVMe">SSD 1TB NVMe - R$ 799</option>
+                                <option value="1299" data-name="SSD 2TB NVMe">SSD 2TB NVMe - R$ 1.299</option>
+                            </select>
+                        </div>
+
+                        <!-- Fonte -->
+                        <div class="m-30px-b">
+                            <div class="category-title m-12px-b">
+                                Fonte
+                                <span class="tooltip-trigger" data-balloon-pos="right" data-balloon-length="large" aria-label="Fornece energia para todos os componentes. Uma fonte de qualidade e com potência adequada é essencial para estabilidade do sistema.">ⓘ</span>
+                            </div>
+                            <select class="component-select border-rd-4" id="psu" onchange="updateBuild()">
+                                <option value="0" data-name="">Selecione a fonte</option>
+                                <option value="299" data-name="500W 80 Plus">500W 80 Plus - R$ 299</option>
+                                <option value="499" data-name="600W 80 Plus Bronze">600W 80 Plus Bronze - R$ 499</option>
+                                <option value="699" data-name="750W 80 Plus Gold">750W 80 Plus Gold - R$ 699</option>
+                                <option value="999" data-name="850W 80 Plus Gold">850W 80 Plus Gold - R$ 999</option>
+                            </select>
+                        </div>
+
+                        <!-- Gabinete -->
+                        <div class="m-30px-b">
+                            <div class="category-title m-12px-b">
+                                Gabinete
+                                <span class="tooltip-trigger" data-balloon-pos="right" data-balloon-length="large" aria-label="Carcaça que abriga todos os componentes. Um bom gabinete oferece ventilação adequada, organização de cabos e espaço para upgrades.">ⓘ</span>
+                            </div>
+                            <select class="component-select border-rd-4" id="case" onchange="updateBuild()">
+                                <option value="0" data-name="">Selecione o gabinete</option>
+                                <option value="199" data-name="Gabinete Básico">Gabinete Básico - R$ 199</option>
+                                <option value="399" data-name="Gabinete Mid Tower RGB">Gabinete Mid Tower RGB - R$ 399</option>
+                                <option value="699" data-name="Gabinete Gamer Premium">Gabinete Gamer Premium - R$ 699</option>
+                                <option value="1299" data-name="Gabinete Full Tower">Gabinete Full Tower - R$ 1.299</option>
+                            </select>
+                        </div>
+
+                        <!-- Cooler -->
+                        <div class="m-30px-b">
+                            <div class="category-title m-12px-b">
+                                Cooler CPU
+                                <span class="tooltip-trigger" data-balloon-pos="right" data-balloon-length="large" aria-label="Resfria o processador durante uso intenso. Coolers melhores permitem temperaturas mais baixas e melhor desempenho em tarefas pesadas.">ⓘ</span>
+                            </div>
+                            <select class="component-select border-rd-4" id="cooler" onchange="updateBuild()">
+                                <option value="0" data-name="">Selecione o cooler</option>
+                                <option value="99" data-name="Cooler Box (Padrão)">Cooler Box (Padrão) - R$ 99</option>
+                                <option value="199" data-name="Cooler Tower Air">Cooler Tower Air - R$ 199</option>
+                                <option value="399" data-name="Water Cooler 120mm">Water Cooler 120mm - R$ 399</option>
+                                <option value="699" data-name="Water Cooler 240mm">Water Cooler 240mm - R$ 699</option>
+                                <option value="999" data-name="Water Cooler 360mm RGB">Water Cooler 360mm RGB - R$ 999</option>
+                            </select>
+                        </div>
+
+                        <!-- Monitor -->
+                        <div class="m-30px-b">
+                            <div class="category-title m-12px-b">
+                                Monitor
+                                <span class="tooltip-trigger" data-balloon-pos="right" data-balloon-length="large" aria-label="Display onde você visualiza tudo. Taxa de atualização alta (144Hz+) proporciona imagens mais fluidas, ideal para jogos competitivos.">ⓘ</span>
+                            </div>
+                            <select class="component-select border-rd-4" id="monitor" onchange="updateBuild()">
+                                <option value="0" data-name="">Selecione o monitor</option>
+                                <option value="599" data-name="Monitor 24 75Hz Full HD">Monitor 24" 75Hz Full HD - R$ 599</option>
+                                <option value="899" data-name="Monitor 24 144Hz Full HD">Monitor 24" 144Hz Full HD - R$ 899</option>
+                                <option value="1499" data-name="Monitor 27 165Hz QHD">Monitor 27" 165Hz QHD - R$ 1.499</option>
+                                <option value="2299" data-name="Monitor 27 240Hz QHD">Monitor 27" 240Hz QHD - R$ 2.299</option>
+                                <option value="3499" data-name="Monitor 32 4K 144Hz">Monitor 32" 4K 144Hz - R$ 3.499</option>
+                            </select>
+                        </div>
+
+                        <!-- Teclado -->
+                        <div class="m-30px-b">
+                            <div class="category-title m-12px-b">
+                                Teclado
+                                <span class="tooltip-trigger" data-balloon-pos="right" data-balloon-length="large" aria-label="Principal periférico de entrada. Teclados mecânicos oferecem maior durabilidade, precisão e feedback tátil superior ao digitar e jogar.">ⓘ</span>
+                            </div>
+                            <select class="component-select border-rd-4" id="keyboard" onchange="updateBuild()">
+                                <option value="0" data-name="">Selecione o teclado</option>
+                                <option value="99" data-name="Teclado Membrana">Teclado Membrana - R$ 99</option>
+                                <option value="299" data-name="Teclado Mecânico RGB">Teclado Mecânico RGB - R$ 299</option>
+                                <option value="599" data-name="Teclado Mecânico Premium">Teclado Mecânico Premium - R$ 599</option>
+                                <option value="999" data-name="Teclado Mecânico 60% Custom">Teclado Mecânico 60% Custom - R$ 999</option>
+                            </select>
+                        </div>
+
+                        <!-- Mouse -->
+                        <div class="m-30px-b">
+                            <div class="category-title m-12px-b">
+                                Mouse
+                                <span class="tooltip-trigger" data-balloon-pos="right" data-balloon-length="large" aria-label="Dispositivo de precisão para navegação e jogos. DPI alto permite ajustar a sensibilidade, e modelos wireless oferecem mais liberdade de movimento.">ⓘ</span>
+                            </div>
+                            <select class="component-select border-rd-4" id="mouse" onchange="updateBuild()">
+                                <option value="0" data-name="">Selecione o mouse</option>
+                                <option value="79" data-name="Mouse Óptico">Mouse Óptico - R$ 79</option>
+                                <option value="199" data-name="Mouse Gamer 12000 DPI">Mouse Gamer 12000 DPI - R$ 199</option>
+                                <option value="399" data-name="Mouse Gamer Pro Wireless">Mouse Gamer Pro Wireless - R$ 399</option>
+                                <option value="699" data-name="Mouse Gamer Ultra Leve">Mouse Gamer Ultra Leve - R$ 699</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summary -->
+                <div class="c-xs-12 c-lg-4">
+                    <div class="build-summary border-rd-8 p-30px-all wow fadeInRight">
+                        <h3 class="category-title text-center m-20px-b" style="font-size: 24px;">Resumo da Build</h3>
+                        <div id="summaryList"></div>
+                        <div class="summary-total m-20px-t p-20px-t" style="border-top: 2px solid rgba(255, 107, 0, 0.3);">
+                            <span class="summary-total-label">TOTAL:</span>
+                            <span class="summary-total-price" id="totalPrice">R$ 0</span>
+                        </div>
+                        <div class="m-25px-t">
+                            <button class="btn-primary w-100 border-rd-4 m-12px-b cursor-pointer" onclick="addToCart()"><span class="iccon-cart-1 m-5px-r"></span>Adicionar ao Carrinho</button>
+                            <button class="btn-secondary w-100 border-rd-4 m-12px-b cursor-pointer" onclick="contactSpecialist()"><span class="iccon-whatsapp-1 m-5px-r"></span>Falar com Especialista</button>
+                            <button class="btn-secondary w-100 border-rd-4 cursor-pointer" onclick="testPerformance()"><span class="iccon-speed-1 m-5px-r"></span>Testar Performance</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Test -->
+    <section id="performance" class="p-80px-tb" style="background: rgba(0, 0, 0, 0.5);">
+        <div class="container">
+            <h2 class="section-title text-center m-15px-b wow fadeInUp">Teste de Performance</h2>
+            <p class="fs-9 text-center m-60px-b wow fadeInUp" style="color: #808080;">Veja como sua build se comporta nos jogos mais exigentes</p>
+
+            <div class="row gap-10">
+                <div class="c-xs-12 c-sm-6 c-md-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="game-card border-rd-8 cursor-pointer">
+                        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202008/0416/6Bo40lnWU0BhgrOUm7Cb6by3.png" alt="Cyberpunk 2077" class="game-image">
+                        <div class="p-20px-all text-center">
+                            <div class="game-name m-12px-b">Cyberpunk 2077</div>
+                            <div class="game-fps m-10px-b" id="fps-cyber">-- FPS</div>
+                            <span class="performance-badge badge-good border-rd-20" id="badge-cyber">Selecione as peças</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="c-xs-12 c-sm-6 c-md-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="game-card border-rd-8 cursor-pointer">
+                        <img src="https://preview.redd.it/y1udzivcql471.png?auto=webp&s=50bdf059cca89b8bb0a37fcdaa2802b1519df2cb" alt="Elden Ring" class="game-image">
+                        <div class="p-20px-all text-center">
+                            <div class="game-name m-12px-b">Elden Ring</div>
+                            <div class="game-fps m-10px-b" id="fps-elden">-- FPS</div>
+                            <span class="performance-badge badge-good border-rd-20" id="badge-elden">Selecione as peças</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="c-xs-12 c-sm-6 c-md-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="game-card border-rd-8 cursor-pointer">
+                        <img src="https://upload.wikimedia.org/wikipedia/pt/thumb/d/dc/Capa_de_Forza_Horizon_5.jpg/330px-Capa_de_Forza_Horizon_5.jpg" alt="Forza Horizon 5" class="game-image">
+                        <div class="p-20px-all text-center">
+                            <div class="game-name m-12px-b">Forza Horizon 5</div>
+                            <div class="game-fps m-10px-b" id="fps-forza">-- FPS</div>
+                            <span class="performance-badge badge-good border-rd-20" id="badge-forza">Selecione as peças</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="c-xs-12 c-sm-6 c-md-4 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="game-card border-rd-8 cursor-pointer">
+                        <img src="https://upload.wikimedia.org/wikipedia/pt/thumb/6/65/Call_of_Duty_Black_Ops_6.png/250px-Call_of_Duty_Black_Ops_6.png" alt="Call of Duty Black Ops 6" class="game-image">
+                        <div class="p-20px-all text-center">
+                            <div class="game-name m-12px-b">Call of Duty Black Ops 6</div>
+                            <div class="game-fps m-10px-b" id="fps-cod">-- FPS</div>
+                            <span class="performance-badge badge-good border-rd-20" id="badge-cod">Selecione as peças</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="c-xs-12 c-sm-6 c-md-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="game-card border-rd-8 cursor-pointer">
+                        <img src="https://upload.wikimedia.org/wikipedia/pt/thumb/5/5a/Hogwarts_Legacy_capa.jpeg/330px-Hogwarts_Legacy_capa.jpeg" alt="Hogwarts Legacy" class="game-image">
+                        <div class="p-20px-all text-center">
+                            <div class="game-name m-12px-b">Hogwarts Legacy</div>
+                            <div class="game-fps m-10px-b" id="fps-hogwarts">-- FPS</div>
+                            <span class="performance-badge badge-good border-rd-20" id="badge-hogwarts">Selecione as peças</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="c-xs-12 c-sm-6 c-md-4 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="game-card border-rd-8 cursor-pointer">
+                        <img src="https://upload.wikimedia.org/wikipedia/pt/thumb/6/64/Spider-Man_2_2023_capa.jpg/330px-Spider-Man_2_2023_capa.jpg" alt="Spider-Man 2" class="game-image">
+                        <div class="p-20px-all text-center">
+                            <div class="game-name m-12px-b">Spider-Man 2</div>
+                            <div class="game-fps m-10px-b" id="fps-spiderman">-- FPS</div>
+                            <span class="performance-badge badge-good border-rd-20" id="badge-spiderman">Selecione as peças</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-Built Configs -->
+    <section id="prebuilt" class="p-80px-tb" style="background: rgba(0, 0, 0, 0.7);">
+        <div class="container">
+            <h2 class="section-title text-center m-15px-b wow fadeInUp">PCs Pré-Montados</h2>
+            <p class="fs-9 text-center m-60px-b wow fadeInUp" style="color: #808080;">Configurações prontas para diferentes orçamentos e necessidades</p>
+
+            <div class="row gap-10">
+                <div class="c-xs-12 c-sm-6 c-md-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="config-card border-rd-8 p-35px-all">
+                        <div class="config-tier m-15px-b">ENTRY LEVEL</div>
+                        <div class="config-price m-20px-b">R$ 4.499</div>
+                        <ul class="config-specs m-25px-b">
+                            <li><strong>CPU:</strong> Intel Core i3-12100F</li>
+                            <li><strong>GPU:</strong> GTX 1650 4GB</li>
+                            <li><strong>RAM:</strong> 16GB DDR4</li>
+                            <li><strong>SSD:</strong> 480GB SATA</li>
+                            <li><strong>Fonte:</strong> 500W 80 Plus</li>
+                            <li><strong>Monitor:</strong> 24" 75Hz</li>
+                        </ul>
+                        <button class="btn-primary w-100 border-rd-4 cursor-pointer" onclick="selectPrebuilt('entry')">Escolher Setup</button>
+                    </div>
+                </div>
+
+                <div class="c-xs-12 c-sm-6 c-md-3 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="config-card border-rd-8 p-35px-all">
+                        <div class="config-tier m-15px-b">MID TIER</div>
+                        <div class="config-price m-20px-b">R$ 8.999</div>
+                        <ul class="config-specs m-25px-b">
+                            <li><strong>CPU:</strong> AMD Ryzen 5 5600</li>
+                            <li><strong>GPU:</strong> RTX 3060 12GB</li>
+                            <li><strong>RAM:</strong> 16GB DDR4 3600MHz</li>
+                            <li><strong>SSD:</strong> 1TB NVMe</li>
+                            <li><strong>Fonte:</strong> 750W 80 Plus Gold</li>
+                            <li><strong>Monitor:</strong> 27" 165Hz QHD</li>
+                        </ul>
+                        <button class="btn-primary w-100 border-rd-4 cursor-pointer" onclick="selectPrebuilt('mid')">Escolher Setup</button>
+                    </div>
+                </div>
+
+                <div class="c-xs-12 c-sm-6 c-md-3 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="config-card border-rd-8 p-35px-all">
+                        <div class="config-tier m-15px-b">HIGH END</div>
+                        <div class="config-price m-20px-b">R$ 16.999</div>
+                        <ul class="config-specs m-25px-b">
+                            <li><strong>CPU:</strong> Intel Core i7-13700K</li>
+                            <li><strong>GPU:</strong> RTX 4070 12GB</li>
+                            <li><strong>RAM:</strong> 32GB DDR5 5600MHz</li>
+                            <li><strong>SSD:</strong> 2TB NVMe</li>
+                            <li><strong>Fonte:</strong> 850W 80 Plus Gold</li>
+                            <li><strong>Monitor:</strong> 27" 240Hz QHD</li>
+                        </ul>
+                        <button class="btn-primary w-100 border-rd-4 cursor-pointer" onclick="selectPrebuilt('high')">Escolher Setup</button>
+                    </div>
+                </div>
+
+                <div class="c-xs-12 c-sm-6 c-md-3 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="config-card border-rd-8 p-35px-all">
+                        <div class="config-tier m-15px-b">ULTIMATE</div>
+                        <div class="config-price m-20px-b">R$ 26.999</div>
+                        <ul class="config-specs m-25px-b">
+                            <li><strong>CPU:</strong> AMD Ryzen 9 7900X</li>
+                            <li><strong>GPU:</strong> RTX 4080 16GB</li>
+                            <li><strong>RAM:</strong> 32GB DDR5 5600MHz</li>
+                            <li><strong>SSD:</strong> 2TB NVMe Gen4</li>
+                            <li><strong>Fonte:</strong> 850W 80 Plus Gold</li>
+                            <li><strong>Monitor:</strong> 32" 4K 144Hz</li>
+                        </ul>
+                        <button class="btn-primary w-100 border-rd-4 cursor-pointer" onclick="selectPrebuilt('ultimate')">Escolher Setup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Carousel -->
+    <section class="p-80px-tb" style="background: rgba(0, 0, 0, 0.5);">
+        <div class="container">
+            <h2 class="section-title text-center m-15px-b wow fadeInUp">O Que Nossos Clientes Dizem</h2>
+            <p class="fs-9 text-center m-60px-b wow fadeInUp" style="color: #808080;">Milhares de gamers e profissionais confiam no X Builder</p>
+
+            <div class="slide__viewport wow fadeInUp">
+                <div class="slide__row cursor-grab">
+                    <div class="slide__item c-xs-12 c-md-4">
+                        <div class="testimonial-card border-rd-10">
+                            <div class="d-flex f-items-center f-gap-15 m-20px-b">
+                                <img src="https://i.pravatar.cc/150?img=12" alt="Cliente 1" class="testimonial-avatar">
+                                <div>
+                                    <div style="font-weight: 700; color: #fff;">Ricardo Silva</div>
+                                    <div style="font-size: 14px; color: var(--text-gray);">Gamer Profissional</div>
+                                </div>
+                            </div>
+                            <p style="color: var(--text-gray); line-height: 1.6;">"Montei meu PC gamer com o X Builder e o resultado superou todas as expectativas. Roda tudo no ultra a 144fps!"</p>
+                            <div class="m-15px-t" style="color: var(--primary-orange);"><span class="iccon-star-1"></span><span class="iccon-star-1"></span><span class="iccon-star-1"></span><span class="iccon-star-1"></span><span class="iccon-star-1"></span></div>
+                        </div>
+                    </div>
+                    <div class="slide__item c-xs-12 c-md-4">
+                        <div class="testimonial-card border-rd-10">
+                            <div class="d-flex f-items-center f-gap-15 m-20px-b">
+                                <img src="https://i.pravatar.cc/150?img=45" alt="Cliente 2" class="testimonial-avatar">
+                                <div>
+                                    <div style="font-weight: 700; color: #fff;">Mariana Costa</div>
+                                    <div style="font-size: 14px; color: var(--text-gray);">Designer Gráfica</div>
+                                </div>
+                            </div>
+                            <p style="color: var(--text-gray); line-height: 1.6;">"Perfeito para trabalhar com edição de vídeo e 3D. O atendimento foi excepcional e a entrega super rápida!"</p>
+                            <div class="m-15px-t" style="color: var(--primary-orange);"><span class="iccon-star-1"></span><span class="iccon-star-1"></span><span class="iccon-star-1"></span><span class="iccon-star-1"></span><span class="iccon-star-1"></span></div>
+                        </div>
+                    </div>
+                    <div class="slide__item c-xs-12 c-md-4">
+                        <div class="testimonial-card border-rd-10">
+                            <div class="d-flex f-items-center f-gap-15 m-20px-b">
+                                <img src="https://i.pravatar.cc/150?img=33" alt="Cliente 3" class="testimonial-avatar">
+                                <div>
+                                    <div style="font-weight: 700; color: #fff;">Pedro Santos</div>
+                                    <div style="font-size: 14px; color: var(--text-gray);">Streamer</div>
+                                </div>
+                            </div>
+                            <p style="color: var(--text-gray); line-height: 1.6;">"Consigo fazer stream em 1080p 60fps sem nenhum problema. Setup top e preço justo. Recomendo demais!"</p>
+                            <div class="m-15px-t" style="color: var(--primary-orange);"><span class="iccon-star-1"></span><span class="iccon-star-1"></span><span class="iccon-star-1"></span><span class="iccon-star-1"></span><span class="iccon-star-1"></span></div>
+                        </div>
+                    </div>
+                    <div class="slide__item c-xs-12 c-md-4">
+                        <div class="testimonial-card border-rd-10">
+                            <div class="d-flex f-items-center f-gap-15 m-20px-b">
+                                <img src="https://i.pravatar.cc/150?img=27" alt="Cliente 4" class="testimonial-avatar">
+                                <div>
+                                    <div style="font-weight: 700; color: #fff;">Ana Oliveira</div>
+                                    <div style="font-size: 14px; color: var(--text-gray);">Desenvolvedora</div>
+                                </div>
+                            </div>
+                            <p style="color: var(--text-gray); line-height: 1.6;">"Ideal para programação e múltiplas VMs rodando simultaneamente. Build bem equilibrada e dentro do orçamento!"</p>
+                            <div class="m-15px-t" style="color: var(--primary-orange);"><span class="iccon-star-1"></span><span class="iccon-star-1"></span><span class="iccon-star-1"></span><span class="iccon-star-1"></span><span class="iccon-star-1"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery with VenoBox -->
+    <section class="p-80px-tb" style="background: rgba(0, 0, 0, 0.7);">
+        <div class="container">
+            <h2 class="section-title text-center m-15px-b wow fadeInUp">Galeria de Setups</h2>
+            <p class="fs-9 text-center m-60px-b wow fadeInUp" style="color: #808080;">Veja alguns dos PCs que montamos para nossos clientes</p>
+
+            <div class="row gap-10">
+                <div class="c-xs-12 c-sm-6 c-md-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="gallery-item border-rd-8">
+                        <a href="https://s2-techtudo.glbimg.com/gxiMeUSf3OjEeJTcui-g7cGvZ50=/0x0:3876x2579/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2022/g/v/z6kOIMTGqdKvsBDmfoBg/cadeiragamer.jpeg" data-gall="gallery" class="venobox">
+                            <img src="https://s2-techtudo.glbimg.com/gxiMeUSf3OjEeJTcui-g7cGvZ50=/0x0:3876x2579/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2022/g/v/z6kOIMTGqdKvsBDmfoBg/cadeiragamer.jpeg" alt="Setup Gamer 1" class="w-100 border-rd-8">
+                            <div class="gallery-overlay border-rd-8"><span class="iccon-search-1"></span> Ver Mais</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="c-xs-12 c-sm-6 c-md-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="gallery-item border-rd-8">
+                        <a href="https://preview.redd.it/my-wall-mounted-pc-setup-v0-z5ea5i5vjjvc1.jpeg?width=1080&crop=smart&auto=webp&s=ba7b42c1e6910895dacef6f282aa20caa3717650" data-gall="gallery" class="venobox">
+                            <img src="https://preview.redd.it/my-wall-mounted-pc-setup-v0-z5ea5i5vjjvc1.jpeg?width=1080&crop=smart&auto=webp&s=ba7b42c1e6910895dacef6f282aa20caa3717650" alt="Setup Wall Mounted" class="w-100 border-rd-8">
+                            <div class="gallery-overlay border-rd-8"><span class="iccon-search-1"></span> Ver Mais</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="c-xs-12 c-sm-6 c-md-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="gallery-item border-rd-8">
+                        <a href="https://preview.redd.it/djj833r7x7h71.jpg?width=1080&crop=smart&auto=webp&s=27747be603e6ef0009a525beb4e41efc912c42a3" data-gall="gallery" class="venobox">
+                            <img src="https://preview.redd.it/djj833r7x7h71.jpg?width=1080&crop=smart&auto=webp&s=27747be603e6ef0009a525beb4e41efc912c42a3" alt="Setup Gaming Desk" class="w-100 border-rd-8">
+                            <div class="gallery-overlay border-rd-8"><span class="iccon-search-1"></span> Ver Mais</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="c-xs-12 c-sm-6 c-md-4 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="gallery-item border-rd-8">
+                        <a href="https://external-preview.redd.it/Q1oRn4-_oX2cA_Xihn8mPWpP_aTRCPQAB9UyAUEXUjI.jpg?width=1080&crop=smart&auto=webp&s=bb211a9acd2979aedc6ab9afd739f5f7b8c91591" data-gall="gallery" class="venobox">
+                            <img src="https://external-preview.redd.it/Q1oRn4-_oX2cA_Xihn8mPWpP_aTRCPQAB9UyAUEXUjI.jpg?width=1080&crop=smart&auto=webp&s=bb211a9acd2979aedc6ab9afd739f5f7b8c91591" alt="Setup RGB" class="w-100 border-rd-8">
+                            <div class="gallery-overlay border-rd-8"><span class="iccon-search-1"></span> Ver Mais</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="c-xs-12 c-sm-6 c-md-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="gallery-item border-rd-8">
+                        <a href="https://preview.redd.it/just-finished-a-wall-mounted-pc-to-go-with-desk-i-built-2-v0-16ke9ivamwr81.jpg?width=1080&crop=smart&auto=webp&s=e51e4849bfcebc50e8380344fab5978ea3670a08" data-gall="gallery" class="venobox">
+                            <img src="https://preview.redd.it/just-finished-a-wall-mounted-pc-to-go-with-desk-i-built-2-v0-16ke9ivamwr81.jpg?width=1080&crop=smart&auto=webp&s=e51e4849bfcebc50e8380344fab5978ea3670a08" alt="Setup Custom Build" class="w-100 border-rd-8">
+                            <div class="gallery-overlay border-rd-8"><span class="iccon-search-1"></span> Ver Mais</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="c-xs-12 c-sm-6 c-md-4 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="gallery-item border-rd-8">
+                        <a href="https://setupgamer.com.br/wp-content/uploads/2020/12/geforce-rtx-broadcasting-1024x576.jpg.webp" data-gall="gallery" class="venobox">
+                            <img src="https://setupgamer.com.br/wp-content/uploads/2020/12/geforce-rtx-broadcasting-1024x576.jpg.webp" alt="Setup Streamer" class="w-100 border-rd-8">
+                            <div class="gallery-overlay border-rd-8"><span class="iccon-search-1"></span> Ver Mais</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="p-80px-tb" style="background: rgba(0, 0, 0, 0.5);">
+        <div class="container">
+            <h2 class="section-title text-center m-15px-b wow fadeInUp">Perguntas Frequentes</h2>
+            <p class="fs-9 text-center m-60px-b wow fadeInUp" style="color: #808080;">Tire suas dúvidas sobre montagem de PC</p>
+
+            <div class="w-max-800px c-center">
+                <div class="faq-item border-rd-8 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Quanto tempo demora para montar e entregar o PC?</span>
+                        <span class="faq-icon iccon-bb-chevron-down"></span>
+                    </div>
+                    <div class="faq-answer" style="color: var(--text-gray);">
+                        O processo de montagem leva de 2 a 5 dias úteis após a confirmação do pagamento. A entrega varia conforme sua localização, geralmente entre 3 a 10 dias úteis para todo o Brasil.
+                    </div>
+                </div>
+
+                <div class="faq-item border-rd-8 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>O PC vem com garantia?</span>
+                        <span class="faq-icon iccon-bb-chevron-down"></span>
+                    </div>
+                    <div class="faq-answer" style="color: var(--text-gray);">
+                        Sim! Todos os componentes possuem garantia individual dos fabricantes (geralmente de 1 a 3 anos). Além disso, oferecemos 90 dias de garantia estendida para a montagem realizada por nossa equipe.
+                    </div>
+                </div>
+
+                <div class="faq-item border-rd-8 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Posso fazer upgrade futuramente?</span>
+                        <span class="faq-icon iccon-bb-chevron-down"></span>
+                    </div>
+                    <div class="faq-answer" style="color: var(--text-gray);">
+                        Com certeza! Todas as nossas builds são projetadas pensando em upgrades futuros. Você pode adicionar mais RAM, trocar a GPU, adicionar armazenamento e muito mais. Nossa equipe também pode ajudar com upgrades posteriormente.
+                    </div>
+                </div>
+
+                <div class="faq-item border-rd-8 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Vocês instalam Windows e programas?</span>
+                        <span class="faq-icon iccon-bb-chevron-down"></span>
+                    </div>
+                    <div class="faq-answer" style="color: var(--text-gray);">
+                        Sim! Oferecemos serviço de instalação do Windows 11 (licença não inclusa), drivers atualizados e programas básicos. Também podemos instalar programas específicos mediante solicitação.
+                    </div>
+                </div>
+
+                <div class="faq-item border-rd-8 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Como funciona o teste de performance?</span>
+                        <span class="faq-icon iccon-bb-chevron-down"></span>
+                    </div>
+                    <div class="faq-answer" style="color: var(--text-gray);">
+                        Nossa calculadora de performance usa dados reais de benchmarks e testes em jogos atuais. Os FPS estimados são baseados em configurações altas/ultra em 1080p. Para 1440p ou 4K, os valores podem variar.
+                    </div>
+                </div>
+
+                <div class="faq-item border-rd-8 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Posso parcelar a compra?</span>
+                        <span class="faq-icon iccon-bb-chevron-down"></span>
+                    </div>
+                    <div class="faq-answer" style="color: var(--text-gray);">
+                        Sim! Aceitamos cartão de crédito em até 12x sem juros (consulte valores mínimos) e PIX com 5% de desconto. Também trabalhamos com financiamento em até 24x.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="p-60px-t p-30px-b">
+        <div class="container">
+            <div class="row gap-10 m-40px-b">
+                <div class="c-xs-12 c-sm-6 c-md-3 footer-section">
+                    <h4 class="m-20px-b"><span class="iccon-laptop-1 m-5px-r"></span>Produtos</h4>
+                    <ul>
+                        <li class="m-10px-b"><a href="#">Processadores</a></li>
+                        <li class="m-10px-b"><a href="#">Placas de Vídeo</a></li>
+                        <li class="m-10px-b"><a href="#">Memórias</a></li>
+                        <li class="m-10px-b"><a href="#">Armazenamento</a></li>
+                        <li class="m-10px-b"><a href="#">Periféricos</a></li>
+                    </ul>
+                </div>
+
+                <div class="c-xs-12 c-sm-6 c-md-3 footer-section">
+                    <h4 class="m-20px-b"><span class="iccon-settings-1 m-5px-r"></span>Serviços</h4>
+                    <ul>
+                        <li class="m-10px-b"><a href="#">Montagem</a></li>
+                        <li class="m-10px-b"><a href="#">Consultoria</a></li>
+                        <li class="m-10px-b"><a href="#">Upgrade</a></li>
+                        <li class="m-10px-b"><a href="#">Garantia</a></li>
+                        <li class="m-10px-b"><a href="#">Suporte</a></li>
+                    </ul>
+                </div>
+
+                <div class="c-xs-12 c-sm-6 c-md-3 footer-section">
+                    <h4 class="m-20px-b"><span class="iccon-user-1 m-5px-r"></span>Empresa</h4>
+                    <ul>
+                        <li class="m-10px-b"><a href="#">Sobre Nós</a></li>
+                        <li class="m-10px-b"><a href="#">Trabalhe Conosco</a></li>
+                        <li class="m-10px-b"><a href="#">Blog</a></li>
+                        <li class="m-10px-b"><a href="#">Parcerias</a></li>
+                        <li class="m-10px-b"><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="c-xs-12 c-sm-6 c-md-3 footer-section">
+                    <h4 class="m-20px-b"><span class="iccon-question-1 m-5px-r"></span>Suporte</h4>
+                    <ul>
+                        <li class="m-10px-b"><a href="#">FAQ</a></li>
+                        <li class="m-10px-b"><a href="#">Política de Troca</a></li>
+                        <li class="m-10px-b"><a href="#">Envios</a></li>
+                        <li class="m-10px-b"><a href="#">Rastreamento</a></li>
+                        <li class="m-10px-b"><a href="#">Formas de Pagamento</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center p-30px-t" style="border-top: 1px solid rgba(255, 107, 0, 0.2); color: #606060; font-size: 13px;">
+                <p>&copy; 2026 X Builder. Todos os direitos reservados.</p>
+                <p class="m-10px-t">Monte o PC dos seus sonhos com os melhores componentes do mercado.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Squeleton JavaScript Footer -->
+    <script src="https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js"></script>
+
+    <script>
+        let currentBuild = {
+            cpu: { name: '', price: 0 },
+            motherboard: { name: '', price: 0 },
+            gpu: { name: '', price: 0 },
+            ram: { name: '', price: 0 },
+            storage: { name: '', price: 0 },
+            psu: { name: '', price: 0 },
+            case: { name: '', price: 0 },
+            cooler: { name: '', price: 0 },
+            monitor: { name: '', price: 0 },
+            keyboard: { name: '', price: 0 },
+            mouse: { name: '', price: 0 }
+        };
+
+        function updateBuild() {
+            const components = ['cpu', 'motherboard', 'gpu', 'ram', 'storage', 'psu', 'case', 'cooler', 'monitor', 'keyboard', 'mouse'];
+
+            components.forEach(comp => {
+                const select = document.getElementById(comp);
+                const option = select.options[select.selectedIndex];
+                currentBuild[comp] = {
+                    name: option.dataset.name || '',
+                    price: parseInt(option.value) || 0
+                };
+            });
+
+            updateSummary();
+            calculatePerformance();
+            updateProgressBar();
+        }
+
+        function updateProgressBar() {
+            const components = ['cpu', 'motherboard', 'gpu', 'ram', 'storage', 'psu', 'case', 'cooler', 'monitor', 'keyboard', 'mouse'];
+            let selectedCount = 0;
+
+            components.forEach(comp => {
+                if (currentBuild[comp].price > 0) {
+                    selectedCount++;
+                }
+            });
+
+            const percentage = (selectedCount / components.length) * 100;
+            document.getElementById('progressBar').style.width = percentage + '%';
+            document.getElementById('progressText').textContent = selectedCount + '/11 componentes';
+        }
+
+        function updateSummary() {
+            const summaryList = document.getElementById('summaryList');
+            let html = '';
+            let total = 0;
+
+            const labels = {
+                cpu: 'Processador',
+                motherboard: 'Placa Mãe',
+                gpu: 'Placa de Vídeo',
+                ram: 'Memória RAM',
+                storage: 'Armazenamento',
+                psu: 'Fonte',
+                case: 'Gabinete',
+                cooler: 'Cooler',
+                monitor: 'Monitor',
+                keyboard: 'Teclado',
+                mouse: 'Mouse'
+            };
+
+            for (let key in currentBuild) {
+                if (currentBuild[key].price > 0) {
+                    html += `
+                        <div class="summary-item">
+                            <span class="summary-item-name">${labels[key]}</span>
+                            <span class="summary-item-price">R$ ${currentBuild[key].price}</span>
+                        </div>
+                    `;
+                    total += currentBuild[key].price;
+                }
+            }
+
+            summaryList.innerHTML = html;
+            document.getElementById('totalPrice').textContent = `R$ ${total.toLocaleString('pt-BR')}`;
+        }
+
+        function calculatePerformance() {
+            const gpuPrice = currentBuild.gpu.price;
+            const cpuPrice = currentBuild.cpu.price;
+
+            if (gpuPrice === 0 || cpuPrice === 0) {
+                return;
+            }
+
+            const powerScore = (gpuPrice * 0.7) + (cpuPrice * 0.3);
+
+            const games = [
+                { id: 'cyber', baseFps: 30 },
+                { id: 'elden', baseFps: 45 },
+                { id: 'forza', baseFps: 60 },
+                { id: 'cod', baseFps: 80 },
+                { id: 'hogwarts', baseFps: 40 },
+                { id: 'spiderman', baseFps: 55 }
+            ];
+
+            games.forEach(game => {
+                const fps = Math.round(game.baseFps + (powerScore / 100));
+                document.getElementById(`fps-${game.id}`).textContent = `${fps} FPS`;
+
+                const badge = document.getElementById(`badge-${game.id}`);
+                if (fps >= 90) {
+                    badge.textContent = 'Excelente';
+                    badge.className = 'performance-badge badge-excellent border-rd-20';
+                } else if (fps >= 60) {
+                    badge.textContent = 'Ótimo';
+                    badge.className = 'performance-badge badge-good border-rd-20';
+                } else {
+                    badge.textContent = 'Jogável';
+                    badge.className = 'performance-badge badge-medium border-rd-20';
+                }
+            });
+        }
+
+        function addToCart() {
+            if (getTotalPrice() === 0) {
+                Toastify({
+                    text: "⚠️ Selecione pelo menos alguns componentes antes de adicionar ao carrinho!",
+                    duration: 3000,
+                    gravity: "top",
+                    position: "right",
+                    style: {
+                        background: "linear-gradient(135deg, #ff6b00 0%, #ffa500 100%)",
+                        borderRadius: "8px",
+                        fontWeight: "600"
+                    }
+                }).showToast();
+                return;
+            }
+            Toastify({
+                text: "✅ Build adicionada ao carrinho! Total: R$ " + getTotalPrice().toLocaleString('pt-BR'),
+                duration: 4000,
+                gravity: "top",
+                position: "right",
+                style: {
+                    background: "linear-gradient(135deg, #00ff88 0%, #00d9ff 100%)",
+                    borderRadius: "8px",
+                    fontWeight: "600",
+                    color: "#000"
+                }
+            }).showToast();
+        }
+
+        function contactSpecialist() {
+            if (getTotalPrice() === 0) {
+                Toastify({
+                    text: "💬 Nossos especialistas estão prontos para te atender! Entre em contato pelo WhatsApp: (11) 9999-9999",
+                    duration: 5000,
+                    gravity: "top",
+                    position: "right",
+                    style: {
+                        background: "linear-gradient(135deg, #ff6b00 0%, #ffa500 100%)",
+                        borderRadius: "8px",
+                        fontWeight: "600"
+                    }
+                }).showToast();
+            } else {
+                Toastify({
+                    text: "💬 Em breve entraremos em contato! Sua build: R$ " + getTotalPrice().toLocaleString('pt-BR'),
+                    duration: 5000,
+                    gravity: "top",
+                    position: "right",
+                    style: {
+                        background: "linear-gradient(135deg, #ff6b00 0%, #ffa500 100%)",
+                        borderRadius: "8px",
+                        fontWeight: "600"
+                    }
+                }).showToast();
+            }
+        }
+
+        function testPerformance() {
+            if (currentBuild.gpu.price === 0 || currentBuild.cpu.price === 0) {
+                Toastify({
+                    text: "⚠️ Selecione pelo menos um Processador e uma Placa de Vídeo para testar a performance!",
+                    duration: 3000,
+                    gravity: "top",
+                    position: "right",
+                    style: {
+                        background: "linear-gradient(135deg, #ff6b00 0%, #ffa500 100%)",
+                        borderRadius: "8px",
+                        fontWeight: "600"
+                    }
+                }).showToast();
+                return;
+            }
+
+            document.getElementById('performance').scrollIntoView({ behavior: 'smooth' });
+
+            setTimeout(() => {
+                Toastify({
+                    text: "✅ Teste de performance calculado! Confira os resultados abaixo.",
+                    duration: 3000,
+                    gravity: "top",
+                    position: "right",
+                    style: {
+                        background: "linear-gradient(135deg, #00ff88 0%, #00d9ff 100%)",
+                        borderRadius: "8px",
+                        fontWeight: "600",
+                        color: "#000"
+                    }
+                }).showToast();
+            }, 500);
+        }
+
+        function getTotalPrice() {
+            let total = 0;
+            for (let key in currentBuild) {
+                total += currentBuild[key].price;
+            }
+            return total;
+        }
+
+        function selectPrebuilt(tier) {
+            Toastify({
+                text: "✅ Setup " + tier.toUpperCase() + " selecionado! Redirecionando...",
+                duration: 3000,
+                gravity: "top",
+                position: "right",
+                style: {
+                    background: "linear-gradient(135deg, #00ff88 0%, #00d9ff 100%)",
+                    borderRadius: "8px",
+                    fontWeight: "600",
+                    color: "#000"
+                }
+            }).showToast();
+        }
+
+        // FAQ Toggle
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+
+            // Fechar todos os itens
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Abrir o clicado se não estava ativo
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Counter Animation
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-count'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    element.textContent = target.toLocaleString('pt-BR');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString('pt-BR');
+                }
+            }, 16);
+        }
+
+        // Inicializar Embla Carousel
+        const emblaNode = document.querySelector('.slide__viewport');
+        const emblaOptions = {
+            loop: true,
+            align: 'start',
+            slidesToScroll: 1,
+            breakpoints: {
+                '(min-width: 992px)': { slidesToScroll: 3 }
+            }
+        };
+        const embla = EmblaCarousel(emblaNode, emblaOptions);
+
+        // Inicializar contadores quando entrarem na viewport
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.counter');
+                    counters.forEach(counter => {
+                        if (counter.textContent === '0') {
+                            animateCounter(counter);
+                        }
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observar a seção de stats
+        const statsSection = document.querySelector('.stats-card').closest('section');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+    </script>
+</body>
+</html>

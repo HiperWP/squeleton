@@ -1,0 +1,2816 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Savage de Publicidade - Por Peter Kell</title>
+
+    <!-- Squeleton CSS -->
+    <link rel="stylesheet" href="https://cdn.hiperwp.com.br/squeleton.v4.min.css">
+
+    <!-- Bunny Fonts (GDPR friendly) -->
+    <link href="https://fonts.bunny.net/css?family=cinzel-decorative:700,900|cinzel:600,700,800|noto-serif:400,600,700&display=swap" rel="stylesheet">
+
+    <!-- Squeleton JS (Head) -->
+    <script src="https://cdn.hiperwp.com.br/squeleton-main.v4.min.js"></script>
+
+    <style>
+        :root {
+            --dark-green: #1a2a1f;
+            --darker-green: #191208;
+            --darkest-green: #100c05;
+            --gold: #c9a227;
+            --gold-light: #e5c75a;
+            --gold-bright: #ffd700;
+            --gold-dark: #8b7019;
+            --gold-darker: #5c4a10;
+            --red: #b33a3a;
+            --red-bright: #dc4a4a;
+            --cream: #f5f0e1;
+            --cream-dark: #e8dcc8;
+            --text-light: #d4d0c5;
+            --text-muted: #8a8578;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--darker-green);
+            color: var(--text-light);
+            font-family: 'Noto Serif', serif;
+            font-size: 16px;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* ============================================
+           TIPOGRAFIA - PESOS CORRIGIDOS
+           ============================================ */
+        .font-decorative {
+            font-family: 'Cinzel Decorative', serif;
+            font-weight: 700; /* Peso padrão mais grosso */
+        }
+
+        .font-decorative-black {
+            font-family: 'Cinzel Decorative', serif;
+            font-weight: 900;
+        }
+
+        .font-medieval {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+        }
+
+        .font-medieval-bold {
+            font-family: 'Cinzel', serif;
+            font-weight: 800;
+            letter-spacing: 0.03em;
+        }
+
+        .font-elegant {
+            font-family: 'Noto Serif', serif;
+        }
+
+        /* ============================================
+           CORES DE TEXTO
+           ============================================ */
+        .text-gold {
+            color: var(--gold);
+        }
+
+        .text-gold-gradient {
+            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 25%, var(--gold-bright) 50%, var(--gold) 75%, var(--gold-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .text-gold-shine {
+            background: linear-gradient(90deg, var(--gold-dark), var(--gold-light), var(--gold-bright), var(--gold-light), var(--gold-dark));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: goldShine 3s linear infinite;
+        }
+
+        @keyframes goldShine {
+            to { background-position: 200% center; }
+        }
+
+        .text-red { color: var(--red); }
+        .text-red-glow {
+            color: var(--red-bright);
+            text-shadow: 0 0 20px rgba(179, 58, 58, 0.5);
+        }
+        .text-cream { color: var(--cream); }
+        .text-white { color: #fff; }
+
+        /* ============================================
+           BACKGROUNDS
+           ============================================ */
+        .bg-dark-green {
+            background-color: var(--dark-green);
+            background-image:
+                radial-gradient(ellipse 80% 50% at 50% 0%, rgba(201, 162, 39, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 50% 100%, rgba(201, 162, 39, 0.05) 0%, transparent 40%);
+        }
+        .bg-darker-green { background-color: var(--darker-green); }
+        .bg-darkest { background-color: var(--darkest-green); }
+
+        .bg-gradient-dark {
+            background:
+                radial-gradient(ellipse 100% 60% at 50% 0%, rgba(201, 162, 39, 0.06) 0%, transparent 50%),
+                linear-gradient(180deg, var(--darker-green) 0%, var(--darkest-green) 100%);
+        }
+
+        .bg-gradient-radial {
+            background:
+                radial-gradient(ellipse 80% 80% at 50% 50%, rgba(201, 162, 39, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at center, var(--dark-green) 0%, var(--darker-green) 50%, var(--darkest-green) 100%);
+        }
+
+        .bg-pattern {
+            background-color: var(--darker-green);
+            background-image:
+                radial-gradient(ellipse 100% 80% at 20% 20%, rgba(201, 162, 39, 0.07) 0%, transparent 40%),
+                radial-gradient(ellipse 80% 60% at 80% 80%, rgba(201, 162, 39, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(201, 162, 39, 0.03) 0%, transparent 60%);
+        }
+
+        /* Variação com luz central (spotlight) */
+        .bg-spotlight {
+            background-color: var(--darker-green);
+            background-image:
+                radial-gradient(ellipse 60% 40% at 50% 30%, rgba(201, 162, 39, 0.12) 0%, transparent 50%),
+                radial-gradient(ellipse 80% 50% at 50% 100%, rgba(0, 0, 0, 0.3) 0%, transparent 50%);
+        }
+
+        /* Variação com luz lateral */
+        .bg-side-glow {
+            background-color: var(--dark-green);
+            background-image:
+                radial-gradient(ellipse 40% 80% at 0% 50%, rgba(201, 162, 39, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse 40% 80% at 100% 50%, rgba(201, 162, 39, 0.08) 0%, transparent 50%);
+        }
+
+        /* Variação com vignette */
+        .bg-vignette {
+            background-color: var(--dark-green);
+            background-image:
+                radial-gradient(ellipse 80% 80% at 50% 50%, transparent 30%, rgba(0, 0, 0, 0.4) 100%),
+                radial-gradient(ellipse 60% 40% at 50% 20%, rgba(201, 162, 39, 0.08) 0%, transparent 50%);
+        }
+
+        .section-divider {
+            height: 80px;
+            background: linear-gradient(180deg, var(--darker-green) 0%, transparent 100%);
+            position: relative;
+        }
+
+        .section-divider::after {
+            content: "";
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero-section {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: url('assets/hero-header-new-CijmyuQI.jpeg') center bottom no-repeat;
+            background-size: cover;
+        }
+
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(20, 15, 8, 0.5);
+            mix-blend-mode: multiply;
+            z-index: 0;
+        }
+
+        .hero-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                transparent 0%,
+                transparent 70%,
+                rgba(25, 18, 8, 0.8) 90%,
+                rgb(25, 18, 8) 100%
+            );
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            margin-top: 20vh;
+        }
+
+        /* Partículas de Brasa */
+        .embers-container {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .ember {
+            position: absolute;
+            bottom: -10px;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: ember-rise linear infinite;
+        }
+
+        @keyframes ember-rise {
+            0% {
+                opacity: 0;
+                transform: translateY(0) translateX(0) scale(1);
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100vh) translateX(var(--drift)) scale(0.3);
+            }
+        }
+
+        @keyframes ember-glow {
+            0%, 100% {
+                box-shadow: 0 0 4px 2px rgba(255, 120, 20, 0.8),
+                            0 0 8px 4px rgba(255, 80, 0, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 6px 3px rgba(255, 150, 50, 1),
+                            0 0 12px 6px rgba(255, 100, 20, 0.6);
+            }
+        }
+
+        .hero-image {
+            max-width: 500px;
+            width: 90%;
+            margin: 0 auto 40px;
+            filter: drop-shadow(0 0 40px rgba(201, 162, 39, 0.3));
+        }
+
+        .hero-title {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            background: linear-gradient(180deg,
+                #ff5555 0%,
+                #dd2222 30%,
+                #aa0000 60%,
+                #880000 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(4px 4px 0 #000)
+                    drop-shadow(-3px -3px 0 #000)
+                    drop-shadow(3px -3px 0 #000)
+                    drop-shadow(-3px 3px 0 #000)
+                    drop-shadow(0 0 20px rgba(0, 0, 0, 1))
+                    drop-shadow(0 6px 25px rgba(0, 0, 0, 1))
+                    drop-shadow(0 10px 40px rgba(0, 0, 0, 0.9));
+        }
+
+        .hero-subtitle {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: clamp(1.4rem, 3.5vw, 2.5rem);
+            font-weight: 900;
+            line-height: 1.3;
+            margin-bottom: 40px;
+            background: linear-gradient(180deg,
+                #ffd700 0%,
+                #ffec80 20%,
+                #ffd700 40%,
+                #c9a227 70%,
+                #8b7019 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(3px 3px 0 #000)
+                    drop-shadow(-2px -2px 0 #000)
+                    drop-shadow(2px -2px 0 #000)
+                    drop-shadow(-2px 2px 0 #000)
+                    drop-shadow(0 0 15px rgba(0, 0, 0, 1))
+                    drop-shadow(0 6px 20px rgba(0, 0, 0, 1))
+                    drop-shadow(0 10px 35px rgba(0, 0, 0, 0.85));
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 50%, var(--gold-bright) 100%);
+            color: var(--darkest-green);
+            padding: 20px 50px;
+            border-radius: 8px;
+            font-family: 'Cinzel', serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            box-shadow:
+                0 10px 40px rgba(0, 0, 0, 0.7),
+                0 4px 15px rgba(0, 0, 0, 0.5),
+                0 0 30px rgba(201, 162, 39, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-cta::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(201, 162, 39, 0.5);
+        }
+
+        .hero-cta:hover::before {
+            left: 100%;
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            cursor: pointer;
+        }
+
+        .scroll-arrow {
+            width: 18px;
+            height: 18px;
+            border-right: 2px solid var(--gold);
+            border-bottom: 2px solid var(--gold);
+            transform: rotate(45deg);
+            opacity: 0.6;
+        }
+
+        /* ============================================
+           SEÇÃO INTRO (CREME)
+           ============================================ */
+        .intro-section {
+            background: linear-gradient(180deg, rgb(40, 32, 18) 0%, var(--cream) 6%, var(--cream) 94%, var(--cream-dark) 100%);
+            color: #2a2a2a;
+            padding: 100px 0 80px;
+            position: relative;
+        }
+
+        .intro-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent 5%, var(--gold-dark), var(--gold), var(--gold-bright), var(--gold), var(--gold-dark), transparent 95%);
+        }
+
+        .intro-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            color: #1a1a1a;
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(201, 162, 39, 0.3);
+        }
+
+        .intro-title {
+            font-family: 'Cinzel Decorative', serif;
+            font-weight: 900;
+            font-size: clamp(1.5rem, 4vw, 2.4rem);
+            line-height: 1.3;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .intro-title-gold {
+            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 50%, var(--gold-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .intro-highlight {
+            color: var(--gold-dark);
+            font-weight: 700;
+        }
+
+        .intro-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        .intro-stat {
+            text-align: center;
+        }
+
+        .intro-stat-number {
+            font-family: 'Cinzel Decorative', serif;
+            font-weight: 900;
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            background: linear-gradient(180deg, var(--gold-dark), #8b6914);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            display: block;
+        }
+
+        .intro-stat-label {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 8px;
+        }
+
+        .intro-description {
+            font-family: 'Noto Serif', serif;
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            line-height: 1.7;
+            color: #333;
+            max-width: 750px;
+            margin: 0 auto 50px;
+        }
+
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            padding: 30px 35px;
+            background: linear-gradient(135deg, rgba(26, 42, 31, 0.95), rgba(16, 12, 5, 0.95));
+            border: 2px solid var(--gold);
+            border-radius: 16px;
+            max-width: 650px;
+            margin: 0 auto;
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.3),
+                0 0 30px rgba(201, 162, 39, 0.15),
+                inset 0 1px 0 rgba(201, 162, 39, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .author-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .author-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cinzel Decorative', serif;
+            font-weight: 900;
+            color: var(--darkest-green);
+            font-size: 1.6rem;
+            flex-shrink: 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .author-info {
+            color: var(--cream);
+        }
+
+        .author-name {
+            font-family: 'Cinzel', serif;
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin-bottom: 8px;
+            letter-spacing: 0.05em;
+        }
+
+        .author-bio {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-light);
+            opacity: 0.9;
+        }
+
+        .author-bio strong {
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+
+        /* ============================================
+           SEÇÃO 2020 VS 2026 - PAIN POINTS
+           ============================================ */
+        .pain-point {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 18px 25px;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, rgba(180, 50, 50, 0.15) 0%, rgba(100, 30, 30, 0.1) 100%);
+            border-left: 3px solid var(--red);
+            border-radius: 0 10px 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .pain-point:hover {
+            background: linear-gradient(135deg, rgba(180, 50, 50, 0.25) 0%, rgba(100, 30, 30, 0.15) 100%);
+            transform: translateX(5px);
+        }
+
+        .pain-icon {
+            color: var(--red-bright);
+            font-size: 1.3rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .pain-point p {
+            margin: 0;
+            font-family: 'Noto Serif', serif;
+            font-size: 1.15rem;
+            line-height: 1.5;
+            color: var(--text-light);
+        }
+
+        .pain-point strong {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .solution-box {
+            margin-top: 35px;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(201, 162, 39, 0.15) 0%, rgba(139, 112, 25, 0.1) 100%);
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold-bright), transparent);
+        }
+
+        .solution-label {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            letter-spacing: 0.03em;
+        }
+
+        .solution-number {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .counter-big {
+            font-family: 'Cinzel Decorative', serif;
+            font-weight: 900;
+            font-size: clamp(3rem, 8vw, 5rem);
+            background: linear-gradient(180deg, var(--gold-bright) 0%, var(--gold) 50%, var(--gold-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .plus {
+            font-family: 'Cinzel Decorative', serif;
+            font-weight: 900;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--gold);
+        }
+
+        .per-week {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: var(--gold-light);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-left: 10px;
+        }
+
+        .final-statement {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .gold-line-short {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        @media (max-width: 639px) {
+            .gold-line-short {
+                display: none;
+            }
+        }
+
+        /* ============================================
+           CARDS DE BENEFÍCIOS
+           ============================================ */
+        .benefit-card {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
+            border: 1px solid rgba(201, 162, 39, 0.2);
+            border-radius: 12px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .benefit-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .benefit-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(201, 162, 39, 0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .benefit-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-8px);
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(201, 162, 39, 0.1);
+        }
+
+        .benefit-card:hover::before,
+        .benefit-card:hover::after {
+            opacity: 1;
+        }
+
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .benefit-icon::before {
+            content: attr(data-number);
+            font-family: 'Cinzel Decorative', serif;
+            font-weight: 900;
+            font-size: 1.2rem;
+            color: var(--gold);
+        }
+
+        .benefit-card h4 {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            color: var(--gold);
+            font-size: 1.1rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .benefit-card p {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ============================================
+           CITAÇÃO / QUOTE BOX
+           ============================================ */
+        .quote-box {
+            position: relative;
+            background: linear-gradient(135deg, rgba(201, 162, 39, 0.08) 0%, rgba(0, 0, 0, 0.3) 100%);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            border-radius: 12px;
+            padding: 50px 40px 40px;
+        }
+
+        .quote-marks {
+            position: absolute;
+            top: 10px;
+            left: 30px;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 6rem;
+            font-weight: 900;
+            color: var(--gold);
+            opacity: 0.3;
+            line-height: 1;
+        }
+
+        .quote-box p {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ============================================
+           SEÇÃO SKULL BADGE
+           ============================================ */
+        .skull-badge {
+            background: linear-gradient(135deg, #1a1208 0%, #2a1f0f 50%, #1a1208 100%);
+            border: 2px solid var(--gold-dark);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skull-badge::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 30%, rgba(201, 162, 39, 0.1) 0%, transparent 50%);
+        }
+
+        .skull-badge img {
+            max-width: 180px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 20px rgba(201, 162, 39, 0.3));
+        }
+
+        .skull-badge h3 {
+            font-family: 'Cinzel Decorative', serif;
+            font-weight: 900;
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            line-height: 1.4;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ============================================
+           FEATURE BOXES
+           ============================================ */
+        .feature-box {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(201, 162, 39, 0.15);
+            border-radius: 10px;
+            padding: 22px 25px;
+            height: 100%;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-box::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--gold), var(--gold-dark));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .feature-box:hover {
+            background: rgba(201, 162, 39, 0.08);
+            border-color: rgba(201, 162, 39, 0.4);
+            transform: translateX(5px);
+        }
+
+        .feature-box:hover::before {
+            opacity: 1;
+        }
+
+        .feature-marker {
+            width: 32px;
+            height: 32px;
+            border: 2px solid var(--gold);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-right: 15px;
+            transition: all 0.3s;
+        }
+
+        .feature-marker::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            background: var(--gold);
+            border-radius: 2px;
+            transform: rotate(45deg);
+        }
+
+        .feature-box:hover .feature-marker {
+            background: var(--gold);
+        }
+
+        .feature-box:hover .feature-marker::before {
+            background: var(--dark-green);
+        }
+
+        /* ============================================
+           PASSO 7 - DESTAQUE ESPECIAL
+           ============================================ */
+        .step-7-highlight {
+            position: relative;
+            background: linear-gradient(135deg, rgba(201, 162, 39, 0.15) 0%, rgba(201, 162, 39, 0.05) 100%);
+            border: 2px solid var(--gold);
+            border-radius: 16px;
+            padding: 40px;
+            overflow: hidden;
+        }
+
+        .step-7-highlight::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(201, 162, 39, 0.2) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .step-7-highlight::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold-dark), var(--gold-bright), var(--gold-dark));
+        }
+
+        .step-7-badge {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--darkest-green);
+            font-family: 'Cinzel', serif;
+            font-weight: 800;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            padding: 6px 14px;
+            border-radius: 20px;
+        }
+
+        /* ============================================
+           IMAGENS DECORATIVAS
+           ============================================ */
+        .decorative-image {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
+            transition: all 0.4s ease;
+        }
+
+        .decorative-image:hover {
+            transform: scale(1.03);
+        }
+
+        .decorative-image-glow {
+            filter: drop-shadow(0 0 40px rgba(201, 162, 39, 0.5))
+                    drop-shadow(0 0 80px rgba(201, 162, 39, 0.3));
+        }
+
+        .decorative-image-glow:hover {
+            filter: drop-shadow(0 0 50px rgba(201, 162, 39, 0.7))
+                    drop-shadow(0 0 100px rgba(201, 162, 39, 0.4));
+        }
+
+        .w-max-300px {
+            max-width: 300px;
+        }
+
+        /* ============================================
+           SCROLL/PERGAMINHO
+           ============================================ */
+        .scroll-container {
+            background:
+                linear-gradient(180deg,
+                    #e8d5a3 0%,
+                    #f5e6c8 5%,
+                    #f8ecd4 20%,
+                    #f5e6c8 50%,
+                    #f8ecd4 80%,
+                    #f5e6c8 95%,
+                    #e8d5a3 100%
+                );
+            border-radius: 8px;
+            padding: 80px 50px;
+            position: relative;
+            max-width: 450px;
+            margin: 0 auto;
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.5),
+                inset 0 0 100px rgba(139, 112, 25, 0.1);
+        }
+
+        .scroll-container::before,
+        .scroll-container::after {
+            content: "";
+            position: absolute;
+            left: -5%;
+            width: 110%;
+            height: 50px;
+            background: linear-gradient(90deg,
+                #5c4a10,
+                #8b7019 10%,
+                #c9a227 30%,
+                #e5c75a 50%,
+                #c9a227 70%,
+                #8b7019 90%,
+                #5c4a10
+            );
+            border-radius: 50%;
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.4),
+                inset 0 2px 4px rgba(255,255,255,0.3);
+        }
+
+        .scroll-container::before {
+            top: -20px;
+        }
+
+        .scroll-container::after {
+            bottom: -20px;
+        }
+
+        .scroll-ornament-top,
+        .scroll-ornament-bottom {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+        }
+
+        .scroll-ornament-top {
+            top: -35px;
+        }
+
+        .scroll-ornament-bottom {
+            bottom: -35px;
+        }
+
+        .scroll-ornament-top::before,
+        .scroll-ornament-bottom::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--gold), var(--gold-bright), var(--gold));
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            box-shadow: 0 0 15px rgba(201, 162, 39, 0.5);
+        }
+
+        .scroll-title {
+            font-family: 'Cinzel Decorative', serif;
+            font-weight: 700;
+            color: #3a2d15;
+            font-size: clamp(1.4rem, 3.5vw, 2rem);
+            text-align: center;
+            line-height: 1.4;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+        }
+
+        .wax-seal {
+            width: 90px;
+            height: 90px;
+            background:
+                radial-gradient(circle at 30% 30%, #0d8b45, #0a6b38 40%, #085a2e 70%, #074a26);
+            border-radius: 50%;
+            margin: 40px auto 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow:
+                0 8px 25px rgba(0,0,0,0.4),
+                inset 0 -3px 10px rgba(0,0,0,0.3),
+                inset 0 3px 10px rgba(255,255,255,0.1);
+            position: relative;
+        }
+
+        .wax-seal::before {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 60px;
+            background: var(--gold);
+            clip-path: polygon(
+                50% 0%, 60% 15%, 75% 10%, 70% 25%, 85% 35%,
+                70% 40%, 75% 55%, 60% 50%, 50% 65%, 40% 50%,
+                25% 55%, 30% 40%, 15% 35%, 30% 25%, 25% 10%,
+                40% 15%
+            );
+            opacity: 0.9;
+        }
+
+        /* ============================================
+           FAQ
+           ============================================ */
+        .faq-item {
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(201, 162, 39, 0.15);
+            border-radius: 10px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(201, 162, 39, 0.4);
+        }
+
+        .faq-question {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 22px 28px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            background: rgba(201, 162, 39, 0.08);
+        }
+
+        .faq-arrow {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            flex-shrink: 0;
+            margin-left: 15px;
+        }
+
+        .faq-arrow::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-right: 2px solid var(--gold);
+            border-bottom: 2px solid var(--gold);
+            transform: rotate(45deg) translateY(-2px);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-arrow {
+            background: var(--gold);
+        }
+
+        .faq-item.active .faq-arrow::before {
+            border-color: var(--dark-green);
+            transform: rotate(-135deg) translateY(-2px);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 28px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 20px 22px;
+        }
+
+        /* ============================================
+           PRICING CARDS
+           ============================================ */
+        .pricing-card {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
+            border: 2px solid rgba(201, 162, 39, 0.25);
+            border-radius: 16px;
+            padding: 45px 35px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .pricing-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(201, 162, 39, 0.08) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .pricing-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+            box-shadow:
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                0 0 40px rgba(201, 162, 39, 0.15);
+        }
+
+        .pricing-card:hover::before {
+            opacity: 1;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--gold);
+            background: linear-gradient(180deg, rgba(201, 162, 39, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%);
+        }
+
+        .pricing-card.featured::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold-dark), var(--gold-bright), var(--gold-dark));
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+            color: var(--dark-green);
+            padding: 8px 24px;
+            border-radius: 0 0 12px 12px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-family: 'Cinzel', serif;
+        }
+
+        .pricing-title {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            color: var(--gold);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing-amount {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 3.2rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing-amount span.currency {
+            font-size: 1.2rem;
+            vertical-align: top;
+            margin-right: 5px;
+        }
+
+        .pricing-amount span.period {
+            font-size: 1rem;
+            font-family: 'Noto Serif', serif;
+            font-weight: 400;
+            opacity: 0.7;
+        }
+
+        .pricing-description {
+            opacity: 0.8;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           GARANTIA / TRUST BADGES
+           ============================================ */
+        .guarantee-box {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .guarantee-icon {
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .guarantee-icon span {
+            font-size: 2rem;
+            color: var(--darkest-green);
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(201, 162, 39, 0.2);
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            color: var(--gold);
+            letter-spacing: 0.05em;
+        }
+
+        .trust-item span {
+            color: var(--gold);
+        }
+
+        /* ============================================
+           URGÊNCIA / CTA BADGES
+           ============================================ */
+        .urgency-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--red) 0%, var(--red-bright) 100%);
+            color: white;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            padding: 10px 25px;
+            border-radius: 30px;
+            margin-bottom: 30px;
+            animation: urgencyPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes urgencyPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(179, 58, 58, 0.5); }
+            50% { box-shadow: 0 0 35px rgba(220, 74, 74, 0.8); }
+        }
+
+        /* ============================================
+           BOTÕES
+           ============================================ */
+        .btn-gold {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 50%, var(--gold-dark) 100%);
+            background-size: 200% 200%;
+            color: var(--darkest-green);
+            padding: 18px 40px;
+            border-radius: 8px;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-gold::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-bright) 50%, var(--gold) 100%);
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: -1;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow:
+                0 10px 30px rgba(201, 162, 39, 0.4),
+                0 0 20px rgba(201, 162, 39, 0.2);
+        }
+
+        .btn-gold:hover::before {
+            opacity: 1;
+        }
+
+        /* ============================================
+           ELEMENTOS DECORATIVOS
+           ============================================ */
+        .diamond-divider {
+            text-align: center;
+            padding: 50px 0;
+            position: relative;
+        }
+
+        .diamond-divider::before {
+            content: "";
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: var(--gold);
+            transform: rotate(45deg);
+            box-shadow: 0 0 20px rgba(201, 162, 39, 0.5);
+        }
+
+        .diamond-divider::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 162, 39, 0.3), transparent);
+        }
+
+        .gold-line {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .gold-line-thick {
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, var(--gold-dark) 20%, var(--gold) 50%, var(--gold-dark) 80%, transparent 100%);
+        }
+
+        /* ============================================
+           CHECKMARK LIST
+           ============================================ */
+        .checkmark-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .checkmark-list li {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 18px;
+            line-height: 1.6;
+        }
+
+        .checkmark-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+        }
+
+        .checkmark-list li::after {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: 9px;
+            width: 8px;
+            height: 5px;
+            border-left: 2px solid var(--gold);
+            border-bottom: 2px solid var(--gold);
+            transform: rotate(-45deg);
+        }
+
+        /* ============================================
+           STYLED LIST (Bullets)
+           ============================================ */
+        .styled-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .styled-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 18px;
+            line-height: 1.6;
+        }
+
+        .styled-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer-hero {
+            min-height: 70vh;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            background: url('assets/scottish-king-banner-BR7nbYZ4.jpeg') center center no-repeat;
+            background-size: cover;
+        }
+
+        .footer-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, var(--darker-green) 0%, rgba(13, 23, 16, 0.7) 40%, rgba(13, 23, 16, 0.3) 100%);
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        /* ============================================
+           HEADER / NAVBAR
+           ============================================ */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: linear-gradient(135deg, rgba(26, 42, 31, 0.97), rgba(16, 12, 5, 0.97));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(201, 162, 39, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .site-header.scrolled {
+            background: linear-gradient(135deg, rgba(26, 42, 31, 0.99), rgba(16, 12, 5, 0.99));
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .header-logo img {
+            height: 32px;
+            width: auto;
+        }
+
+        .header-logo-text {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--gold);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .header-nav a {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .header-nav a::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .header-nav a:hover {
+            color: var(--gold);
+        }
+
+        .header-nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .header-login {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: color 0.3s ease;
+        }
+
+        .header-login:hover {
+            color: var(--gold);
+        }
+
+        .header-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 50%, var(--gold-bright) 100%);
+            color: var(--darkest-green);
+            padding: 6px 18px;
+            border-radius: 6px;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(201, 162, 39, 0.3);
+        }
+
+        .header-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(201, 162, 39, 0.4);
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--gold);
+            transition: all 0.3s ease;
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 991px) {
+            .hero-image {
+                max-width: 400px;
+            }
+
+            .header-nav {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .header-container {
+                padding: 12px 20px;
+            }
+
+            .header-actions {
+                gap: 15px;
+            }
+
+            .header-login {
+                display: none;
+            }
+        }
+
+        @media (max-width: 639px) {
+            .hero-image {
+                max-width: 300px;
+                margin-bottom: 30px;
+            }
+
+            .author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .scroll-container {
+                padding: 60px 30px;
+            }
+
+            .skull-badge img {
+                max-width: 140px;
+            }
+
+            .header-logo-text {
+                font-size: 0.9rem;
+            }
+
+            .header-cta {
+                padding: 10px 20px;
+                font-size: 0.75rem;
+            }
+        }
+
+        /* ============================================
+           FONT-SIZE FLUIDOS (CLAMP)
+           ============================================ */
+        .fs-title-xl { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+        .fs-title-lg { font-size: clamp(1.4rem, 3.5vw, 2.2rem); }
+        .fs-title-md { font-size: clamp(1.3rem, 3.5vw, 2rem); }
+        .fs-title-sm { font-size: clamp(1.3rem, 3vw, 1.8rem); }
+        .fs-subtitle { font-size: clamp(1.2rem, 3vw, 1.7rem); }
+        .fs-quote { font-size: clamp(1.2rem, 2.8vw, 1.6rem); }
+        .fs-lead { font-size: clamp(1.1rem, 2.5vw, 1.4rem); }
+        .fs-label { font-size: clamp(1rem, 2.5vw, 1.3rem); }
+        .fs-label-sm { font-size: clamp(1rem, 2.2vw, 1.2rem); }
+        .fs-red-glow { font-size: clamp(1.3rem, 3vw, 2rem); }
+
+        /* ============================================
+           FONT-SIZE FIXOS
+           ============================================ */
+        .fs-huge { font-size: 3.8rem; }
+        .fs-xlarge { font-size: 3rem; }
+        .fs-large { font-size: 2rem; }
+        .fs-medium-lg { font-size: 1.8rem; }
+        .fs-medium { font-size: 1.3rem; }
+        .fs-normal-lg { font-size: 1.2rem; }
+        .fs-normal-md { font-size: 1.15rem; }
+        .fs-normal { font-size: 1.1rem; }
+        .fs-base { font-size: 1rem; }
+        .fs-small { font-size: 0.95rem; }
+        .fs-smaller { font-size: 0.9rem; }
+        .fs-tiny { font-size: 0.85rem; }
+        .fs-mini { font-size: 0.8rem; }
+        .fs-micro { font-size: 0.75rem; }
+
+        /* ============================================
+           AUXILIARES
+           ============================================ */
+        .lh-1 { line-height: 1; }
+        .lh-1-6 { line-height: 1.6; }
+        .btn-gold-sm { padding: 20px 35px; font-size: 0.9rem; }
+        .btn-gold-lg { padding: 22px 45px; font-size: 1rem; }
+        .hero-cta-lg { font-size: 1.1rem; padding: 22px 50px; }
+        .link-underline { text-decoration: underline; text-underline-offset: 4px; transition: all 0.3s; }
+    </style>
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<header class="site-header">
+    <div class="header-container">
+        <a href="#" class="header-logo">
+            <img src="assets/flaming-crown-CDAWMI25.png" alt="Savage">
+            <span class="header-logo-text">Savage Advertising</span>
+        </a>
+
+        <nav class="header-nav">
+            <a href="#sistema">O Sistema</a>
+            <a href="#coaching">Programa Elite</a>
+            <a href="#resultados">Resultados</a>
+        </nav>
+
+        <div class="header-actions">
+            <a href="#" class="header-login">Login</a>
+            <a href="#pricing" class="header-cta">Entrar Agora</a>
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- ==================== HERO SECTION ==================== -->
+<section class="hero-section">
+    <!-- Partículas de Brasa -->
+    <div class="embers-container" id="embers"></div>
+
+    <div class="hero-content text-center p-30px-all">
+        <h1 class="hero-title wow fadeInUp">
+            ENQUANTO A IA ROUBA EMPREGOS
+        </h1>
+        <h2 class="hero-subtitle wow fadeInUp" data-wow-delay="0.2s">
+            ANUNCIANTES SAVAGE FICAM COM OS LUCROS
+        </h2>
+        <a href="#pricing" class="hero-cta wow fadeInUp" data-wow-delay="0.4s">
+            Quero Me Tornar Savage
+        </a>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-arrow"></div>
+    </div>
+</section>
+
+<!-- ==================== INTRO SECTION (CREME) ==================== -->
+<section class="intro-section">
+    <div class="container">
+        <div class="text-center">
+            <span class="intro-badge wow fadeIn">Apresentando</span>
+
+            <h2 class="intro-title wow fadeInUp">
+                <span class="intro-title-gold">O Sistema Savage de Publicidade</span>
+            </h2>
+
+            <p class="intro-description wow fadeIn" data-wow-delay="0.1s">
+                O Fluxo de Trabalho Criativo Revolucionário que está transformando anunciantes comuns em <strong>máquinas de produção de conteúdo</strong> de classe mundial.
+            </p>
+
+            <div class="intro-stats wow fadeInUp" data-wow-delay="0.2s">
+                <div class="intro-stat">
+                    <span class="intro-stat-number"><span class="counter">50</span>+</span>
+                    <span class="intro-stat-label">Anúncios por Semana</span>
+                </div>
+                <div class="intro-stat">
+                    <span class="intro-stat-number">R$<span class="counter">175</span></span>
+                    <span class="intro-stat-label">Por Anúncio</span>
+                </div>
+                <div class="intro-stat">
+                    <span class="intro-stat-number"><span class="counter">10</span>X</span>
+                    <span class="intro-stat-label">Mais Rápido</span>
+                </div>
+            </div>
+
+            <div class="author-card wow fadeInUp" data-wow-delay="0.3s">
+                <div class="author-avatar">PK</div>
+                <div class="author-info text-left">
+                    <p class="author-name">Peter Kell</p>
+                    <p class="author-bio">O homem que saiu de <strong>R$ 0 para R$ 200M</strong> em 12 meses com sua própria marca de skincare. Construiu o departamento de anúncios da Mindvalley para mais de <strong>R$ 500M+</strong>, com alunos que já faturaram <strong>R$ 50M+ por mês</strong>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== STRAIGHT TO THE POINT ==================== -->
+<section class="bg-spotlight p-80px-tb xs-p-40px-tb">
+    <div class="container">
+        <div class="row f-items-center">
+            <div class="c-xs-12 c-md-7">
+                <h2 class="font-decorative fs-12 m-30px-b lh-1-3 fs-title-sm wow fadeInUp">
+                    <span class="text-gold-gradient">VOU DIRETO AO PONTO:</span> SE VOCÊ NÃO EVOLUIR PARA UM ANUNCIANTE SAVAGE QUE CONSEGUE PRODUZIR ANÚNCIOS DE CLASSE MUNDIAL EM ESCALA, É MELHOR COMEÇAR A <span class="text-red-glow">CAVAR SUA PRÓPRIA COVA.</span>
+                </h2>
+
+                <div class="wow fadeIn" data-wow-delay="0.2s">
+                    <p class="m-20px-b">
+                        <span class="text-gold-shine fw-700 fs-medium-lg">10.000X</span> <span class="opacity-9">mais anúncios estão sendo enviados para o Facebook do que nunca.</span>
+                    </p>
+
+                    <p class="m-20px-b">
+                        A competição está <strong class="text-white">insana</strong>.
+                    </p>
+
+                    <p class="m-20px-b">
+                        Qualquer um que não esteja focado em ser o anunciante dominante no seu nicho <span class="text-red fw-700">R.I.P.</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-5 text-center xs-m-40px-t wow fadeInRight" data-wow-delay="0.3s">
+                <img src="assets/savage-skull-DUB4LIek.png" alt="Savage Skull" class="decorative-image decorative-image-glow w-max-300px">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== 2020 VS 2026 ==================== -->
+<section class="bg-gradient-dark p-80px-tb xs-p-40px-tb">
+    <div class="container">
+        <h2 class="font-decorative-black text-center m-60px-b fs-title-lg wow fadeIn">
+            <span class="text-gold-gradient">O QUE FUNCIONAVA EM 2020</span> <span class="text-red-glow d-block m-10px-t">NÃO VAI FUNCIONAR EM 2026.</span>
+        </h2>
+
+        <div class="w-max-700px c-center">
+            <p class="font-medieval text-gold-light m-20px-b text-center fs-smaller ls-2 wow fadeIn">ENQUANTO VOCÊ...</p>
+
+            <div class="pain-point wow fadeInUp" data-wow-delay="0.1s">
+                <span class="pain-icon">✕</span>
+                <p>Está lutando para acertar <strong>UM</strong> anúncio vencedor...</p>
+            </div>
+
+            <div class="pain-point wow fadeInUp" data-wow-delay="0.2s">
+                <span class="pain-icon">✕</span>
+                <p>Esperando sua agência entregar lixo...</p>
+            </div>
+
+            <div class="pain-point wow fadeInUp" data-wow-delay="0.3s">
+                <span class="pain-icon">✕</span>
+                <p>Rodando os mesmos 5 vídeos rezando para que um funcione...</p>
+            </div>
+
+            <div class="solution-box wow fadeInUp" data-wow-delay="0.4s">
+                <p class="solution-label">Uma nova geração de anunciantes está produzindo</p>
+                <div class="solution-number">
+                    <span class="counter-big">50</span><span class="plus">+</span>
+                    <span class="per-week">por semana</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bloco Final -->
+        <div class="text-center m-50px-t wow fadeInUp" data-wow-delay="0.5s">
+            <p class="opacity-8 m-10px-b">Eles não são mais inteligentes que você.</p>
+            <p class="opacity-8 m-10px-b">Eles não são mais criativos.</p>
+            <p class="text-white fw-700 m-40px-b fs-normal-md">Eles simplesmente se tornaram <span class="text-gold">anunciantes savage</span>.</p>
+
+            <div class="final-statement">
+                <div class="gold-line-short"></div>
+                <p class="font-decorative-black text-gold-shine text-uppercase fs-title-xl ls-1">
+                    E essa única mudança muda tudo.
+                </p>
+                <div class="gold-line-short"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FACEBOOK ANDROMEDA UPDATE ==================== -->
+<section class="bg-pattern p-80px-tb xs-p-40px-tb">
+    <div class="container">
+        <div class="diamond-divider"></div>
+
+        <h2 class="font-decorative-black text-center m-50px-b fs-title-xl wow fadeIn">
+            <span class="text-gold-gradient">A ATUALIZAÇÃO ANDROMEDA DO FACEBOOK</span>
+        </h2>
+
+        <div class="row gap-10">
+            <!-- Card 1 -->
+            <div class="c-xs-12 c-md-6 m-15px-b">
+                <div class="benefit-card h-100 wow fadeInUp">
+                    <div class="benefit-icon" data-number="1"></div>
+                    <h4>VOLUME DE CLASSE MUNDIAL É REI</h4>
+                    <p>O Andromeda recompensa anunciantes que produzem MUITOS criativos DIFERENTES — não pequenos ajustes, mas vídeos verdadeiramente diferentes. Por quê? Porque é uma melhor experiência para o usuário. As pessoas não querem ver o mesmo anúncio 47 vezes. O Facebook sabe disso. Por isso estão priorizando anunciantes que conseguem entregar variedade em escala.</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="c-xs-12 c-md-6 m-15px-b">
+                <div class="benefit-card h-100 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="benefit-icon" data-number="2"></div>
+                    <h4>CRIATIVOS HIPER-SEGMENTADOS SÃO CRÍTICOS</h4>
+                    <p>Um anúncio para todo mundo não funciona mais. Os vencedores estão fazendo vídeos separados para a mãe de 45 anos que acabou de receber o diagnóstico... o homem de 60 anos cujo médico deu um alerta... o jovem de 35 anos que já foi enganado por suplementos antes. Mesmo produto. Anúncios diferentes. Cada um falando diretamente com a situação exata da pessoa.</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="c-xs-12 c-md-6 m-15px-b">
+                <div class="benefit-card h-100 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="benefit-icon" data-number="3"></div>
+                    <h4>ENTENDIMENTO PROFUNDO DE AVATAR SEPARA VENCEDORES DE PERDEDORES</h4>
+                    <p>As marcas que estão escalando agora conhecem seus compradores melhor do que os compradores conhecem a si mesmos. Eles estão encontrando segmentos que ninguém mais vê. E estão falando com cada um com precisão.</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="c-xs-12 c-md-6 m-15px-b">
+                <div class="benefit-card h-100 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="benefit-icon" data-number="4"></div>
+                    <h4>VELOCIDADE É A NOVA VANTAGEM COMPETITIVA</h4>
+                    <p>Enquanto seus concorrentes gastam meses lançando uma campanha, você poderia ter testado 30 abordagens diferentes e encontrado seu vencedor. Os rápidos devoram os lentos.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center m-60px-t wow fadeIn">
+            <p class="font-medieval-bold text-gold m-15px-b fs-label ls-1">
+                OS ANUNCIANTES QUE SE ADAPTAREM VÃO CONSTRUIR IMPÉRIOS.
+            </p>
+            <p class="font-decorative-black text-red-glow fs-red-glow">
+                Aqueles que não se adaptarem serão enterrados.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== PETER KELL SECTION ==================== -->
+<section id="resultados" class="bg-darkest p-80px-tb xs-p-40px-tb">
+    <div class="container">
+        <h2 class="font-decorative-black text-center m-15px-b fs-title-lg wow fadeIn">
+            EU SOU PETER KELL. <span class="text-gold-shine d-block">ALGUNS ME CHAMAM DE REI DOS ANÚNCIOS.</span>
+        </h2>
+
+        <p class="text-center font-elegant fs-9 m-50px-b opacity-9 wow fadeIn">
+            Eu não me coroei. Os resultados fizeram isso.
+        </p>
+
+        <div class="row f-items-start">
+            <div class="c-xs-12 c-md-5 m-40px-b">
+                <div class="text-center wow fadeInLeft">
+                    <!-- Trono Verde - Imagem PNG -->
+                    <img src="assets/green-throne-C2I_aRuM.png" alt="Trono Verde" class="decorative-image decorative-image-glow w-max-300px">
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-7 wow fadeInRight">
+                <p class="m-25px-b opacity-9">
+                    Estou nas trincheiras da publicidade em vídeo há mais de 10 anos. Criando e rodando anúncios. Todo santo dia.
+                </p>
+
+                <h4 class="font-medieval-bold text-gold m-25px-b" style="letter-spacing: 0.15em;">UM BREVE RESUMO:</h4>
+
+                <ul class="checkmark-list">
+                    <li>Fiz <strong class="text-white">R$ 35M em um único ano</strong> como afiliado — tudo com anúncios em vídeo.</li>
+                    <li>Saí de <strong class="text-white">R$ 0 para R$ 200M em 12 meses</strong> com minha própria marca de skincare. Vendi.</li>
+                    <li>Construí o departamento de VSL da Mindvalley para <strong class="text-white">mais de R$ 500M em vendas</strong>. Criei o VSL #1 da história da empresa. Saí.</li>
+                    <li>Treinei alunos que já fizeram <strong class="text-white">R$ 45M em 6 meses... R$ 65M por mês... R$ 2.5M em um dia</strong>.</li>
+                    <li>Agora tenho CEOs de empresas de R$ 500M+ me ligando para aprender esse sistema.</li>
+                </ul>
+
+                <p class="font-elegant more-30 m-30px-t opacity-8">E honestamente? Essa é a versão resumida.</p>
+            </div>
+        </div>
+
+        <div class="gold-line-thick m-60px-tb"></div>
+
+        <!-- Citação Peter Kell -->
+        <blockquote class="quote-box w-max-900px c-center m-50px-b wow fadeIn">
+            <div class="quote-marks">"</div>
+            <p class="font-elegant text-center fs-quote lh-1-6">
+                O jogo mudou. Quem ainda cria anúncios do zero está <span class="text-gold fw-700">brigando com uma faca contra quem tem uma metralhadora</span>. A IA não veio substituir os criativos — veio multiplicar os que souberem usá-la.
+            </p>
+            <footer class="text-center m-20px-t">
+                <cite class="font-medieval-bold text-gold ls-2" style="font-style: normal;">— PETER KELL</cite>
+            </footer>
+        </blockquote>
+
+        <div class="w-max-800px text-center c-center">
+            <h3 class="font-decorative m-30px-b fs-subtitle lh-1-4 wow fadeIn">
+                <span class="text-gold-gradient">MEU SUPERPODER NUNCA FOI COPYWRITING GENIAL.</span> FOI SABER QUAIS ANÚNCIOS RECRIAR.
+            </h3>
+
+            <p class="m-20px-b opacity-9 wow fadeIn">
+                Passei 10.000 horas em ferramentas de espionagem encontrando vencedores. Estudando o que estava escalando. Analisando por que funcionava.
+            </p>
+
+            <p class="m-20px-b more-50 opacity-9 wow fadeIn">
+                Essa foi minha vantagem por 10 anos.
+            </p>
+
+            <p class="font-elegant fs-lead lh-1-6 wow fadeIn">
+                E agora isso se tornou a base do <span class="text-gold fw-700">SISTEMA SAVAGE DE PUBLICIDADE</span> para que virtualmente qualquer pessoa possa produzir 50+ anúncios em vídeo de classe mundial por semana porque tudo é baseado em uma ideia comprovada.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== THIS MEANS TODAY YOU CAN ==================== -->
+<section class="bg-side-glow p-80px-tb xs-p-40px-tb">
+    <div class="container">
+        <div class="diamond-divider"></div>
+
+        <h2 class="font-decorative-black text-center m-50px-b fs-title-md wow fadeIn">
+            <span class="text-gold-gradient">ISSO SIGNIFICA QUE HOJE VOCÊ PODE:</span>
+        </h2>
+
+        <div class="row gap-10">
+            <div class="c-xs-12 c-sm-6 m-20px-b">
+                <div class="feature-box wow fadeInUp">
+                    <div class="d-flex f-items-center">
+                        <div class="feature-marker"></div>
+                        <span>Gerar <strong class="text-white">50+ ângulos de classe mundial</strong> em 10 minutos — para qualquer produto</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-sm-6 m-20px-b">
+                <div class="feature-box wow fadeInUp" data-wow-delay="0.05s">
+                    <div class="d-flex f-items-center">
+                        <div class="feature-marker"></div>
+                        <span>Ter <strong class="text-white">25+ scripts savage</strong> prontos para gravar em 30 minutos — todos baseados em campanhas milionárias</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-sm-6 m-20px-b">
+                <div class="feature-box wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="d-flex f-items-center">
+                        <div class="feature-marker"></div>
+                        <span>Ter vídeos produzidos por apenas <strong class="text-gold">R$ 175 cada</strong></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-sm-6 m-20px-b">
+                <div class="feature-box wow fadeInUp" data-wow-delay="0.15s">
+                    <div class="d-flex f-items-center">
+                        <div class="feature-marker"></div>
+                        <span>Encontrar <strong class="text-white">avatares ocultos</strong> que seus concorrentes nunca pensaram</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-sm-6 m-20px-b">
+                <div class="feature-box wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="d-flex f-items-center">
+                        <div class="feature-marker"></div>
+                        <span>Obter <strong class="text-white">listas de cenas detalhadas</strong> para que seus editores saibam exatamente o que criar</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-sm-6 m-20px-b">
+                <div class="feature-box wow fadeInUp" data-wow-delay="0.25s">
+                    <div class="d-flex f-items-center">
+                        <div class="feature-marker"></div>
+                        <span>Criar <strong class="text-white">porta-vozes com IA</strong> se você não quiser aparecer na câmera</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-sm-6 m-20px-b">
+                <div class="feature-box wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="d-flex f-items-center">
+                        <div class="feature-marker"></div>
+                        <span>Manter-se organizado com um <strong class="text-white">dashboard Notion</strong> que gerencia tudo</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-sm-6 m-20px-b">
+                <div class="feature-box wow fadeInUp" data-wow-delay="0.35s">
+                    <div class="d-flex f-items-center">
+                        <div class="feature-marker"></div>
+                        <span><strong class="text-white">Nunca mais ficar sem ideias</strong> de anúncios — ângulos ilimitados sob demanda</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== THIS ISN'T HYPE ==================== -->
+<section class="bg-darkest p-80px-tb xs-p-40px-tb">
+    <div class="container">
+        <div class="row f-items-center">
+            <div class="c-xs-12 c-md-6 m-40px-b">
+                <h2 class="font-decorative-black m-30px-b fs-title-lg lh-1-2 wow fadeInLeft">
+                    ISSO <span class="text-red" style="text-decoration: line-through;">NÃO É HYPE.</span><br>
+                    É EXATAMENTE<br>
+                    <span class="text-gold-gradient">COMO FUNCIONA.</span>
+                </h2>
+
+                <p class="m-25px-b opacity-9 wow fadeIn">
+                    E ainda assim 95% dos profissionais de marketing e donos de negócios ainda não têm um sistema sólido para reescrever dezenas de campanhas comprovadas de milhões de dólares.
+                </p>
+
+                <ul class="styled-list">
+                    <li class="wow fadeIn">Eles ficam olhando para páginas em branco.</li>
+                    <li class="wow fadeIn" data-wow-delay="0.05s">Eles não estão encontrando audiências ocultas que seus concorrentes perderam.</li>
+                    <li class="wow fadeIn" data-wow-delay="0.1s">Eles não estão usando a IA mais avançada para fazer o trabalho pesado.</li>
+                    <li class="wow fadeIn" data-wow-delay="0.15s"><strong class="text-gold">Esse é um dos grandes problemas que o Sistema Savage de Publicidade resolve.</strong></li>
+                </ul>
+            </div>
+
+            <div class="c-xs-12 c-md-6 text-center wow fadeInRight">
+                <!-- Escudo Leão - Imagem PNG -->
+                <img src="assets/shield-lion-BgbrAqAf.png" alt="Escudo com Leão" class="decorative-image decorative-image-glow w-250px">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== IN 2026 LOW VOLUME ==================== -->
+<section class="bg-vignette p-80px-tb xs-p-40px-tb">
+    <div class="container">
+        <div class="text-center m-50px-b">
+            <p class="font-medieval-bold text-gold m-15px-b fs-label ls-1 wow fadeIn">
+                EM 2026, ANUNCIANTES DE BAIXO VOLUME ESTÃO MORTOS.
+            </p>
+            <h2 class="font-decorative-black fs-title-xl wow fadeInUp">
+                TODO O DINHEIRO VAI PARA OS <span class="text-gold-shine">ANUNCIANTES SAVAGE.</span>
+            </h2>
+        </div>
+
+        <div class="row f-items-center">
+            <div class="c-xs-12 c-md-5 text-center m-40px-b wow fadeInLeft">
+                <!-- Machados Cruzados - Imagem PNG -->
+                <img src="assets/crossed-axes-pcK42pi-.png" alt="Machados Cruzados" class="decorative-image decorative-image-glow w-max-300px">
+            </div>
+
+            <div class="c-xs-12 c-md-7 wow fadeInRight">
+                <h3 class="font-medieval-bold text-gold m-25px-b fs-label ls-1">
+                    O QUE É PRECISO PARA SER UM ANUNCIANTE SAVAGE?
+                </h3>
+
+                <ul class="styled-list">
+                    <li>Você precisa saber como encontrar <strong class="text-white">múltiplos avatares</strong> — compradores ocultos que seus concorrentes nunca pensaram.</li>
+                    <li>Você precisa criar <strong class="text-white">dezenas de ângulos</strong> para cada avatar em diferentes níveis de consciência.</li>
+                    <li>Você precisa <strong class="text-white">reescrever campanhas vencedoras comprovadas em escala</strong> usando a IA mais avançada para copywriting.</li>
+                    <li>Você precisa gerenciar uma <strong class="text-white">equipe de editores</strong> que consegue produzir 50+ vídeos por semana a um preço que você pode pagar.</li>
+                    <li>E você precisa <strong class="text-white">manter tudo organizado</strong>.</li>
+                    <li><strong class="text-gold">Esse é o problema que o Sistema Savage de Publicidade resolve.</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== 7-STEP SYSTEM ==================== -->
+<section id="sistema" class="bg-gradient-radial p-80px-tb xs-p-40px-tb">
+    <div class="container">
+        <!-- Coroa Flamejante -->
+        <div class="text-center m-40px-b wow fadeIn">
+            <img src="assets/flaming-crown-CDAWMI25.png" alt="Coroa Flamejante" class="decorative-image decorative-image-glow w-max-300px">
+        </div>
+
+        <h2 class="font-decorative-black text-center m-50px-b fs-title-lg wow fadeIn">
+            O SISTEMA <span class="text-gold-shine">SAVAGE</span> DE 7 PASSOS
+        </h2>
+
+        <p class="text-center m-50px-b font-elegant opacity-9 fs-lead wow fadeIn">
+            Aqui está exatamente o sistema de prompts e fluxo que vamos usar para produzir 50+ anúncios em vídeo de classe mundial por semana:
+        </p>
+
+        <!-- 7 Passos em Grid -->
+        <div class="row gap-10">
+            <div class="c-xs-12 c-md-6 m-15px-b">
+                <div class="feature-box wow fadeInUp">
+                    <div class="d-flex f-items-start">
+                        <span class="font-decorative-black text-gold m-15px-r fs-large lh-1">1</span>
+                        <div>
+                            <h4 class="font-medieval-bold text-gold m-8px-b">DESCOBERTA DE AVATARES</h4>
+                            <p class="opacity-9">Encontre compradores ocultos que seus concorrentes nunca pensaram em atingir.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 m-15px-b">
+                <div class="feature-box wow fadeInUp" data-wow-delay="0.05s">
+                    <div class="d-flex f-items-start">
+                        <span class="font-decorative-black text-gold m-15px-r fs-large lh-1">2</span>
+                        <div>
+                            <h4 class="font-medieval-bold text-gold m-8px-b">GERAÇÃO DE ÂNGULOS</h4>
+                            <p class="opacity-9">Crie 50+ ângulos únicos de classe mundial em apenas 10 minutos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 m-15px-b">
+                <div class="feature-box wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="d-flex f-items-start">
+                        <span class="font-decorative-black text-gold m-15px-r fs-large lh-1">3</span>
+                        <div>
+                            <h4 class="font-medieval-bold text-gold m-8px-b">MINERAÇÃO DE CAMPANHAS</h4>
+                            <p class="opacity-9">Encontre e reescreva campanhas vencedoras comprovadas de milhões de dólares.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 m-15px-b">
+                <div class="feature-box wow fadeInUp" data-wow-delay="0.15s">
+                    <div class="d-flex f-items-start">
+                        <span class="font-decorative-black text-gold m-15px-r fs-large lh-1">4</span>
+                        <div>
+                            <h4 class="font-medieval-bold text-gold m-8px-b">CRIAÇÃO DE SCRIPTS</h4>
+                            <p class="opacity-9">Tenha 25+ scripts savage prontos para gravar em 30 minutos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 m-15px-b">
+                <div class="feature-box wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="d-flex f-items-start">
+                        <span class="font-decorative-black text-gold m-15px-r fs-large lh-1">5</span>
+                        <div>
+                            <h4 class="font-medieval-bold text-gold m-8px-b">LISTAS DE CENAS</h4>
+                            <p class="opacity-9">Gere instruções detalhadas para que editores saibam exatamente o que criar.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-6 m-15px-b">
+                <div class="feature-box wow fadeInUp" data-wow-delay="0.25s">
+                    <div class="d-flex f-items-start">
+                        <span class="font-decorative-black text-gold m-15px-r fs-large lh-1">6</span>
+                        <div>
+                            <h4 class="font-medieval-bold text-gold m-8px-b">PRODUÇÃO EM ESCALA</h4>
+                            <p class="opacity-9">Gerencie uma equipe que produz 50+ vídeos por semana a R$ 175 cada.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Passo 7 - Destaque Especial -->
+            <div class="c-xs-12 m-30px-t">
+                <div class="step-7-highlight wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="step-7-badge">BÔNUS</div>
+                    <div class="d-flex f-items-center f-justify-center xs-f-col">
+                        <span class="font-decorative-black text-gold m-15px-r xs-m-0px-r xs-m-10px-b fs-xlarge lh-1">7</span>
+                        <div class="text-center xs-text-center">
+                            <h4 class="font-medieval-bold text-gold m-8px-b fs-medium ls-1">ORGANIZAÇÃO TOTAL</h4>
+                            <p class="opacity-9 m-0px-b">Dashboard Notion completo para gerenciar tudo em um só lugar — <strong class="text-white">nunca mais fique perdido.</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FREE SYSTEM + COACHING ==================== -->
+<section id="coaching" class="bg-spotlight p-80px-tb xs-p-40px-tb">
+    <div class="container">
+        <h2 class="font-decorative-black text-center m-50px-b lh-1-3 fs-title-sm wow fadeIn">
+            QUERO TE DAR O SISTEMA SAVAGE DE PUBLICIDADE COMPLETO <span class="text-gold-shine">DE GRAÇA.</span>
+        </h2>
+
+        <div class="row f-items-center">
+            <div class="c-xs-12 c-md-4 text-center m-40px-b wow fadeInLeft">
+                <!-- Tocha Verde - Imagem PNG -->
+                <img src="assets/green-flame-torch-BAKL7WqA.png" alt="Tocha com Chama Verde" class="decorative-image decorative-image-glow w-150px">
+            </div>
+
+            <div class="c-xs-12 c-md-8 wow fadeInRight">
+                <p class="m-20px-b opacity-9">Agora, aqui está a questão.</p>
+
+                <p class="m-20px-b opacity-9">
+                    Sabe, eu costumava ter um Programa de Coaching Elite para meus Top Alunos de VSL a R$ 15.000/mês. Uma vez por semana eu entrava em uma call, respondia perguntas e ajudava as pessoas a destravar suas campanhas.
+                </p>
+
+                <p class="m-20px-b opacity-9">
+                    Era ótimo. Mas sempre me incomodou que as pessoas que estavam começando... as que realmente precisavam mais de ajuda... nunca conseguiam entrar.
+                </p>
+
+                <p class="m-30px-b fw-600 text-white">Então estou mudando isso.</p>
+            </div>
+        </div>
+
+        <div class="gold-line-thick m-50px-tb"></div>
+
+        <div class="text-center">
+            <h3 class="font-decorative m-25px-b lh-1-3 fs-title-sm wow fadeIn">
+                PELA PRIMEIRA VEZ EM UM ANO, ESTOU REABRINDO AS PORTAS DO PROGRAMA <span class="text-gold-shine">ELITE COACHING</span> DO SAVAGE ADVERTISING.
+            </h3>
+
+            <p class="w-max-750px c-center m-30px-b opacity-9 wow fadeIn">
+                Por que agora? Porque o jogo está evoluindo rápido demais para fazer isso apenas "uma vez por ano." A IA está mudando todo santo dia. Novos truques. Novas ferramentas. Novas formas de sair na frente. Você quer estar na sala quando eu compartilhar o que está funcionando AGORA, não o que funcionava 6 meses atrás.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FAQ ==================== -->
+<section class="bg-pattern p-80px-tb xs-p-40px-tb">
+    <div class="container">
+        <h2 class="font-decorative-black text-center m-50px-b fs-title-md wow fadeIn">
+            PERGUNTAS <span class="text-gold-gradient">FREQUENTES</span>
+        </h2>
+
+        <div class="w-max-800px c-center">
+            <div class="faq-item wow fadeInUp">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    <span>Por Que Eu Deveria Ficar Bom em Publicidade?</span>
+                    <div class="faq-arrow"></div>
+                </div>
+                <div class="faq-answer">
+                    <p class="opacity-9">Publicidade é a habilidade mais lucrativa do século 21. Quem domina a criação de anúncios controla o fluxo de clientes e receita de qualquer negócio.</p>
+                </div>
+            </div>
+
+            <div class="faq-item wow fadeInUp" data-wow-delay="0.05s">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    <span>Como Sei Se Isso Pode Funcionar Para Mim?</span>
+                    <div class="faq-arrow"></div>
+                </div>
+                <div class="faq-answer">
+                    <p class="opacity-9">Se você vende qualquer produto ou serviço online e quer escalar com anúncios pagos, esse sistema foi feito para você.</p>
+                </div>
+            </div>
+
+            <div class="faq-item wow fadeInUp" data-wow-delay="0.1s">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    <span>Como Isso É Diferente do VSL Masterclass?</span>
+                    <div class="faq-arrow"></div>
+                </div>
+                <div class="faq-answer">
+                    <p class="opacity-9">O VSL Masterclass foca em criar uma VSL perfeita. O Sistema Savage é sobre produzir volume — 50+ anúncios por semana — para dominar o algoritmo.</p>
+                </div>
+            </div>
+
+            <div class="faq-item wow fadeInUp" data-wow-delay="0.15s">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    <span>Preciso Ter Experiência com Ferramentas de IA?</span>
+                    <div class="faq-arrow"></div>
+                </div>
+                <div class="faq-answer">
+                    <p class="opacity-9">Não. O sistema inclui todos os prompts prontos. Você só precisa copiar, colar e adaptar para seu produto.</p>
+                </div>
+            </div>
+
+            <div class="faq-item wow fadeInUp" data-wow-delay="0.2s">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    <span>Isso É Só Para Copywriters?</span>
+                    <div class="faq-arrow"></div>
+                </div>
+                <div class="faq-answer">
+                    <p class="opacity-9">Não. É para donos de negócios, media buyers, gestores de tráfego, e qualquer pessoa que quer criar anúncios que convertem.</p>
+                </div>
+            </div>
+
+            <div class="faq-item wow fadeInUp" data-wow-delay="0.25s">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    <span>É Só Para Publicidade Paga?</span>
+                    <div class="faq-arrow"></div>
+                </div>
+                <div class="faq-answer">
+                    <p class="opacity-9">O foco principal é Facebook/Meta Ads, mas os princípios se aplicam a TikTok, YouTube e qualquer plataforma de vídeo.</p>
+                </div>
+            </div>
+
+            <div class="faq-item wow fadeInUp" data-wow-delay="0.3s">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    <span>O Sistema Savage É Para Iniciantes?</span>
+                    <div class="faq-arrow"></div>
+                </div>
+                <div class="faq-answer">
+                    <p class="opacity-9">Sim. É especialmente poderoso para iniciantes porque você não começa do zero — começa de campanhas comprovadas.</p>
+                </div>
+            </div>
+
+            <div class="faq-item wow fadeInUp" data-wow-delay="0.35s">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    <span>Quanto Tempo Preciso Investir?</span>
+                    <div class="faq-arrow"></div>
+                </div>
+                <div class="faq-answer">
+                    <p class="opacity-9">Com o sistema, você pode gerar 50+ ângulos em 10 minutos e 25+ scripts em 30 minutos. O investimento é mínimo.</p>
+                </div>
+            </div>
+
+            <div class="faq-item wow fadeInUp" data-wow-delay="0.4s">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    <span>E Se Eu Estiver em Um Nicho Específico?</span>
+                    <div class="faq-arrow"></div>
+                </div>
+                <div class="faq-answer">
+                    <p class="opacity-9">O sistema funciona para qualquer nicho. Os princípios de copywriting e estrutura de anúncios são universais.</p>
+                </div>
+            </div>
+
+            <div class="faq-item wow fadeInUp" data-wow-delay="0.45s">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    <span>A IA Está Mudando Rápido. Isso Vai Funcionar Daqui a Um Ano?</span>
+                    <div class="faq-arrow"></div>
+                </div>
+                <div class="faq-answer">
+                    <p class="opacity-9">Por isso incluímos as calls semanais de coaching. Você sempre terá acesso às últimas atualizações e estratégias.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== PRICING ==================== -->
+<section id="pricing" class="bg-dark-green p-80px-tb xs-p-40px-tb">
+    <div class="container">
+        <div class="diamond-divider"></div>
+
+        <h2 class="font-decorative-black text-center m-50px-b fs-title-xl wow fadeIn">
+            <span class="text-gold-gradient">ESCOLHA SEU COMPROMISSO</span>
+        </h2>
+
+        <div class="row f-justify-center f-items-end gap-10">
+            <!-- Plano 1 -->
+            <div class="c-xs-12 c-sm-6 c-lg-4 m-20px-b">
+                <div class="pricing-card wow fadeInUp">
+                    <h4 class="pricing-title">Pagamento Único</h4>
+                    <div class="pricing-amount text-gold-gradient">
+                        <span class="currency">R$</span>4.997
+                    </div>
+                    <p class="pricing-description">Pague uma vez. Acesso imediato. Sem Coaching Incluído.</p>
+                    <a href="#" class="btn-gold btn-gold-sm">ENTRAR NA SALA DE GUERRA</a>
+                </div>
+            </div>
+
+            <!-- Plano 3 (Featured) - Agora no centro -->
+            <div class="c-xs-12 c-sm-12 c-lg-4 m-20px-b">
+                <div class="pricing-card featured wow fadeInUp" data-wow-delay="0.1s" style="transform: scale(1.08); padding: 55px 40px;">
+                    <span class="pricing-badge">Melhor Valor</span>
+                    <h4 class="pricing-title" style="margin-top: 15px;">Plano Trimestral</h4>
+                    <div class="pricing-amount text-gold-shine fs-huge">
+                        <span class="currency">R$</span>12.497
+                    </div>
+                    <p class="pricing-description fs-base">ECONOMIZE R$ 2.500. Compromisso de 3 meses de maestria. Inclui Calls Semanais de Coaching.</p>
+                    <a href="#" class="btn-gold btn-gold-lg">ENTRAR NA SALA DE GUERRA</a>
+                </div>
+            </div>
+
+            <!-- Plano 2 -->
+            <div class="c-xs-12 c-sm-6 c-lg-4 m-20px-b">
+                <div class="pricing-card wow fadeInUp" data-wow-delay="0.2s">
+                    <h4 class="pricing-title">Plano Mensal</h4>
+                    <div class="pricing-amount text-gold-gradient">
+                        <span class="currency">R$</span>4.997<span class="period">/mês</span>
+                    </div>
+                    <p class="pricing-description">Cancele quando quiser. Acesso completo imediato. Inclui Calls Semanais de Coaching.</p>
+                    <a href="#" class="btn-gold btn-gold-sm">ENTRAR NA SALA DE GUERRA</a>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-center m-40px-t m-50px-b">
+            <a href="#" class="text-gold font-medieval link-underline fs-normal">Não preciso do coaching. Só quero o sistema.</a>
+        </p>
+
+        <!-- Garantia / Trust Badges -->
+        <div class="guarantee-box wow fadeIn">
+            <div class="row f-items-center f-justify-center">
+                <div class="c-xs-12 c-md-8">
+                    <div class="d-flex f-items-center f-justify-center xs-f-col">
+                        <div class="guarantee-icon m-25px-r xs-m-0px-r xs-m-15px-b">
+                            <span class="iccon-certificate-1"></span>
+                        </div>
+                        <div class="text-center xs-text-center">
+                            <h4 class="font-medieval-bold text-gold m-10px-b fs-normal-lg ls-1">GARANTIA INCONDICIONAL DE 7 DIAS</h4>
+                            <p class="opacity-9 m-0px-b fs-small">
+                                Se dentro de 7 dias você não sentir que o Sistema Savage de Publicidade pode transformar sua forma de criar anúncios, devolvo <strong class="text-white">100% do seu investimento</strong>. Sem perguntas. Sem burocracia. O risco é todo meu.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="trust-badges m-30px-t">
+                <span class="trust-item"><span class="iccon-lock-1 m-5px-r"></span>Pagamento Seguro</span>
+                <span class="trust-item"><span class="iccon-check-1 m-5px-r"></span>Acesso Imediato</span>
+                <span class="trust-item"><span class="iccon-phone-1 m-5px-r"></span>Suporte Dedicado</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== CTA FINAL ==================== -->
+<section class="bg-gradient-dark p-80px-tb xs-p-50px-tb ps-relative" style="overflow: hidden;">
+    <!-- Glow de fundo -->
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(201, 162, 39, 0.15) 0%, transparent 70%); pointer-events: none;"></div>
+
+    <div class="container text-center ps-relative">
+        <div class="urgency-badge wow fadeIn">
+            <span class="iccon-exclamation-1 m-8px-r"></span>VAGAS LIMITADAS
+        </div>
+
+        <h2 class="font-decorative-black m-25px-b fs-title-xl wow fadeIn">
+            <span class="text-gold-gradient">O JOGO MUDOU.</span><br>
+            <span class="text-white">A PERGUNTA É: VOCÊ VAI MUDAR COM ELE?</span>
+        </h2>
+
+        <p class="font-elegant m-15px-b opacity-9 fs-lead w-max-750px c-center wow fadeIn">
+            Enquanto você lê isso, seus concorrentes que usam IA já estão produzindo <strong class="text-gold">50+ anúncios por semana</strong>. Cada dia que passa, a distância aumenta.
+        </p>
+
+        <p class="font-medieval-bold text-gold m-40px-b fs-label-sm ls-1 wow fadeIn">
+            VOCÊ PODE CONTINUAR LUTANDO SOZINHO...<br>OU PODE ENTRAR NA SALA DE GUERRA AGORA.
+        </p>
+
+        <a href="#pricing" class="hero-cta hero-cta-lg wow fadeInUp" data-wow-delay="0.2s">
+            QUERO DOMINAR A PUBLICIDADE
+        </a>
+
+        <p class="m-25px-t opacity-7 fs-smaller wow fadeIn">
+            <span class="iccon-check-1 text-gold m-5px-r"></span>Garantia de 7 dias ou seu dinheiro de volta
+        </p>
+    </div>
+</section>
+
+<!-- ==================== FOOTER HERO ==================== -->
+<section class="footer-hero">
+    <!-- Background com imagem do rei escocês -->
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="bg-darkest p-50px-tb">
+    <div class="container">
+        <div class="row f-items-center">
+            <div class="c-xs-12 c-md-4 m-25px-b xs-text-center">
+                <div class="d-flex f-items-center f-gap-12 xs-f-justify-center">
+                    <span class="font-decorative text-gold fs-normal">SAVAGE ADVERTISING</span>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-4 text-center m-25px-b">
+                <div class="footer-links d-flex f-justify-center f-gap-25">
+                    <a href="#" class="font-medieval fs-tiny">Privacidade</a>
+                    <a href="#" class="font-medieval fs-tiny">Termos</a>
+                    <a href="#" class="font-medieval fs-tiny">Contato</a>
+                </div>
+            </div>
+
+            <div class="c-xs-12 c-md-4 text-right xs-text-center">
+                <p class="opacity-5 fs-mini">© 2026 The Savage Advertising. Todos os direitos reservados.</p>
+            </div>
+        </div>
+
+        <div class="gold-line m-35px-tb"></div>
+
+        <p class="text-center opacity-4 fs-micro w-max-800px c-center">
+            Este site não faz parte do website do Facebook ou Facebook Inc. Além disso, este site NÃO é endossado pelo Facebook de nenhuma forma. FACEBOOK é uma marca registrada da FACEBOOK, Inc. Os resultados podem variar e não são garantidos.
+        </p>
+    </div>
+</footer>
+
+<!-- Squeleton JS (Footer) -->
+<script src="https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js"></script>
+
+<script>
+    // Partículas de Brasa - Hero Effect
+    (function() {
+        const container = document.getElementById('embers');
+        if (!container) return;
+
+        const emberCount = 35;
+        const colors = [
+            'rgba(255, 120, 20, 0.9)',   // Laranja brilhante
+            'rgba(255, 80, 0, 0.9)',     // Laranja escuro
+            'rgba(255, 160, 40, 0.9)',   // Amarelo-laranja
+            'rgba(255, 50, 0, 0.85)',    // Vermelho-laranja
+            'rgba(255, 200, 60, 0.8)'    // Amarelo claro
+        ];
+
+        function createEmber() {
+            const ember = document.createElement('div');
+            ember.className = 'ember';
+
+            // Tamanho aleatório (2-6px)
+            const size = Math.random() * 4 + 2;
+            ember.style.width = size + 'px';
+            ember.style.height = size + 'px';
+
+            // Posição horizontal aleatória
+            ember.style.left = Math.random() * 100 + '%';
+
+            // Cor aleatória
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            ember.style.backgroundColor = color;
+
+            // Glow effect
+            ember.style.boxShadow = `0 0 ${size * 2}px ${size}px ${color}, 0 0 ${size * 4}px ${size * 2}px rgba(255, 100, 0, 0.3)`;
+
+            // Duração aleatória (6-12 segundos)
+            const duration = Math.random() * 6 + 6;
+            ember.style.animationDuration = duration + 's';
+
+            // Delay aleatório para distribuir as partículas
+            ember.style.animationDelay = Math.random() * 8 + 's';
+
+            // Drift horizontal (movimento lateral) - CSS variable
+            const drift = (Math.random() - 0.5) * 100;
+            ember.style.setProperty('--drift', drift + 'px');
+
+            container.appendChild(ember);
+
+            // Remover e recriar após a animação
+            setTimeout(() => {
+                ember.remove();
+                createEmber();
+            }, (duration + parseFloat(ember.style.animationDelay)) * 1000);
+        }
+
+        // Criar partículas iniciais com delays escalonados
+        for (let i = 0; i < emberCount; i++) {
+            setTimeout(() => createEmber(), i * 200);
+        }
+    })();
+
+    // Counter-Up2 - Animação dos números
+    (function() {
+        if (!window.counterUp) return;
+        const counterUp = window.counterUp.default;
+
+        // Função para observar e animar contadores
+        function observeCounters(containerSelector, counterSelector) {
+            const container = document.querySelector(containerSelector);
+            if (!container) return;
+
+            const counters = container.querySelectorAll(counterSelector);
+            if (!counters.length) return;
+
+            const counterCall = (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.classList.contains('is-visible')) {
+                        entry.target.classList.add('is-visible');
+                        counters.forEach(counter => {
+                            counterUp(counter, {
+                                duration: 2000,
+                                delay: 16
+                            });
+                        });
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(counterCall, { threshold: 0.5 });
+            observer.observe(container);
+        }
+
+        // Intro Stats
+        observeCounters('.intro-stats', '.counter');
+
+        // Solution Box (50+ por semana)
+        observeCounters('.solution-box', '.counter-big');
+    })();
+
+    // Header Scroll Effect
+    (function() {
+        const header = document.querySelector('.site-header');
+        if (!header) return;
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    })();
+
+    // Smooth Scroll para links internos
+    (function() {
+        const headerHeight = 80; // Altura do header fixo
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll indicator click
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        if (scrollIndicator) {
+            scrollIndicator.addEventListener('click', () => {
+                const nextSection = document.querySelector('.intro-section');
+                if (nextSection) {
+                    const targetPosition = nextSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        }
+    })();
+</script>
+
+</body>
+</html>

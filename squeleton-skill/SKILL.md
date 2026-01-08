@@ -15,7 +15,7 @@ Ao usar essa habilidade, **sempre prefira usar e combinar as classes do Squeleto
 
 ### Perguntas antes de começar
 
-Note que o Squeleton é deliberadamente agnóstico em relação a cores, família de fontes e estilos muito específicos. O foco está em fornecer estrutura, grid e utilitários essenciais, deixando a identidade visual para o desenvolvedor definir. 
+Note que o Squeleton é deliberadamente agnóstico em relação a paleta de cores, família de fontes e estilos muito específicos. Esta neutralidade é uma decisão estratégica para maximizar sua portabilidade entre diferentes temas e projetos. O foco está em fornecer estrutura, grid e utilitários essenciais, deixando a identidade visual para o desenvolvedor definir. 
 
 Ao desenvolver com Squeleton, você pode estar trabalhando em um projeto que já tem o boilerplate integrado e faz uso de arquivos adicionais de estilos e scripts personalizados. Para saber de onde partir, sempre pergunte:
 
@@ -63,26 +63,37 @@ Somente crie CSS ou JavaScript novo quando **não existir** uma classe ou biblio
 
 ---
 
-## Breakpoints para Colunas de Grid
+## Sistema Responsivo Híbrido
 
-Colunas são mobile-first e usam breakpoints como **sufixo** (ex: `c-xs-12`), por isso suportam **todos os 4 breakpoints**:
+O Squeleton usa uma **abordagem híbrida única**: Grid mobile-first + Utilitários desktop-first.
+
+---
+
+## Breakpoints para Colunas de Grid (Mobile-First)
+
+Colunas usam `min-width` - comece em mobile e expanda para desktop:
 
 | Breakpoint | Dimensão | Exemplo |
 |------------|----------|---------|
-| `c-xs-{1-12}` | ≤ 639px | `c-xs-12` |
+| `c-xs-{1-12}` | ≤ 639px (base) | `c-xs-12` |
 | `c-sm-{1-12}` | ≥ 640px | `c-sm-6` |
 | `c-md-{1-12}` | ≥ 992px | `c-md-4` |
 | `c-lg-{1-12}` | ≥ 1200px | `c-lg-3` |
 
-**⚠️ Mobile-first obrigatório**: Sempre inicie com `c-xs-{número}` como base.
+**⚠️ Sempre inicie com `c-xs-{número}`**: A base mobile é obrigatória para o grid.
 - ✅ Correto: `c-xs-12 c-md-6` (100% mobile, 50% desktop)
 - ❌ Errado: `c-md-6` (falta o c-xs-)
 
 ---
 
-## Breakpoints para Classes Utilitárias
+## Breakpoints para Classes Utilitárias (Desktop-First)
 
-Classes utilitárias usam **apenas `@media (max-width)`**, criando uma "redução progressiva":
+**Diferente do grid**, classes utilitárias usam `max-width` - escreva para desktop, ajuste para mobile:
+- Sem prefixo = desktop (padrão)
+- Adicione `md-`, `sm-`, `xs-` para ajustar em telas menores
+- **Não existe `lg-`** porque desktop já é o padrão
+
+Classes utilitárias criam uma "redução progressiva":
 
 | Breakpoint | Query CSS | Quando Aplica | Exemplo |
 |------------|-----------|---------------|---------|
@@ -148,40 +159,27 @@ Como todos usam `max-width`, a ordem de especificidade é:
 - Centralizar: `c-center` (margin: 0 auto)
 
 ### Containers
-- `.container` - max-width: 1250px, centralizado
-- `.container-fluid` - width: 100%
+- `.container` - max-width: 1250px, centralizado (padrão para conteúdo)
+- `.container-fluid` - width: 100% (para seções full-width)
+
+**Quando usar cada um:**
+- `container` → Conteúdo centralizado (textos, cards, grids de produtos) - **usar na maioria dos casos**
+- `container-fluid` → Conteúdo sem margem lateral (galerias full-width, dashboards, mapas)
 
 ### Gaps (espaçamento entre colunas)
-- Padrão: 15px (sem classe)
-- `.gap-10` - 10px
-- `.gap-5` - 5px
 - `.gap-0` - sem gap
-- Responsivos: Apenas breakpoints de utilitárias (`xs-`, `sm-`, `md-`) + todos os valores (`gap-0`, `gap-5`, `gap-10`)
-  - Exemplos: `xs-gap-5`, `sm-gap-10`, `md-gap-0`
+- `.gap-5` - 5px
+- `.gap-10` - 10px
+- `.gap-15` - 15px (padrão)
+- `.gap-20` - 20px
+- `.gap-25` - 25px
+- `.gap-30` - 30px
+- Responsivos: `{xs|sm|md}-gap-{0-30}` (intervalo de 5)
+  - Exemplos: `xs-gap-10`, `sm-gap-20`, `md-gap-0`
 
 ### Performance - Content Visibility (Lazy Rendering)
 
-Classes para otimizar listas/grids longos (20+ itens) usando `content-visibility: auto`:
-
-**Variantes de Tamanho**:
-- `.render-auto` - 500px (cards médios)
-- `.render-auto-250px` - 250px (cards compactos)
-- `.render-auto-800px` - 800px (cards grandes/hero)
-
-**Variantes Responsivas**:
-- `.md-render-auto` - 450px em ≤1199px (tablet)
-- `.sm-render-auto` - 400px em ≤991px (mobile médio)
-- `.xs-render-auto` - 300px em ≤639px (mobile compacto)
-
-```html
-<div class="row">
-    <div class="c-xs-12 c-md-4 render-auto">Card 1</div>
-    <div class="c-xs-12 c-md-4 render-auto">Card 2</div>
-    <!-- 20+ itens com 5-7x melhor performance -->
-</div>
-```
-
-Consulte `references/grid-reference.md` para mais informações e exemplos.
+Classes `.render-auto`, `.render-auto-small`, `.render-auto-large` para otimizar containers below-the-fold usando `content-visibility: auto`. Aplicar em `.container` ou `.container-fluid`. Consulte `references/grid-reference.md` para detalhes.
 
 ---
 
@@ -222,11 +220,10 @@ Consulte `references/padding-reference.md` e `references/margin-reference.md` pa
 
 **Width Percentual** - `w-{valor}` (sem unidade):
 - 10% até 100% (intervalo de 5%)
-- Especial: `w-12` (12.5% - útil para grid de 8 colunas)
 
 **Width Especiais**:
 - `w-auto` - largura automática
-- `w-max-{400-900}px` - max-width de 400px até 900px (intervalo de 50px)
+- `w-max-{100-900}px` - max-width de 100px até 900px (intervalo de 50px)
 
 ```html
 <!-- Largura fixa -->
@@ -277,8 +274,14 @@ Consulte `references/height-reference.md` para lista completa de valores.
 ```html
 <div class="d-none">Oculto</div>
 <div class="d-block">Block</div>
+<div class="d-inline">Inline</div>
 <div class="d-inline-block">Inline-block</div>
 <div class="d-flex">Flex</div>
+<div class="d-inline-flex">Inline Flex</div>
+<div class="d-grid">Grid</div>
+<div class="d-contents">Contents</div>
+<div class="d-table">Table</div>
+<div class="d-table-cell">Table Cell</div>
 <div class="xs-d-none md-d-block">Oculto mobile, visível desktop</div>
 ```
 
@@ -305,7 +308,7 @@ Consulte `references/display-reference.md` para mais informações e exemplos.
 - `.f-auto-max` (flex: 1 1 auto)
 - `.f-auto-min` (flex: 0 1 auto)
 
-**Gaps flex**: `.f-gap-{0-30}` (intervalo de 5, incluindo 0)
+**Gaps flex**: `.f-gap-{0-50}` (intervalo de 5)
 
 ```html
 <!-- Centralizar conteúdo -->
@@ -366,47 +369,59 @@ Consulte `references/flex-reference.md` para mais informações e exemplos.
 
 ## Classes Utilitárias de Tipografia
 
-**Font Size - Tamanhos de Heading (Fluido)**:
-- `.text-sz-h1` - 28px → 36px (escala fluida)
-- `.text-sz-h2` - 24px → 30px (escala fluida)
-- `.text-sz-h3` - 20px → 24px (escala fluida)
-- `.text-sz-h4` - 16px → 18px (escala fluida)
-- `.text-sz-h5` - 13px → 14px (escala fluida)
-- `.text-sz-h6` - 11px → 12px (escala fluida)
+**Font Size - Escala Numérica (fs-1 a fs-16)**:
+- `.fs-1` a `.fs-6` - tamanhos fixos (10px a 15px)
+- `.fs-7` a `.fs-16` - tamanhos fluidos com clamp() (16px a 64px)
+
+| Classe | Tamanho | Uso |
+|--------|---------|-----|
+| `.fs-1` | 10px | Micro labels |
+| `.fs-2` | 11px | Badges |
+| `.fs-3` | 12px | Small text |
+| `.fs-4` | 13px | Secondary |
+| `.fs-5` | 14px | Body small |
+| `.fs-6` | 15px | Body alt |
+| `.fs-7` | 15→16px | Body padrão |
+| `.fs-8` | 16→17px | Body large |
+| `.fs-9` | 17→18px | Lead |
+| `.fs-10` | 18→20px | Subtítulo |
+| `.fs-11` | 21→24px | Título pequeno |
+| `.fs-12` | 24→28px | Título médio |
+| `.fs-13` | 28→32px | Título grande |
+| `.fs-14` | 34→40px | Headline |
+| `.fs-15` | 40→48px | Hero |
+| `.fs-16` | 52→64px | Display |
 
 **Font Weight e Espaçamento**:
-- `.font-wg-{300-900}` - font-weight (300, 400, 500, 600, 700, 800, 900)
-- `.letter-sp-{0-5}` - letter-spacing positivo
-- `.letter-sp-minus-{025|05|1|2|3}` - letter-spacing negativo
+- `.fw-{300-900}` - font-weight (300, 400, 500, 600, 700, 800, 900)
+- `.ls-{0-5}` - letter-spacing positivo
+- `.ls-minus-{0-2|0-5|1|2|3}` - letter-spacing negativo
 
 **Font Size - Ajustes Percentuais**:
-- `.minus-{10-30}` - font-size menor (75-90%)
+- `.minus-{10-50}` - font-size menor (50-90%)
 - `.more-{10-50}` - font-size maior (110-150%)
 
 **Alinhamento e Transformação**:
 - `.text-left`, `.text-center`, `.text-right`
 - `.text-uppercase`, `.text-lowercase`
-- `.line-h-1-{0-9}` - line-height (1.0 a 1.9)
+- `.lh-1-{0-9}` - line-height (1.0 a 1.9)
 
 ## Classes Utilitárias de Posicionamento
-- `.ps-relative`, `.ps-absolute`, `.ps-fixed`, `.ps-sticky`
+- `.ps-relative`, `.ps-absolute`, `.ps-fixed`, `.ps-sticky`, `.ps-static`
+- `.top-0`, `.bottom-0`, `.left-0`, `.right-0`, `.top-auto`, `.bottom-auto` - valores de posição
 - `.z-index-{0-5}`, `.z-index-111`, `.z-index-1111`
 - `.absolute-xy` - centraliza absoluto (transform translate -50%)
 
-## Classes Utilitárias de Cursor
-- `.cursor-pointer` - hover em botões/cards clicáveis
-- `.cursor-not-allowed` - estados disabled
-- `.cursor-wait` - loading states
-- `.cursor-text` - campos de texto customizados
-- `.cursor-move` - elementos movíveis/drag & drop
-- `.cursor-grab` - carrosséis, sliders (antes de arrastar)
-- `.cursor-grabbing` - durante o arrasto
-- `.cursor-help` - tooltips, ícones de ajuda
-- `.cursor-zoom-in` / `.cursor-zoom-out` - lightbox, zoom de imagens
+## Outras Classes Utilitárias
 
-**Nota importante sobre classes globais**: Todas as classes utilitárias acima (border, opacity, tipografia, posicionamento, cursor) podem ser usadas sem breakpoint (global) ou com breakpoint (`xs-`, `sm-`, `md-`) para aplicação específica, exceto cursor que não possui variantes responsivas.
+- **Cursor**: `.cursor-pointer`, `.cursor-grab`, `.cursor-not-allowed`, etc.
+- **Imagem**: `.obj-cover`, `.obj-contain`, `.aspect-16-9`, `.aspect-1-1`, etc.
+- **Texto**: `.truncate`, `.line-clamp-2`, `.line-clamp-3`
+- **Interação**: `.pe-none`, `.pe-auto`
+- **Visibilidade**: `.visible-xs`, `.visible-sm`, `.visible-md`, `.visible-lg` - mostra apenas no breakpoint
+- **Vídeo**: `.video-responsive`, `.embed-responsive-16by9` - iframes/vídeos responsivos
 
-Consulte `references/border-reference.md`, `references/typography-reference.md` e `references/utilities-reference.md` para mais informações e exemplos.
+Consulte `references/utilities-reference.md` para lista completa.
 
 ---
 
@@ -442,25 +457,27 @@ Consulte `references/animations-reference.md` para mais informações e exemplos
 
 ## Bibliotecas JavaScript
 
-O Squeleton integra 9 bibliotecas JavaScript otimizadas e pré-configuradas. Use-as conforme a documentação oficial de cada uma:
+O Squeleton integra bibliotecas JavaScript otimizadas e pré-configuradas:
 
-| Biblioteca | Finalidade | Documentação |
-|------------|------------|--------------|
-| **HTMX** | O menor framework de interface de usuário reativo do mundo. Incrivelmente poderoso, absurdamente pequeno. | htmx.org |
-| **Embla Carousel** | Biblioteca de carrossel minimalista com movimento fluido e precisão de swipe excepcional. | embla-carousel.com |
-| **js-cookie** | Biblioteca JavaScript simples e leve para gerenciamento de cookies do navegador. |
-| **a11y-dialog** | Biblioteca leve e flexível para criação de janelas de diálogo intuitivas. | a11y-dialog.netlify.app |
-| **VanJS** | O menor framework de interface de usuário reativo do mundo. Incrivelmente poderoso, absurdamente pequeno. | vanjs.org |
-| **Toastify** | Biblioteca JavaScript para mensagens de notificação aprimoradas. | apvarun.github.io/toastify-js |
-| **VenoBox 2** | Biblioteca JavaScript Lightbox para imagens, vídeos, galerias e iFrames. | veno.es/venobox |
-| **Counter-Up2** | Biblioteca leve que conta até um número alvo quando o número se torna visível. | github.com/bfintal/Counter-Up2 |
-| **Wow2 Animation** | Fork otimizado próprio baseado no wow.js para animações on-scroll performáticas. | https://wowjs.uk/ |
+| Biblioteca | Finalidade | GitHub |
+|------------|------------|--------|
+| **HTMX** | Requisições AJAX declarativas via atributos HTML | github.com/bigskysoftware/htmx |
+| **Embla Carousel** | Carrossel minimalista com swipe fluido. Ver `references/carousel-reference.md` | github.com/davidjerleke/embla-carousel |
+| **js-cookie** | Gerenciamento de cookies do navegador | github.com/js-cookie/js-cookie |
+| **a11y-dialog** | Modais acessíveis e leves. Ver `references/modal-reference.md` | github.com/KittyGiraudel/a11y-dialog |
+| **VanJS** | Framework reativo minimalista | github.com/vanjs-org/van |
+| **Toastify** | Notificações toast customizáveis | github.com/apvarun/toastify-js |
+| **VenoBox 2** | Lightbox para imagens, vídeos e galerias. Ver `references/venobox-reference.md` | github.com/nicholasio/venobox |
+| **Counter-Up2** | Animação de contagem numérica | github.com/bfintal/Counter-Up2 |
+| **Wow2 Animation** | Animações on-scroll. Ver `references/animations-reference.md` | github.com/graingert/wow |
 
 ---
 
-### Adaptações do Squeleton
+### Modais com a11y-dialog
 
-**a11y-dialog**: Os atributos originais `data-a11y-dialog-*` foram renomeados para `data-modal-*`:
+Modais com classe `.modal-dialog` já vêm com scroll lock automático (eventos show/hide).
+
+**Configuração a11y-dialog**: Os atributos originais `data-a11y-dialog-*` foram renomeados para `data-modal-*`:
 
 | Original | Squeleton |
 |----------|-----------|
@@ -499,9 +516,21 @@ Prefixo: `iccon-{nome}-{variante}`
 <span class="iccon-user-2"></span>
 ```
 
-**⚠️ IMPORTANTE**: Use APENAS ícones da lista oficial em `references/icons-reference.md`. Ícones inventados ou de outros frameworks NÃO funcionarão. **SEMPRE consulte a referência ANTES de usar qualquer ícone.**
+**IMPORTANTE**: Use APENAS ícones da lista oficial em `references/icons-reference.md`. Ícones inventados ou de outros frameworks NÃO funcionarão. **SEMPRE consulte a referência ANTES de usar qualquer ícone.**
 
 Consulte `references/icons-reference.md` para a lista completa organizada por categoria.
+
+## Tooltips
+
+Tooltips em CSS puro baseados na Balloon.css (já integrada):
+
+```html
+<button aria-label="Texto do tooltip" data-balloon-pos="up">Hover aqui</button>
+```
+
+Posições: `up`, `down`, `left`, `right`, `up-left`, `up-right`, `down-left`, `down-right`
+
+Consulte `references/tooltips-reference.md` para mais opções.
 
 ## Padrões Comuns de Uso
 
@@ -509,26 +538,28 @@ Consulte `references/icons-reference.md` para a lista completa organizada por ca
 ```html
 <section class="h-100vh d-flex f-items-center f-justify-center text-center p-30px-all">
     <div class="w-max-600px">
-        <h1 class="text-sz-h1 font-wg-700 m-20px-b">Título Principal</h1>
-        <p class="text-sz-h4 opacity-8">Subtítulo descritivo</p>
+        <h1 class="fs-13 fw-700 m-20px-b">Título Principal</h1>
+        <p class="fs-9 opacity-8">Subtítulo descritivo</p>
     </div>
 </section>
 ```
 
-### Grid de Cards Responsivo (Padrão E-commerce)
+### Grid de Cards Responsivo
 ```html
-<div class="container p-60px-tb xs-p-30px-tb">
-    <div class="row gap-10">
-        <div class="c-xs-12 c-sm-6 c-lg-3 render-auto">
-            <div class="border-all border-rd-8 p-20px-all cursor-pointer">
-                <img src="produto.jpg" class="w-100 border-rd-4 m-15px-b">
-                <h4 class="text-sz-h5 m-10px-b">Nome do Produto</h4>
-                <p class="text-sz-h4 font-wg-700">R$ 99,90</p>
+<section class="p-60px-tb">
+    <div class="container p-60px-tb xs-p-30px-tb render-auto">
+        <div class="row gap-10">
+            <div class="c-xs-12 c-sm-6 c-lg-3">
+                <div class="border-all border-rd-8 p-20px-all cursor-pointer">
+                    <img src="produto.jpg" class="w-100 border-rd-4 m-15px-b">
+                    <h4 class="fs-5 m-10px-b">Nome do Produto</h4>
+                    <p class="fs-9 fw-700">R$ 99,90</p>
+                </div>
             </div>
+            <!-- Repetir para 20+ produtos -->
         </div>
-        <!-- Repetir para 20+ produtos -->
     </div>
-</div>
+</section>
 ```
 
 ### Header com Logo e Menu
@@ -561,7 +592,7 @@ Consulte `references/icons-reference.md` para a lista completa organizada por ca
         <div class="dialog-inline w-max-500px">
             <button class="dialog-close" data-modal-hide></button>
             <div class="modal-popup border-rd-10 p-30px-all">
-                <h3 class="text-sz-h3 m-20px-b">Título do Modal</h3>
+                <h3 class="fs-11 m-20px-b">Título do Modal</h3>
                 <p>Conteúdo...</p>
             </div>
         </div>
@@ -570,6 +601,9 @@ Consulte `references/icons-reference.md` para a lista completa organizada por ca
 ```
 
 ### Carrossel com Embla
+
+Embla Carousel **requer inicialização via JavaScript**. Estrutura HTML:
+
 ```html
 <div class="slide__viewport">
     <div class="slide__row cursor-grab">
@@ -579,12 +613,32 @@ Consulte `references/icons-reference.md` para a lista completa organizada por ca
         <div class="slide__item c-xs-12 c-sm-6 c-md-4">
             <img src="slide2.jpg" class="w-100">
         </div>
-        <div class="slide__item c-xs-12 c-sm-6 c-md-4">
-            <img src="slide3.jpg" class="w-100">
-        </div>
     </div>
+    <div class="slide__dots"></div>
+    <button class="slide__prev"><span class="iccon-chevron-left-1"></span></button>
+    <button class="slide__next"><span class="iccon-chevron-right-1"></span></button>
 </div>
 ```
+
+Consulte `references/carousel-reference.md` para inicialização e opções avançadas.
+
+### Lightbox com VenoBox
+
+VenoBox já vem inicializado com os seletores: `.open-gallery`, `.open-video`, `.open-iframe`
+
+```html
+<!-- Galeria de imagens -->
+<a href="foto1.jpg" class="open-gallery" data-gall="galeria1"><img src="thumb1.jpg"></a>
+<a href="foto2.jpg" class="open-gallery" data-gall="galeria1"><img src="thumb2.jpg"></a>
+
+<!-- Vídeo -->
+<a href="https://youtube.com/watch?v=xxx" class="open-video">Ver vídeo</a>
+
+<!-- Iframe -->
+<a href="pagina.html" class="open-iframe">Abrir iframe</a>
+```
+
+Consulte `references/venobox-reference.md` para mais opções.
 
 ---
 

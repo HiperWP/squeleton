@@ -17,6 +17,9 @@ body {
   font-size: 14px;
   line-height: 1.55;
   color: #0f1419;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   min-height: 100vh
 }
 
@@ -30,14 +33,22 @@ figure,
 footer,
 header,
 hgroup,
-main,
 menu,
 nav,
 progress,
-section,
 summary,
 video {
   display: block
+}
+
+main,
+section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 a {
@@ -78,6 +89,8 @@ strong {
 
 img {
   border: 0;
+  max-width: 100%;
+  height: auto;
   vertical-align: middle
 }
 
@@ -254,34 +267,92 @@ h6 {
   overflow-wrap: break-word
 }
 
-h1,
-.text-sz-h1 {
-  font-size: clamp(28px, 5vw + 16px, 36px)
+h1 {
+  font-size: clamp(30px, 3vw + 18px, 36px)
 }
 
-h2,
-.text-sz-h2 {
-  font-size: clamp(24px, 4vw + 14px, 30px)
+h2 {
+  font-size: clamp(26px, 2vw + 18px, 30px)
 }
 
-h3,
-.text-sz-h3 {
-  font-size: clamp(20px, 3vw + 12px, 24px)
+h3 {
+  font-size: clamp(22px, 1vw + 18px, 24px)
 }
 
-h4,
-.text-sz-h4 {
-  font-size: clamp(16px, 2vw + 10px, 18px)
+h4 {
+  font-size: clamp(17px, 0.5vw + 15px, 18px)
 }
 
-h5,
-.text-sz-h5 {
-  font-size: clamp(13px, 1.5vw + 8px, 14px)
+h5 {
+  font-size: 14px
 }
 
-h6,
-.text-sz-h6 {
-  font-size: clamp(11px, 1vw + 8px, 12px)
+h6 {
+  font-size: 12px
+}
+
+.fs-1 {
+  font-size: 10px
+}
+
+.fs-2 {
+  font-size: 11px
+}
+
+.fs-3 {
+  font-size: 12px
+}
+
+.fs-4 {
+  font-size: 13px
+}
+
+.fs-5 {
+  font-size: 14px
+}
+
+.fs-6 {
+  font-size: 15px
+}
+
+.fs-7 {
+  font-size: clamp(15px, 0.5vw + 13px, 16px)
+}
+
+.fs-8 {
+  font-size: clamp(16px, 0.5vw + 14px, 17px)
+}
+
+.fs-9 {
+  font-size: clamp(17px, 0.5vw + 15px, 18px)
+}
+
+.fs-10 {
+  font-size: clamp(18px, 1vw + 14px, 20px)
+}
+
+.fs-11 {
+  font-size: clamp(21px, 1.5vw + 15px, 24px)
+}
+
+.fs-12 {
+  font-size: clamp(24px, 2vw + 16px, 28px)
+}
+
+.fs-13 {
+  font-size: clamp(28px, 2vw + 20px, 32px)
+}
+
+.fs-14 {
+  font-size: clamp(34px, 3vw + 22px, 40px)
+}
+
+.fs-15 {
+  font-size: clamp(40px, 4vw + 24px, 48px)
+}
+
+.fs-16 {
+  font-size: clamp(52px, 6vw + 28px, 64px)
 }
 
 p {
@@ -377,6 +448,10 @@ blockquote ul:last-child {
   text-transform: capitalize
 }
 
+.color-inherit {
+  color: inherit;
+}
+
 .container,
 .container-fluid {
   width: 100%;
@@ -455,6 +530,66 @@ blockquote ul:last-child {
 .gap-0 [class*=c-xs-] {
   padding-right: 0;
   padding-left: 0
+}
+
+.gap-15.row,
+.gap-15.slide__row {
+  margin-right: -15px;
+  margin-left: -15px
+}
+
+.gap-15 [class*=c-auto],
+.gap-15 [class*=c-lg-],
+.gap-15 [class*=c-md-],
+.gap-15 [class*=c-sm-],
+.gap-15 [class*=c-xs-] {
+  padding-right: 15px;
+  padding-left: 15px
+}
+
+.gap-20.row,
+.gap-20.slide__row {
+  margin-right: -20px;
+  margin-left: -20px
+}
+
+.gap-20 [class*=c-auto],
+.gap-20 [class*=c-lg-],
+.gap-20 [class*=c-md-],
+.gap-20 [class*=c-sm-],
+.gap-20 [class*=c-xs-] {
+  padding-right: 20px;
+  padding-left: 20px
+}
+
+.gap-25.row,
+.gap-25.slide__row {
+  margin-right: -25px;
+  margin-left: -25px
+}
+
+.gap-25 [class*=c-auto],
+.gap-25 [class*=c-lg-],
+.gap-25 [class*=c-md-],
+.gap-25 [class*=c-sm-],
+.gap-25 [class*=c-xs-] {
+  padding-right: 25px;
+  padding-left: 25px
+}
+
+.gap-30.row,
+.gap-30.slide__row {
+  margin-right: -30px;
+  margin-left: -30px
+}
+
+.gap-30 [class*=c-auto],
+.gap-30 [class*=c-lg-],
+.gap-30 [class*=c-md-],
+.gap-30 [class*=c-sm-],
+.gap-30 [class*=c-xs-] {
+  padding-right: 30px;
+  padding-left: 30px
 }
 
 .c-auto {
@@ -739,6 +874,22 @@ blockquote ul:last-child {
   gap: 30px
 }
 
+.f-gap-35 {
+  gap: 35px
+}
+
+.f-gap-40 {
+  gap: 40px
+}
+
+.f-gap-45 {
+  gap: 45px
+}
+
+.f-gap-50 {
+  gap: 50px
+}
+
 .hidden,
 .visible-lg,
 .visible-md,
@@ -864,7 +1015,7 @@ fieldset[disabled] .radio-inline {
   border: 1px solid transparent;
   padding: 10px 15px;
   font-size: 14px;
-  line-height: 1.42857143;
+  line-height: 1.4;
   border-radius: 4px;
   user-select: none;
   transition-duration: .3s;
@@ -958,7 +1109,7 @@ fieldset[disabled] a.btn {
   padding: 6px 12px;
   margin-left: -1px;
   line-height: 1.42857143;
-  color: #337ab7;
+  color: #0f1419;
   text-decoration: none;
   background-color: #fff;
   border: 1px solid #ddd
@@ -996,8 +1147,8 @@ fieldset[disabled] a.btn {
   z-index: 3;
   color: #fff;
   cursor: default;
-  background-color: #337ab7;
-  border-color: #337ab7
+  background-color: #0f1419;
+  border-color: #0f1419
 }
 
 .pagination > .disabled > a,
@@ -1106,82 +1257,82 @@ fieldset[disabled] a.btn {
   color: #843534
 }
 
-.letter-sp-0 {
+.ls-0 {
   letter-spacing: 0
 }
 
-.letter-sp-1 {
+.ls-1 {
   letter-spacing: 1px
 }
 
-.letter-sp-2 {
+.ls-2 {
   letter-spacing: 2px
 }
 
-.letter-sp-3 {
+.ls-3 {
   letter-spacing: 3px
 }
 
-.letter-sp-4 {
+.ls-4 {
   letter-spacing: 4px
 }
 
-.letter-sp-5 {
+.ls-5 {
   letter-spacing: 5px
 }
 
-.letter-sp-minus-025 {
+.ls-minus-0-2 {
   letter-spacing: -.25px
 }
 
-.letter-sp-minus-05 {
+.ls-minus-0-5 {
   letter-spacing: -.5px
 }
 
-.letter-sp-minus-1 {
+.ls-minus-1 {
   letter-spacing: -1px
 }
 
-.letter-sp-minus-2 {
+.ls-minus-2 {
   letter-spacing: -2px
 }
 
-.letter-sp-minus-3 {
+.ls-minus-3 {
   letter-spacing: -3px
 }
 
-.btn.font-wg-300,
-.font-wg-300 {
+.btn.fw-300,
+.fw-300 {
   font-weight: 300
 }
 
-.btn.font-wg-400,
-.font-wg-400 {
+.btn.fw-400,
+.fw-400 {
   font-weight: 400
 }
 
-.btn.font-wg-500,
-.font-wg-500 {
+.btn.fw-500,
+.fw-500 {
   font-weight: 500
 }
 
-.btn.font-wg-600,
-.font-wg-600 {
+.btn.fw-600,
+.fw-600 {
   font-weight: 600
 }
 
-.btn.font-wg-700,
-.font-wg-700 {
+.btn.fw-700,
+.fw-700 {
   font-weight: 700
 }
 
-.btn.font-wg-800,
-.font-wg-800 {
+.btn.fw-800,
+.fw-800 {
   font-weight: 800
 }
 
-.btn.font-wg-900,
-.font-wg-900 {
+.btn.fw-900,
+.fw-900 {
   font-weight: 900
 }
 
@@ -1205,44 +1356,44 @@ fieldset[disabled] a.btn {
   white-space: nowrap
 }
 
-.line-h-1-0 {
-  line-height: 1 !important
+.lh-1-0 {
+  line-height: 1
 }
 
-.line-h-1-1 {
-  line-height: 1.1 !important
+.lh-1-1 {
+  line-height: 1.1
 }
 
-.line-h-1-2 {
-  line-height: 1.2 !important
+.lh-1-2 {
+  line-height: 1.2
 }
 
-.line-h-1-3 {
-  line-height: 1.3 !important
+.lh-1-3 {
+  line-height: 1.3
 }
 
-.line-h-1-4 {
-  line-height: 1.4 !important
+.lh-1-4 {
+  line-height: 1.4
 }
 
-.line-h-1-5 {
-  line-height: 1.5 !important
+.lh-1-5 {
+  line-height: 1.5
 }
 
-.line-h-1-6 {
-  line-height: 1.6 !important
+.lh-1-6 {
+  line-height: 1.6
 }
 
-.line-h-1-7 {
-  line-height: 1.7 !important
+.lh-1-7 {
+  line-height: 1.7
 }
 
-.line-h-1-8 {
-  line-height: 1.8 !important
+.lh-1-8 {
+  line-height: 1.8
 }
 
-.line-h-1-9 {
-  line-height: 1.9 !important
+.lh-1-9 {
+  line-height: 1.9
 }
 
 .opacity-extra-medium,
@@ -1782,10 +1933,6 @@ fieldset[disabled] a.btn {
   top: 50%;
   position: absolute;
   transform: translateX(-50%) translateY(-50%)
-}
-
-.m-0e5-all {
-  margin: .5%
 }
 
 .m-1-all {
@@ -4610,12 +4757,24 @@ fieldset[disabled] a.btn {
   display: flex !important
 }
 
+.d-inline-flex {
+  display: inline-flex !important
+}
+
+.d-grid {
+  display: grid !important
+}
+
+.d-contents {
+  display: contents !important
+}
+
 .d-table {
-  display: table
+  display: table !important
 }
 
 .d-table-cell {
-  display: table-cell
+  display: table-cell !important
 }
 
 .render-auto {
@@ -4623,17 +4782,16 @@ fieldset[disabled] a.btn {
   contain-intrinsic-size: auto 500px
 }
 
-.render-auto-250px {
+.render-auto-small {
   content-visibility: auto;
-  contain-intrinsic-size: auto 250px
+  contain-intrinsic-size: auto 300px
 }
 
-.render-auto-800px {
+.render-auto-large {
   content-visibility: auto;
   contain-intrinsic-size: auto 800px
 }
 
-/* Cursor Utilities */
 .cursor-pointer {
   cursor: pointer
 }
@@ -4674,6 +4832,62 @@ fieldset[disabled] a.btn {
   cursor: zoom-out
 }
 
+.obj-cover {
+  object-fit: cover
+}
+
+.obj-contain {
+  object-fit: contain
+}
+
+.obj-fill {
+  object-fit: fill
+}
+
+.aspect-1-1 {
+  aspect-ratio: 1 / 1
+}
+
+.aspect-16-9 {
+  aspect-ratio: 16 / 9
+}
+
+.aspect-4-3 {
+  aspect-ratio: 4 / 3
+}
+
+.aspect-3-2 {
+  aspect-ratio: 3 / 2
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden
+}
+
+.pe-none {
+  pointer-events: none
+}
+
+.pe-auto {
+  pointer-events: auto
+}
+
 .ov-hidden {
   overflow: hidden !important
 }
@@ -4684,6 +4898,10 @@ fieldset[disabled] a.btn {
 
 .ov-auto {
   overflow: auto !important
+}
+
+.ov-scroll {
+  overflow: scroll !important
 }
 
 .vs-visible {
@@ -4726,6 +4944,10 @@ fieldset[disabled] a.btn {
 
 .ps-sticky {
   position: sticky
+}
+
+.ps-static {
+  position: static
 }
 
 .top-auto {
@@ -4778,6 +5000,22 @@ fieldset[disabled] a.btn {
 
 .minus-30 {
   font-size: 70%
+}
+
+.minus-35 {
+  font-size: 65%
+}
+
+.minus-40 {
+  font-size: 60%
+}
+
+.minus-45 {
+  font-size: 55%
+}
+
+.minus-50 {
+  font-size: 50%
 }
 
 .more-10 {
@@ -5009,6 +5247,30 @@ fieldset[disabled] a.btn {
 
 .w-700px {
   width: 700px
+}
+
+.w-max-100px {
+  max-width: 100px
+}
+
+.w-max-150px {
+  max-width: 150px
+}
+
+.w-max-200px {
+  max-width: 200px
+}
+
+.w-max-250px {
+  max-width: 250px
+}
+
+.w-max-300px {
+  max-width: 300px
+}
+
+.w-max-350px {
+  max-width: 350px
 }
 
 .w-max-400px {
@@ -6113,9 +6375,19 @@ button.vbox-link-btn:hover {
     vertical-align: bottom
   }
 
+  .md-render-auto-small {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 350px
+  }
+
   .md-render-auto {
     content-visibility: auto;
-    contain-intrinsic-size: auto 450px
+    contain-intrinsic-size: auto 550px
+  }
+
+  .md-render-auto-large {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 900px
   }
 
   .visible-md {
@@ -6169,6 +6441,66 @@ button.vbox-link-btn:hover {
   .md-gap-0 [class*=c-xs-] {
     padding-right: 0;
     padding-left: 0
+  }
+
+  .md-gap-15.row,
+  .md-gap-15.slide__row {
+    margin-right: -15px;
+    margin-left: -15px
+  }
+
+  .md-gap-15 [class*=c-auto],
+  .md-gap-15 [class*=c-lg-],
+  .md-gap-15 [class*=c-md-],
+  .md-gap-15 [class*=c-sm-],
+  .md-gap-15 [class*=c-xs-] {
+    padding-right: 15px;
+    padding-left: 15px
+  }
+
+  .md-gap-20.row,
+  .md-gap-20.slide__row {
+    margin-right: -20px;
+    margin-left: -20px
+  }
+
+  .md-gap-20 [class*=c-auto],
+  .md-gap-20 [class*=c-lg-],
+  .md-gap-20 [class*=c-md-],
+  .md-gap-20 [class*=c-sm-],
+  .md-gap-20 [class*=c-xs-] {
+    padding-right: 20px;
+    padding-left: 20px
+  }
+
+  .md-gap-25.row,
+  .md-gap-25.slide__row {
+    margin-right: -25px;
+    margin-left: -25px
+  }
+
+  .md-gap-25 [class*=c-auto],
+  .md-gap-25 [class*=c-lg-],
+  .md-gap-25 [class*=c-md-],
+  .md-gap-25 [class*=c-sm-],
+  .md-gap-25 [class*=c-xs-] {
+    padding-right: 25px;
+    padding-left: 25px
+  }
+
+  .md-gap-30.row,
+  .md-gap-30.slide__row {
+    margin-right: -30px;
+    margin-left: -30px
+  }
+
+  .md-gap-30 [class*=c-auto],
+  .md-gap-30 [class*=c-lg-],
+  .md-gap-30 [class*=c-md-],
+  .md-gap-30 [class*=c-sm-],
+  .md-gap-30 [class*=c-xs-] {
+    padding-right: 30px;
+    padding-left: 30px
   }
 
   .md-f-grid {
@@ -6227,6 +6559,22 @@ button.vbox-link-btn:hover {
 
   .md-f-gap-30 {
     gap: 30px
+  }
+
+  .md-f-gap-35 {
+    gap: 35px
+  }
+
+  .md-f-gap-40 {
+    gap: 40px
+  }
+
+  .md-f-gap-45 {
+    gap: 45px
+  }
+
+  .md-f-gap-50 {
+    gap: 50px
   }
 
   .md-m-1-all {
@@ -9318,12 +9666,36 @@ button.vbox-link-btn:hover {
     display: flex !important
   }
 
+  .md-d-inline-flex {
+    display: inline-flex !important
+  }
+
+  .md-d-grid {
+    display: grid !important
+  }
+
+  .md-d-contents {
+    display: contents !important
+  }
+
+  .md-d-table {
+    display: table !important
+  }
+
+  .md-d-table-cell {
+    display: table-cell !important
+  }
+
   .md-ov-hidden {
     overflow: hidden !important
   }
 
   .md-ov-auto {
     overflow: auto !important
+  }
+
+  .md-ov-scroll {
+    overflow: scroll !important
   }
 
   .md-ps-relative {
@@ -9339,11 +9711,15 @@ button.vbox-link-btn:hover {
   }
 
   .md-ps-inherit {
-    position: inherit !important
+    position: inherit
   }
 
   .md-ps-sticky {
     position: sticky
+  }
+
+  .md-ps-static {
+    position: static
   }
 
   .md-c-center {
@@ -9412,9 +9788,19 @@ button.vbox-link-btn:hover {
     vertical-align: bottom
   }
 
-  .sm-render-auto {
+  .sm-render-auto-small {
     content-visibility: auto;
     contain-intrinsic-size: auto 400px
+  }
+
+  .sm-render-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 650px
+  }
+
+  .sm-render-auto-large {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 1000px
   }
 
   .sm-gap-10.row,
@@ -9460,6 +9846,66 @@ button.vbox-link-btn:hover {
   .sm-gap-0 [class*=c-xs-] {
     padding-right: 0;
     padding-left: 0
+  }
+
+  .sm-gap-15.row,
+  .sm-gap-15.slide__row {
+    margin-right: -15px;
+    margin-left: -15px
+  }
+
+  .sm-gap-15 [class*=c-auto],
+  .sm-gap-15 [class*=c-lg-],
+  .sm-gap-15 [class*=c-md-],
+  .sm-gap-15 [class*=c-sm-],
+  .sm-gap-15 [class*=c-xs-] {
+    padding-right: 15px;
+    padding-left: 15px
+  }
+
+  .sm-gap-20.row,
+  .sm-gap-20.slide__row {
+    margin-right: -20px;
+    margin-left: -20px
+  }
+
+  .sm-gap-20 [class*=c-auto],
+  .sm-gap-20 [class*=c-lg-],
+  .sm-gap-20 [class*=c-md-],
+  .sm-gap-20 [class*=c-sm-],
+  .sm-gap-20 [class*=c-xs-] {
+    padding-right: 20px;
+    padding-left: 20px
+  }
+
+  .sm-gap-25.row,
+  .sm-gap-25.slide__row {
+    margin-right: -25px;
+    margin-left: -25px
+  }
+
+  .sm-gap-25 [class*=c-auto],
+  .sm-gap-25 [class*=c-lg-],
+  .sm-gap-25 [class*=c-md-],
+  .sm-gap-25 [class*=c-sm-],
+  .sm-gap-25 [class*=c-xs-] {
+    padding-right: 25px;
+    padding-left: 25px
+  }
+
+  .sm-gap-30.row,
+  .sm-gap-30.slide__row {
+    margin-right: -30px;
+    margin-left: -30px
+  }
+
+  .sm-gap-30 [class*=c-auto],
+  .sm-gap-30 [class*=c-lg-],
+  .sm-gap-30 [class*=c-md-],
+  .sm-gap-30 [class*=c-sm-],
+  .sm-gap-30 [class*=c-xs-] {
+    padding-right: 30px;
+    padding-left: 30px
   }
 
   .sm-f-grid {
@@ -9518,6 +9964,22 @@ button.vbox-link-btn:hover {
 
   .sm-f-gap-30 {
     gap: 30px
+  }
+
+  .sm-f-gap-35 {
+    gap: 35px
+  }
+
+  .sm-f-gap-40 {
+    gap: 40px
+  }
+
+  .sm-f-gap-45 {
+    gap: 45px
+  }
+
+  .sm-f-gap-50 {
+    gap: 50px
   }
 
   .sm-m-1-all {
@@ -12613,12 +13075,36 @@ button.vbox-link-btn:hover {
     display: flex !important
   }
 
+  .sm-d-inline-flex {
+    display: inline-flex !important
+  }
+
+  .sm-d-grid {
+    display: grid !important
+  }
+
+  .sm-d-contents {
+    display: contents !important
+  }
+
+  .sm-d-table {
+    display: table !important
+  }
+
+  .sm-d-table-cell {
+    display: table-cell !important
+  }
+
   .sm-ov-hidden {
     overflow: hidden !important
   }
 
   .sm-ov-auto {
     overflow: auto !important
+  }
+
+  .sm-ov-scroll {
+    overflow: scroll !important
   }
 
   .sm-clear-both {
@@ -12643,6 +13129,10 @@ button.vbox-link-btn:hover {
 
   .sm-ps-sticky {
     position: sticky
+  }
+
+  .sm-ps-static {
+    position: static
   }
 
   .sm-c-center {
@@ -12727,9 +13217,19 @@ button.vbox-link-btn:hover {
     text-align: right
   }
 
+  .xs-render-auto-small {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 450px
+  }
+
   .xs-render-auto {
     content-visibility: auto;
-    contain-intrinsic-size: auto 300px
+    contain-intrinsic-size: auto 750px
+  }
+
+  .xs-render-auto-large {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 1200px
   }
 
   .xs-float-left {
@@ -12801,6 +13301,66 @@ button.vbox-link-btn:hover {
     padding-left: 0
   }
 
+  .xs-gap-15.row,
+  .xs-gap-15.slide__row {
+    margin-right: -15px;
+    margin-left: -15px
+  }
+
+  .xs-gap-15 [class*=c-auto],
+  .xs-gap-15 [class*=c-lg-],
+  .xs-gap-15 [class*=c-md-],
+  .xs-gap-15 [class*=c-sm-],
+  .xs-gap-15 [class*=c-xs-] {
+    padding-right: 15px;
+    padding-left: 15px
+  }
+
+  .xs-gap-20.row,
+  .xs-gap-20.slide__row {
+    margin-right: -20px;
+    margin-left: -20px
+  }
+
+  .xs-gap-20 [class*=c-auto],
+  .xs-gap-20 [class*=c-lg-],
+  .xs-gap-20 [class*=c-md-],
+  .xs-gap-20 [class*=c-sm-],
+  .xs-gap-20 [class*=c-xs-] {
+    padding-right: 20px;
+    padding-left: 20px
+  }
+
+  .xs-gap-25.row,
+  .xs-gap-25.slide__row {
+    margin-right: -25px;
+    margin-left: -25px
+  }
+
+  .xs-gap-25 [class*=c-auto],
+  .xs-gap-25 [class*=c-lg-],
+  .xs-gap-25 [class*=c-md-],
+  .xs-gap-25 [class*=c-sm-],
+  .xs-gap-25 [class*=c-xs-] {
+    padding-right: 25px;
+    padding-left: 25px
+  }
+
+  .xs-gap-30.row,
+  .xs-gap-30.slide__row {
+    margin-right: -30px;
+    margin-left: -30px
+  }
+
+  .xs-gap-30 [class*=c-auto],
+  .xs-gap-30 [class*=c-lg-],
+  .xs-gap-30 [class*=c-md-],
+  .xs-gap-30 [class*=c-sm-],
+  .xs-gap-30 [class*=c-xs-] {
+    padding-right: 30px;
+    padding-left: 30px
+  }
+
   .xs-f-grid {
     display: flex;
     flex-wrap: wrap;
@@ -12857,6 +13417,22 @@ button.vbox-link-btn:hover {
 
   .xs-f-gap-30 {
     gap: 30px
+  }
+
+  .xs-f-gap-35 {
+    gap: 35px
+  }
+
+  .xs-f-gap-40 {
+    gap: 40px
+  }
+
+  .xs-f-gap-45 {
+    gap: 45px
+  }
+
+  .xs-f-gap-50 {
+    gap: 50px
   }
 
   .xs-m-1-all {
@@ -15896,12 +16472,36 @@ button.vbox-link-btn:hover {
     display: flex !important
   }
 
+  .xs-d-inline-flex {
+    display: inline-flex !important
+  }
+
+  .xs-d-grid {
+    display: grid !important
+  }
+
+  .xs-d-contents {
+    display: contents !important
+  }
+
+  .xs-d-table {
+    display: table !important
+  }
+
+  .xs-d-table-cell {
+    display: table-cell !important
+  }
+
   .xs-ov-hidden {
     overflow: hidden !important
   }
 
   .xs-ov-auto {
     overflow: auto !important
+  }
+
+  .xs-ov-scroll {
+    overflow: scroll !important
   }
 
   .xs-ps-relative {
@@ -15922,6 +16522,10 @@ button.vbox-link-btn:hover {
 
   .xs-ps-sticky {
     position: sticky
+  }
+
+  .xs-ps-static {
+    position: static
   }
 
   .xs-border-0-t {
