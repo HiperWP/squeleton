@@ -68,44 +68,70 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 </html>
 ```
 
-## Exemplo Básico
+## Exemplos Básicos
+
+**Hero Section** - Tipografia fluida + Centralização:
 
 ```html
-<div class="container">
-    <div class="row">
-        <!-- Coluna 1: Grid + Espaçamento + Bordas -->
-        <div class="c-xs-12 c-md-6 p-30px-all m-20px-b border-all border-rd-10">
-            <h2 class="fw-600 m-30px-b more-20">Grid Responsivo</h2>
-            <p class="m-15px-tb opacity-8">
-                Coluna adapta de 100% (mobile) para 50% (desktop)
-            </p>
-            <button class="p-15px-lr p-10px-tb border-rd-8 fw-600 d-inline-block">
-                Botão Estilizado
-            </button>
-        </div>
+<section class="h-100vh f-justify-center f-items-center text-center p-30px-all">
+    <div class="w-max-600px">
+        <h1 class="fs-14 fw-700 m-15px-b">Bem-vindo ao Squeleton</h1>
+        <p class="fs-9 opacity-8 m-25px-b">Boilerplate leve para interfaces modernas</p>
+        <a href="#" class="d-inline-block p-15px-lr p-10px-tb border-rd-8 fw-600">
+            Começar Agora
+        </a>
+    </div>
+</section>
+```
 
-        <!-- Coluna 2: Tipografia + Animações + Flexbox -->
-        <div class="c-xs-12 c-md-6 p-30px-all m-20px-b wow fadeIn" data-wow-delay="0.2s">
-            <h2 class="fw-600 m-30px-b more-20">Classes Utilitárias</h2>
-            <p class="m-15px-tb opacity-8">
-              Spacing, tipografia e cores sem CSS customizado
-            </p>
-            <div class="d-flex f-gap-10 m-10px-t">
-              <span class="p-10px-all border-all border-rd-5 fw-700">Tag 1</span>
-              <span class="p-10px-all border-all border-rd-5 fw-700">Tag 2</span>
+**Grid de Cards** - Container + Row + Colunas responsivas:
+
+```html
+<section class="p-60px-tb xs-p-30px-tb">
+    <div class="container">
+        <h2 class="fs-12 fw-600 text-center m-40px-b">Recursos</h2>
+        <div class="row gap-20">
+            <div class="c-xs-12 c-md-6 c-lg-4">
+                <div class="border-all border-rd-10 p-25px-all h-100">
+                    <i class="iccon-rocket-1 fs-13 m-15px-b d-block"></i>
+                    <h3 class="fs-10 fw-600 m-10px-b">Performance</h3>
+                    <p class="fs-7 opacity-7">Otimizado para 99+ no PageSpeed</p>
+                </div>
+            </div>
+            <div class="c-xs-12 c-md-6 c-lg-4">
+                <div class="border-all border-rd-10 p-25px-all h-100 wow fadeInUp">
+                    <i class="iccon-layer-1 fs-13 m-15px-b d-block"></i>
+                    <h3 class="fs-10 fw-600 m-10px-b">400+ Classes</h3>
+                    <p class="fs-7 opacity-7">Grid, spacing, flexbox e mais</p>
+                </div>
+            </div>
+            <div class="c-xs-12 c-md-6 c-lg-4">
+                <div class="border-all border-rd-10 p-25px-all h-100 wow fadeInUp" data-wow-delay="0.1s">
+                    <i class="iccon-speed-1 fs-13 m-15px-b d-block"></i>
+                    <h3 class="fs-10 fw-600 m-10px-b">Zero Build</h3>
+                    <p class="fs-7 opacity-7">CDN e pronto para usar</p>
+                </div>
             </div>
         </div>
     </div>
+</section>
+```
 
-    <!-- Exemplo Flexbox: Alinhamento e Distribuição -->
-    <div class="d-flex f-justify-between f-items-center">
-        <i class="iccon-check-1"></i>
-        <div class="p-25px-all m-20px-t wow fadeInUp">
-            <h3 class="fw-700">Flexbox Utilities</h3>
-            <p class="m-5px-t opacity-7">Alinhamento e distribuição simplificados</p>
+**Footer** - Flexbox com distribuição:
+
+```html
+<footer class="p-30px-tb border-t">
+    <div class="container">
+        <div class="d-flex f-justify-between f-items-center xs-f-col xs-f-gap-15">
+            <p class="fs-6 opacity-7">© 2026 Meu Projeto</p>
+            <div class="d-flex f-gap-20">
+                <a href="#"><i class="iccon-instagram-1 fs-9"></i></a>
+                <a href="#"><i class="iccon-linkedin-1 fs-9"></i></a>
+                <a href="#"><i class="iccon-github-1 fs-9"></i></a>
+            </div>
         </div>
     </div>
-</div>
+</footer>
 ```
 
 ### Sistema Responsivo Híbrido
