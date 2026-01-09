@@ -88,7 +88,6 @@ body {
 ```css
 main, section {
   display: flex;
-  align-items: normal;
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
