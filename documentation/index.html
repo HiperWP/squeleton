@@ -13,7 +13,8 @@
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://hiperwp.com.br/squeleton/">
 	<meta property="og:title" content="Squeleton - O boilerplate essencial para interfaces modernas e intuitivas">
-	<meta property="og:description" content="Boilerplate moderno e enxuto que combina CSS utilitário, grid responsivo, animações e bibliotecas JavaScript essenciais.">
+	<meta property="og:description"
+		content="Boilerplate moderno e enxuto que combina CSS utilitário, grid responsivo, animações e bibliotecas JavaScript essenciais.">
 	<meta property="og:image" content="https://hiperwp.com.br/squeleton/og-image.webp">
 
 	<link rel="icon" href="https://hiperwp.com.br/squeleton/favicon.webp" sizes="256x256" />
@@ -48,10 +49,6 @@
 		body {
 			font-size: 14.5px;
 			font-family: 'Sora', sans-serif;
-			display: flex;
-			flex-direction: column;
-			margin: 0 auto;
-			width: 100%
 		}
 
 		@font-face {
@@ -134,10 +131,10 @@
 		.code-block {
 			color: #eee;
 			background: #2d2d2d;
-			border-radius: 6px;
-			padding: 10px 15px;
 			font-family: Consolas, monaco, monospace;
 			font-size: 13px;
+			border-radius: 6px;
+			padding: 10px 15px;
 			overflow-x: hidden;
 		}
 
@@ -173,10 +170,50 @@
 		.demo-box {
 			background: #f8f9fa;
 			border: 2px solid #f4f4f5;
-			padding: 15px;
-			text-align: center;
 			border-radius: 6px;
-			margin: 10px 0;
+			padding: 10px 15px;
+			min-height: 100%;
+			margin-top: 10px;
+    	margin-bottom: 10px;
+			text-align: center;
+		}
+
+		.demo-primary {
+			background: var(--primary-color);
+			color: white;
+		}
+
+		.demo-success {
+			background: var(--success-color);
+			color: white;
+		}
+
+		.demo-warning {
+			background: var(--warning-color);
+			color: #333;
+		}
+
+		.demo-info {
+			background: var(--info-color);
+			color: white;
+		}
+
+		.demo-danger {
+			background: var(--danger-color);
+			color: white;
+		}
+
+		.demo-dark {
+			background: var(--dark-color);
+			color: white;
+		}
+
+		.demo-light {
+			background: rgba(255, 255, 255, 0.2);
+		}
+
+		.demo-gray {
+			background: #f8f9fa;
 		}
 
 		.feature-card {
@@ -243,25 +280,18 @@
 			font-weight: 700;
 		}
 
-		.section-header > span {
+		.section-header>span {
 			font-size: 90%;
 			color: var(--main-color);
 		}
 
 		.highlight {
 			background: linear-gradient(120deg, #a8e6cf 0%, #dce7fd 100%);
-			padding: 0.2rem 0.4rem;
-			border-radius: 4px;
-			font-weight: 600;
 		}
 
 		.stat-card {
 			background: white;
-			padding: 1.5rem;
-			border-radius: 8px;
-			text-align: center;
 			box-shadow: var(--box-shadown);
-			min-height: 100%;
 		}
 
 		.animated-number {
@@ -271,16 +301,11 @@
 		}
 
 		.btn-demo {
-			display: inline-block;
-			padding: 0.75rem 1.5rem;
 			background: var(--main-color);
 			color: white;
 			text-decoration: none;
-			border-radius: 6px;
-			font-weight: 500;
 			transition: all 0.3s ease;
 			border: none;
-			cursor: pointer;
 		}
 
 		.btn-demo:hover {
@@ -297,15 +322,11 @@
 		}
 
 		.icon-item {
-			padding: 15px 10px;
 			border: 1px solid #dee2e6;
-			border-radius: 6px;
 			font-size: 2rem;
 			transition: all 0.3s ease;
-			text-align: center;
 			min-width: 120px;
 			width: 12%;
-			flex-grow: 1;
 		}
 
 		.icon-item i {
@@ -349,9 +370,6 @@
 		.comparison-card {
 			background: white;
 			border: 2px solid #dee2e6;
-			border-radius: 8px;
-			padding: 1.5rem;
-			text-align: center;
 		}
 
 		.comparison-card.highlight {
@@ -360,14 +378,8 @@
 		}
 
 		.version-badge {
-			display: inline-block;
 			background: var(--success-color);
 			color: white;
-			padding: 2px 8px;
-			margin-left: 8px;
-			border-radius: 4px;
-			font-size: 12px;
-			font-weight: 600;
 		}
 
 		.squeleton-icon {
@@ -376,10 +388,6 @@
 
 		.squeleton-title {
 			font-size: 80px;
-		}
-
-		.squeleton-subtitle {
-			font-size: 26px;
 		}
 
 		.btn-initiate {
@@ -430,10 +438,53 @@
 			font-weight: 400;
 		}
 
+		.accordion-v1 .panel {
+			border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		}
+
+		.accordion-v1 .panel-heading {
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 20px 0;
+			transition: color 0.2s;
+		}
+
+		.accordion-v1 .panel-heading:hover {
+			color: var(--main-color);
+		}
+
 		.accordion-v1 .panel-heading h5 {
-			font-size: 18px;
-			margin-top: 35px;
-			margin-bottom: 10px;
+			margin: 0;
+			font-size: 17px;
+		}
+
+		.accordion-v1 .panel-heading .accordion-icon {
+			transition: transform 0.3s;
+		}
+
+		.accordion-v1 .panel-heading.panel-open .accordion-icon {
+			transform: rotate(45deg);
+		}
+
+		.accordion-v1 .panel-collapse {
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.3s ease-out;
+		}
+
+		.accordion-v1 .panel-collapse.panel-open {
+			max-height: 2000px;
+			transition: max-height 0.5s ease-in;
+		}
+
+		.accordion-v1 .panel-body {
+			padding: 0 0 25px 0;
+		}
+
+		.accordion-v1 .panel-body p {
+			margin-bottom: 15px;
 		}
 
 		.down-section {
@@ -500,10 +551,6 @@
 				font-size: 60px;
 			}
 
-			.squeleton-subtitle {
-				font-size: 22px;
-			}
-
 			.icon-item {
 				width: 20%;
 			}
@@ -522,8 +569,9 @@
 				font-size: 26px;
 			}
 
-			.squeleton-subtitle {
+			#hero .fs-11 {
 				font-size: 18px;
+				line-height: 1.6;
 			}
 
 			.version-badge {
@@ -568,9 +616,11 @@
 					<div class="f-grid f-items-center f-justify-center">
 						<i class="squeleton-icon iccon-rocket-1 p-15px-r rocketUp"></i>
 						<h1 class="squeleton-title m-25px-tb animated slideIn">Squeleton</h1>
-						<div class="version-badge animated magnetIn delay-800">v4.6</div>
+						<div
+							class="version-badge d-inline-block p-5px-lr m-5px-l border-rd-4 fs-3 fw-600 animated magnetIn delay-800">
+							v4.6</div>
 					</div>
-					<p class="squeleton-subtitle p-20px-tb xs-p-10px-t animated delay-500 fadeInUp">
+					<p class="fs-11 p-20px-tb xs-p-10px-t animated delay-500 fadeInUp">
 						Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid responsivo, animações
 						elegantes e bibliotecas JavaScript essenciais para criar interfaces rápidas, intuitivas e com
 						manutenção simplificada.
@@ -610,56 +660,56 @@
 			<div class="row gap-10 xs-gap-5 m-20px-t">
 
 				<div class="c-xs-6 c-md-3 m-20px-b xs-m-10px-b ">
-					<div class="stat-card wow slideIn">
+					<div class="stat-card p-25px-all border-rd-8 text-center h-100 wow slideIn">
 						<div class="animated-number">4</div>
 						<div>Device Breakpoints</div>
 					</div>
 				</div>
 
 				<div class="c-xs-6 c-md-3 m-20px-b xs-m-10px-b ">
-					<div class="stat-card wow slideIn" data-wow-delay="0.1s">
+					<div class="stat-card p-25px-all border-rd-8 text-center h-100 wow slideIn" data-wow-delay="0.1s">
 						<div class="animated-number">12</div>
 						<div>Colunas de Grid</div>
 					</div>
 				</div>
 
 				<div class="c-xs-6 c-md-3 m-20px-b xs-m-10px-b ">
-					<div class="stat-card wow slideIn" data-wow-delay="0.2s">
+					<div class="stat-card p-25px-all border-rd-8 text-center h-100 wow slideIn" data-wow-delay="0.2s">
 						<div class="animated-number">400+</div>
 						<div>Classes Utilitárias</div>
 					</div>
 				</div>
 
 				<div class="c-xs-6 c-md-3 m-20px-b xs-m-10px-b ">
-					<div class="stat-card wow slideIn" data-wow-delay="0.3s">
+					<div class="stat-card p-25px-all border-rd-8 text-center h-100 wow slideIn" data-wow-delay="0.3s">
 						<div class="animated-number">300+</div>
 						<div>Ícones Vetoriais</div>
 					</div>
 				</div>
 
 				<div class="c-xs-6 c-md-3 m-20px-b xs-m-10px-b ">
-					<div class="stat-card wow slideIn" data-wow-delay="0.4s">
+					<div class="stat-card p-25px-all border-rd-8 text-center h-100 wow slideIn" data-wow-delay="0.4s">
 						<div class="animated-number">30+</div>
 						<div>Efeitos Animados</div>
 					</div>
 				</div>
 
 				<div class="c-xs-6 c-md-3 m-20px-b xs-m-10px-b ">
-					<div class="stat-card wow slideIn" data-wow-delay="0.5s">
+					<div class="stat-card p-25px-all border-rd-8 text-center h-100 wow slideIn" data-wow-delay="0.5s">
 						<div class="animated-number">20+</div>
 						<div>Atributos Padronizados</div>
 					</div>
 				</div>
 
 				<div class="c-xs-6 c-md-3 m-20px-b xs-m-10px-b ">
-					<div class="stat-card wow slideIn" data-wow-delay="0.6s">
+					<div class="stat-card p-25px-all border-rd-8 text-center h-100 wow slideIn" data-wow-delay="0.6s">
 						<div class="animated-number">9</div>
 						<div>Micro-bibliotecas JS</div>
 					</div>
 				</div>
 
 				<div class="c-xs-6 c-md-3 m-20px-b xs-m-10px-b ">
-					<div class="stat-card wow slideIn" data-wow-delay="0.7s">
+					<div class="stat-card p-25px-all border-rd-8 text-center h-100 wow slideIn" data-wow-delay="0.7s">
 						<div class="animated-number">99+</div>
 						<div>PageSpeed Insights</div>
 					</div>
@@ -682,7 +732,7 @@
 						<a href="#icones">Ícones Vetoriais</a>
 						<a href="#animacoes">Animações</a>
 						<a href="#componentes">Micro-bibliotecas JS</a>
-						<a href="#guia">Guia Rápido</a>
+						<a href="#faq">Perguntas Frequentes</a>
 					</nav>
 				</aside>
 
@@ -769,8 +819,11 @@
 							<h4>Breakpoints e Responsividade</h4>
 							<p>O Squeleton usa uma <strong>abordagem híbrida única</strong>:
 								<strong>Grid mobile-first</strong> (colunas expandem de mobile para desktop) +
-								<strong>Utilitários desktop-first</strong> (ajustes reduzem de desktop para mobile).</p>
-							<p class="m-30px-b">Isso combina praticidade no desenvolvimento (escreva para desktop, ajuste só o necessário para mobile) com layouts responsivos otimizados (grids naturalmente empilham em mobile e dividem em desktop).</p>
+								<strong>Utilitários desktop-first</strong> (ajustes reduzem de desktop para mobile).
+							</p>
+							<p class="m-30px-b">Isso combina praticidade no desenvolvimento (escreva para desktop, ajuste só o
+								necessário para mobile) com layouts responsivos otimizados (grids naturalmente empilham em mobile e
+								dividem em desktop).</p>
 							<table class="comparison-table">
 								<thead>
 									<tr>
@@ -807,14 +860,16 @@
 
 					<section id="grids" class="p-25px-b">
 						<h2 class="section-header">
-							<span class="iccon-newspaper-2 p-5px-r"></span>
+							<span class="iccon-bb-grid-view p-5px-r"></span>
 							Grid System
 						</h2>
 
 						<div class="feature-card m-20px-b">
 							<h4>Grid System Responsivo (12 Colunas)</h4>
 							<p>Sistema de grade <strong>mobile-first</strong> desenvolvido com flexbox.
-								Comece com <code>c-xs-</code> como base e expanda progressivamente com <code>c-sm-</code>, <code>c-md-</code>, <code>c-lg-</code>.</p>
+								Comece com <code>c-xs-</code> como base e expanda progressivamente com <code>c-sm-</code>,
+								<code>c-md-</code>, <code>c-lg-</code>.
+							</p>
 
 							<div class="p-10px-t">
 								<h5>Estrutura Básica:</h5>
@@ -935,7 +990,7 @@
     Desktop: 60px | Mobile: 30px
 </div>
 
-<!-- Não existe lg- porque desktop já é o padrão -->
+<!-- ❌ Não existe lg- porque desktop já é o padrão -->
 <div class="d-flex xs-d-block">Flex em desktop, block em mobile</div></textarea>
 								</div>
 							</div>
@@ -993,50 +1048,41 @@
 								<h5>Demonstração Visual:</h5>
 								<div class="row">
 									<div class="c-xs-12 c-md-6">
-										<div class="demo-box h-100">
+										<div class="demo-box">
 											<strong>Containers</strong>
-											<div style="margin: 10px 0;">
-												<div
-													style="background: var(--primary-color); color: white; padding: 10px; margin-bottom: 0.5rem; max-width: 300px; margin-left: auto; margin-right: auto;">
+											<div class="m-10px-tb">
+												<div class="demo-primary p-10px-all m-5px-b w-max-300px c-center">
 													.container (max-width: 1250px)
 												</div>
-												<div style="background: var(--success-color); color: white; padding: 10px; width: 100%;">
+												<div class="demo-success p-10px-all w-100">
 													.container-fluid (width: 100%)
 												</div>
 											</div>
 										</div>
 									</div>
 									<div class="c-xs-12 c-md-6">
-										<div class="demo-box h-100">
+										<div class="demo-box">
 											<strong>Gaps Visuais</strong>
-											<div style="margin: 10px 0;">
-												<div style="margin-bottom: 1rem;">
+											<div class="m-10px-tb">
+												<div class="m-15px-b">
 													<small>Gap padrão (15px)</small>
 													<div class="row">
 														<div class="c-xs-6">
-															<div
-																style="background: var(--primary-color); color: white; padding: 10px; text-align: center; font-size: 12px;">
-																Col 1</div>
+															<div class="demo-primary p-10px-all text-center fs-3">Col 1</div>
 														</div>
 														<div class="c-xs-6">
-															<div
-																style="background: var(--success-color); color: white; padding: 10px; text-align: center; font-size: 12px;">
-																Col 2</div>
+															<div class="demo-success p-10px-all text-center fs-3">Col 2</div>
 														</div>
 													</div>
 												</div>
-												<div style="margin-bottom: 1rem;">
+												<div class="m-15px-b">
 													<small>Gap reduzido (5px)</small>
 													<div class="row gap-5">
 														<div class="c-xs-6">
-															<div
-																style="background: var(--warning-color); color: #333; padding: 10px; text-align: center; font-size: 12px;">
-																Col 1</div>
+															<div class="demo-warning p-10px-all text-center fs-3">Col 1</div>
 														</div>
 														<div class="c-xs-6">
-															<div
-																style="background: var(--info-color); color: white; padding: 10px; text-align: center; font-size: 12px;">
-																Col 2</div>
+															<div class="demo-info p-10px-all text-center fs-3">Col 2</div>
 														</div>
 													</div>
 												</div>
@@ -1044,14 +1090,10 @@
 													<small>Sem gap (0px)</small>
 													<div class="row gap-0">
 														<div class="c-xs-6">
-															<div
-																style="background: var(--danger-color); color: white; padding: 10px; text-align: center; font-size: 12px;">
-																Col 1</div>
+															<div class="demo-danger p-10px-all text-center fs-3">Col 1</div>
 														</div>
 														<div class="c-xs-6">
-															<div
-																style="background: var(--dark-color); color: white; padding: 10px; text-align: center; font-size: 12px;">
-																Col 2</div>
+															<div class="demo-dark p-10px-all text-center fs-3">Col 2</div>
 														</div>
 													</div>
 												</div>
@@ -1132,8 +1174,10 @@
 
 						<div class="feature-card m-20px-b">
 							<h4>Abordagem Desktop-First</h4>
-							<p>Classes utilitárias usam <strong>desktop-first</strong>: escreva para desktop (sem prefixo) e ajuste para telas menores com <code>md-</code>, <code>sm-</code>, <code>xs-</code>.</p>
-							<p class="m-20px-b">Não existe <code>lg-</code> para utilitários porque desktop já é o padrão. Isso reduz código e acelera o desenvolvimento.</p>
+							<p>Classes utilitárias usam <strong>desktop-first</strong>: escreva para desktop (sem prefixo) e ajuste
+								para telas menores com <code>md-</code>, <code>sm-</code>, <code>xs-</code>.</p>
+							<p class="m-20px-b">Não existe <code>lg-</code> para utilitários porque desktop já é o padrão. Isso reduz
+								código e acelera o desenvolvimento.</p>
 
 							<div class="code-block m-30px-b">
 								<textarea class="prism-code" data-lang="markup"><!-- Desktop: 60px | Tablet: 40px | Mobile: 20px -->
@@ -1268,15 +1312,15 @@ class="xs-p-10px-all md-p-20px-tb sm-m-10px-lr"</textarea>
 								<h5>Demonstração Visual:</h5>
 								<div class="row f-items-center">
 									<div class="c-xs-12 c-md-4">
-										<div class="demo-box h-100">
-											<div class="p-20px-all" style="background: var(--primary-color); color: white;">
+										<div class="demo-box">
+											<div class="p-20px-all demo-primary">
 												p-20px-all
 											</div>
 										</div>
 									</div>
 									<div class="c-xs-12 c-md-4">
-										<div class="demo-box h-100">
-											<div class="p-5-tb m-30px-lr m-10px-tb" style="background: var(--success-color); color: white;">
+										<div class="demo-box">
+											<div class="p-5-tb m-30px-lr m-10px-tb demo-success">
 												p-5-tb<br>
 												m-30px-lr<br>
 												m-10px-tb
@@ -1284,8 +1328,8 @@ class="xs-p-10px-all md-p-20px-tb sm-m-10px-lr"</textarea>
 										</div>
 									</div>
 									<div class="c-xs-12 c-md-4">
-										<div class="demo-box h-100">
-											<div class="p-30px-tb" style="background: var(--warning-color); color: #333;">
+										<div class="demo-box">
+											<div class="p-30px-tb demo-warning">
 												p-30px-tb
 											</div>
 										</div>
@@ -1300,36 +1344,32 @@ class="xs-p-10px-all md-p-20px-tb sm-m-10px-lr"</textarea>
 								<div class="c-xs-12 c-md-6">
 									<h5>Larguras em Pixels</h5>
 									<div class="code-block min-line-4">
-										<textarea class="prism-code" data-lang="css">.w-5px, .w-10px, .w-15px
+										<textarea class="prism-code" data-lang="css">
+.w-5px, .w-10px, .w-15px
 .w-20px, .w-25px, .w-30px
 .w-50px, .w-100px, .w-150px
 .w-200px, .w-250px, .w-300px
 ...até .w-700px
 
 <!-- Exemplo -->
-<div class="w-50px">50px de largura</div></textarea>
+<div class="w-50px">50px de largura</div>
+										</textarea>
 									</div>
 								</div>
 
 								<div class="c-xs-12 c-md-6">
 									<h5>Alturas Dinâmicas</h5>
 									<div class="code-block min-line-4">
-										<textarea class="prism-code" data-lang="css">.h-50px, .h-100px, .h-150px
+										<textarea class="prism-code" data-lang="css">
+.h-50px, .h-100px, .h-150px
 .h-200px, .h-250px, .h-300px
 .h-400px, .h-450px, .h-500px
 .h-550px, .h-600px, .h-650px
 ...até .w-700px
 
-<!-- Classes de Equalização -->
-.min-line-1
-.min-line-2
-.min-line-3
-...
-
-/* Equaliza altura entre os elementos */
-/* Busca pelas classes .min-line-** */
-/* Cada número representa um grupo diferente */
-/* Disponível de .min-line-1 até .min-line-20 */</textarea>
+<!-- Exemplo -->
+<div class="w-200px">200px de altura</div>
+										</textarea>
 									</div>
 								</div>
 
@@ -1349,7 +1389,7 @@ class="xs-p-10px-all md-p-20px-tb sm-m-10px-lr"</textarea>
 
 <!-- Exemplo -->
 <div class="w-max-600px">
-Largura máxima de 600px
+	Largura máxima de 600px
 </div></textarea>
 									</div>
 								</div>
@@ -1441,31 +1481,29 @@ Altura total da viewport
 								<h5>Demonstração Visual:</h5>
 								<div class="row f-items-center">
 									<div class="c-xs-12 c-md-4">
-										<div class="demo-box h-100">
-											<div class="d-block"
-												style="background: var(--primary-color); color: white; padding: 10px; margin: 10px;">
+										<div class="demo-box">
+											<div class="d-block demo-primary p-10px-all m-10px-all">
 												d-block
 											</div>
-											<div class="d-inline-block"
-												style="background: var(--success-color); color: white; padding: 10px; margin: 10px;">
+											<div class="d-inline-block demo-success p-10px-all m-10px-all">
 												d-inline-block
 											</div>
 										</div>
 									</div>
 									<div class="c-xs-12 c-md-4">
-										<div class="demo-box h-100">
-											<div class="d-flex" style="background: var(--warning-color); color: #333; padding: 10px;">
-												<span style="flex: 1;">d-flex <br>Item 1</span>
-												<span style="flex: 1;">d-flex <br>Item 2</span>
+										<div class="demo-box">
+											<div class="d-flex demo-warning p-10px-all">
+												<span class="f-grow-1">d-flex <br>Item 1</span>
+												<span class="f-grow-1">d-flex <br>Item 2</span>
 											</div>
 										</div>
 									</div>
 									<div class="c-xs-12 c-md-4">
-										<div class="demo-box h-100">
-											<div class="d-table" style="width: 100%; background: var(--info-color); color: white;">
-												<div class="d-table-cell" style="padding: 10px; border: 1px solid white;">d-table <br>célula 1
+										<div class="demo-box">
+											<div class="d-table w-100 demo-info">
+												<div class="d-table-cell p-10px-all border-all">d-table <br>célula 1
 												</div>
-												<div class="d-table-cell" style="padding: 10px; border: 1px solid white;">d-table <br>célula 2
+												<div class="d-table-cell p-10px-all border-all">d-table <br>célula 2
 												</div>
 											</div>
 										</div>
@@ -1700,9 +1738,10 @@ Altura total da viewport
 								<div class="c-xs-12 c-md-6">
 									<h5>Patterns Mais Utilizados</h5>
 									<div class="code-block min-line-13">
-										<textarea class="prism-code" data-lang="markup"><!-- Centralizar horizontal e vertical -->
+										<textarea class="prism-code" data-lang="markup">
+<!-- Centralizar horizontal e vertical -->
 <div class="d-flex f-items-center f-justify-center">
-Conteúdo centralizado
+	Conteúdo centralizado
 </div>
 
 <!-- Flexbox em Grid (flex + wrap + row) -->
@@ -1729,15 +1768,16 @@ Conteúdo centralizado
 <!-- Layout em coluna com footer fixo -->
 <div class="d-flex f-col">
 <header>
-Cabeçalho
+	Cabeçalho
 </header>
 <main class="f-grow-1">
-Conteúdo principal
+	Conteúdo principal
 </main>
 <footer>
-Rodapé sempre no final
+	Rodapé sempre no final
 </footer>
-</div></textarea>
+</div>
+										</textarea>
 									</div>
 								</div>
 
@@ -1782,31 +1822,24 @@ Rodapé sempre no final
 								<h5>Demonstração Visual:</h5>
 								<div class="row">
 									<div class="c-xs-12 c-md-6">
-										<div class="demo-box h-100">
+										<div class="demo-box">
 											<strong>f-items-center</strong>
-											<div class="d-flex f-items-center"
-												style="background: var(--success-color); color: white; padding: 10px; margin: 10px 0;">
-												<span class="m-10px-all p-10px-all text-center border-rd-4"
-													style="background: rgba(255,255,255,0.2);">Item<br>Menor</span>
-												<span class="m-10px-all p-10px-all text-center border-rd-4"
-													style="background: rgba(255,255,255,0.2);">Item<br>Mais<br>Alto</span>
-												<span class="m-10px-all p-10px-all text-center border-rd-4"
-													style="background: rgba(255,255,255,0.2);">Item<br>Menor</span>
+											<div class="d-flex f-items-center demo-success p-10px-all m-10px-tb">
+												<span class="m-10px-all p-10px-all text-center border-rd-4 demo-light">Item<br>Menor</span>
+												<span
+													class="m-10px-all p-10px-all text-center border-rd-4 demo-light">Item<br>Mais<br>Alto</span>
+												<span class="m-10px-all p-10px-all text-center border-rd-4 demo-light">Item<br>Menor</span>
 											</div>
 										</div>
 									</div>
 
 									<div class="c-xs-12 c-md-6">
-										<div class="demo-box h-100">
+										<div class="demo-box">
 											<strong>f-justify-center</strong>
-											<div class="d-flex f-justify-center"
-												style="background: var(--danger-color); color: white; padding: 10px; margin: 10px 0;">
-												<span class="m-10px-all p-10px-all border-rd-4"
-													style="background: rgba(255,255,255,0.2);">Item<br>1</span>
-												<span class="m-10px-all p-10px-all border-rd-4"
-													style="background: rgba(255,255,255,0.2);">Item<br>2</span>
-												<span class="m-10px-all p-10px-all border-rd-4"
-													style="background: rgba(255,255,255,0.2);">Item<br>3</span>
+											<div class="d-flex f-justify-center demo-danger p-10px-all m-10px-tb">
+												<span class="m-10px-all p-10px-all border-rd-4 demo-light">Item<br>1</span>
+												<span class="m-10px-all p-10px-all border-rd-4 demo-light">Item<br>2</span>
+												<span class="m-10px-all p-10px-all border-rd-4 demo-light">Item<br>3</span>
 											</div>
 										</div>
 									</div>
@@ -1814,28 +1847,23 @@ Rodapé sempre no final
 
 								<div class="row p-20px-t">
 									<div class="c-xs-12 c-md-6">
-										<div class="demo-box h-100">
+										<div class="demo-box">
 											<strong>f-grow-1</strong>
-											<div class="d-flex"
-												style="background: var(--warning-color); color: white; padding: 10px; margin: 10px 0;">
-												<span
-													style="background: rgba(255,255,255,0.2); padding: 10px; border-radius: 4px; margin-right: 0.5rem;">Fixo</span>
-												<span class="f-grow-1"
-													style="background: rgba(255,255,255,0.4); padding: 10px; border-radius: 4px; text-align: center;">Cresce</span>
-												<span
-													style="background: rgba(255,255,255,0.2); padding: 10px; border-radius: 4px; margin-left: 0.5rem;">Fixo</span>
+											<div class="d-flex demo-warning p-10px-all m-10px-tb">
+												<span class="demo-light p-10px-all border-rd-4 m-5px-r">Fixo</span>
+												<span class="f-grow-1 demo-light p-10px-all border-rd-4 text-center opacity-7">Cresce</span>
+												<span class="demo-light p-10px-all border-rd-4 m-5px-l">Fixo</span>
 											</div>
 										</div>
 									</div>
 
 									<div class="c-xs-12 c-md-6">
-										<div class="demo-box h-100">
+										<div class="demo-box">
 											<strong>f-justify-between</strong>
-											<div class="d-flex f-wrap f-justify-between"
-												style="background: var(--primary-color); color: white; padding: 10px; margin: 10px 0;">
-												<span class="p-10px-all border-rd-4" style="background: rgba(255,255,255,0.2);">Logo</span>
-												<span class="p-10px-all border-rd-4" style="background: rgba(255,255,255,0.2);">Centro</span>
-												<span class="p-10px-all border-rd-4" style="background: rgba(255,255,255,0.2);">Menu</span>
+											<div class="d-flex f-wrap f-justify-between demo-primary p-10px-all m-10px-tb">
+												<span class="p-10px-all border-rd-4 demo-light">Logo</span>
+												<span class="p-10px-all border-rd-4 demo-light">Centro</span>
+												<span class="p-10px-all border-rd-4 demo-light">Menu</span>
 											</div>
 										</div>
 									</div>
@@ -1843,36 +1871,26 @@ Rodapé sempre no final
 
 								<div class="row p-20px-t">
 									<div class="c-xs-12 c-md-6">
-										<div class="demo-box h-100">
+										<div class="demo-box">
 											<strong>f-grid | f-gap-15</strong>
-											<div class="f-grid f-gap-15 f-justify-center"
-												style="background: var(--success-color); color: white; padding: 10px; margin: 10px 0;">
-												<span class="p-10px-all text-center border-rd-4"
-													style="background: rgba(255,255,255,0.2);">Coluna 1</span>
-												<span class="p-10px-all text-center border-rd-4"
-													style="background: rgba(255,255,255,0.2);">Coluna 2</span>
-												<span class="p-10px-all text-center border-rd-4"
-													style="background: rgba(255,255,255,0.2);">Coluna 3</span>
-												<span class="p-10px-all text-center border-rd-4"
-													style="background: rgba(255,255,255,0.2);">Coluna 4</span>
-												<span class="p-10px-all text-center border-rd-4"
-													style="background: rgba(255,255,255,0.2);">Coluna 5</span>
-												<span class="p-10px-all text-center border-rd-4"
-													style="background: rgba(255,255,255,0.2);">Coluna 6</span>
+											<div class="f-grid f-gap-15 f-justify-center demo-success p-10px-all m-10px-tb">
+												<span class="p-10px-all text-center border-rd-4 demo-light">Coluna 1</span>
+												<span class="p-10px-all text-center border-rd-4 demo-light">Coluna 2</span>
+												<span class="p-10px-all text-center border-rd-4 demo-light">Coluna 3</span>
+												<span class="p-10px-all text-center border-rd-4 demo-light">Coluna 4</span>
+												<span class="p-10px-all text-center border-rd-4 demo-light">Coluna 5</span>
+												<span class="p-10px-all text-center border-rd-4 demo-light">Coluna 6</span>
 											</div>
 										</div>
 									</div>
 
 									<div class="c-xs-12 c-md-6">
-										<div class="demo-box h-100">
+										<div class="demo-box">
 											<strong>f-auto-min | f-auto-max</strong>
-											<div class="f-grid"
-												style="background: var(--danger-color); color: white; padding: 10px; margin: 10px 0;">
-												<span class="f-auto-min m-10px-all p-10px-all border-rd-4"
-													style="background: rgba(255,255,255,0.2);">Item<br>f-auto-min
+											<div class="f-grid demo-danger p-10px-all m-10px-tb">
+												<span class="f-auto-min m-10px-all p-10px-all border-rd-4 demo-light">Item<br>f-auto-min
 												</span>
-												<span class="f-auto-max m-10px-all p-10px-all border-rd-4"
-													style="background: rgba(255,255,255,0.2);">Item<br>f-auto-max</span>
+												<span class="f-auto-max m-10px-all p-10px-all border-rd-4 demo-light">Item<br>f-auto-max</span>
 											</div>
 										</div>
 									</div>
@@ -1910,8 +1928,11 @@ Rodapé sempre no final
 							<h4>Border Radius</h4>
 							<p>Classes para controle completo dos cantos arredondados:</p>
 
-							<div class="code-block">
-								<textarea class="prism-code" data-lang="markup"><!-- Cantos arredondados em pixels -->
+							<div class="row">
+								<div class="c-xs-12 c-md-6">
+									<div class="code-block min-line-12">
+										<textarea class="prism-code" data-lang="markup">
+<!-- Cantos arredondados em pixels -->
 .border-rd-1         /* border-radius: 1px */
 .border-rd-2         /* border-radius: 2px */
 .border-rd-3         /* border-radius: 3px */
@@ -1922,69 +1943,80 @@ Rodapé sempre no final
 .border-rd-8         /* border-radius: 8px */
 .border-rd-9         /* border-radius: 9px */
 .border-rd-10        /* border-radius: 10px */
+.border-rd-11        /* border-radius: 11px */
 .border-rd-12        /* border-radius: 12px */
 .border-rd-14        /* border-radius: 14px */
 .border-rd-15        /* border-radius: 15px */
+.border-rd-16        /* border-radius: 16px */
+.border-rd-17        /* border-radius: 17px */
+.border-rd-18        /* border-radius: 18px */
+.border-rd-19        /* border-radius: 19px */
 .border-rd-20        /* border-radius: 20px */
-
+</textarea>
+									</div>
+								</div>
+								<div class="c-xs-12 c-md-6">
+									<div class="code-block min-line-12">
+										<textarea class="prism-code" data-lang="markup">
 <!-- Cantos Circulares -->
 .border-rd-50        /* border-radius: 50% */
 .border-rd-100       /* border-radius: 50% */
 
 <!-- Cantos específicos -->
 .border-rd-4-t     /* cantos superiores: 4px */
+.border-rd-6-t     /* cantos superiores: 6px */
 .border-rd-8-t     /* cantos superiores: 8px */
 .border-rd-10-t    /* cantos superiores: 10px */
+.border-rd-12-t    /* cantos superiores: 12px */
 
-.border-rd-4-b  /* cantos inferiores: 4px */
-.border-rd-8-b  /* cantos inferiores: 8px */
-.border-rd-10-b /* cantos inferiores: 10px */</textarea>
+.border-rd-4-b     /* cantos inferiores: 4px */
+.border-rd-6-b     /* cantos inferiores: 6px */
+.border-rd-8-b     /* cantos inferiores: 8px */
+.border-rd-10-b    /* cantos inferiores: 10px */
+.border-rd-12-b    /* cantos inferiores: 12px */
+</textarea>
+									</div>
+								</div>
 							</div>
 
 							<div class="p-20px-t">
 								<h5>Demonstração Visual:</h5>
 								<div class="row">
 									<div class="c-xs-12 c-md-4">
-										<div class="demo-box h-100">
+										<div class="demo-box">
 											<strong>Pequenos</strong>
-											<div style="display: flex; gap: 10px; margin: 10px 0; justify-content: center;">
-												<div class="border-rd-2"
-													style="width: 60px; height: 60px; background: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-size: 12px;">
+											<div class="d-flex f-gap-10 m-10px-tb f-justify-center">
+												<div class="border-rd-2 p-20px-all demo-primary d-flex f-items-center f-justify-center fs-3">
 													2px</div>
-												<div class="border-rd-4"
-													style="width: 60px; height: 60px; background: var(--success-color); color: white; display: flex; align-items: center; justify-content: center; font-size: 12px;">
+												<div class="border-rd-4 p-20px-all demo-success d-flex f-items-center f-justify-center fs-3">
 													4px</div>
-												<div class="border-rd-8"
-													style="width: 60px; height: 60px; background: var(--warning-color); color: #333; display: flex; align-items: center; justify-content: center; font-size: 12px;">
+												<div class="border-rd-8 p-20px-all demo-warning d-flex f-items-center f-justify-center fs-3">
 													8px</div>
 											</div>
 										</div>
 									</div>
 									<div class="c-xs-12 c-md-4">
-										<div class="demo-box h-100">
+										<div class="demo-box">
 											<strong>Médios e Grandes</strong>
-											<div style="display: flex; gap: 10px; margin: 10px 0; justify-content: center;">
-												<div class="border-rd-12"
-													style="width: 60px; height: 60px; background: var(--info-color); color: white; display: flex; align-items: center; justify-content: center; font-size: 11px;">
+											<div class="d-flex f-gap-10 m-10px-tb f-justify-center">
+												<div class="border-rd-12 p-20px-all demo-info d-flex f-items-center f-justify-center fs-2">
 													12px</div>
-												<div class="border-rd-20"
-													style="width: 60px; height: 60px; background: var(--danger-color); color: white; display: flex; align-items: center; justify-content: center; font-size: 11px;">
+												<div class="border-rd-20 p-20px-all demo-danger d-flex f-items-center f-justify-center fs-2">
 													20px</div>
-												<div class="border-rd-50"
-													style="width: 60px; height: 60px; background: var(--dark-color); color: white; display: flex; align-items: center; justify-content: center; font-size: 11px;">
+												<div class="border-rd-50 p-20px-all demo-dark d-flex f-items-center f-justify-center fs-2">
 													50%</div>
 											</div>
 										</div>
 									</div>
 									<div class="c-xs-12 c-md-4">
-										<div class="demo-box h-100">
+										<div class="demo-box">
 											<strong>Cantos Específicos</strong>
-											<div style="margin: 10px 0;">
-												<div class="border-rd-8-t"
-													style="width: 100%; height: 30px; background: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-size: 11px; margin-bottom: 5px;">
+											<div class="m-10px-tb">
+												<div
+													class="border-rd-8-t w-100 p-10px-all demo-primary d-flex f-items-center f-justify-center fs-2 m-5px-b">
 													Top 8px</div>
-												<div class="border-rd-8-b"
-													style="width: 100%; height: 30px; background: var(--success-color); color: white; display: flex; align-items: center; justify-content: center; font-size: 11px;">
+												<div
+													class="border-rd-8-b w-100 p-10px-all demo-success d-flex f-items-center f-justify-center fs-2">
 													Bottom 8px</div>
 											</div>
 										</div>
@@ -2045,51 +2077,27 @@ Rodapé sempre no final
 									<div class="c-xs-12 c-md-4">
 										<div class="demo-box">
 											<strong>Transparência Alta</strong>
-											<div
-												style="background: var(--primary-color); padding: 10px; margin: 10px 0; color: white; position: relative; min-height: 60px">
-												Background
-												<div class="opacity-1"
-													style="position: absolute; top: 10px; left: 10px; background: var(--danger-color); color: white; padding: 10px; width: 60px; text-align: center; font-size: 11px;">
-													0.1
-												</div>
-												<div class="opacity-2"
-													style="position: absolute; top: 10px; right: 10px; background: var(--success-color); color: white; padding: 10px; width: 60px; text-align: center; font-size: 11px;">
-													0.2
-												</div>
+											<div class="demo-primary d-flex f-justify-between p-10px-all m-10px-tb">
+												<div class="opacity-1 demo-danger p-10px-all w-60px text-center fs-2">0.1</div>
+												<div class="opacity-2 demo-success p-10px-all w-60px text-center fs-2">0.2</div>
 											</div>
 										</div>
 									</div>
 									<div class="c-xs-12 c-md-4">
 										<div class="demo-box">
 											<strong>Transparência Média</strong>
-											<div
-												style="background: var(--success-color); padding: 10px; margin: 10px 0; color: white; position: relative; min-height: 60px;">
-												Background
-												<div class="opacity-5"
-													style="position: absolute; top: 10px; right: 10px; background: var(--primary-color); color: white; padding: 10px; width: 60px; text-align: center; font-size: 11px;">
-													0.5
-												</div>
-												<div class="opacity-6"
-													style="position: absolute; top: 10px; left: 10px; background: var(--info-color); color: white; padding: 10px; width: 60px; text-align: center; font-size: 11px;">
-													0.6
-												</div>
+											<div class="demo-success d-flex f-justify-between p-10px-all m-10px-tb">
+												<div class="opacity-6 demo-info p-10px-all w-60px text-center fs-2">0.6</div>
+												<div class="opacity-5 demo-primary p-10px-all w-60px text-center fs-2">0.5</div>
 											</div>
 										</div>
 									</div>
 									<div class="c-xs-12 c-md-4">
 										<div class="demo-box">
 											<strong>Transparência Baixa</strong>
-											<div
-												style="background: var(--warning-color); padding: 10px; margin: 10px 0; color: #333; position: relative; min-height: 60px">
-												Background
-												<div class="opacity-8"
-													style="position: absolute; top: 10px; right: 10px; background: var(--primary-color); color: white; padding: 10px; width: 60px; text-align: center; font-size: 11px;">
-													0.8
-												</div>
-												<div class="opacity-9"
-													style="position: absolute; top: 10px; left: 10px; background: var(--success-color); color: white; padding: 10px; width: 60px; text-align: center; font-size: 11px;">
-													0.9
-												</div>
+											<div class="demo-warning d-flex f-justify-between p-10px-all m-10px-tb">
+												<div class="opacity-9 demo-success p-10px-all w-60px text-center fs-2">0.9</div>
+												<div class="opacity-8 demo-primary p-10px-all w-60px text-center fs-2">0.8</div>
 											</div>
 										</div>
 									</div>
@@ -2118,7 +2126,9 @@ Rodapé sempre no final
 
 						<div class="feature-card m-20px-b">
 							<h4>Font Size - Escala Numérica</h4>
-							<p>Escala completa de tamanhos de fonte (fs-1 a fs-16). Classes fs-1 a fs-6 são fixas, fs-7 a fs-16 usam <code>clamp()</code> para tipografia fluida:</p>
+							<p>Escala completa de tamanhos de fonte (fs-1 a fs-16). Classes fs-1 a fs-6 são fixas, fs-7 a fs-16 usam
+								<code>clamp()</code> para tipografia fluida:
+							</p>
 
 							<div class="row gap-10">
 								<div class="c-xs-12 c-md-6">
@@ -2225,34 +2235,38 @@ Rodapé sempre no final
 
 							<div class="row gap-10 p-20px-t">
 								<div class="c-xs-12 c-md-6">
-									<h5>Tamanho Relativo - Redução</h5>
+									<h5>Tamanho Relativo</h5>
 									<div class="code-block min-line-10">
 										<textarea class="prism-code" data-lang="css"><!-- Fontes menores (em %) -->
 .minus-10 /* font-size: 90% */
-.minus-15 /* font-size: 85% */
 .minus-20 /* font-size: 80% */
-.minus-25 /* font-size: 75% */
 .minus-30 /* font-size: 70% */
-.minus-35 /* font-size: 65% */
 .minus-40 /* font-size: 60% */
-.minus-45 /* font-size: 55% */
-.minus-50 /* font-size: 50% */</textarea>
+.minus-50 /* font-size: 50% */
+
+<!-- Fontes maiores (em %) -->
+.more-10 /* font-size: 110% */
+.more-20 /* font-size: 120% */
+.more-30 /* font-size: 130% */
+.more-40 /* font-size: 140% */
+.more-50 /* font-size: 150% */</textarea>
 									</div>
 								</div>
 
 								<div class="c-xs-12 c-md-6">
-									<h5>Tamanho Relativo - Ampliação</h5>
+									<h5>Line Height</h5>
 									<div class="code-block min-line-10">
-										<textarea class="prism-code" data-lang="css"><!-- Fontes maiores (em %) -->
-.more-10 /* font-size: 110% */
-.more-15 /* font-size: 115% */
-.more-20 /* font-size: 120% */
-.more-25 /* font-size: 125% */
-.more-30 /* font-size: 130% */
-.more-35 /* font-size: 135% */
-.more-40 /* font-size: 140% */
-.more-45 /* font-size: 145% */
-.more-50 /* font-size: 150% */</textarea>
+										<textarea class="prism-code" data-lang="css"><!-- Line Height (1.0 a 1.9) -->
+.lh-1-0 /* line-height: 1 */
+.lh-1-2 /* line-height: 1.2 */
+.lh-1-4 /* line-height: 1.4 */
+.lh-1-6 /* line-height: 1.6 */
+.lh-1-8 /* line-height: 1.8 */
+
+<!-- Line Height Responsivo -->
+.md-lh-1-4 /* ≤1199px */
+.sm-lh-1-5 /* ≤991px */
+.xs-lh-1-6 /* ≤639px */</textarea>
 									</div>
 								</div>
 							</div>
@@ -2261,27 +2275,23 @@ Rodapé sempre no final
 								<h5>Demonstração Visual:</h5>
 								<div class="row">
 									<div class="c-xs-12 c-md-6 m-20px-b">
-										<div class="demo-box h-100">
+										<div class="demo-box">
 											<strong>Letter Spacing</strong>
-											<div style="padding: 10px; background: #f8f9fa; margin: 10px 0;">
-												<div class="ls-minus-2" style="margin-bottom: 0.5rem;">TEXTO
-													COMPACTO (-2px)</div>
-												<div style="margin-bottom: 0.5rem;">TEXTO NORMAL (0px)</div>
-												<div class="ls-3" style="margin-bottom: 0.5rem;">TEXTO ESPAÇADO
-													(3px)</div>
+											<div class="p-10px-all demo-gray m-10px-tb">
+												<div class="ls-minus-2 m-5px-b">TEXTO COMPACTO (-2px)</div>
+												<div class="m-5px-b">TEXTO NORMAL (0px)</div>
+												<div class="ls-3 m-5px-b">TEXTO ESPAÇADO (3px)</div>
 												<div class="ls-5">MUITO ESPAÇADO (5px)</div>
 											</div>
 										</div>
 									</div>
 									<div class="c-xs-12 c-md-6 m-20px-b">
-										<div class="demo-box h-100">
+										<div class="demo-box">
 											<strong>Font Size Relativo</strong>
-											<div style="padding: 10px; background: #f8f9fa; margin: 10px 0;">
-												<div class="minus-25" style="margin-bottom: 0.5rem;">Texto pequeno (75%)
-												</div>
-												<div style="margin-bottom: 0.5rem;">Texto normal (100%)</div>
-												<div class="more-25" style="margin-bottom: 0.5rem;">Texto maior (125%)
-												</div>
+											<div class="p-10px-all demo-gray m-10px-tb">
+												<div class="minus-25 m-5px-b">Texto pequeno (75%)</div>
+												<div class="m-5px-b">Texto normal (100%)</div>
+												<div class="more-25 m-5px-b">Texto maior (125%)</div>
 												<div class="more-50">Texto grande (150%)</div>
 											</div>
 										</div>
@@ -2289,24 +2299,21 @@ Rodapé sempre no final
 								</div>
 								<div class="row p-10px-t">
 									<div class="c-xs-12 c-md-6 m-20px-b">
-										<div class="demo-box h-100">
+										<div class="demo-box">
 											<strong>Font Weight</strong>
-											<div style="padding: 10px; background: #f8f9fa; margin: 10px 0;">
-												<div class="fw-400" style="margin-bottom: 0.5rem;">Texto normal
-													(400)</div>
-												<div class="fw-600" style="margin-bottom: 0.5rem;">Texto semibold
-													(600)</div>
+											<div class="p-10px-all demo-gray m-10px-tb">
+												<div class="fw-400 m-5px-b">Texto normal (400)</div>
+												<div class="fw-600 m-5px-b">Texto semibold (600)</div>
 												<div class="fw-700">Texto bold (700)</div>
 											</div>
 										</div>
 									</div>
 									<div class="c-xs-12 c-md-6 m-20px-b">
-										<div class="demo-box h-100">
+										<div class="demo-box">
 											<strong>Text Decoration</strong>
-											<div style="padding: 10px; background: #f8f9fa; margin: 10px 0;">
-												<div style="margin-bottom: 0.5rem;">Texto normal</div>
-												<div class="underline" style="margin-bottom: 0.5rem;">
-													Texto sublinhado</div>
+											<div class="p-10px-all demo-gray m-10px-tb">
+												<div class="m-5px-b">Texto normal</div>
+												<div class="underline m-5px-b">Texto sublinhado</div>
 												<div class="line-through">Texto riscado</div>
 											</div>
 										</div>
@@ -2350,31 +2357,28 @@ Rodapé sempre no final
 
 						<div class="feature-card m-20px-b">
 							<h4>Classes de Alerta</h4>
-							<p>Classes semânticas para feedback visual. Use em mensagens, badges, botões ou qualquer elemento que precise comunicar estado:</p>
+							<p>Classes semânticas para feedback visual. Use em mensagens, badges, botões ou qualquer elemento que
+								precise comunicar estado:</p>
 
 							<div class="row p-20px-tb">
 								<div class="c-xs-12 c-sm-6 c-md-3">
-									<div class="alert-success"
-										style="padding: 10px; border-radius: 6px; text-align: center; margin-bottom: 1rem;">
-										<strong>Success</strong><br>
+									<div class="alert-success p-10px-all border-rd-6 text-center m-15px-b">
+										<strong>Success</strong>
 									</div>
 								</div>
 								<div class="c-xs-12 c-sm-6 c-md-3">
-									<div class="alert-info"
-										style="padding: 10px; border-radius: 6px; text-align: center; margin-bottom: 1rem;">
-										<strong>Info</strong><br>
+									<div class="alert-info p-10px-all border-rd-6 text-center m-15px-b">
+										<strong>Info</strong>
 									</div>
 								</div>
 								<div class="c-xs-12 c-sm-6 c-md-3">
-									<div class="alert-warning"
-										style="padding: 10px; border-radius: 6px; text-align: center; margin-bottom: 1rem;">
-										<strong>Warning</strong><br>
+									<div class="alert-warning p-10px-all border-rd-6 text-center m-15px-b">
+										<strong>Warning</strong>
 									</div>
 								</div>
 								<div class="c-xs-12 c-sm-6 c-md-3">
-									<div class="alert-danger"
-										style="padding: 10px; border-radius: 6px; text-align: center; margin-bottom: 1rem;">
-										<strong>Danger</strong><br>
+									<div class="alert-danger p-10px-all border-rd-6 text-center m-15px-b">
+										<strong>Danger</strong>
 									</div>
 								</div>
 							</div>
@@ -2392,7 +2396,9 @@ Rodapé sempre no final
 						<div id="balloon" class="feature-card m-20px-b">
 							<h4>Tooltips (Balloon.css)</h4>
 
-							<p>Tooltips em CSS puro para dicas contextuais. Adicione <code>aria-label</code> com o texto e <code>data-balloon-pos</code> com a posição:</p>
+							<p>Tooltips em CSS puro para dicas contextuais. Adicione <code>aria-label</code> com o texto e
+								<code>data-balloon-pos</code> com a posição:
+							</p>
 
 							<div class="f-grid f-gap-10 p-20px-tb text-center">
 								<button class="btn alert-info f-grow-1 w-200px xs-w-100" aria-label="Acima" data-balloon-pos="up">
@@ -2446,7 +2452,7 @@ Rodapé sempre no final
     Posição Direita
 </button>
 							</textarea>
-						</div>
+							</div>
 
 							<p class="m-40px-t">Atributos principais:</p>
 							<ul class="list-style">
@@ -2474,59 +2480,59 @@ Rodapé sempre no final
 							<div class="p-20px-tb">
 								<h5>Showcase de Ícones Populares:</h5>
 								<div class="f-grid f-gap-15 f-justify-evenly">
-									<div class="icon-item ">
+									<div class="icon-item p-15px-tb p-10px-lr border-rd-6 text-center f-grow-1">
 										<i class="iccon-home-1"></i>
 										<small>home-1</small>
 									</div>
-									<div class="icon-item ">
+									<div class="icon-item p-15px-tb p-10px-lr border-rd-6 text-center f-grow-1">
 										<i class="iccon-user-1"></i>
 										<small>user-1</small>
 									</div>
-									<div class="icon-item ">
+									<div class="icon-item p-15px-tb p-10px-lr border-rd-6 text-center f-grow-1">
 										<i class="iccon-envelope-1"></i>
 										<small>envelope-1</small>
 									</div>
-									<div class="icon-item ">
+									<div class="icon-item p-15px-tb p-10px-lr border-rd-6 text-center f-grow-1">
 										<i class="iccon-phone-1"></i>
 										<small>phone-1</small>
 									</div>
-									<div class="icon-item ">
+									<div class="icon-item p-15px-tb p-10px-lr border-rd-6 text-center f-grow-1">
 										<i class="iccon-calendar-1"></i>
 										<small>calendar-1</small>
 									</div>
-									<div class="icon-item ">
+									<div class="icon-item p-15px-tb p-10px-lr border-rd-6 text-center f-grow-1">
 										<i class="iccon-clock-1"></i>
 										<small>clock-1</small>
 									</div>
-									<div class="icon-item ">
+									<div class="icon-item p-15px-tb p-10px-lr border-rd-6 text-center f-grow-1">
 										<i class="iccon-marker-1"></i>
 										<small>marker-1</small>
 									</div>
-									<div class="icon-item ">
+									<div class="icon-item p-15px-tb p-10px-lr border-rd-6 text-center f-grow-1">
 										<i class="iccon-search-1"></i>
 										<small>search-1</small>
 									</div>
-									<div class="icon-item ">
+									<div class="icon-item p-15px-tb p-10px-lr border-rd-6 text-center f-grow-1">
 										<i class="iccon-heart-1"></i>
 										<small>heart-1</small>
 									</div>
-									<div class="icon-item ">
+									<div class="icon-item p-15px-tb p-10px-lr border-rd-6 text-center f-grow-1">
 										<i class="iccon-star-1"></i>
 										<small>star-1</small>
 									</div>
-									<div class="icon-item ">
+									<div class="icon-item p-15px-tb p-10px-lr border-rd-6 text-center f-grow-1">
 										<i class="iccon-cart-1"></i>
 										<small>cart-1</small>
 									</div>
-									<div class="icon-item ">
+									<div class="icon-item p-15px-tb p-10px-lr border-rd-6 text-center f-grow-1">
 										<i class="iccon-settings-1"></i>
 										<small>settings-1</small>
 									</div>
-									<div class="icon-item ">
+									<div class="icon-item p-15px-tb p-10px-lr border-rd-6 text-center f-grow-1">
 										<i class="iccon-file-1"></i>
 										<small>file-1</small>
 									</div>
-									<div class="icon-item ">
+									<div class="icon-item p-15px-tb p-10px-lr border-rd-6 text-center f-grow-1">
 										<i class="iccon-comment-1"></i>
 										<small>comment-1</small>
 									</div>
@@ -2783,7 +2789,7 @@ Rodapé sempre no final
 							</div>
 
 							<h4>Animações contínuas</h4>
-							<p>Conjunto de efeitos prontos que já possuem repetição e duração configuradas em uma única	classe.</p>
+							<p>Conjunto de efeitos prontos que já possuem repetição e duração configuradas em uma única classe.</p>
 							<div class="row">
 								<div class="c-xs-12 c-sm-6 text-center m-10px-b">
 									<div class="demo-box anima-pulse">
@@ -2824,7 +2830,8 @@ Rodapé sempre no final
 
 						<div class="feature-card m-20px-b">
 							<h4>Bibliotecas Vanilla Integradas</h4>
-							<p>Todas as micro-bibliotecas estão pré-configuradas e otimizadas para funcionar perfeitamente com o Squeleton.
+							<p>Todas as micro-bibliotecas estão pré-configuradas e otimizadas para funcionar perfeitamente com o
+								Squeleton.
 							</p>
 
 							<div class="row">
@@ -2841,7 +2848,8 @@ Rodapé sempre no final
 											simples e leve para gerenciamento de cookies do navegador.</li>
 										<li><strong><a href="#dialog">a11y-dialog</a></strong> - Biblioteca leve e
 											flexível para criação de janelas de diálogo intuitivas.
-											<em>(scroll lock auto-inicializado)</em></li>
+											<em>(scroll lock auto-inicializado)</em>
+										</li>
 										<li><strong><a href="#vanjs">VanJS</a></strong> - O menor framework de interface
 											de usuário reativo do mundo. Incrivelmente poderoso, absurdamente pequeno.
 										</li>
@@ -2849,10 +2857,12 @@ Rodapé sempre no final
 											para mensagens de notificação aprimoradas.</li>
 										<li><strong><a href="#wow2">Wow2 Animation</a></strong> - Fork otimizado próprio
 											baseado no wow.js para animações on-scroll performáticas.
-											<em>(auto-inicializado)</em></li>
+											<em>(auto-inicializado)</em>
+										</li>
 										<li><strong><a href="#venobox">VenoBox 2</a></strong> - Biblioteca JavaScript
 											Lightbox para imagens, vídeos, galerias e iFrames.
-											<em>(auto-inicializado)</em></li>
+											<em>(auto-inicializado)</em>
+										</li>
 										<li><strong><a href="#counter2">Counter-Up2</a></strong> - Biblioteca leve que
 											conta até um número alvo quando o número se torna visível.</li>
 									</ul>
@@ -3508,7 +3518,8 @@ Rodapé sempre no final
 									</div>
 								</div>
 								<div class="c-sm-6 c-xs-12 m-10px-b">
-									<div class="demo-box wow fadeInDown" data-wow-duration="2s">
+									<div class="demo-box wow fadeInDown"
+										data-wow-duration="2s">
 										wow fadeInDown + duration 2s
 									</div>
 								</div>
@@ -3523,12 +3534,14 @@ Rodapé sempre no final
 									</div>
 								</div>
 								<div class="c-sm-6 c-xs-12 m-10px-b">
-									<div class="demo-box animated shakeX infinite duration-2500">
+									<div
+										class="demo-box animated shakeX infinite duration-2500">
 										animated shakeX infinite duration-2500
 									</div>
 								</div>
 								<div class="c-sm-6 c-xs-12 m-10px-b">
-									<div class="demo-box animated zoomIn repeat-5 duration-3000">
+									<div
+										class="demo-box animated zoomIn repeat-5 duration-3000">
 										animated zoomIn repeat-5 duration-3000
 									</div>
 								</div>
@@ -3733,14 +3746,13 @@ Rodapé sempre no final
 									data-vbtype="video" data-gall="veno-demo" data-maxwidth="960px"
 									href="https://www.youtube.com/watch?v=UYmvFzDuO5k">Abrir YouTube Vídeo</a>
 
-								<a class="btn open-gallery p-10px-tb p-20px-lr m-5px-r m-10px-b xs-w-100 alert-info" data-gall="veno-demo"
-									data-title="Foto em Tela Ampliada"
+								<a class="btn open-gallery p-10px-tb p-20px-lr m-5px-r m-10px-b xs-w-100 alert-info"
+									data-gall="veno-demo" data-title="Foto em Tela Ampliada"
 									href="https://hiperwp.com.br/app/uploads/2025/08/voice_43.webp">Abrir Imagem
 									Ampliada</a>
 
-								<a class="btn open-iframe p-10px-tb p-20px-lr m-10px-b xs-w-100 alert-info"
-									data-vbtype="iframe" data-maxwidth="900px"
-									href="https://hiperwp.com.br/">Abrir Iframe</a>
+								<a class="btn open-iframe p-10px-tb p-20px-lr m-10px-b xs-w-100 alert-info" data-vbtype="iframe"
+									data-ratio="full" href="https://hiperwp.com.br/">Abrir Iframe</a>
 							</div>
 							<div class="code-block">
 								<textarea class="prism-code" data-lang="markup">
@@ -3816,11 +3828,11 @@ Rodapé sempre no final
 								<textarea class="prism-code" data-lang="markup">
 <div id="view-counter"> 
 	<!-- Viewport da Contagem -->
-	<div class="stat-card">
+	<div class="stat-card p-25px-all border-rd-8 text-center h-100">
 		<div class="animated-number">400+</div> <!-- Inicia Contagem -->
 		<div>Classes Utilitárias</div>
 	</div>
-	<div class="stat-card">
+	<div class="stat-card p-25px-all border-rd-8 text-center h-100">
 		<div class="animated-number">300+</div> <!-- Inicia Contagem -->
 		<div>Ícones Vetoriais</div>
 	</div>
@@ -3881,10 +3893,10 @@ Rodapé sempre no final
 
 					</section>
 
-					<section id="guia" class="p-25px-b">
+					<section id="faq" class="p-25px-b">
 						<h2 class="section-header">
 							<span class="iccon-comment-1 p-5px-r"></span>
-							Guia Rápido
+							Perguntas Frequentes
 						</h2>
 
 						<div class="feature-card m-20px-b">
@@ -3895,6 +3907,7 @@ Rodapé sempre no final
 								<div class="panel">
 									<div class="panel-heading">
 										<h5>Por que o Squeleton foi criado e qual seu objetivo?</h5>
+										<span class="accordion-icon iccon-plus-1"></span>
 									</div>
 									<div class="panel-collapse">
 										<div class="panel-body">
@@ -3951,10 +3964,13 @@ Rodapé sempre no final
 								<div class="panel">
 									<div class="panel-heading">
 										<h5>Como personalizar as cores e fontes?</h5>
+										<span class="accordion-icon iccon-plus-1"></span>
 									</div>
 									<div class="panel-collapse">
 										<div class="panel-body">
-											<p>O Squeleton é deliberadamente agnóstico em relação a paleta de cores, família de fontes e estilos muito específicos. Esta neutralidade é uma decisão estratégica para maximizar sua portabilidade entre diferentes temas e projetos.</p>
+											<p>O Squeleton é deliberadamente agnóstico em relação a paleta de cores, família de fontes e
+												estilos muito específicos. Esta neutralidade é uma decisão estratégica para maximizar sua
+												portabilidade entre diferentes temas e projetos.</p>
 
 											<p>Para implementar personalizações de maneira organizada e sustentável,
 												recomendamos:</p>
@@ -3963,7 +3979,8 @@ Rodapé sempre no final
 													variáveis CSS de personalização</li>
 												<li>Definir suas variáveis no seletor <code>:root</code> para
 													estabelecer sua paleta de cores e família de fontes compatíveis com seu projeto</li>
-												<li>Manter um arquivo JavaScript separado para funções específicas do projeto, como listeners personalizados, manipulação de cookies e
+												<li>Manter um arquivo JavaScript separado para funções específicas do projeto, como listeners
+													personalizados, manipulação de cookies e
 													funcionalidades customizadas</li>
 											</ul>
 
@@ -4002,6 +4019,7 @@ body {
 								<div class="panel">
 									<div class="panel-heading">
 										<h5>Como implementar animações personalizadas?</h5>
+										<span class="accordion-icon iccon-plus-1"></span>
 									</div>
 									<div class="panel-collapse">
 										<div class="panel-body">
@@ -4035,6 +4053,7 @@ body {
 								<div class="panel">
 									<div class="panel-heading">
 										<h5>Por que não há um sistema de deploy e compilação de estilos e scripts?</h5>
+										<span class="accordion-icon iccon-plus-1"></span>
 									</div>
 									<div class="panel-collapse">
 										<div class="panel-body">
@@ -4089,6 +4108,7 @@ body {
 									<div class="panel-heading">
 										<h5>Como posso descobrir todas as classes utilitárias e possibilidades do
 											Squeleton?</h5>
+										<span class="accordion-icon iccon-plus-1"></span>
 									</div>
 									<div class="panel-collapse">
 										<div class="panel-body">
@@ -4128,17 +4148,23 @@ body {
 								<div class="panel">
 									<div class="panel-heading">
 										<h5>Posso usar o Squeleton com Claude e outras IAs?</h5>
+										<span class="accordion-icon iccon-plus-1"></span>
 									</div>
 									<div class="panel-collapse">
 										<div class="panel-body">
-											<p><strong>Sim!</strong> Foi desenvolvida uma <strong>Skill</strong> específica para desenvolvimento com IA chamada <strong>squeleton-skill</strong>.</p>
+											<p><strong>Sim!</strong> Foi desenvolvida uma <strong>Skill</strong> específica para
+												desenvolvimento com IA chamada <strong>squeleton-skill</strong>.</p>
 
-											<p>Skills (ou "habilidades") são pacotes de conhecimento especializados que você pode adicionar a assistentes de IA como Claude Code, GitHub Copilot ou outros agentes de código. Funcionam como "plugins de conhecimento" que ensinam a IA sobre frameworks, bibliotecas ou padrões específicos do seu projeto.</p>
+											<p>Skills (ou "habilidades") são pacotes de conhecimento especializados que você pode adicionar a
+												assistentes de IA como Claude Code, GitHub Copilot ou outros agentes de código. Funcionam como
+												"plugins de conhecimento" que ensinam a IA sobre frameworks, bibliotecas ou padrões específicos
+												do seu projeto.</p>
 
 											<h6>Ao instalar esta skill, a IA ganha:</h6>
 											<ul class="list-style">
 												<li><strong>Conhecimento completo</strong> das 400+ classes utilitárias do Squeleton</li>
-												<li><strong>Referências detalhadas</strong> de grid, espaçamento, flexbox, animações e ícones</li>
+												<li><strong>Referências detalhadas</strong> de grid, espaçamento, flexbox, animações e ícones
+												</li>
 												<li><strong>Padrões de uso</strong> e boas práticas específicas do framework</li>
 												<li><strong>Integração com bibliotecas JS</strong> (HTMX, VanJS, Embla, VenoBox, etc.)</li>
 												<li><strong>Exemplos práticos</strong> para hero sections, cards, modais, carrosséis e mais</li>
@@ -4146,12 +4172,19 @@ body {
 
 											<h6>Como usar?</h6>
 											<ol class="list-style">
-												<li><strong>Baixe a skill</strong>: <a href="https://github.com/HiperWP/squeleton/raw/refs/heads/main/squeleton-skill.zip" target="_blank" rel="noopener">squeleton-skill.zip</a></li>
-												<li><strong>Instale no seu IDE</strong> (Claude for VSCode, Cursor, Windsurf, etc.) seguindo a documentação da ferramenta</li>
-												<li><strong>Desenvolva com IA</strong>: A IA agora conhece todo o Squeleton e priorizará suas classes e componentes ao invés de criar CSS e JS personalizado</li>
+												<li><strong>Baixe a skill</strong>: <a
+														href="https://github.com/HiperWP/squeleton/raw/refs/heads/main/squeleton-skill.zip"
+														target="_blank" rel="noopener">squeleton-skill.zip</a></li>
+												<li><strong>Instale no seu IDE</strong> (Claude for VSCode, Cursor, Windsurf, etc.) seguindo a
+													documentação da ferramenta</li>
+												<li><strong>Desenvolva com IA</strong>: A IA agora conhece todo o Squeleton e priorizará suas
+													classes e componentes ao invés de criar CSS e JS personalizado</li>
 											</ol>
 
-											<p>Para mais detalhes sobre Skills, consulte a <a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview" target="_blank" rel="noopener">documentação do Claude Agent SDK</a> ou do seu assistente de IA preferido.</p>
+											<p>Para mais detalhes sobre Skills, consulte a <a
+													href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview"
+													target="_blank" rel="noopener">documentação do Claude Agent SDK</a> ou do seu assistente de IA
+												preferido.</p>
 										</div>
 									</div>
 								</div>
@@ -4166,6 +4199,7 @@ body {
 								<div class="panel">
 									<div class="panel-heading">
 										<h5>Como reportar bugs ou sugerir melhorias?</h5>
+										<span class="accordion-icon iccon-plus-1"></span>
 									</div>
 									<div class="panel-collapse">
 										<div class="panel-body">
@@ -4181,6 +4215,7 @@ body {
 								<div class="panel">
 									<div class="panel-heading">
 										<h5>O Squeleton é gratuito para uso comercial?</h5>
+										<span class="accordion-icon iccon-plus-1"></span>
 									</div>
 									<div class="panel-collapse">
 										<div class="panel-body">
@@ -4195,6 +4230,7 @@ body {
 								<div class="panel">
 									<div class="panel-heading">
 										<h5>Como contribuir com o desenvolvimento?</h5>
+										<span class="accordion-icon iccon-plus-1"></span>
 									</div>
 									<div class="panel-collapse">
 										<div class="panel-body">
@@ -4227,11 +4263,13 @@ body {
 					<div class="f-grid f-items-center f-justify-center p-15px-b">
 						<span class="iccon-rocket-1 p-10px-r"></span>
 						<h3 class="m-0-b p-5px-r">Squeleton</h3>
-						<span class="version-badge">4.6</span>
+						<span class="version-badge d-inline-block p-5px-lr m-5px-l border-rd-4 fs-3 fw-600">4.6</span>
 					</div>
 					<p class="minus-20 opacity-7">Desenvolvido por HiperWP</p>
 					<p>Um boilerplate leve e funcional para interfaces modernas e intuitivas</p>
-					<a href="https://github.com/HiperWP/squeleton" target="_blank" class="d-inline-flex f-items-center f-gap-5 p-5px-t opacity-6 color-inherit" aria-label="Repositório no GitHub" data-balloon-pos="down">
+					<a href="https://github.com/HiperWP/squeleton" target="_blank"
+						class="d-inline-flex f-items-center f-gap-5 p-5px-t opacity-6 color-inherit"
+						aria-label="Repositório no GitHub" data-balloon-pos="down">
 						<span class="iccon-github-1 fs-11"></span>
 					</a>
 				</div>
@@ -4355,9 +4393,11 @@ body {
 		// START RESIZE
 		window.addEventListener('resize', function () {
 
+			updateBreakpoints();
+
 			setTimeout(function () {
 				matchHeight();
-			}, 500);
+			}, 300);
 
 		});
 
@@ -4365,47 +4405,12 @@ body {
 		document.addEventListener('DOMContentLoaded', function () {
 			"use strict";
 
-			// Scroll To Top
-			var scrollTopArrow = document.querySelector('.scroll-top-arrow');
-
-			if (scrollTopArrow) {
-				scrollTopArrow.addEventListener('click', function (e) {
-					e.preventDefault();
-					window.scrollTo({
-						top: 0,
-						behavior: 'smooth'
-					});
-				});
-			}
-
-			// Side Menu
-			var showSideMenu = document.getElementById('showSideMenu');
-			var sideMenuClose = document.getElementById('sideMenuClose');
-			var siteMask = document.getElementById('site-mask');
-
-			if (showSideMenu && sideMenuClose && siteMask) {
-				showSideMenu.onclick = toggleMenu;
-				sideMenuClose.onclick = toggleMenu;
-				siteMask.onclick = toggleMenu;
-			}
-
-			// Side SubMenu
-			var arrowSubMenu = document.querySelectorAll('.vertical-nav-inner .arrow-menu');
-
-			arrowSubMenu.forEach(function (arrowMenu) {
-				arrowMenu.addEventListener('click', function (e) {
-
-					e.preventDefault();
-					var parentDiv = e.target.closest('.menu-item-has-children');
-					if (parentDiv) {
-						parentDiv.classList.toggle('show-sub-menu');
-					}
-				});
-			});
+			// Breakpoint Init
+			updateBreakpoints();
 
 			// Accordions
-			var accordionMain = document.getElementById('accordion-main');
-			if (accordionMain) {
+			var accordionContainers = document.querySelectorAll('.accordion-v1');
+			if (accordionContainers.length) {
 
 				var accordions = document.querySelectorAll(".accordion-v1 .panel-heading");
 				accordions.forEach(function (heading) {
@@ -4427,29 +4432,6 @@ body {
 							this.classList.remove("panel-open");
 						} else {
 							panelCollapse.classList.add("panel-open");
-							this.classList.add("panel-open");
-						}
-					});
-				});
-
-			}
-
-			// Toggles
-			var toggleMain = document.getElementById('toggle-main');
-			if (toggleMain) {
-
-				var toggles = document.querySelectorAll(".toggles-v1 .panel-heading");
-				toggles.forEach(function (heading) {
-					heading.addEventListener("click", function (e) {
-						e.preventDefault();
-
-						var collapse = this.nextElementSibling;
-
-						if (collapse.classList.contains("panel-open")) {
-							collapse.classList.remove("panel-open");
-							this.classList.remove("panel-open");
-						} else {
-							collapse.classList.add("panel-open");
 							this.classList.add("panel-open");
 						}
 					});
@@ -4519,7 +4501,30 @@ body {
 			document.querySelectorAll('textarea.prism-code').forEach(function (textarea) {
 				const code = document.createElement('code');
 				code.className = 'language-' + textarea.dataset.lang;
-				code.textContent = textarea.value;
+
+				// Dedent: Remove common indentation from all lines.
+				let text = textarea.value;
+				const lines = text.split('\n');
+
+				// Remove the first line if it is empty (break after <textarea>)
+				if (lines[0].trim() === '') lines.shift();
+				// Remove the last line if it's empty (break before </textarea>).
+				if (lines.length && lines[lines.length - 1].trim() === '') lines.pop();
+
+				// Find the smallest indentation (ignoring empty lines).
+				const minIndent = lines
+					.filter(line => line.trim().length > 0)
+					.reduce((min, line) => {
+						const indent = line.match(/^[\t ]*/)[0].length;
+						return Math.min(min, indent);
+					}, Infinity);
+
+				// Remove the common indentation from all lines.
+				const dedented = lines
+					.map(line => line.slice(minIndent === Infinity ? 0 : minIndent))
+					.join('\n');
+
+				code.textContent = dedented;
 
 				const pre = document.createElement('pre');
 				pre.appendChild(code);
@@ -4538,5 +4543,3 @@ body {
 </body>
 
 </html>
-
-

@@ -139,6 +139,13 @@ lh-1-8 (1.8)
 lh-1-9 (1.9)
 ```
 
+Responsivos:
+```
+md-lh-1-0, md-lh-1-1, md-lh-1-2, md-lh-1-3, md-lh-1-4, md-lh-1-5, md-lh-1-6, md-lh-1-7, md-lh-1-8, md-lh-1-9
+sm-lh-1-0, sm-lh-1-1, sm-lh-1-2, sm-lh-1-3, sm-lh-1-4, sm-lh-1-5, sm-lh-1-6, sm-lh-1-7, sm-lh-1-8, sm-lh-1-9
+xs-lh-1-0, xs-lh-1-1, xs-lh-1-2, xs-lh-1-3, xs-lh-1-4, xs-lh-1-5, xs-lh-1-6, xs-lh-1-7, xs-lh-1-8, xs-lh-1-9
+```
+
 ## White Space
 
 ```

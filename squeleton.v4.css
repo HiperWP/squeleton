@@ -5646,8 +5646,17 @@ fieldset[disabled] a.btn {
   opacity: 1
 }
 
-.modal-dialog,
 .vbox-overlay {
+  --vbox-tools-color: #fff;
+  --vbox-title-background: #101010;
+  --vbox-title-width: 'auto';
+  --vbox-title-radius: 0;
+  --vbox-padding: 10px;
+  --vbox-max-width: 100%
+}
+
+.vbox-overlay,
+.modal-dialog {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -5660,14 +5669,15 @@ fieldset[disabled] a.btn {
   z-index: 1045
 }
 
-.modal-dialog *,
-.vbox-overlay * {
+.vbox-overlay *,
+.modal-dialog * {
+  -webkit-backface-visibility: visible;
   backface-visibility: visible
 }
 
-.modal-dialog[aria-hidden=true],
-.modal-vbox[aria-hidden=true] {
-  display: none
+.modal-vbox[aria-hidden='true'],
+.modal-dialog[aria-hidden='true'] {
+  display: none;
 }
 
 .vbox-title {
@@ -5676,14 +5686,14 @@ fieldset[disabled] a.btn {
   z-index: 98;
   text-align: center;
   margin: 0 auto;
-  color: #fff
+  color: var(--vbox-tools-color)
 }
 
 .vbox-title {
   font-size: 12px;
-  background-color: #101010;
-  width: 'auto';
-  border-radius: 0;
+  background-color: var(--vbox-title-background);
+  width: var(--vbox-title-width);
+  border-radius: var(--vbox-title-radius);
   padding: 12px 54px;
   white-space: nowrap;
   overflow: hidden;
@@ -5712,10 +5722,10 @@ button.vbox-link-btn:hover {
   top: 0;
   right: 0;
   z-index: 99;
-  padding: 6px 15px;
-  color: #fff;
+  padding: 9px 15px;
+  color: var(--vbox-tools-color);
   border: 0;
-  font-size: 24px;
+  font-size: 18px;
   display: flex;
   align-items: center;
   opacity: .8;
@@ -5737,7 +5747,7 @@ button.vbox-link-btn:hover {
   z-index: 99;
   display: flex;
   align-items: center;
-  color: #fff
+  color: var(--vbox-tools-color)
 }
 
 .vbox-num {
@@ -5784,14 +5794,14 @@ button.vbox-link-btn:hover {
 .vbox-next span,
 .vbox-prev span {
   position: relative;
-  width: 20px;
-  height: 20px;
-  border: 2px solid transparent;
-  border-top-color: #fff;
-  border-right-color: #fff;
+  width: 18px;
+  height: 18px;
+  border: 3px solid transparent;
+  border-top-color: var(--vbox-tools-color);
+  border-right-color: var(--vbox-tools-color);
   text-indent: -100px;
   position: absolute;
-  top: 8px;
+  top: 13px;
   display: block
 }
 
@@ -5829,7 +5839,7 @@ button.vbox-link-btn:hover {
   max-height: 100%;
   padding: 25px 0;
   scrollbar-color: #303030 #191919;
-  scrollbar-width: thin
+  scrollbar-width: thin;
 }
 
 .vbox-content {
@@ -5852,9 +5862,9 @@ button.vbox-link-btn:hover {
 
 .vbox-child {
   box-shadow: 0 0 12px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
-  max-width: 100%;
+  max-width: var(--vbox-max-width);
   text-align: initial;
-  padding: 10px
+  padding: var(--vbox-padding)
 }
 
 .vbox-child img {
@@ -5886,27 +5896,27 @@ button.vbox-link-btn:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 10px
+  padding: var(--vbox-padding)
 }
 
 .venoratio-1x1 {
   --vb-aspect-ratio: 100%;
-  max-width: calc(min(100%, (100vh - 60px)))
+  max-width: calc(min(var(--vbox-max-width), (100vh - 60px)))
 }
 
 .venoratio-4x3.vbox-child.venoratio {
   --vb-aspect-ratio: calc(3 / 4 * 100%);
-  max-width: calc(min(100%, (100vh - 60px) * 4 / 3))
+  max-width: calc(min(var(--vbox-max-width), (100vh - 60px) * 4 / 3))
 }
 
 .venoratio-16x9.vbox-child.venoratio {
   --vb-aspect-ratio: calc(9 / 16 * 100%);
-  max-width: calc(min(100%, (100vh - 60px) * 16 / 9))
+  max-width: calc(min(var(--vbox-max-width), (100vh - 60px) * 16 / 9))
 }
 
 .venoratio-21x9.vbox-child.venoratio {
   --vb-aspect-ratio: calc(9 / 21 * 100%);
-  max-width: calc(min(100%, (100vh - 60px) * 21 / 9))
+  max-width: calc(min(var(--vbox-max-width), (100vh - 60px) * 21 / 9))
 }
 
 .venoratio-full {
@@ -6351,6 +6361,46 @@ button.vbox-link-btn:hover {
 
   .md-text-right {
     text-align: right
+  }
+
+  .md-lh-1-0 {
+    line-height: 1
+  }
+
+  .md-lh-1-1 {
+    line-height: 1.1
+  }
+
+  .md-lh-1-2 {
+    line-height: 1.2
+  }
+
+  .md-lh-1-3 {
+    line-height: 1.3
+  }
+
+  .md-lh-1-4 {
+    line-height: 1.4
+  }
+
+  .md-lh-1-5 {
+    line-height: 1.5
+  }
+
+  .md-lh-1-6 {
+    line-height: 1.6
+  }
+
+  .md-lh-1-7 {
+    line-height: 1.7
+  }
+
+  .md-lh-1-8 {
+    line-height: 1.8
+  }
+
+  .md-lh-1-9 {
+    line-height: 1.9
   }
 
   .md-float-left {
@@ -9768,6 +9818,46 @@ button.vbox-link-btn:hover {
 
   .sm-text-right {
     text-align: right
+  }
+
+  .sm-lh-1-0 {
+    line-height: 1
+  }
+
+  .sm-lh-1-1 {
+    line-height: 1.1
+  }
+
+  .sm-lh-1-2 {
+    line-height: 1.2
+  }
+
+  .sm-lh-1-3 {
+    line-height: 1.3
+  }
+
+  .sm-lh-1-4 {
+    line-height: 1.4
+  }
+
+  .sm-lh-1-5 {
+    line-height: 1.5
+  }
+
+  .sm-lh-1-6 {
+    line-height: 1.6
+  }
+
+  .sm-lh-1-7 {
+    line-height: 1.7
+  }
+
+  .sm-lh-1-8 {
+    line-height: 1.8
+  }
+
+  .sm-lh-1-9 {
+    line-height: 1.9
   }
 
   .visible-sm {
@@ -13217,6 +13307,46 @@ button.vbox-link-btn:hover {
 
   .xs-text-right {
     text-align: right
+  }
+
+  .xs-lh-1-0 {
+    line-height: 1
+  }
+
+  .xs-lh-1-1 {
+    line-height: 1.1
+  }
+
+  .xs-lh-1-2 {
+    line-height: 1.2
+  }
+
+  .xs-lh-1-3 {
+    line-height: 1.3
+  }
+
+  .xs-lh-1-4 {
+    line-height: 1.4
+  }
+
+  .xs-lh-1-5 {
+    line-height: 1.5
+  }
+
+  .xs-lh-1-6 {
+    line-height: 1.6
+  }
+
+  .xs-lh-1-7 {
+    line-height: 1.7
+  }
+
+  .xs-lh-1-8 {
+    line-height: 1.8
+  }
+
+  .xs-lh-1-9 {
+    line-height: 1.9
   }
 
   .xs-render-auto-small {
