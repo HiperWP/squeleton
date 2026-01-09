@@ -487,11 +487,75 @@
 			margin-bottom: 15px;
 		}
 
+		/* Grid Animado */
+		.hero-grid {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: space-between;
+			padding: 0 calc((100% - 1250px) / 2);
+			pointer-events: none;
+			z-index: 0;
+			overflow: hidden;
+		}
+
+		.grid-line {
+			width: 1px;
+			height: 100%;
+			background: linear-gradient(to bottom,
+				transparent 0%,
+				rgba(255,255,255,0.08) 20%,
+				rgba(255,255,255,0.08) 80%,
+				transparent 100%);
+			animation: gridPulse 4s ease-in-out infinite;
+		}
+
+		.grid-line:nth-child(1) { animation-delay: 0s; }
+		.grid-line:nth-child(2) { animation-delay: 0.3s; }
+		.grid-line:nth-child(3) { animation-delay: 0.6s; }
+		.grid-line:nth-child(4) { animation-delay: 0.9s; }
+		.grid-line:nth-child(5) { animation-delay: 1.2s; }
+		.grid-line:nth-child(6) { animation-delay: 1.5s; }
+		.grid-line:nth-child(7) { animation-delay: 1.5s; }
+		.grid-line:nth-child(8) { animation-delay: 1.2s; }
+		.grid-line:nth-child(9) { animation-delay: 0.9s; }
+		.grid-line:nth-child(10) { animation-delay: 0.6s; }
+		.grid-line:nth-child(11) { animation-delay: 0.3s; }
+		.grid-line:nth-child(12) { animation-delay: 0s; }
+
+		.grid-horizontal {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			height: 1px;
+			background: linear-gradient(to right,
+				transparent 0%,
+				rgba(255,255,255,0.06) 20%,
+				rgba(255,255,255,0.06) 80%,
+				transparent 100%);
+			animation: gridPulse 5s ease-in-out infinite 0.5s;
+		}
+
+		@keyframes gridPulse {
+			0%, 100% { opacity: 0.3; }
+			50% { opacity: 1; }
+		}
+
+		#hero > .container {
+			position: relative;
+			z-index: 1;
+		}
+
 		.down-section {
 			position: absolute;
 			bottom: 10px;
 			left: 50%;
 			transform: translateX(-50%);
+			z-index: 1;
 		}
 
 		.down-section i,
@@ -610,6 +674,22 @@
 <body>
 
 	<header id="hero" class="hero-gradient p-30px-t p-0-b f-grid f-items-center h-100vh ps-relative">
+		<!-- Grid Animado de Fundo -->
+		<div class="hero-grid" aria-hidden="true">
+			<div class="grid-line"></div>
+			<div class="grid-line"></div>
+			<div class="grid-line"></div>
+			<div class="grid-line"></div>
+			<div class="grid-line"></div>
+			<div class="grid-line"></div>
+			<div class="grid-line"></div>
+			<div class="grid-line"></div>
+			<div class="grid-line"></div>
+			<div class="grid-line"></div>
+			<div class="grid-line"></div>
+			<div class="grid-line"></div>
+			<div class="grid-horizontal"></div>
+		</div>
 		<div class="container p-60px-b">
 			<div class="row text-center">
 				<div class="c-xs-12 c-md-8 c-center">
