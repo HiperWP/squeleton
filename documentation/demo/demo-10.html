@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Savage de Publicidade - Por Peter Kell</title>
 
-    <!-- Squeleton CSS -->
     <link rel="stylesheet" href="https://cdn.hiperwp.com.br/squeleton.v4.min.css">
 
-    <!-- Bunny Fonts (GDPR friendly) -->
     <link href="https://fonts.bunny.net/css?family=cinzel-decorative:700,900|cinzel:600,700,800|noto-serif:400,600,700&display=swap" rel="stylesheet">
 
-    <!-- Squeleton JS (Head) -->
     <script src="https://cdn.hiperwp.com.br/squeleton-main.v4.min.js"></script>
 
     <style>
@@ -47,12 +44,9 @@
             overflow-x: hidden;
         }
 
-        /* ============================================
-           TIPOGRAFIA - PESOS CORRIGIDOS
-           ============================================ */
         .font-decorative {
             font-family: 'Cinzel Decorative', serif;
-            font-weight: 700; /* Peso padrão mais grosso */
+            font-weight: 700;
         }
 
         .font-decorative-black {
@@ -76,9 +70,6 @@
             font-family: 'Noto Serif', serif;
         }
 
-        /* ============================================
-           CORES DE TEXTO
-           ============================================ */
         .text-gold {
             color: var(--gold);
         }
@@ -111,9 +102,6 @@
         .text-cream { color: var(--cream); }
         .text-white { color: #fff; }
 
-        /* ============================================
-           BACKGROUNDS
-           ============================================ */
         .bg-dark-green {
             background-color: var(--dark-green);
             background-image:
@@ -143,7 +131,6 @@
                 radial-gradient(circle at 50% 50%, rgba(201, 162, 39, 0.03) 0%, transparent 60%);
         }
 
-        /* Variação com luz central (spotlight) */
         .bg-spotlight {
             background-color: var(--darker-green);
             background-image:
@@ -151,7 +138,6 @@
                 radial-gradient(ellipse 80% 50% at 50% 100%, rgba(0, 0, 0, 0.3) 0%, transparent 50%);
         }
 
-        /* Variação com luz lateral */
         .bg-side-glow {
             background-color: var(--dark-green);
             background-image:
@@ -159,7 +145,6 @@
                 radial-gradient(ellipse 40% 80% at 100% 50%, rgba(201, 162, 39, 0.08) 0%, transparent 50%);
         }
 
-        /* Variação com vignette */
         .bg-vignette {
             background-color: var(--dark-green);
             background-image:
@@ -184,9 +169,6 @@
             background: linear-gradient(90deg, transparent, var(--gold), transparent);
         }
 
-        /* ============================================
-           HERO SECTION
-           ============================================ */
         .hero-section {
             min-height: 100vh;
             position: relative;
@@ -194,8 +176,24 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            background: url('assets/hero-header-new-CijmyuQI.webp') center bottom no-repeat;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('assets/hero-header-new-CijmyuQI2.webp') center bottom no-repeat;
             background-size: cover;
+            z-index: -1;
+            animation: heroZoom 20s ease-out forwards;
+        }
+
+        @keyframes heroZoom {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
         }
 
         .hero-section::before {
@@ -227,7 +225,6 @@
             margin-top: 20vh;
         }
 
-        /* Partículas de Brasa */
         .embers-container {
             position: absolute;
             inset: 0;
@@ -370,7 +367,6 @@
             left: 100%;
         }
 
-        /* Scroll Indicator */
         .scroll-indicator {
             position: absolute;
             bottom: 40px;
@@ -389,9 +385,6 @@
             opacity: 0.6;
         }
 
-        /* ============================================
-           SEÇÃO INTRO (CREME)
-           ============================================ */
         .intro-section {
             background: linear-gradient(180deg, rgb(40, 32, 18) 0%, var(--cream) 6%, var(--cream) 94%, var(--cream-dark) 100%);
             color: #2a2a2a;
@@ -558,9 +551,6 @@
             font-weight: 600;
         }
 
-        /* ============================================
-           SEÇÃO 2020 VS 2026 - PAIN POINTS
-           ============================================ */
         .pain-point {
             display: flex;
             align-items: center;
@@ -681,9 +671,6 @@
             }
         }
 
-        /* ============================================
-           CARDS DE BENEFÍCIOS
-           ============================================ */
         .benefit-card {
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
             border: 1px solid rgba(201, 162, 39, 0.2);
@@ -766,9 +753,6 @@
             z-index: 1;
         }
 
-        /* ============================================
-           CITAÇÃO / QUOTE BOX
-           ============================================ */
         .quote-box {
             position: relative;
             background: linear-gradient(135deg, rgba(201, 162, 39, 0.08) 0%, rgba(0, 0, 0, 0.3) 100%);
@@ -794,9 +778,6 @@
             z-index: 1;
         }
 
-        /* ============================================
-           SEÇÃO SKULL BADGE
-           ============================================ */
         .skull-badge {
             background: linear-gradient(135deg, #1a1208 0%, #2a1f0f 50%, #1a1208 100%);
             border: 2px solid var(--gold-dark);
@@ -829,9 +810,6 @@
             z-index: 1;
         }
 
-        /* ============================================
-           FEATURE BOXES
-           ============================================ */
         .feature-box {
             background: rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(201, 162, 39, 0.15);
@@ -895,9 +873,6 @@
             background: var(--dark-green);
         }
 
-        /* ============================================
-           PASSO 7 - DESTAQUE ESPECIAL
-           ============================================ */
         .step-7-highlight {
             position: relative;
             background: linear-gradient(135deg, rgba(201, 162, 39, 0.15) 0%, rgba(201, 162, 39, 0.05) 100%);
@@ -939,9 +914,6 @@
             border-radius: 20px;
         }
 
-        /* ============================================
-           IMAGENS DECORATIVAS
-           ============================================ */
         .decorative-image {
             max-width: 100%;
             height: auto;
@@ -963,10 +935,6 @@
                     drop-shadow(0 0 100px rgba(201, 162, 39, 0.4));
         }
 
-
-        /* ============================================
-           SCROLL/PERGAMINHO
-           ============================================ */
         .scroll-container {
             background:
                 linear-gradient(180deg,
@@ -1087,9 +1055,6 @@
             opacity: 0.9;
         }
 
-        /* ============================================
-           FAQ
-           ============================================ */
         .faq-item {
             background: rgba(0, 0, 0, 0.25);
             border: 1px solid rgba(201, 162, 39, 0.15);
@@ -1164,9 +1129,6 @@
             padding: 20px 28px;
         }
 
-        /* ============================================
-           PRICING CARDS
-           ============================================ */
         .pricing-card {
             background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
             border: 2px solid rgba(201, 162, 39, 0.25);
@@ -1273,9 +1235,6 @@
             line-height: 1.6;
         }
 
-        /* ============================================
-           GARANTIA / TRUST BADGES
-           ============================================ */
         .guarantee-box {
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
             border: 1px solid rgba(201, 162, 39, 0.3);
@@ -1323,9 +1282,6 @@
             color: var(--gold);
         }
 
-        /* ============================================
-           URGÊNCIA / CTA BADGES
-           ============================================ */
         .urgency-badge {
             display: inline-flex;
             align-items: center;
@@ -1346,9 +1302,6 @@
             50% { box-shadow: 0 0 35px rgba(220, 74, 74, 0.8); }
         }
 
-        /* ============================================
-           BOTÕES
-           ============================================ */
         .btn-gold {
             display: inline-block;
             background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 50%, var(--gold-dark) 100%);
@@ -1391,9 +1344,6 @@
             opacity: 1;
         }
 
-        /* ============================================
-           ELEMENTOS DECORATIVOS
-           ============================================ */
         .diamond-divider {
             text-align: center;
             padding: 50px 0;
@@ -1433,9 +1383,6 @@
             background: linear-gradient(90deg, transparent 0%, var(--gold-dark) 20%, var(--gold) 50%, var(--gold-dark) 80%, transparent 100%);
         }
 
-        /* ============================================
-           CHECKMARK LIST
-           ============================================ */
         .checkmark-list {
             list-style: none;
             padding: 0;
@@ -1472,9 +1419,6 @@
             transform: rotate(-45deg);
         }
 
-        /* ============================================
-           STYLED LIST (Bullets)
-           ============================================ */
         .styled-list {
             list-style: none;
             padding: 0;
@@ -1499,15 +1443,12 @@
             border-radius: 50%;
         }
 
-        /* ============================================
-           FOOTER
-           ============================================ */
         .footer-hero {
             min-height: 70vh;
             position: relative;
             display: flex;
             align-items: flex-end;
-            background: url('assets/scottish-king-banner-BR7nbYZ4.webp') center center no-repeat;
+            background: url('assets/scottish-king-banner-BR7nbYZ42.webp') top center no-repeat;
             background-size: cover;
         }
 
@@ -1544,9 +1485,6 @@
             width: 100%;
         }
 
-        /* ============================================
-           HEADER / NAVBAR
-           ============================================ */
         .site-header {
             position: fixed;
             top: 0;
@@ -1675,9 +1613,6 @@
             box-shadow: 0 6px 20px rgba(201, 162, 39, 0.4);
         }
 
-        /* ============================================
-           RESPONSIVE
-           ============================================ */
         @media (max-width: 991px) {
             .hero-image {
                 max-width: 400px;
@@ -1729,10 +1664,6 @@
             }
         }
 
-
-        /* ============================================
-           AUXILIARES
-           ============================================ */
         .btn-gold-sm { padding: 20px 35px; font-size: 0.9rem; }
         .btn-gold-lg { padding: 22px 45px; font-size: 1rem; }
         .hero-cta-lg { font-size: 1.1rem; padding: 22px 50px; }
@@ -1741,7 +1672,6 @@
 </head>
 <body>
 
-<!-- ==================== HEADER ==================== -->
 <header class="site-header">
     <div class="header-container">
         <a href="#" class="header-logo">
@@ -1762,9 +1692,10 @@
     </div>
 </header>
 
-<!-- ==================== HERO SECTION ==================== -->
 <section class="hero-section">
-    <!-- Partículas de Brasa -->
+
+    <div class="hero-bg"></div>
+
     <div class="embers-container" id="embers"></div>
 
     <div class="hero-content text-center p-30px-all">
@@ -1779,13 +1710,11 @@
         </a>
     </div>
 
-    <!-- Scroll Indicator -->
     <div class="scroll-indicator">
         <div class="scroll-arrow"></div>
     </div>
 </section>
 
-<!-- ==================== INTRO SECTION (CREME) ==================== -->
 <section class="intro-section">
     <div class="container">
         <div class="text-center">
@@ -1825,7 +1754,6 @@
     </div>
 </section>
 
-<!-- ==================== STRAIGHT TO THE POINT ==================== -->
 <section class="bg-spotlight p-80px-tb xs-p-40px-tb">
     <div class="container">
         <div class="row f-items-center">
@@ -1856,7 +1784,6 @@
     </div>
 </section>
 
-<!-- ==================== 2020 VS 2026 ==================== -->
 <section class="bg-gradient-dark p-80px-tb xs-p-40px-tb">
     <div class="container">
         <h2 class="font-decorative-black text-center m-60px-b fs-12 wow fadeIn">
@@ -1890,7 +1817,6 @@
             </div>
         </div>
 
-        <!-- Bloco Final -->
         <div class="text-center m-50px-t wow fadeInUp" data-wow-delay="0.5s">
             <p class="opacity-8 m-10px-b">Eles não são mais inteligentes que você.</p>
             <p class="opacity-8 m-10px-b">Eles não são mais criativos.</p>
@@ -1907,7 +1833,6 @@
     </div>
 </section>
 
-<!-- ==================== FACEBOOK ANDROMEDA UPDATE ==================== -->
 <section class="bg-pattern p-80px-tb xs-p-40px-tb">
     <div class="container">
         <div class="diamond-divider"></div>
@@ -1917,7 +1842,7 @@
         </h2>
 
         <div class="row gap-10">
-            <!-- Card 1 -->
+
             <div class="c-xs-12 c-md-6 m-15px-b">
                 <div class="benefit-card h-100 wow fadeInUp">
                     <div class="benefit-icon" data-number="1"></div>
@@ -1926,7 +1851,6 @@
                 </div>
             </div>
 
-            <!-- Card 2 -->
             <div class="c-xs-12 c-md-6 m-15px-b">
                 <div class="benefit-card h-100 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="benefit-icon" data-number="2"></div>
@@ -1935,7 +1859,6 @@
                 </div>
             </div>
 
-            <!-- Card 3 -->
             <div class="c-xs-12 c-md-6 m-15px-b">
                 <div class="benefit-card h-100 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="benefit-icon" data-number="3"></div>
@@ -1944,7 +1867,6 @@
                 </div>
             </div>
 
-            <!-- Card 4 -->
             <div class="c-xs-12 c-md-6 m-15px-b">
                 <div class="benefit-card h-100 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="benefit-icon" data-number="4"></div>
@@ -1965,7 +1887,6 @@
     </div>
 </section>
 
-<!-- ==================== PETER KELL SECTION ==================== -->
 <section id="resultados" class="bg-darkest p-80px-tb xs-p-40px-tb">
     <div class="container">
         <h2 class="font-decorative-black text-center m-15px-b fs-12 wow fadeIn">
@@ -1979,7 +1900,7 @@
         <div class="row f-items-start">
             <div class="c-xs-12 c-md-5 m-40px-b">
                 <div class="text-center wow fadeInLeft">
-                    <!-- Trono Verde - Imagem PNG -->
+
                     <img src="assets/green-throne-C2I_aRuM.webp" alt="Trono Verde" class="decorative-image decorative-image-glow w-300px" width="300" height="300">
                 </div>
             </div>
@@ -2005,7 +1926,6 @@
 
         <div class="gold-line-thick m-60px-tb"></div>
 
-        <!-- Citação Peter Kell -->
         <blockquote class="quote-box w-max-900px c-center m-50px-b wow fadeIn">
             <div class="quote-marks">"</div>
             <p class="font-elegant text-center fs-10 lh-1-6">
@@ -2036,7 +1956,6 @@
     </div>
 </section>
 
-<!-- ==================== THIS MEANS TODAY YOU CAN ==================== -->
 <section class="bg-side-glow p-80px-tb xs-p-40px-tb">
     <div class="container">
         <div class="diamond-divider"></div>
@@ -2121,7 +2040,6 @@
     </div>
 </section>
 
-<!-- ==================== THIS ISN'T HYPE ==================== -->
 <section class="bg-darkest p-80px-tb xs-p-40px-tb">
     <div class="container">
         <div class="row f-items-center">
@@ -2145,14 +2063,13 @@
             </div>
 
             <div class="c-xs-12 c-md-6 text-center wow fadeInRight">
-                <!-- Escudo Leão - Imagem PNG -->
+
                 <img src="assets/shield-lion-BgbrAqAf.webp" alt="Escudo com Leão" class="decorative-image decorative-image-glow w-250px" width="250" height="250">
             </div>
         </div>
     </div>
 </section>
 
-<!-- ==================== IN 2026 LOW VOLUME ==================== -->
 <section class="bg-vignette p-80px-tb xs-p-40px-tb">
     <div class="container">
         <div class="text-center m-50px-b">
@@ -2166,7 +2083,7 @@
 
         <div class="row f-items-center">
             <div class="c-xs-12 c-md-5 text-center m-40px-b wow fadeInLeft">
-                <!-- Machados Cruzados - Imagem PNG -->
+
                 <img src="assets/crossed-axes-pcK42pi.webp" alt="Machados Cruzados" class="decorative-image decorative-image-glow w-300px" width="300" height="300">
             </div>
 
@@ -2188,10 +2105,9 @@
     </div>
 </section>
 
-<!-- ==================== 7-STEP SYSTEM ==================== -->
 <section id="sistema" class="bg-gradient-radial p-80px-tb xs-p-40px-tb">
     <div class="container">
-        <!-- Coroa Flamejante -->
+
         <div class="text-center m-40px-b wow fadeIn">
             <img src="assets/flaming-crown-CDAWMI25.webp" alt="Coroa Flamejante" class="decorative-image decorative-image-glow w-300px" width="300" height="300">
         </div>
@@ -2204,7 +2120,6 @@
             Aqui está exatamente o sistema de prompts e fluxo que vamos usar para produzir 50+ anúncios em vídeo de classe mundial por semana:
         </p>
 
-        <!-- 7 Passos em Grid -->
         <div class="row gap-10">
             <div class="c-xs-12 c-md-6 m-15px-b">
                 <div class="feature-box wow fadeInUp">
@@ -2278,7 +2193,6 @@
                 </div>
             </div>
 
-            <!-- Passo 7 - Destaque Especial -->
             <div class="c-xs-12 m-30px-t">
                 <div class="step-7-highlight wow fadeInUp" data-wow-delay="0.3s">
                     <div class="step-7-badge">BÔNUS</div>
@@ -2295,7 +2209,6 @@
     </div>
 </section>
 
-<!-- ==================== FREE SYSTEM + COACHING ==================== -->
 <section id="coaching" class="bg-spotlight p-80px-tb xs-p-40px-tb">
     <div class="container">
         <h2 class="font-decorative-black text-center m-50px-b lh-1-3 fs-11 wow fadeIn">
@@ -2304,7 +2217,7 @@
 
         <div class="row f-items-center">
             <div class="c-xs-12 c-md-4 text-center m-40px-b wow fadeInLeft">
-                <!-- Tocha Verde - Imagem PNG -->
+
                 <img src="assets/green-flame-torch-BAKL7WqA.webp" alt="Tocha com Chama Verde" class="decorative-image decorative-image-glow w-150px" width="150" height="150">
             </div>
 
@@ -2337,7 +2250,6 @@
     </div>
 </section>
 
-<!-- ==================== FAQ ==================== -->
 <section class="bg-pattern p-80px-tb xs-p-40px-tb">
     <div class="container">
         <h2 class="font-decorative-black text-center m-50px-b fs-13 wow fadeIn">
@@ -2448,7 +2360,6 @@
     </div>
 </section>
 
-<!-- ==================== PRICING ==================== -->
 <section id="pricing" class="bg-dark-green p-80px-tb xs-p-40px-tb">
     <div class="container">
         <div class="diamond-divider"></div>
@@ -2458,7 +2369,7 @@
         </h2>
 
         <div class="row f-justify-center f-items-end gap-10">
-            <!-- Plano 1 -->
+
             <div class="c-xs-12 c-sm-6 c-lg-4 m-20px-b">
                 <div class="pricing-card wow fadeInUp">
                     <h4 class="pricing-title">Pagamento Único</h4>
@@ -2470,7 +2381,6 @@
                 </div>
             </div>
 
-            <!-- Plano 3 (Featured) - Agora no centro -->
             <div class="c-xs-12 c-sm-12 c-lg-4 m-20px-b">
                 <div class="pricing-card featured wow fadeInUp" data-wow-delay="0.1s" style="transform: scale(1.08); padding: 55px 40px;">
                     <span class="pricing-badge">Melhor Valor</span>
@@ -2483,7 +2393,6 @@
                 </div>
             </div>
 
-            <!-- Plano 2 -->
             <div class="c-xs-12 c-sm-6 c-lg-4 m-20px-b">
                 <div class="pricing-card wow fadeInUp" data-wow-delay="0.2s">
                     <h4 class="pricing-title">Plano Mensal</h4>
@@ -2500,7 +2409,6 @@
             <a href="#" class="text-gold font-medieval link-underline fs-9">Não preciso do coaching. Só quero o sistema.</a>
         </p>
 
-        <!-- Garantia / Trust Badges -->
         <div class="guarantee-box wow fadeIn">
             <div class="row f-items-center f-justify-center">
                 <div class="c-xs-12 c-md-8">
@@ -2526,9 +2434,8 @@
     </div>
 </section>
 
-<!-- ==================== CTA FINAL ==================== -->
 <section class="bg-gradient-dark p-80px-tb xs-p-50px-tb ps-relative ov-hidden">
-    <!-- Glow de fundo -->
+
     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(201, 162, 39, 0.15) 0%, transparent 70%); pointer-events: none;"></div>
 
     <div class="container text-center ps-relative">
@@ -2559,12 +2466,10 @@
     </div>
 </section>
 
-<!-- ==================== FOOTER HERO ==================== -->
 <section class="footer-hero">
-    <!-- Background com imagem do rei escocês -->
+
 </section>
 
-<!-- ==================== FOOTER ==================== -->
 <footer class="bg-darkest p-50px-tb">
     <div class="container">
         <div class="row f-items-center">
@@ -2595,75 +2500,63 @@
     </div>
 </footer>
 
-<!-- Squeleton JS (Footer) -->
 <script src="https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js"></script>
 
 <script>
-    // Partículas de Brasa - Hero Effect
+
     (function() {
         const container = document.getElementById('embers');
         if (!container) return;
 
         const emberCount = 35;
         const colors = [
-            'rgba(255, 120, 20, 0.9)',   // Laranja brilhante
-            'rgba(255, 80, 0, 0.9)',     // Laranja escuro
-            'rgba(255, 160, 40, 0.9)',   // Amarelo-laranja
-            'rgba(255, 50, 0, 0.85)',    // Vermelho-laranja
-            'rgba(255, 200, 60, 0.8)'    // Amarelo claro
+            'rgba(255, 120, 20, 0.9)',
+            'rgba(255, 80, 0, 0.9)',
+            'rgba(255, 160, 40, 0.9)',
+            'rgba(255, 50, 0, 0.85)',
+            'rgba(255, 200, 60, 0.8)'
         ];
 
         function createEmber() {
             const ember = document.createElement('div');
             ember.className = 'ember';
 
-            // Tamanho aleatório (2-6px)
             const size = Math.random() * 4 + 2;
             ember.style.width = size + 'px';
             ember.style.height = size + 'px';
 
-            // Posição horizontal aleatória
             ember.style.left = Math.random() * 100 + '%';
 
-            // Cor aleatória
             const color = colors[Math.floor(Math.random() * colors.length)];
             ember.style.backgroundColor = color;
 
-            // Glow effect
             ember.style.boxShadow = `0 0 ${size * 2}px ${size}px ${color}, 0 0 ${size * 4}px ${size * 2}px rgba(255, 100, 0, 0.3)`;
 
-            // Duração aleatória (6-12 segundos)
             const duration = Math.random() * 6 + 6;
             ember.style.animationDuration = duration + 's';
 
-            // Delay aleatório para distribuir as partículas
             ember.style.animationDelay = Math.random() * 8 + 's';
 
-            // Drift horizontal (movimento lateral) - CSS variable
             const drift = (Math.random() - 0.5) * 100;
             ember.style.setProperty('--drift', drift + 'px');
 
             container.appendChild(ember);
 
-            // Remover e recriar após a animação
             setTimeout(() => {
                 ember.remove();
                 createEmber();
             }, (duration + parseFloat(ember.style.animationDelay)) * 1000);
         }
 
-        // Criar partículas iniciais com delays escalonados
         for (let i = 0; i < emberCount; i++) {
             setTimeout(() => createEmber(), i * 200);
         }
     })();
 
-    // Counter-Up2 - Animação dos números
     (function() {
         if (!window.counterUp) return;
         const counterUp = window.counterUp.default;
 
-        // Função para observar e animar contadores
         function observeCounters(containerSelector, counterSelector) {
             const container = document.querySelector(containerSelector);
             if (!container) return;
@@ -2689,14 +2582,11 @@
             observer.observe(container);
         }
 
-        // Intro Stats
         observeCounters('.intro-stats', '.counter');
 
-        // Solution Box (50+ por semana)
         observeCounters('.solution-box', '.counter-big');
     })();
 
-    // Header Scroll Effect
     (function() {
         const header = document.querySelector('.site-header');
         if (!header) return;
@@ -2710,9 +2600,8 @@
         });
     })();
 
-    // Smooth Scroll para links internos
     (function() {
-        const headerHeight = 80; // Altura do header fixo
+        const headerHeight = 80;
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -2732,7 +2621,6 @@
             });
         });
 
-        // Scroll indicator click
         const scrollIndicator = document.querySelector('.scroll-indicator');
         if (scrollIndicator) {
             scrollIndicator.addEventListener('click', () => {
