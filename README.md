@@ -155,9 +155,9 @@ O Squeleton adota uma **abordagem híbrida única** que combina o melhor dos doi
 | Medium | `c-md-` (≥992px) | `md-` (≤1199px) |
 | Large | `c-lg-` (≥1200px) | — (desktop é padrão) |
 
-### Bibliotecas JavaScript Integradas
+### Micro-bibliotecas JavaScript
 
-Todas as bibliotecas estão pré-configuradas e otimizadas. Consulte a documentação específica de cada uma para casos de uso avançados.
+Todas as bibliotecas estão integrada, pré-configuradas e otimizadas. Consulte a documentação específica de cada uma para casos de uso avançados.
 
 | Biblioteca | Descrição |
 |-----------|-----------|

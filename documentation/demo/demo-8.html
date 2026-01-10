@@ -73,13 +73,26 @@
         .card-celtics {
             background: var(--celtics-white);
             border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 3px solid var(--celtics-green);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-celtics::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--celtics-green) 0%, var(--celtics-gold) 100%);
         }
 
         .card-celtics:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0, 122, 51, 0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 122, 51, 0.2);
         }
 
         .table-celtics {
@@ -87,30 +100,35 @@
             background: var(--celtics-white);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-collapse: collapse;
         }
 
         .table-celtics thead {
-            background: var(--celtics-green);
+            background: linear-gradient(135deg, var(--celtics-green) 0%, #005a26 100%);
             color: var(--celtics-white);
         }
 
         .table-celtics th {
-            padding: 16px;
+            padding: 18px 16px;
             text-align: left;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .table-celtics td {
             padding: 16px;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .table-celtics tbody tr {
+            transition: background 0.2s ease;
         }
 
         .table-celtics tbody tr:hover {
-            background: #f9f9f9;
+            background: rgba(0, 122, 51, 0.04);
         }
 
         .table-celtics tbody tr:last-child td {
@@ -118,21 +136,25 @@
         }
 
         .badge-win {
-            background: #4CAF50;
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
             color: white;
-            padding: 4px 12px;
+            padding: 5px 14px;
             border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 6px rgba(76, 175, 80, 0.3);
         }
 
         .badge-loss {
-            background: #F44336;
+            background: linear-gradient(135deg, #F44336 0%, #C62828 100%);
             color: white;
-            padding: 4px 12px;
+            padding: 5px 14px;
             border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 6px rgba(244, 67, 54, 0.3);
         }
 
         .stat-box {
@@ -147,34 +169,57 @@
         }
 
         .stat-label {
-            font-size: 14px;
+            font-size: 13px;
             color: #666;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-top: 8px;
+            margin-top: 12px;
         }
 
         .game-card {
-            background: var(--celtics-white);
-            border-left: 4px solid var(--celtics-green);
+            border-top: none;
+        }
+
+        .game-card::before {
+            display: none;
         }
 
         .team-logo {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            background: #f0f0f0;
+            background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
+            font-weight: 800;
+            font-size: 14px;
             color: var(--celtics-green);
+            border: 2px solid rgba(0, 122, 51, 0.1);
         }
 
         .vs-text {
-            font-size: 20px;
-            font-weight: 600;
-            color: #999;
+            font-size: 18px;
+            font-weight: 700;
+            color: #bbb;
+            text-transform: uppercase;
+        }
+
+        /* Footer Social Icons */
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--celtics-gold);
+            transform: translateY(-3px);
         }
 
         .mobile-menu-btn {
@@ -247,38 +292,38 @@
         <div class="container">
             <h2 class="section-title m-40px-b wow fadeInUp">Estatísticas da Temporada</h2>
 
-            <div class="row gap-10">
-                <div class="c-xs-12 c-sm-6 c-md-3 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="card-celtics p-30px-all">
+            <div id="stats-counter" class="row gap-20">
+                <div class="c-xs-12 c-sm-6 c-md-3 xs-m-10px-b wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="card-celtics p-30px-all h-100">
                         <div class="stat-box">
-                            <div class="stat-number counter" data-count="119.2">0</div>
+                            <div class="stat-number animated-number">119.2</div>
                             <div class="stat-label">Pontos por Jogo</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="c-xs-12 c-sm-6 c-md-3 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="card-celtics p-30px-all">
+                <div class="c-xs-12 c-sm-6 c-md-3 xs-m-10px-b wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="card-celtics p-30px-all h-100">
                         <div class="stat-box">
-                            <div class="stat-number counter" data-count="45.8">0</div>
+                            <div class="stat-number animated-number">45.8</div>
                             <div class="stat-label">Rebotes por Jogo</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="c-xs-12 c-sm-6 c-md-3 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="card-celtics p-30px-all">
+                <div class="c-xs-12 c-sm-6 c-md-3 xs-m-10px-b wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="card-celtics p-30px-all h-100">
                         <div class="stat-box">
-                            <div class="stat-number counter" data-count="26.5">0</div>
+                            <div class="stat-number animated-number">26.5</div>
                             <div class="stat-label">Assistências por Jogo</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="c-xs-12 c-sm-6 c-md-3 wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="card-celtics p-30px-all">
+                <div class="c-xs-12 c-sm-6 c-md-3 xs-m-10px-b wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="card-celtics p-30px-all h-100">
                         <div class="stat-box">
-                            <div class="stat-number counter" data-count="37.9">0</div>
+                            <div class="stat-number animated-number">37.9</div>
                             <div class="stat-label">% Arremessos 3pts</div>
                         </div>
                     </div>
@@ -454,9 +499,9 @@
         <div class="container">
             <h2 class="section-title m-40px-b wow fadeInUp">Próximos Jogos</h2>
 
-            <div class="row gap-10">
-                <div class="c-xs-12 c-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="game-card card-celtics p-25px-all">
+            <div class="row">
+                <div class="c-xs-12 c-md-6 m-25px-b wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="game-card card-celtics p-25px-all h-100">
                         <div class="d-flex f-items-center f-justify-between f-gap-15">
                             <div class="text-center f-auto-max">
                                 <div class="team-logo m-0-all" style="margin: 0 auto 10px;">BOS</div>
@@ -477,8 +522,8 @@
                     </div>
                 </div>
 
-                <div class="c-xs-12 c-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="game-card card-celtics p-25px-all">
+                <div class="c-xs-12 c-md-6 m-25px-b wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="game-card card-celtics p-25px-all h-100">
                         <div class="d-flex f-items-center f-justify-between f-gap-15">
                             <div class="text-center f-auto-max">
                                 <div class="team-logo m-0-all" style="margin: 0 auto 10px;">BOS</div>
@@ -499,8 +544,8 @@
                     </div>
                 </div>
 
-                <div class="c-xs-12 c-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="game-card card-celtics p-25px-all">
+                <div class="c-xs-12 c-md-6 m-25px-b wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="game-card card-celtics p-25px-all h-100">
                         <div class="d-flex f-items-center f-justify-between f-gap-15">
                             <div class="text-center f-auto-max">
                                 <div class="team-logo m-0-all" style="margin: 0 auto 10px;">BOS</div>
@@ -521,8 +566,8 @@
                     </div>
                 </div>
 
-                <div class="c-xs-12 c-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="game-card card-celtics p-25px-all">
+                <div class="c-xs-12 c-md-6 m-25px-b wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="game-card card-celtics p-25px-all h-100">
                         <div class="d-flex f-items-center f-justify-between f-gap-15">
                             <div class="text-center f-auto-max">
                                 <div class="team-logo m-0-all" style="margin: 0 auto 10px;">BOS</div>
@@ -547,17 +592,17 @@
     </section>
 
     <!-- Footer -->
-    <footer class="p-40px-tb text-center" style="background: var(--celtics-black); color: var(--celtics-white);">
+    <footer class="p-50px-tb text-center" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); color: var(--celtics-white);">
         <div class="container">
-            <div class="fs-9 fw-700 m-15px-b">Boston Celtics</div>
-            <div class="opacity-7 m-20px-b">18x Campeões da NBA</div>
-            <div class="d-flex f-justify-center f-gap-20 m-25px-b">
-                <a href="#" class="cursor-pointer" style="color: var(--celtics-white);"><span class="iccon-facebook-1"></span></a>
-                <a href="#" class="cursor-pointer" style="color: var(--celtics-white);"><span class="iccon-new-twitter"></span></a>
-                <a href="#" class="cursor-pointer" style="color: var(--celtics-white);"><span class="iccon-instagram-1"></span></a>
-                <a href="#" class="cursor-pointer" style="color: var(--celtics-white);"><span class="iccon-youtube-1"></span></a>
+            <div class="fs-11 fw-700 m-10px-b">Boston Celtics</div>
+            <div class="opacity-6 m-25px-b">18x Campeões da NBA</div>
+            <div class="d-flex f-justify-center f-gap-15 m-30px-b">
+                <a href="#" class="social-icon cursor-pointer" style="color: var(--celtics-white);"><span class="iccon-facebook-1"></span></a>
+                <a href="#" class="social-icon cursor-pointer" style="color: var(--celtics-white);"><span class="iccon-new-twitter"></span></a>
+                <a href="#" class="social-icon cursor-pointer" style="color: var(--celtics-white);"><span class="iccon-instagram-1"></span></a>
+                <a href="#" class="social-icon cursor-pointer" style="color: var(--celtics-white);"><span class="iccon-youtube-1"></span></a>
             </div>
-            <div class="opacity-5 minus-10">© 2026 Boston Celtics. Todos os direitos reservados.</div>
+            <div class="opacity-4 minus-10">© 2026 Boston Celtics. Todos os direitos reservados.</div>
         </div>
     </footer>
 
@@ -599,6 +644,31 @@
                 }
             });
         });
+
+        // Counter-Up2 Init Numbers
+        var statsCounter = document.getElementById('stats-counter');
+        if (statsCounter) {
+            const counterUp = window.counterUp.default;
+            const counterCall = entries => {
+                entries.forEach(entry => {
+                    const el = entry.target;
+                    if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+                        const counters = document.querySelectorAll('.animated-number');
+                        for (const counter of counters) {
+                            counterUp(counter, {
+                                duration: 1500,
+                                delay: 16,
+                            });
+                        }
+                        el.classList.add('is-visible');
+                    }
+                });
+            };
+
+            // Intersection Observer
+            const IO = new IntersectionObserver(counterCall, { threshold: 0.5 });
+            IO.observe(statsCounter);
+        }
     </script>
 </body>
 </html>
