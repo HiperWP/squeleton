@@ -5445,6 +5445,7 @@ fieldset[disabled] a.btn {
 }
 
 .slide {
+  width: 100%;
   max-width: 100%;
   margin: auto;
   position: relative;
