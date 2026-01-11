@@ -483,10 +483,6 @@ blockquote ul:last-child {
   position: relative
 }
 
-[class*=c-xs-] > div {
-  min-height: 100%
-}
-
 .gap-0.row,
 .gap-0.slide__row {
   --gap: 0px
