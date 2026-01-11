@@ -23,10 +23,68 @@ container-fluid (width: 100%, max-width: 1920px em ultra-wide)
 - Conteúdo que não deve ter margem lateral (mapas, vídeos full-width)
 - **Nota:** Em telas ≥1920px, limita a max-width: 1920px
 
-## Row
+## Row e Gap
 
 ```
-row (display: flex, flex-wrap: wrap, margin: -15px)
+row (display: flex, flex-wrap: wrap, gap: 30px)
+```
+
+O `.row` é um container flex com gap padrão de 30px entre colunas.
+
+- O gap aplica espaçamento **horizontal e vertical** automaticamente
+- Quando colunas quebram de linha, o espaçamento vertical é aplicado sem necessidade de margin extra
+- Use classes `gap-{valor}` para alterar o valor padrão.
+
+### Classes de Gap
+
+```
+gap-0 (0px)
+gap-5 (5px)
+gap-10 (10px)
+gap-15 (15px)
+gap-20 (20px)
+gap-25 (25px)
+gap-30 (30px - padrão do row)
+gap-35 (35px)
+gap-40 (40px)
+gap-45 (45px)
+gap-50 (50px)
+```
+
+Responsivos:
+```
+xs-gap-{0-50} (intervalo de 5)
+sm-gap-{0-50} (intervalo de 5)
+md-gap-{0-50} (intervalo de 5)
+```
+
+### Exemplos de Row com Gap
+
+```html
+<!-- Row com gap padrão (30px) -->
+<div class="row">
+    <div class="c-xs-6">Coluna 1</div>
+    <div class="c-xs-6">Coluna 2</div>
+</div>
+
+<!-- Row com gap menor -->
+<div class="row gap-15">
+    <div class="c-xs-4">Card 1</div>
+    <div class="c-xs-4">Card 2</div>
+    <div class="c-xs-4">Card 3</div>
+</div>
+
+<!-- Row sem gap -->
+<div class="row gap-0">
+    <div class="c-xs-6">Sem espaço</div>
+    <div class="c-xs-6">Entre colunas</div>
+</div>
+
+<!-- Gap responsivo: 30px desktop, 15px mobile -->
+<div class="row gap-30 xs-gap-15">
+    <div class="c-xs-12 c-md-6">Card 1</div>
+    <div class="c-xs-12 c-md-6">Card 2</div>
+</div>
 ```
 
 ## Colunas
@@ -113,45 +171,6 @@ sm-c-center (responsivo ≤991px)
 xs-c-center (responsivo ≤639px)
 ```
 
-## Gap (espaçamento entre colunas)
-
-**IMPORTANTE**: O gap no grid aplica **apenas espaçamento horizontal** entre colunas (column-gap). Diferente do `f-gap` do Flexbox que aplica gap em ambas as direções.
-
-```
-gap-0 (0px)
-gap-5 (5px)
-gap-10 (10px)
-gap-15 (15px - padrão)
-gap-20 (20px)
-gap-25 (25px)
-gap-30 (30px)
-```
-
-Responsivos:
-```
-xs-gap-{0-30} (intervalo de 5)
-sm-gap-{0-30} (intervalo de 5)
-md-gap-{0-30} (intervalo de 5)
-```
-
-### Espaçamento Vertical em Quebras de Coluna
-
-Quando colunas quebram em breakpoints menores, adicione **margin-bottom no breakpoint onde ocorre a quebra**.
-
-**Regra prática**: margin vertical ≈ 2x o gap horizontal
-
-| Gap | Margin recomendada |
-|-----|-------------------|
-| `gap-5` | `{breakpoint}-m-10px-b` |
-| `gap-10` | `{breakpoint}-m-20px-b` |
-| `gap-15` | `{breakpoint}-m-30px-b` |
-| `gap-20` | `{breakpoint}-m-40px-b` |
-
-**Por que usar margin em vez de row-gap?**
-- Nem sempre colunas quebram (ex: `c-md-4` pode ficar em linha no desktop)
-- Margin com breakpoint dá controle preciso sobre quando aplicar espaçamento vertical
-- Evita espaçamento desnecessário quando colunas estão lado a lado
-
 ## Exemplos de Uso
 
 ```html
@@ -163,13 +182,12 @@ Quando colunas quebram em breakpoints menores, adicione **margin-bottom no break
     </div>
 </div>
 
-<!-- Grid de 3 colunas com gap horizontal + margin vertical nas quebras -->
-<!-- Quebra em SM (2 cols) e XS (1 col), então adiciona margin nesses breakpoints -->
+<!-- Grid de 3 colunas com gap -->
 <div class="container">
-    <div class="row gap-10">
-        <div class="c-xs-12 c-sm-6 c-md-4 sm-m-20px-b xs-m-20px-b">Card 1</div>
-        <div class="c-xs-12 c-sm-6 c-md-4 sm-m-20px-b xs-m-20px-b">Card 2</div>
-        <div class="c-xs-12 c-sm-6 c-md-4 sm-m-20px-b xs-m-20px-b">Card 3</div>
+    <div class="row gap-20">
+        <div class="c-xs-12 c-sm-6 c-md-4">Card 1</div>
+        <div class="c-xs-12 c-sm-6 c-md-4">Card 2</div>
+        <div class="c-xs-12 c-sm-6 c-md-4">Card 3</div>
     </div>
 </div>
 

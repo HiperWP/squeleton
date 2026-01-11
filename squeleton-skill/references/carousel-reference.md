@@ -48,7 +48,7 @@ Use classes de coluna (`c-xs-*`, `c-sm-*`, etc.) nos items:
 
 ## Gap entre Slides
 
-Aplique gap no `slide__row`:
+O `.slide__row` tem display flex e gap padrão de 15px. Use classes `gap-{valor}` para alterar:
 
 ```html
 <div class="slide__row gap-0">...</div>   <!-- sem espaçamento -->
@@ -58,6 +58,17 @@ Aplique gap no `slide__row`:
 <div class="slide__row gap-20">...</div>  <!-- 20px -->
 <div class="slide__row gap-25">...</div>  <!-- 25px -->
 <div class="slide__row gap-30">...</div>  <!-- 30px -->
+<div class="slide__row gap-35">...</div>  <!-- 35px -->
+<div class="slide__row gap-40">...</div>  <!-- 40px -->
+<div class="slide__row gap-45">...</div>  <!-- 45px -->
+<div class="slide__row gap-50">...</div>  <!-- 50px -->
+```
+
+Responsivos:
+```
+xs-gap-{0-50} (intervalo de 5)
+sm-gap-{0-50} (intervalo de 5)
+md-gap-{0-50} (intervalo de 5)
 ```
 
 ## Com Navegação (Setas)

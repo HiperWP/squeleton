@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formação Frente Progressista 2026 - Forme-se para Vencer</title>
+    <link rel="stylesheet" href="https://cdn.hiperwp.com.br/squeleton.v4.min.css">
+    <script src="https://cdn.hiperwp.com.br/squeleton-main.v4.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #DC2626;
+            --primary-dark: #B91C1C;
+            --secondary: #FBBF24;
+            --dark: #0F172A;
+            --dark-light: #1E293B;
+            --text: #F8FAFC;
+            --text-muted: #94A3B8;
+            --gradient: linear-gradient(135deg, #DC2626 0%, #991B1B 100%);
+            --gradient-gold: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+        }
+
+        * { font-family: 'Inter', sans-serif; }
+
+        body {
+            background: var(--dark);
+            color: var(--text);
+        }
+
+        .bg-dark { background: var(--dark); }
+        .bg-dark-light { background: var(--dark-light); }
+        .bg-gradient { background: var(--gradient); }
+        .bg-gradient-gold { background: var(--gradient-gold); }
+
+        .text-primary { color: var(--primary); }
+        .text-secondary { color: var(--secondary); }
+        .text-muted { color: var(--text-muted); }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(220, 38, 38, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--gradient-gold);
+            color: var(--dark);
+            padding: 18px 40px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(251, 191, 36, 0.4);
+        }
+
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, var(--dark) 0%, var(--dark-light) 100%);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.85) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .urgency-bar {
+            background: var(--gradient);
+            animation: pulse-bg 2s infinite;
+        }
+
+        @keyframes pulse-bg {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.9; }
+        }
+
+        .countdown-box {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 15px 20px;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+
+        .badge-urgency {
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            display: inline-block;
+            animation: shake 0.5s infinite;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-2px); }
+            75% { transform: translateX(2px); }
+        }
+
+        .card-benefit {
+            background: var(--dark-light);
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .card-benefit:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(220, 38, 38, 0.2);
+        }
+
+        .icon-benefit {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-card {
+            background: var(--dark-light);
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .testimonial-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+        }
+
+        .stars {
+            color: var(--secondary);
+            font-size: 18px;
+        }
+
+        .module-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .module-item:hover {
+            background: rgba(220, 38, 38, 0.1);
+        }
+
+        .guarantee-badge {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            border-radius: 16px;
+            padding: 40px;
+        }
+
+        .price-old {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        .price-new {
+            font-size: 64px;
+            font-weight: 900;
+            color: var(--secondary);
+            line-height: 1;
+        }
+
+        .price-installment {
+            font-size: 24px;
+            color: var(--text);
+        }
+
+        .floating-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--dark);
+            border-top: 2px solid var(--primary);
+            padding: 15px 20px;
+            z-index: 1000;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .floating-cta.visible {
+            transform: translateY(0);
+        }
+
+        .scarcity-counter {
+            background: rgba(220, 38, 38, 0.2);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .spots-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--primary);
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .faq-item {
+            background: var(--dark-light);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-muted);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+            color: var(--secondary);
+            font-size: 20px;
+        }
+
+        .partner-logo {
+            height: auto;
+            max-width: 220px;
+            object-fit: contain;
+            opacity: 0.8;
+            filter: grayscale(30%);
+            transition: all 0.3s ease;
+        }
+
+        .partner-logo:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+        }
+
+        .bonus-ia-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 1) 0%, rgba(15, 23, 42, 1) 100%);
+            border: 2px solid var(--primary);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bonus-ia-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at top left, rgba(220, 38, 38, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .bonus-ia-card .ribbon {
+            top: 18px;
+            right: -28px;
+            padding: 5px 35px;
+            font-size: 10px;
+        }
+
+        @media (max-width: 991px) {
+            .bonus-ia-card {
+                padding: 20px;
+            }
+            .bonus-ia-card .row {
+                flex-direction: column;
+            }
+            .bonus-ia-card .ribbon {
+                top: 12px;
+                right: -32px;
+                font-size: 9px;
+            }
+        }
+
+        .bonus-card {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
+            border: 2px solid var(--secondary);
+            border-radius: 16px;
+            padding: 25px;
+        }
+
+        .bonus-tag {
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .instructor-img {
+            border-radius: 16px;
+            border: 4px solid var(--primary);
+        }
+
+        .social-proof {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 100px;
+            padding: 10px 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .avatar-stack {
+            display: flex;
+        }
+
+        .avatar-stack img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 2px solid var(--dark);
+            margin-left: -10px;
+        }
+
+        .avatar-stack img:first-child {
+            margin-left: 0;
+        }
+
+        .live-counter {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(220, 38, 38, 0.2);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .progress-bar {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 100px;
+            height: 12px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: var(--gradient);
+            height: 100%;
+            border-radius: 100px;
+            transition: width 0.5s ease;
+        }
+
+        .ribbon {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--primary);
+            color: white;
+            padding: 8px 40px;
+            font-size: 12px;
+            font-weight: 700;
+            transform: rotate(45deg);
+            text-transform: uppercase;
+        }
+
+        .glow-text {
+            text-shadow: 0 0 30px rgba(220, 38, 38, 0.5);
+        }
+
+        .check-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .check-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 14px;
+        }
+
+        @media (max-width: 991px) {
+            .countdown-number { font-size: 24px; }
+            .countdown-box { min-width: 60px; padding: 10px 15px; }
+            .price-new { font-size: 48px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de Urgência Topo -->
+    <div class="urgency-bar p-10px-tb">
+        <div class="container">
+            <div class="d-flex f-items-center f-justify-center f-gap-15 xs-f-col xs-f-gap-5">
+                <span class="badge-urgency">ÚLTIMAS VAGAS</span>
+                <span class="fw-600 xs-text-center">Inscrições encerram em breve - Turma de Janeiro/2026</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section p-40px-tb">
+        <img src="assets/hero-bg.webp" alt="" class="hero-bg">
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content">
+            <div class="row f-items-center">
+                <div class="c-xs-12 c-md-7">
+
+                    <!-- Social Proof -->
+                    <div class="m-25px-b wow fadeInDown">
+                        <div class="live-counter">
+                            <span class="live-dot"></span>
+                            <span><strong id="viewers">347</strong> pessoas visualizando agora</span>
+                        </div>
+                    </div>
+
+                    <!-- Badge -->
+                    <div class="m-20px-b wow fadeInUp">
+                        <span class="text-secondary fw-700 fs-8">FORMAÇÃO POLÍTICA PARA 2026</span>
+                    </div>
+
+                    <!-- Headline -->
+                    <h1 class="fs-15 xs-fs-13 fw-900 lh-1-1 wow fadeInUp glow-text" data-wow-delay="0.1s">
+                        Domine a Arte da <span class="text-primary">Política Progressista</span> e Vença!
+                    </h1>
+
+                    <!-- Subheadline -->
+                    <p class="fs-9 text-muted lh-1-6 wow fadeInUp" data-wow-delay="0.2s">
+                        A formação mais completa do Brasil para candidatos, assessores e militantes da esquerda que querem
+                        <strong class="text-secondary">conquistar mandatos</strong> e transformar a política brasileira.
+                    </p>
+
+                    <!-- Bullet Points -->
+                    <ul class="check-list wow fadeInUp" data-wow-delay="0.3s">
+                        <li>
+                            <span class="check-icon"><span class="iccon-check-1"></span></span>
+                            <span><strong>12 módulos</strong> com mais de 80 horas de conteúdo estratégico</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><span class="iccon-check-1"></span></span>
+                            <span><strong>Mentoria em grupo</strong> semanal ao vivo com especialistas</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><span class="iccon-check-1"></span></span>
+                            <span><strong>Comunidade exclusiva</strong> com +2.000 progressistas ativos</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><span class="iccon-check-1"></span></span>
+                            <span><strong>Certificado reconhecido</strong> por institutos e partidos</span>
+                        </li>
+                    </ul>
+
+                    <!-- CTA -->
+                    <div class="d-flex f-items-center p-25px-t f-gap-20 f-wrap wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="#inscricao" class="btn-primary anima-pulse">
+                            QUERO MINHA VAGA AGORA
+                        </a>
+                        <div class="text-muted fs-7">
+                            <span class="iccon-shield-1 text-secondary"></span> Pagamento 100% seguro
+                        </div>
+                    </div>
+
+                    <!-- Mini Social Proof -->
+                    <div class="m-30px-t wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="social-proof">
+                            <div class="avatar-stack">
+                                <img src="assets/avatar-1.webp" alt="Aluno">
+                                <img src="assets/avatar-2.webp" alt="Aluno">
+                                <img src="assets/avatar-3.webp" alt="Aluno">
+                                <img src="assets/avatar-4.webp" alt="Aluno">
+                            </div>
+                            <span class="fs-7"><strong>+2.847</strong> alunos formados</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="c-xs-12 c-md-5">
+                    <!-- Countdown Card -->
+                    <div class="bg-dark-light border-rd-16 p-30px-all wow fadeInRight ps-relative" style="overflow: hidden;">
+                        <div class="ribbon">-67% OFF</div>
+
+                        <div class="text-center">
+                            <p class="text-secondary fw-700 fs-8">OFERTA ESPECIAL ENCERRA EM:</p>
+                            <div class="d-flex f-justify-center f-gap-10" id="countdown">
+                                <div class="countdown-box">
+                                    <div class="countdown-number" id="days">02</div>
+                                    <div class="countdown-label">Dias</div>
+                                </div>
+                                <div class="countdown-box">
+                                    <div class="countdown-number" id="hours">14</div>
+                                    <div class="countdown-label">Horas</div>
+                                </div>
+                                <div class="countdown-box">
+                                    <div class="countdown-number" id="minutes">37</div>
+                                    <div class="countdown-label">Min</div>
+                                </div>
+                                <div class="countdown-box">
+                                    <div class="countdown-number" id="seconds">52</div>
+                                    <div class="countdown-label">Seg</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Scarcity -->
+                        <div class="scarcity-counter m-20px-tb text-center">
+                            <p class="fs-7 m-5px-b">Vagas restantes para turma de Janeiro:</p>
+                            <div class="spots-number" id="spots">23</div>
+                            <div class="progress-bar m-10px-t">
+                                <div class="progress-fill" style="width: 77%;"></div>
+                            </div>
+                            <p class="fs-6 text-muted m-5px-t">77% das vagas já preenchidas</p>
+                        </div>
+
+                        <!-- Price -->
+                        <div class="text-center">
+                            <p class="price-old fs-9">De R$ 2.997,00</p>
+                            <p class="text-secondary fs-7 fw-600">Por apenas:</p>
+                            <p class="price-new">R$ 997</p>
+                            <p class="price-installment">ou 12x de R$ 97,00</p>
+                        </div>
+
+                        <a href="#inscricao" class="btn-secondary w-100 text-center d-block">
+                            GARANTIR MINHA VAGA
+                        </a>
+
+                        <p class="text-center text-muted fs-6 m-15px-t">
+                            <span class="iccon-lock-1"></span> Compra segura · Garantia de 7 dias
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logos / Credibilidade -->
+    <section class="bg-dark-light p-40px-tb">
+        <div class="container">
+            <p class="text-center text-muted fs-7">Formação reconhecida e apoiada por:</p>
+            <div class="d-flex f-justify-center f-items-center f-gap-30 f-wrap xs-f-gap-15">
+                <img src="assets/logo-partner-2.webp" alt="Parceiro" class="partner-logo">
+                <img src="assets/logo-partner-3.webp" alt="Parceiro" class="partner-logo">
+                <img src="assets/logo-partner-4.webp" alt="Parceiro" class="partner-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Problema / Agitação -->
+    <section class="p-80px-tb xs-p-50px-tb">
+        <div class="container">
+            <div class="row f-items-center">
+                <div class="c-xs-12 c-md-6">
+                    <img src="assets/problem-section2.webp" alt="Problema" class="w-100 border-rd-16 wow fadeInLeft">
+                </div>
+                <div class="c-xs-12 c-md-6">
+                    <h2 class="fs-13 xs-fs-11 fw-800 wow fadeInRight">
+                        A Direita Está <span class="text-primary">Organizada</span>. E Você?
+                    </h2>
+                    <div class="wow fadeInRight" data-wow-delay="0.1s">
+                        <p class="fs-8 lh-1-7 text-muted">
+                            Enquanto a extrema-direita investe milhões em formação política, marketing digital e articulação estratégica,
+                            grande parte da esquerda ainda opera no improviso.
+                        </p>
+                        <p class="fs-8 lh-1-7 text-muted">
+                            <strong class="text-secondary">O resultado?</strong> Perdemos eleições que podíamos ter vencido.
+                            Candidatos preparados são derrotados por adversários com menos propostas, mas com mais estratégia.
+                        </p>
+                        <p class="fs-8 lh-1-7 text-muted">
+                            <strong class="text-primary">2026 será decisivo.</strong> Não podemos nos dar ao luxo de perder mais uma vez.
+                            É hora de profissionalizar nossa atuação.
+                        </p>
+                    </div>
+                    <div class="d-flex f-items-center f-gap-15 f-wrap wow fadeInRight" data-wow-delay="0.2s">
+                        <a href="#inscricao" class="btn-primary">QUERO ME PREPARAR</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O Que Você Vai Aprender -->
+    <section class="bg-dark-light p-80px-tb xs-p-50px-tb">
+        <div class="container">
+            <div class="text-center">
+                <span class="text-secondary fw-700 fs-7 wow fadeInUp">CONTEÚDO COMPLETO</span>
+                <h2 class="fs-13 xs-fs-11 fw-800 m-15px-t m-35px-b wow fadeInUp" data-wow-delay="0.1s">
+                    12 Módulos Para Você <span class="text-primary">Dominar</span> a Política
+                </h2>
+            </div>
+
+            <div class="row gap-20">
+                <!-- Módulo 1 -->
+                <div class="c-xs-12 c-md-6">
+                    <div class="module-item wow fadeInUp">
+                        <div class="d-flex f-items-start f-gap-15">
+                            <span class="fs-14 fw-900 text-primary">01</span>
+                            <div>
+                                <h4 class="fs-9 fw-700">Fundamentos do Pensamento Progressista</h4>
+                                <p class="text-muted fs-7">História, teorias e valores que fundamentam a esquerda democrática no século XXI.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo 2 -->
+                <div class="c-xs-12 c-md-6">
+                    <div class="module-item wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="d-flex f-items-start f-gap-15">
+                            <span class="fs-14 fw-900 text-primary">02</span>
+                            <div>
+                                <h4 class="fs-9 fw-700">Marketing Político Digital</h4>
+                                <p class="text-muted fs-7">Domine redes sociais, criação de conteúdo viral e estratégias de engajamento.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo 3 -->
+                <div class="c-xs-12 c-md-6">
+                    <div class="module-item wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="d-flex f-items-start f-gap-15">
+                            <span class="fs-14 fw-900 text-primary">03</span>
+                            <div>
+                                <h4 class="fs-9 fw-700">Comunicação e Oratória Política</h4>
+                                <p class="text-muted fs-7">Técnicas de persuasão, debates, entrevistas e discursos que conectam com o eleitor.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo 4 -->
+                <div class="c-xs-12 c-md-6">
+                    <div class="module-item wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="d-flex f-items-start f-gap-15">
+                            <span class="fs-14 fw-900 text-primary">04</span>
+                            <div>
+                                <h4 class="fs-9 fw-700">Legislação Eleitoral 2026</h4>
+                                <p class="text-muted fs-7">Tudo sobre a nova lei eleitoral, prestação de contas e compliance jurídico.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo 5 -->
+                <div class="c-xs-12 c-md-6">
+                    <div class="module-item wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="d-flex f-items-start f-gap-15">
+                            <span class="fs-14 fw-900 text-primary">05</span>
+                            <div>
+                                <h4 class="fs-9 fw-700">Gestão de Campanha Eleitoral</h4>
+                                <p class="text-muted fs-7">Planejamento, equipe, orçamento, cronograma e execução de campanhas vitoriosas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo 6 -->
+                <div class="c-xs-12 c-md-6">
+                    <div class="module-item wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="d-flex f-items-start f-gap-15">
+                            <span class="fs-14 fw-900 text-primary">06</span>
+                            <div>
+                                <h4 class="fs-9 fw-700">Financiamento e Captação de Recursos</h4>
+                                <p class="text-muted fs-7">Estratégias legais para financiar sua campanha sem depender de grandes doadores.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo 7 -->
+                <div class="c-xs-12 c-md-6">
+                    <div class="module-item wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="d-flex f-items-start f-gap-15">
+                            <span class="fs-14 fw-900 text-primary">07</span>
+                            <div>
+                                <h4 class="fs-9 fw-700">Análise de Dados e Inteligência Eleitoral</h4>
+                                <p class="text-muted fs-7">Use dados para tomar decisões estratégicas e identificar seu eleitorado.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo 8 -->
+                <div class="c-xs-12 c-md-6">
+                    <div class="module-item wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="d-flex f-items-start f-gap-15">
+                            <span class="fs-14 fw-900 text-primary">08</span>
+                            <div>
+                                <h4 class="fs-9 fw-700">Mobilização Popular e Militância</h4>
+                                <p class="text-muted fs-7">Construa uma base sólida de apoiadores engajados e voluntários motivados.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo 9 -->
+                <div class="c-xs-12 c-md-6">
+                    <div class="module-item wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="d-flex f-items-start f-gap-15">
+                            <span class="fs-14 fw-900 text-primary">09</span>
+                            <div>
+                                <h4 class="fs-9 fw-700">Combate à Desinformação</h4>
+                                <p class="text-muted fs-7">Estratégias para enfrentar fake news e proteger sua reputação online.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo 10 -->
+                <div class="c-xs-12 c-md-6">
+                    <div class="module-item wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="d-flex f-items-start f-gap-15">
+                            <span class="fs-14 fw-900 text-primary">10</span>
+                            <div>
+                                <h4 class="fs-9 fw-700">Articulação Política e Alianças</h4>
+                                <p class="text-muted fs-7">Construa coalizões, negocie apoios e fortaleça o campo progressista.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo 11 -->
+                <div class="c-xs-12 c-md-6">
+                    <div class="module-item wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="d-flex f-items-start f-gap-15">
+                            <span class="fs-14 fw-900 text-primary">11</span>
+                            <div>
+                                <h4 class="fs-9 fw-700">Políticas Públicas Progressistas</h4>
+                                <p class="text-muted fs-7">Elabore propostas viáveis em saúde, educação, economia e meio ambiente.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo 12 -->
+                <div class="c-xs-12 c-md-6">
+                    <div class="module-item wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="d-flex f-items-start f-gap-15">
+                            <span class="fs-14 fw-900 text-primary">12</span>
+                            <div>
+                                <h4 class="fs-9 fw-700">Do Mandato à Transformação</h4>
+                                <p class="text-muted fs-7">Como exercer um mandato efetivo e construir legado após a eleição.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center m-40px-t wow fadeInUp">
+                <a href="#inscricao" class="btn-primary">QUERO ACESSO A TODOS OS MÓDULOS</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bônus -->
+    <section class="p-80px-tb xs-p-50px-tb">
+        <div class="container">
+            <div class="text-center">
+                <span class="text-secondary fw-700 fs-7 wow fadeInUp">BÔNUS EXCLUSIVOS</span>
+                <h2 class="fs-13 xs-fs-11 fw-800 m-15px-t wow fadeInUp" data-wow-delay="0.1s">
+                    Leve Mais <span class="text-secondary">R$ 4.500</span> em Bônus
+                </h2>
+                <p class="text-muted fs-8 m-15px-t m-35px-b wow fadeInUp" data-wow-delay="0.2s">
+                    Somente para quem se inscrever durante esta oferta especial
+                </p>
+            </div>
+
+            <div class="row">
+                <!-- Bônus 1 -->
+                <div class="c-xs-12 c-md-6 c-lg-4">
+                    <div class="bonus-card h-100 wow fadeInUp">
+                        <div class="d-flex f-justify-between f-items-start">
+                            <span class="bonus-tag">BÔNUS 1</span>
+                            <span class="text-secondary fw-700">R$ 997</span>
+                        </div>
+                        <h4 class="fs-9 fw-700">Kit de Templates para Redes Sociais</h4>
+                        <p class="text-muted fs-7">+200 templates editáveis para Instagram, Facebook, TikTok e WhatsApp. Artes prontas para campanha.</p>
+                    </div>
+                </div>
+
+                <!-- Bônus 2 -->
+                <div class="c-xs-12 c-md-6 c-lg-4">
+                    <div class="bonus-card h-100 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="d-flex f-justify-between f-items-start">
+                            <span class="bonus-tag">BÔNUS 2</span>
+                            <span class="text-secondary fw-700">R$ 1.497</span>
+                        </div>
+                        <h4 class="fs-9 fw-700">Masterclass: Debate Político</h4>
+                        <p class="text-muted fs-7">8 horas de treinamento intensivo com ex-assessores de campanha para você dominar debates ao vivo.</p>
+                    </div>
+                </div>
+
+                <!-- Bônus 3 -->
+                <div class="c-xs-12 c-md-6 c-lg-4">
+                    <div class="bonus-card h-100 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="d-flex f-justify-between f-items-start">
+                            <span class="bonus-tag">BÔNUS 3</span>
+                            <span class="text-secondary fw-700">R$ 697</span>
+                        </div>
+                        <h4 class="fs-9 fw-700">Planilha de Gestão de Campanha</h4>
+                        <p class="text-muted fs-7">Sistema completo em planilha para gerenciar orçamento, cronograma, equipe e metas da campanha.</p>
+                    </div>
+                </div>
+
+                <!-- Bônus 4 -->
+                <div class="c-xs-12 c-md-6 c-lg-4">
+                    <div class="bonus-card h-100 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="d-flex f-justify-between f-items-start">
+                            <span class="bonus-tag">BÔNUS 4</span>
+                            <span class="text-secondary fw-700">R$ 497</span>
+                        </div>
+                        <h4 class="fs-9 fw-700">E-book: 50 Discursos Históricos</h4>
+                        <p class="text-muted fs-7">Análise dos maiores discursos progressistas da história com técnicas que você pode aplicar.</p>
+                    </div>
+                </div>
+
+                <!-- Bônus 5 -->
+                <div class="c-xs-12 c-md-6 c-lg-4">
+                    <div class="bonus-card h-100 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="d-flex f-justify-between f-items-start">
+                            <span class="bonus-tag">BÔNUS 5</span>
+                            <span class="text-secondary fw-700">R$ 397</span>
+                        </div>
+                        <h4 class="fs-9 fw-700">Grupo VIP no Telegram</h4>
+                        <p class="text-muted fs-7">Acesso vitalício ao grupo exclusivo com networking entre candidatos e especialistas.</p>
+                    </div>
+                </div>
+
+                <!-- Bônus 6 -->
+                <div class="c-xs-12 c-md-6 c-lg-4">
+                    <div class="bonus-card h-100 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="d-flex f-justify-between f-items-start">
+                            <span class="bonus-tag">BÔNUS 6</span>
+                            <span class="text-secondary fw-700">R$ 397</span>
+                        </div>
+                        <h4 class="fs-9 fw-700">Checklist Jurídico Eleitoral</h4>
+                        <p class="text-muted fs-7">Documento completo com tudo que você precisa para manter sua campanha 100% legal.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bônus Especial IA -->
+            <div class="row m-50px-t">
+                <div class="c-xs-12">
+                    <div class="bonus-ia-card wow fadeInUp">
+                        <div class="ribbon">EXCLUSIVO</div>
+                        <div class="row f-items-center">
+                            <div class="c-xs-12 c-md-5">
+                                <img src="assets/bonus-ia.webp" alt="Agente de IA" class="w-100 border-rd-12">
+                            </div>
+                            <div class="c-xs-12 c-md-7">
+                                <span class="bonus-tag d-inline-block">BÔNUS AGENTE DE IA</span>
+                                <h3 class="fs-12 xs-fs-11 fw-800">Um Verdadeiro Oráculo Progressista</h3>
+                                <p class="fs-8 lh-1-7 text-muted">
+                                    Imagine ter acesso a uma <strong class="text-secondary">IA treinada com +400 mil trechos de vídeos de conhecimento</strong> dos maiores pensadores da esquerda brasileira. Precisa de um argumento sobre reforma agrária? Ela encontra. Quer citar Darcy Ribeiro num debate? Ela localiza o trecho exato nos cursos e vídeos. Dúvida sobre Marx, Florestan ou Paulo Freire? Ela responde em segundos. É como ter uma <strong class="text-secondary">biblioteca viva</strong> de cultura, política, história, direito e filosofia — disponível 24h para você DESTRUIR qualquer adversário no debate.
+                                </p>
+                                <p class="text-primary fw-700 fs-9">
+                                    Valor: INCALCULÁVEL - Disponível apenas nesta oferta
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="bg-dark-light p-80px-tb xs-p-50px-tb">
+        <div class="container">
+            <div class="text-center">
+                <span class="text-secondary fw-700 fs-7 wow fadeInUp">RESULTADOS REAIS</span>
+                <h2 class="fs-13 xs-fs-11 fw-800 m-15px-t m-30px-b wow fadeInUp" data-wow-delay="0.1s">
+                    Quem Já Passou Pela Formação
+                </h2>
+            </div>
+
+            <div class="row gap-20">
+                <!-- Depoimento 1 -->
+                <div class="c-xs-12 c-md-6 c-lg-4">
+                    <div class="testimonial-card h-100 wow fadeInUp">
+                        <div class="stars">
+                            <span class="iccon-star-1"></span>
+                            <span class="iccon-star-1"></span>
+                            <span class="iccon-star-1"></span>
+                            <span class="iccon-star-1"></span>
+                            <span class="iccon-star-1"></span>
+                        </div>
+                        <p class="fs-8 lh-1-7">
+                            "Fui eleita vereadora em 2024 com a segunda maior votação do município. A formação me deu as ferramentas que eu precisava para me destacar."
+                        </p>
+                        <div class="d-flex f-items-center f-gap-15">
+                            <img src="assets/testimonial-1.webp" alt="Marina Santos" class="testimonial-avatar">
+                            <div>
+                                <p class="fw-700 m-0-b">Marina Santos</p>
+                                <p class="text-muted fs-7 m-0-b">Vereadora - SP</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 2 -->
+                <div class="c-xs-12 c-md-6 c-lg-4">
+                    <div class="testimonial-card h-100 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="stars">
+                            <span class="iccon-star-1"></span>
+                            <span class="iccon-star-1"></span>
+                            <span class="iccon-star-1"></span>
+                            <span class="iccon-star-1"></span>
+                            <span class="iccon-star-1"></span>
+                        </div>
+                        <p class="fs-8 lh-1-7">
+                            "Como assessor parlamentar, a formação me permitiu entender estratégias que triplicaram o engajamento do mandato nas redes."
+                        </p>
+                        <div class="d-flex f-items-center f-gap-15">
+                            <img src="assets/testimonial-2.webp" alt="Carlos Mendes" class="testimonial-avatar">
+                            <div>
+                                <p class="fw-700 m-0-b">Carlos Mendes</p>
+                                <p class="text-muted fs-7 m-0-b">Assessor Parlamentar - RJ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 3 -->
+                <div class="c-xs-12 c-md-6 c-lg-4">
+                    <div class="testimonial-card h-100 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="stars">
+                            <span class="iccon-star-1"></span>
+                            <span class="iccon-star-1"></span>
+                            <span class="iccon-star-1"></span>
+                            <span class="iccon-star-1"></span>
+                            <span class="iccon-star-1"></span>
+                        </div>
+                        <p class="fs-8 lh-1-7">
+                            "Mesmo sem ser candidata, a formação transformou minha atuação no movimento social. Agora lidero ações com muito mais estratégia."
+                        </p>
+                        <div class="d-flex f-items-center f-gap-15">
+                            <img src="assets/testimonial-3.webp" alt="Lúcia Ferreira" class="testimonial-avatar">
+                            <div>
+                                <p class="fw-700 m-0-b">Lúcia Ferreira</p>
+                                <p class="text-muted fs-7 m-0-b">Líder Comunitária - BA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Para Quem É -->
+    <section class="p-80px-tb xs-p-50px-tb">
+        <div class="container">
+            <div class="row f-items-center">
+                <div class="c-xs-12 c-md-6">
+                    <span class="text-secondary fw-700 fs-7 wow fadeInUp">PARA QUEM É</span>
+                    <h2 class="fs-13 xs-fs-11 fw-800 m-20px-t wow fadeInUp" data-wow-delay="0.1s">
+                        Esta Formação Foi Feita Para Você Se...
+                    </h2>
+
+                    <ul class="check-list wow fadeInUp" data-wow-delay="0.2s">
+                        <li>
+                            <span class="check-icon"><span class="iccon-check-1"></span></span>
+                            <span>Quer ser <strong>candidato em 2026</strong> e precisa se preparar profissionalmente</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><span class="iccon-check-1"></span></span>
+                            <span>É <strong>assessor ou militante</strong> e quer elevar seu nível de atuação</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><span class="iccon-check-1"></span></span>
+                            <span>Lidera <strong>movimentos sociais</strong> e quer mais impacto político</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><span class="iccon-check-1"></span></span>
+                            <span>Já tem mandato e quer <strong>se reeleger com estratégia</strong></span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><span class="iccon-check-1"></span></span>
+                            <span>Acredita em uma <strong>política mais justa e progressista</strong></span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><span class="iccon-check-1"></span></span>
+                            <span>Está cansado de ver a <strong>direita vencer por falta de preparo</strong> da esquerda</span>
+                        </li>
+                    </ul>
+
+                    <div class="m-30px-t wow fadeInUp" data-wow-delay="0.3s">
+                        <a href="#inscricao" class="btn-primary">SIM, ISSO É PARA MIM!</a>
+                    </div>
+                </div>
+
+                <div class="c-xs-12 c-md-6">
+                    <img src="assets/audience-section.webp" alt="Para quem é" class="w-100 border-rd-16 wow fadeInRight">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Garantia -->
+    <section class="bg-dark-light p-80px-tb xs-p-50px-tb">
+        <div class="container">
+            <div class="row f-items-center f-justify-center">
+                <div class="c-xs-12 c-md-10 c-lg-8">
+                    <div class="guarantee-badge text-center wow zoomIn">
+                        <span class="iccon-shield-1 fs-16 d-block"></span>
+                        <h3 class="fs-12 fw-800">Garantia Incondicional de 7 Dias</h3>
+                        <p class="fs-8 lh-1-7 opacity-9">
+                            Se por qualquer motivo você sentir que a Formação Frente Progressista 2026 não é para você,
+                            basta enviar um email em até 7 dias e devolveremos <strong>100% do seu investimento</strong>.
+                            Sem perguntas, sem burocracia. O risco é todo nosso.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="p-80px-tb xs-p-50px-tb">
+        <div class="container">
+            <div class="text-center">
+                <span class="text-secondary fw-700 fs-7 wow fadeInUp">DÚVIDAS FREQUENTES</span>
+                <h2 class="fs-13 xs-fs-11 fw-800 m-15px-t wow fadeInUp" data-wow-delay="0.1s">
+                    Perguntas e Respostas
+                </h2>
+            </div>
+
+            <div class="row f-justify-center">
+                <div class="c-xs-12 c-md-10 c-lg-8">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item wow fadeInUp">
+                        <div class="faq-question">
+                            <span>A formação é 100% online?</span>
+                            <span class="faq-icon iccon-bb-chevron-down"></span>
+                        </div>
+                        <div class="faq-answer">
+                            Sim! Todo o conteúdo é online, com aulas gravadas que você pode assistir no seu ritmo. Além disso, temos mentorias ao vivo semanais para tirar dúvidas em tempo real.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-item wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="faq-question">
+                            <span>Por quanto tempo terei acesso?</span>
+                            <span class="faq-icon iccon-bb-chevron-down"></span>
+                        </div>
+                        <div class="faq-answer">
+                            Você terá acesso por 2 anos, tempo suficiente para acompanhar toda a preparação para 2026 e além. O acesso à comunidade é vitalício.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-item wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="faq-question">
+                            <span>Preciso ser filiado a algum partido?</span>
+                            <span class="faq-icon iccon-bb-chevron-down"></span>
+                        </div>
+                        <div class="faq-answer">
+                            Não! A formação é apartidária e aberta a todos que se identificam com valores progressistas. Temos alunos de diversos partidos do campo democrático.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="faq-item wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="faq-question">
+                            <span>E se eu não for candidato, vale a pena?</span>
+                            <span class="faq-icon iccon-bb-chevron-down"></span>
+                        </div>
+                        <div class="faq-answer">
+                            Com certeza! A formação é valiosa para assessores, militantes, líderes comunitários e qualquer pessoa que atue politicamente. As técnicas se aplicam a diversas formas de atuação.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="faq-item wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="faq-question">
+                            <span>Como funciona a mentoria em grupo?</span>
+                            <span class="faq-icon iccon-bb-chevron-down"></span>
+                        </div>
+                        <div class="faq-answer">
+                            Toda semana temos um encontro ao vivo de 2 horas com especialistas diferentes. Você pode enviar perguntas antecipadamente ou ao vivo. As gravações ficam disponíveis na plataforma.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 6 -->
+                    <div class="faq-item wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="faq-question">
+                            <span>Posso parcelar o pagamento?</span>
+                            <span class="faq-icon iccon-bb-chevron-down"></span>
+                        </div>
+                        <div class="faq-answer">
+                            Sim! Você pode pagar em até 12x no cartão de crédito. Também aceitamos PIX e boleto com desconto especial para pagamento à vista.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="bg-gradient p-80px-tb xs-p-50px-tb" id="inscricao">
+        <div class="container">
+            <div class="row f-items-center f-justify-center">
+                <div class="c-xs-12 c-md-10 c-lg-8 text-center">
+
+                    <div class="badge-urgency m-25px-b wow fadeInUp">
+                        <span class="iccon-clock-1"></span> ÚLTIMAS HORAS!
+                    </div>
+
+                    <h2 class="fs-14 xs-fs-12 fw-900 wow fadeInUp" data-wow-delay="0.1s">
+                        Está na Hora de Dar o Próximo Passo
+                    </h2>
+
+                    <p class="fs-9 lh-1-7 m-25px-b opacity-9 wow fadeInUp" data-wow-delay="0.2s">
+                        2026 não espera. Cada dia que passa é um dia a menos de preparação.
+                        Os candidatos da direita já estão se organizando. <strong>E você?</strong>
+                    </p>
+
+                    <!-- Price Box -->
+                    <div class="bg-dark border-rd-16 p-40px-all m-35px-b wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="d-flex f-justify-center f-items-center f-gap-30 f-wrap">
+                            <div>
+                                <p class="price-old fs-9">De R$ 2.997,00</p>
+                                <p class="price-new">R$ 997</p>
+                                <p class="price-installment">ou 12x de R$ 97,00</p>
+                            </div>
+                            <div class="scarcity-counter">
+                                <p class="fs-7">Restam apenas:</p>
+                                <div class="spots-number" id="spots-final">23</div>
+                                <p class="fs-6 m-5px-t">vagas</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#" class="btn-secondary anima-pulse wow fadeInUp" data-wow-delay="0.4s">
+                        GARANTIR MINHA VAGA COM DESCONTO
+                    </a>
+
+                    <p class="m-20px-t fs-7 opacity-8 wow fadeInUp" data-wow-delay="0.5s">
+                        <span class="iccon-shield-1"></span> Pagamento 100% seguro |
+                        <span class="iccon-undo-1"></span> 7 dias de garantia
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark p-40px-tb">
+        <div class="container">
+            <div class="text-center">
+                <p class="text-muted fs-7">
+                    Formação Frente Progressista 2026 - Todos os direitos reservados
+                </p>
+                <p class="text-muted fs-6 p-80px-b">
+                    Este site não é afiliado a nenhum partido político.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <div class="floating-cta" id="floatingCta">
+        <div class="container">
+            <div class="d-flex f-items-center f-justify-between xs-f-col xs-f-gap-10">
+                <div class="d-flex f-items-center f-gap-15 xs-d-none">
+                    <span class="text-secondary fw-700">Oferta especial:</span>
+                    <span class="fw-600">R$ 997 (67% OFF)</span>
+                    <span class="text-muted">|</span>
+                    <span class="text-primary fw-600"><span id="floating-spots">23</span> vagas restantes</span>
+                </div>
+                <a href="#inscricao" class="btn-primary xs-w-100 text-center">GARANTIR VAGA</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js"></script>
+    <script>
+        // Countdown Timer
+        function startCountdown() {
+            // Set end date to 3 days from now
+            const endDate = new Date();
+            endDate.setDate(endDate.getDate() + 2);
+            endDate.setHours(endDate.getHours() + 14);
+            endDate.setMinutes(endDate.getMinutes() + 37);
+
+            function updateCountdown() {
+                const now = new Date();
+                const diff = endDate - now;
+
+                if (diff <= 0) {
+                    document.getElementById('days').textContent = '00';
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                    return;
+                }
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        }
+
+        // Viewers counter (fake live)
+        function updateViewers() {
+            const viewersEl = document.getElementById('viewers');
+            const baseViewers = 347;
+            const variation = Math.floor(Math.random() * 30) - 15;
+            viewersEl.textContent = baseViewers + variation;
+        }
+
+        // Spots decrease simulation
+        function decreaseSpots() {
+            const spots = document.querySelectorAll('#spots, #spots-final, #floating-spots');
+            let currentSpots = 23;
+
+            setInterval(() => {
+                if (Math.random() > 0.7 && currentSpots > 5) {
+                    currentSpots--;
+                    spots.forEach(el => el.textContent = currentSpots);
+                }
+            }, 30000);
+        }
+
+        // Floating CTA visibility
+        function handleFloatingCta() {
+            const floatingCta = document.getElementById('floatingCta');
+            const heroSection = document.querySelector('.hero-section');
+
+            window.addEventListener('scroll', () => {
+                const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+                if (window.scrollY > heroBottom) {
+                    floatingCta.classList.add('visible');
+                } else {
+                    floatingCta.classList.remove('visible');
+                }
+            });
+        }
+
+        // FAQ Accordion
+        function initFaq() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    const wasActive = item.classList.contains('active');
+                    faqItems.forEach(i => i.classList.remove('active'));
+                    if (!wasActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            startCountdown();
+            setInterval(updateViewers, 5000);
+            decreaseSpots();
+            handleFloatingCta();
+            initFaq();
+
+            // Initialize WOW animations
+            if (typeof WOW !== 'undefined') {
+                new WOW().init();
+            }
+        });
+    </script>
+</body>
+</html>

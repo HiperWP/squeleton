@@ -229,19 +229,25 @@ Como todos usam `max-width`, a ordem de especificidade é:
 - `container` → Conteúdo centralizado (textos, cards, grids de produtos) - **usar na maioria dos casos**
 - `container-fluid` → Conteúdo sem margem lateral (galerias full-width, dashboards, mapas)
 
-### Gaps (espaçamento horizontal entre colunas)
+### Gaps (espaçamento entre colunas)
 
-- `.gap-0` - sem gap
+O `.row` tem display flex e gap padrão de 30px. Use classes `gap-{valor}` para alterar:
+
+- `.gap-0` - 0px
 - `.gap-5` - 5px
 - `.gap-10` - 10px
-- `.gap-15` - 15px (padrão)
+- `.gap-15` - 15px
 - `.gap-20` - 20px
 - `.gap-25` - 25px
-- `.gap-30` - 30px
-- Responsivos: `{xs|sm|md}-gap-{0-30}` (intervalo de 5)
+- `.gap-30` - 30px (padrão do row)
+- `.gap-35` - 35px
+- `.gap-40` - 40px
+- `.gap-45` - 45px
+- `.gap-50` - 50px
+- Responsivos: `{xs|sm|md}-gap-{0-50}` (intervalo de 5)
   - Exemplos: `xs-gap-10`, `sm-gap-20`, `md-gap-0`
 
-**IMPORTANTE**: O gap no grid aplica **apenas espaçamento horizontal** (estilo column-gap). Para espaçamento vertical quando colunas quebram, use margin-bottom no breakpoint da quebra - `{breakpoint}-m-{valor}px-b`
+**Nota**: O gap aplica espaçamento em ambas as direções (horizontal e vertical) quando colunas quebram de linha.
 
 ### Performance - Content Visibility (Lazy Rendering)
 
