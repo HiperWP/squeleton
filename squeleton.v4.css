@@ -5474,6 +5474,10 @@ fieldset[disabled] a.btn {
   transition: opacity .2s ease-in-out 0s
 }
 
+.slide__item:last-child {
+  margin-right: var(--gap)
+}
+
 .slide__button {
   -webkit-appearance: none;
   background: rgba(0, 0, 0, .4);
