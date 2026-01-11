@@ -229,7 +229,8 @@ Como todos usam `max-width`, a ordem de especificidade é:
 - `container` → Conteúdo centralizado (textos, cards, grids de produtos) - **usar na maioria dos casos**
 - `container-fluid` → Conteúdo sem margem lateral (galerias full-width, dashboards, mapas)
 
-### Gaps (espaçamento entre colunas)
+### Gaps (espaçamento horizontal entre colunas)
+
 - `.gap-0` - sem gap
 - `.gap-5` - 5px
 - `.gap-10` - 10px
@@ -239,6 +240,8 @@ Como todos usam `max-width`, a ordem de especificidade é:
 - `.gap-30` - 30px
 - Responsivos: `{xs|sm|md}-gap-{0-30}` (intervalo de 5)
   - Exemplos: `xs-gap-10`, `sm-gap-20`, `md-gap-0`
+
+**IMPORTANTE**: O gap no grid aplica **apenas espaçamento horizontal** (estilo column-gap). Para espaçamento vertical quando colunas quebram, use margin-bottom no breakpoint da quebra - `{breakpoint}-m-{valor}px-b`
 
 ### Performance - Content Visibility (Lazy Rendering)
 

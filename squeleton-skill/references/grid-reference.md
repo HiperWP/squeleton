@@ -142,10 +142,10 @@ Quando colunas quebram em breakpoints menores, adicione **margin-bottom no break
 
 | Gap | Margin recomendada |
 |-----|-------------------|
-| `gap-5` | `[breakpoint]-m-10px-b` |
-| `gap-10` | `[breakpoint]-m-20px-b` |
-| `gap-15` | `[breakpoint]-m-30px-b` |
-| `gap-20` | `[breakpoint]-m-40px-b` |
+| `gap-5` | `{breakpoint}-m-10px-b` |
+| `gap-10` | `{breakpoint}-m-20px-b` |
+| `gap-15` | `{breakpoint}-m-30px-b` |
+| `gap-20` | `{breakpoint}-m-40px-b` |
 
 **Por que usar margin em vez de row-gap?**
 - Nem sempre colunas quebram (ex: `c-md-4` pode ficar em linha no desktop)
