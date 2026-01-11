@@ -480,8 +480,11 @@ blockquote ul:last-child {
 [class*=c-sm-],
 [class*=c-xs-] {
   flex: 0 0 auto;
-  position: relative;
-  min-height: 1px
+  position: relative
+}
+
+[class*=c-xs-] > div {
+  min-height: 100%
 }
 
 .gap-0.row,
