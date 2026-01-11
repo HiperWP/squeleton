@@ -513,7 +513,13 @@ Consulte `references/utilities-reference.md` para lista completa.
 <div class="animated zoomIn delay-500 duration-2000">Com delay e duração</div>
 ```
 
-**Animações disponíveis**: fadeIn, fadeInUp, fadeInDown, fadeInLeft, fadeInRight, fadeOut, bounceIn, zoomIn, zoomOut, rotateIn, backInDown, backInLeft, backInRight, backInUp, flipIn, glowIn, slideIn, popIn, liquidIn, magnetIn, floatIn, waveIn, flash, pulse, shakeX, swing, tada
+**Animações disponíveis**:
+- **Fade**: fadeIn, fadeInUp, fadeInDown, fadeInLeft, fadeInRight, fadeOut
+- **Bounce/Zoom**: bounceIn, zoomIn, zoomOut
+- **Rotate/Flip**: rotateIn, flipIn
+- **BackIn**: backInDown, backInLeft, backInRight, backInUp
+- **Special**: glowIn, slideIn, popIn, liquidIn, magnetIn, floatIn, waveIn
+- **Attention**: flash, pulse, shakeX, swing, tada
 
 **Classes auxiliares**:
 - `.delay-{100-5000}` (100, 200, 250, 300... 1000, 1250, 1500...)
