@@ -5459,6 +5459,7 @@ fieldset[disabled] a.btn {
 .slide__row {
   --gap: 15px;
   padding: 0;
+  margin: 0;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
