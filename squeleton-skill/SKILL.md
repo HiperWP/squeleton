@@ -524,14 +524,14 @@ O Squeleton integra bibliotecas JavaScript otimizadas e pré-configuradas:
 
 | Biblioteca | Finalidade | GitHub |
 |------------|------------|--------|
-| **HTMX** | Requisições AJAX declarativas via atributos HTML | github.com/bigskysoftware/htmx |
+| **HTMX** | Requisições AJAX declarativas via atributos HTML. Ver `references/htmx-reference.md` | github.com/bigskysoftware/htmx |
 | **Embla Carousel** | Carrossel minimalista com swipe fluido. Ver `references/carousel-reference.md` | github.com/davidjerleke/embla-carousel |
-| **js-cookie** | Gerenciamento de cookies do navegador | github.com/js-cookie/js-cookie |
+| **js-cookie** | Gerenciamento de cookies do navegador. Ver `references/cookies-reference.md` | github.com/js-cookie/js-cookie |
 | **a11y-dialog** | Modais acessíveis e leves. Ver `references/modal-reference.md` | github.com/KittyGiraudel/a11y-dialog |
-| **VanJS** | Framework reativo minimalista | github.com/vanjs-org/van |
-| **Toastify** | Notificações toast customizáveis | github.com/apvarun/toastify-js |
+| **VanJS** | Framework reativo minimalista. Ver `references/vanjs-reference.md` | github.com/vanjs-org/van |
+| **Toastify** | Notificações toast customizáveis. Ver `references/toastify-reference.md` | github.com/apvarun/toastify-js |
 | **VenoBox 2** | Lightbox para imagens, vídeos e galerias. Ver `references/venobox-reference.md` | github.com/nicholasio/venobox |
-| **Counter-Up2** | Animação de contagem numérica | github.com/bfintal/Counter-Up2 |
+| **Counter-Up2** | Animação de contagem numérica. Ver `references/counter-reference.md` | github.com/bfintal/Counter-Up2 |
 | **Wow2 Animation** | Animações on-scroll. Ver `references/animations-reference.md` | github.com/graingert/wow |
 
 ---
@@ -725,3 +725,8 @@ Para lista completa de todas as classes disponíveis, consulte os arquivos em [r
 - [carousel-reference.md](references/carousel-reference.md) - Carrossel (Embla)
 - [venobox-reference.md](references/venobox-reference.md) - Lightbox (VenoBox)
 - [tooltips-reference.md](references/tooltips-reference.md) - Tooltips (Balloon.css)
+- [counter-reference.md](references/counter-reference.md) - Contagem animada (Counter-Up2)
+- [htmx-reference.md](references/htmx-reference.md) - Requisições AJAX (HTMX)
+- [cookies-reference.md](references/cookies-reference.md) - Gerenciamento de cookies (js-cookie)
+- [vanjs-reference.md](references/vanjs-reference.md) - Framework reativo (VanJS)
+- [toastify-reference.md](references/toastify-reference.md) - Notificações toast (Toastify)

@@ -51,9 +51,13 @@ Use classes de coluna (`c-xs-*`, `c-sm-*`, etc.) nos items:
 Aplique gap no `slide__row`:
 
 ```html
-<div class="slide__row gap-10">...</div>
-<div class="slide__row gap-5">...</div>
-<div class="slide__row gap-0">...</div>
+<div class="slide__row gap-0">...</div>   <!-- sem espaçamento -->
+<div class="slide__row gap-5">...</div>   <!-- 5px -->
+<div class="slide__row gap-10">...</div>  <!-- 10px -->
+<div class="slide__row gap-15">...</div>  <!-- 15px - padrão -->
+<div class="slide__row gap-20">...</div>  <!-- 20px -->
+<div class="slide__row gap-25">...</div>  <!-- 25px -->
+<div class="slide__row gap-30">...</div>  <!-- 30px -->
 ```
 
 ## Com Navegação (Setas)

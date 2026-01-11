@@ -1,5 +1,16 @@
 # Flexbox Reference
 
+## Breakpoints Responsivos
+
+Todas as classes flex possuem variantes responsivas com os prefixos:
+- `xs-` (mobile: < 576px)
+- `sm-` (tablet: < 768px)
+- `md-` (desktop: < 992px)
+
+Exemplo: `f-col` → `xs-f-col`, `sm-f-col`, `md-f-col`
+
+---
+
 ## Container Flex
 
 ```
@@ -16,26 +27,12 @@ f-col
 f-col-reverse
 ```
 
-Responsivos:
-```
-xs-f-row, xs-f-col, xs-f-row-reverse, xs-f-col-reverse
-sm-f-row, sm-f-col, sm-f-row-reverse, sm-f-col-reverse
-md-f-row, md-f-col, md-f-row-reverse, md-f-col-reverse
-```
-
 ## Wrap
 
 ```
 f-wrap
 f-nowrap
 f-wrap-reverse
-```
-
-Responsivos:
-```
-xs-f-wrap, xs-f-nowrap
-sm-f-wrap, sm-f-nowrap
-md-f-wrap, md-f-nowrap
 ```
 
 ## Align Items (eixo cruzado)
@@ -49,13 +46,6 @@ f-items-center-safe
 f-items-baseline
 f-items-baseline-last
 f-items-stretch
-```
-
-Responsivos:
-```
-xs-f-items-start, xs-f-items-end, xs-f-items-center, xs-f-items-stretch
-sm-f-items-start, sm-f-items-end, sm-f-items-center, sm-f-items-stretch
-md-f-items-start, md-f-items-end, md-f-items-center, md-f-items-stretch
 ```
 
 ## Justify Content (eixo principal)
@@ -72,13 +62,6 @@ f-justify-evenly
 f-justify-stretch
 f-justify-baseline
 f-justify-normal
-```
-
-Responsivos:
-```
-xs-f-justify-start, xs-f-justify-end, xs-f-justify-center, xs-f-justify-between
-sm-f-justify-start, sm-f-justify-end, sm-f-justify-center, sm-f-justify-between
-md-f-justify-start, md-f-justify-end, md-f-justify-center, md-f-justify-between
 ```
 
 ## Align Self (item individual)
@@ -140,34 +123,6 @@ f-content-stretch (stretch - linhas esticam para preencher - padrão)
 - Container tem altura definida (`h-400px`, `h-100vh`, etc.)
 - Itens quebram em múltiplas linhas
 
-**Exemplos práticos:**
-
-```html
-<!-- Grid com múltiplas linhas - espaçar verticalmente -->
-<div class="f-grid f-content-between h-400px">
-    <div class="w-50">Item 1</div>
-    <div class="w-50">Item 2</div>
-    <div class="w-50">Item 3</div> <!-- Linha 1 fica no topo -->
-    <div class="w-50">Item 4</div> <!-- Linha 2 fica no bottom -->
-</div>
-
-<!-- Galeria de cards - centralizar linhas verticalmente -->
-<div class="f-grid f-content-center f-gap-20 h-600px">
-    <div class="w-30">Card 1</div>
-    <div class="w-30">Card 2</div>
-    <div class="w-30">Card 3</div>
-    <!-- Linhas ficam centralizadas verticalmente -->
-</div>
-
-<!-- Tags que quebram - espaçamento igual entre linhas -->
-<div class="d-flex f-wrap f-content-around h-200px">
-    <span class="tag">Tag 1</span>
-    <span class="tag">Tag 2</span>
-    <span class="tag">Tag 3</span>
-    <!-- Espaço igual ao redor de cada linha -->
-</div>
-```
-
 ## Gap (espaçamento entre itens)
 
 ```
@@ -182,13 +137,6 @@ f-gap-35 (35px)
 f-gap-40 (40px)
 f-gap-45 (45px)
 f-gap-50 (50px)
-```
-
-Responsivos:
-```
-xs-f-gap-{0-50} (intervalo de 5)
-sm-f-gap-{0-50} (intervalo de 5)
-md-f-gap-{0-50} (intervalo de 5)
 ```
 
 ## Exemplos de Uso
@@ -222,5 +170,13 @@ md-f-gap-{0-50} (intervalo de 5)
 <div class="d-flex">
     <div class="f-shrink-0 w-200px">Fixo</div>
     <div class="f-grow-1">Flexível</div>
+</div>
+
+<!-- Grid com múltiplas linhas - espaçar verticalmente -->
+<div class="f-grid f-content-between h-400px">
+    <div class="w-50">Item 1</div>
+    <div class="w-50">Item 2</div>
+    <div class="w-50">Item 3</div>
+    <div class="w-50">Item 4</div>
 </div>
 ```

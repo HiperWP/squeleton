@@ -20,10 +20,10 @@
 	<link rel="icon" href="https://hiperwp.com.br/squeleton/favicon.webp" sizes="256x256" />
 
 	<!-- Squeleton CSS -->
-	<link rel="stylesheet" href="https://cdn.hiperwp.com.br/squeleton.v4.min.css?ver=4.6">
+	<link rel="stylesheet" href="https://cdn.hiperwp.com.br/squeleton.v4.min.css?ver=4.7">
 
 	<!-- Squeleton JavaScript Header -->
-	<script src="https://cdn.hiperwp.com.br/squeleton-main.v4.min.js?ver=4.6"></script>
+	<script src="https://cdn.hiperwp.com.br/squeleton-main.v4.min.js?ver=4.7"></script>
 
 	<!-- Prism.js CSS para syntax highlighting -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
@@ -311,10 +311,17 @@
 			box-shadow: var(--box-shadown);
 		}
 
+		@keyframes number-color {
+			0%, 100% { color: var(--main-color); }
+			50% { color: var(--info-color); }
+		}
+
 		.animated-number {
 			font-size: 40px;
 			font-weight: 700;
 			color: var(--main-color);
+			animation: number-color 6s ease-in-out infinite;
+			animation-delay: var(--shine-delay, 0s);
 		}
 
 		.btn-demo {
@@ -715,7 +722,7 @@
 						<h1 class="squeleton-title m-25px-tb animated slideIn">Squeleton</h1>
 						<div
 							class="version-badge d-inline-block p-5px-lr m-5px-l border-rd-4 fs-3 fw-600 animated magnetIn delay-800">
-							v4.6</div>
+							v4.7</div>
 					</div>
 					<p class="fs-11 p-20px-tb xs-p-10px-t animated delay-500 fadeInUp">
 						Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid responsivo, animações
@@ -757,56 +764,56 @@
 			<div class="row gap-10 xs-gap-5 m-20px-t">
 
 				<div class="c-xs-6 c-md-3 m-20px-b xs-m-10px-b ">
-					<div class="stat-card p-25px-all border-rd-8 text-center h-100 wow slideIn">
+					<div class="stat-card p-25px-all border-rd-8 text-center h-100 wow slideIn" style="--shine-delay: 0s;">
 						<div class="animated-number">4</div>
 						<div>Device Breakpoints</div>
 					</div>
 				</div>
 
 				<div class="c-xs-6 c-md-3 m-20px-b xs-m-10px-b ">
-					<div class="stat-card p-25px-all border-rd-8 text-center h-100 wow slideIn" data-wow-delay="0.1s">
+					<div class="stat-card p-25px-all border-rd-8 text-center h-100 wow slideIn" data-wow-delay="0.1s" style="--shine-delay: 0.3s;">
 						<div class="animated-number">12</div>
 						<div>Colunas de Grid</div>
 					</div>
 				</div>
 
 				<div class="c-xs-6 c-md-3 m-20px-b xs-m-10px-b ">
-					<div class="stat-card p-25px-all border-rd-8 text-center h-100 wow slideIn" data-wow-delay="0.2s">
+					<div class="stat-card p-25px-all border-rd-8 text-center h-100 wow slideIn" data-wow-delay="0.2s" style="--shine-delay: 0.6s;">
 						<div class="animated-number">400+</div>
 						<div>Classes Utilitárias</div>
 					</div>
 				</div>
 
 				<div class="c-xs-6 c-md-3 m-20px-b xs-m-10px-b ">
-					<div class="stat-card p-25px-all border-rd-8 text-center h-100 wow slideIn" data-wow-delay="0.3s">
+					<div class="stat-card p-25px-all border-rd-8 text-center h-100 wow slideIn" data-wow-delay="0.3s" style="--shine-delay: 0.9s;">
 						<div class="animated-number">300+</div>
 						<div>Ícones Vetoriais</div>
 					</div>
 				</div>
 
 				<div class="c-xs-6 c-md-3 m-20px-b xs-m-10px-b ">
-					<div class="stat-card p-25px-all border-rd-8 text-center h-100 wow slideIn" data-wow-delay="0.4s">
+					<div class="stat-card p-25px-all border-rd-8 text-center h-100 wow slideIn" data-wow-delay="0.4s" style="--shine-delay: 1.2s;">
 						<div class="animated-number">30+</div>
 						<div>Efeitos Animados</div>
 					</div>
 				</div>
 
 				<div class="c-xs-6 c-md-3 m-20px-b xs-m-10px-b ">
-					<div class="stat-card p-25px-all border-rd-8 text-center h-100 wow slideIn" data-wow-delay="0.5s">
+					<div class="stat-card p-25px-all border-rd-8 text-center h-100 wow slideIn" data-wow-delay="0.5s" style="--shine-delay: 1.5s;">
 						<div class="animated-number">20+</div>
 						<div>Atributos Padronizados</div>
 					</div>
 				</div>
 
 				<div class="c-xs-6 c-md-3 m-20px-b xs-m-10px-b ">
-					<div class="stat-card p-25px-all border-rd-8 text-center h-100 wow slideIn" data-wow-delay="0.6s">
+					<div class="stat-card p-25px-all border-rd-8 text-center h-100 wow slideIn" data-wow-delay="0.6s" style="--shine-delay: 1.8s;">
 						<div class="animated-number">9</div>
 						<div>Micro-bibliotecas JS</div>
 					</div>
 				</div>
 
 				<div class="c-xs-6 c-md-3 m-20px-b xs-m-10px-b ">
-					<div class="stat-card p-25px-all border-rd-8 text-center h-100 wow slideIn" data-wow-delay="0.7s">
+					<div class="stat-card p-25px-all border-rd-8 text-center h-100 wow slideIn" data-wow-delay="0.7s" style="--shine-delay: 2.1s;">
 						<div class="animated-number">99+</div>
 						<div>PageSpeed Insights</div>
 					</div>
@@ -4363,7 +4370,7 @@ body {
 					<div class="f-grid f-items-center f-justify-center p-15px-b">
 						<span class="iccon-rocket-1 p-10px-r"></span>
 						<h3 class="m-0-b p-5px-r">Squeleton</h3>
-						<span class="version-badge d-inline-block p-5px-lr m-5px-l border-rd-4 fs-3 fw-600">4.6</span>
+						<span class="version-badge d-inline-block p-5px-lr m-5px-l border-rd-4 fs-3 fw-600">4.7</span>
 					</div>
 					<p class="minus-20 opacity-7">Desenvolvido por HiperWP</p>
 					<p>Um boilerplate leve e funcional para interfaces modernas e intuitivas</p>
@@ -4378,7 +4385,7 @@ body {
 	</footer>
 
 	<!-- Squeleton JavaScript Footer -->
-	<script src="https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js?ver=4.6"></script>
+	<script src="https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js?ver=4.7"></script>
 
 	<!-- Prism.js para syntax highlighting -->
 	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
