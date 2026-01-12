@@ -55,14 +55,23 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Projeto com Squeleton</title>
+    <title>Meu Site - Squeleton</title>
     <link rel="stylesheet" href="https://cdn.hiperwp.com.br/squeleton.v4.min.css">
     <script src="https://cdn.hiperwp.com.br/squeleton-main.v4.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Olá, Mundo!</h1>
-    </div>
+    <section class="p-80px-tb">          <!-- Section Flex -->
+        <div class="container">          <!-- Container responsivo -->
+            <div class="row">            <!-- Linha Flex -->
+                <div class="c-xs-12 c-md-8">
+                    Conteúdo Principal
+                </div>
+                <div class="c-xs-12 c-md-4">
+                    Sidebar
+                </div>
+            </div>
+        </div>
+    </section>
     <script src="https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js"></script>
 </body>
 </html>
