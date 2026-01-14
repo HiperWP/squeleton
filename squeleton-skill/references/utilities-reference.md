@@ -226,7 +226,7 @@ img-circle (border-radius: 50%)
 
 ```html
 <!-- Elemento fixo no canto -->
-<div class="ps-fixed top-0 right-0 p-20px-all">
+<div class="ps-fixed top-0 right-0 p-20-all">
     Fixo no canto
 </div>
 

@@ -26,14 +26,14 @@ Biblioteca para gerenciamento de cookies do navegador de forma simples e limpa. 
 ### Marcação HTML
 ```html
 <div id="lgpd" class="fadeInUp d-none">
-    <div class="row f-items-center lgpd-consent m-15px-b md-m-15px-lr">
+    <div class="row f-items-center lgpd-consent m-15-b md-m-15-lr">
         <div class="c-lg-10 c-md-9 c-xs-12 lgpd-text">
             Utilizamos cookies essenciais e tecnologias semelhantes para analisar e
             aprimorar nosso serviço, personalizar conteúdos e melhorar sua experiência
             digital de acordo com a nossa <a href="/termos/" target="_blank">Política de Privacidade</a>
             e, ao continuar navegando, você concorda com estas condições.
         </div>
-        <div class="c-lg-2 c-md-3 c-xs-12 sm-p-20px-t">
+        <div class="c-lg-2 c-md-3 c-xs-12 sm-p-20-t">
             <a href="#" onclick="return false;" class="lgpd-btn sm-w-100">
                 Prosseguir
             </a>

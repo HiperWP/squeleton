@@ -7,11 +7,11 @@ Efeito de contagem animada que exibe números aumentando gradualmente até um va
 ```html
 <div id="view-counter">
     <!-- Viewport da Contagem -->
-    <div class="stat-card p-25px-all border-rd-8 text-center h-100">
+    <div class="stat-card p-25-all border-rd-8 text-center h-100">
         <div class="animated-number">400+</div> <!-- Inicia Contagem -->
         <div>Classes Utilitárias</div>
     </div>
-    <div class="stat-card p-25px-all border-rd-8 text-center h-100">
+    <div class="stat-card p-25-all border-rd-8 text-center h-100">
         <div class="animated-number">300+</div> <!-- Inicia Contagem -->
         <div>Ícones Vetoriais</div>
     </div>

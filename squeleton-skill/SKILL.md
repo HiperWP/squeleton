@@ -153,7 +153,7 @@ Colunas usam `min-width` - comece em mobile e expanda para desktop:
 
 ## Breakpoints para Classes Utilitárias (Desktop-First)
 
-**Diferente do grid**, classes utilitárias usam `max-width` - escreva para desktop, ajuste para mobile:
+**Diferente do grid**, classes utilitárias usam `@max-width` - escreva para desktop, ajuste para mobile:
 - Sem prefixo = desktop (padrão)
 - Adicione `md-`, `sm-`, `xs-` para ajustar em telas menores
 - **Não existe `lg-`** porque desktop já é o padrão
@@ -162,14 +162,14 @@ Classes utilitárias criam uma "redução progressiva":
 
 | Breakpoint | Query CSS | Quando Aplica | Exemplo |
 |------------|-----------|---------------|---------|
-| `xs-` | `@media (max-width: 639px)` | 0px até 639px | `xs-p-20px-all` |
+| `xs-` | `@media (max-width: 639px)` | 0px até 639px | `xs-p-20-all` |
 | `sm-` | `@media (max-width: 991px)` | 0px até 991px | `sm-d-flex` |
 | `md-` | `@media (max-width: 1199px)` | 0px até 1199px | `md-w-50` |
-| Sem prefixo | (sem @media) | **Todos os tamanhos** | `p-20px-all` |
+| Sem prefixo | (sem @media) | **Todos os tamanhos** | `p-20-all` |
 
 **⚠️ Comportamento de Sobrescrita por Especificidade**:
 
-Como todos usam `max-width`, a ordem de especificidade é:
+Como todos usam `@max-width`, a ordem de especificidade é:
 - `xs-` sobrescreve `sm-`, `md-` e global em ≤639px (mais específico)
 - `sm-` sobrescreve `md-` e global em ≤991px
 - `md-` sobrescreve global em ≤1199px
@@ -181,7 +181,7 @@ Como todos usam `max-width`, a ordem de especificidade é:
 
 1. **Sem breakpoint** = global (base para todos os tamanhos)
    ```html
-   <div class="p-20px-all d-flex w-50">
+   <div class="p-20-all d-flex w-50">
    <!-- Aplica em todos os tamanhos -->
    ```
 
@@ -201,7 +201,7 @@ Como todos usam `max-width`, a ordem de especificidade é:
    <div class="text-left sm-text-center">
    <!-- ≤991px: center | ≥992px: left (global) -->
 
-   <div class="p-20px-all xs-p-30px-all">
+   <div class="p-20-all xs-p-30-all">
    <!-- ≤639px: 30px (xs) | ≥640px: 20px (global) -->
    ```
 
@@ -258,7 +258,7 @@ Classes `.render-auto`, `.render-auto-small`, `.render-auto-large` para otimizar
 ---
 
 ## Classes Utilitárias de Padding (p-) e Margin (m-)
-**Padrão**: `{p|m}-{valor}{unidade}-{direção}`
+**Padrão**: `{p|m}-{valor}-{direção}`
 
 | Direção | Aplicação |
 |---------|-----------|
@@ -270,15 +270,20 @@ Classes `.render-auto`, `.render-auto-small`, `.render-auto-large` para otimizar
 | `-tb` | Top + Bottom |
 | `-lr` | Left + Right |
 
-**Valores em pixels**: 0, 5, 10, 15, 20, 25, 30... até 100 (intervalo de 5)
+**Valores**: 0, 5, 10, 15, 20, 25, 30... até 100 (intervalo de 5)
+- Os números representam pixels diretos: `p-20-all` = padding de 20px
+- Responsivo: `xs-`, `sm-`, `md-` ou sem prefixo (desktop)
+
 ```html
-<div class="p-20px-tb m-10px-lr">...</div>
-<div class="xs-p-10px-all md-p-30px-all">Responsivo</div>
+<div class="p-20-tb m-10-lr">Padding 20px vertical, margin 10px horizontal</div>
+<div class="xs-p-10-all md-p-30-all">10px mobile, 30px tablet+</div>
+<div class="m-50-b p-15-lr">Margem 50px abaixo, padding 15px lateral</div>
+<div class="xs-m-5-t sm-m-15-t m-40-t">Margem top progressiva: 5px → 15px → 40px</div>
 ```
 
-**Valores em percentual**: 1 até 25
+**Margin Auto (centralização)**:
 ```html
-<div class="p-5-all m-2-tb">...</div>
+<div class="m-auto-lr">Centralizado horizontalmente</div>
 ```
 
 Consulte `references/padding-reference.md` e `references/margin-reference.md` para mais informações e exemplos.
@@ -395,7 +400,7 @@ Consulte `references/display-reference.md` para mais informações e exemplos.
 </div>
 
 <!-- Header com logo e menu -->
-<header class="d-flex f-items-center f-justify-between p-20px-tb">
+<header class="d-flex f-items-center f-justify-between p-20-tb">
     <div class="logo">Logo</div>
     <nav class="d-flex f-gap-20">...</nav>
 </header>
@@ -607,9 +612,9 @@ Consulte `references/tooltips-reference.md` para mais opções.
 
 ### Hero Section Full Height
 ```html
-<section class="h-100vh f-items-center f-justify-center text-center p-30px-all">
+<section class="h-100vh f-items-center f-justify-center text-center p-30-all">
     <div class="w-max-600px">
-        <h1 class="fs-13 fw-700 m-20px-b">Título Principal</h1>
+        <h1 class="fs-13 fw-700 m-20-b">Título Principal</h1>
         <p class="fs-9 opacity-8">Subtítulo descritivo</p>
     </div>
 </section>
@@ -617,13 +622,13 @@ Consulte `references/tooltips-reference.md` para mais opções.
 
 ### Grid de Cards Responsivo
 ```html
-<section class="p-60px-tb">
-    <div class="container p-60px-tb xs-p-30px-tb render-auto">
+<section class="p-60-tb">
+    <div class="container p-60-tb xs-p-30-tb render-auto">
         <div class="row gap-10">
             <div class="c-xs-12 c-sm-6 c-lg-3">
-                <div class="border-all border-rd-8 p-20px-all cursor-pointer">
-                    <img src="produto.jpg" class="w-100 border-rd-4 m-15px-b">
-                    <h4 class="fs-5 m-10px-b">Nome do Produto</h4>
+                <div class="border-all border-rd-8 p-20-all cursor-pointer">
+                    <img src="produto.jpg" class="w-100 border-rd-4 m-15-b">
+                    <h4 class="fs-5 m-10-b">Nome do Produto</h4>
                     <p class="fs-9 fw-700">R$ 99,90</p>
                 </div>
             </div>
@@ -635,7 +640,7 @@ Consulte `references/tooltips-reference.md` para mais opções.
 
 ### Header com Logo e Menu
 ```html
-<header class="p-20px-tb border-b">
+<header class="p-20-tb border-b">
     <div class="container">
         <div class="d-flex f-items-center f-justify-between">
             <div class="logo">
@@ -662,8 +667,8 @@ Consulte `references/tooltips-reference.md` para mais opções.
         <div class="dialog-backdrop" data-modal-hide></div>
         <div class="dialog-inline w-max-500px">
             <button class="dialog-close" data-modal-hide></button>
-            <div class="modal-popup border-rd-10 p-30px-all">
-                <h3 class="fs-11 m-20px-b">Título do Modal</h3>
+            <div class="modal-popup border-rd-10 p-30-all">
+                <h3 class="fs-11 m-20-b">Título do Modal</h3>
                 <p>Conteúdo...</p>
             </div>
         </div>

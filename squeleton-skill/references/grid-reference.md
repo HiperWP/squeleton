@@ -299,7 +299,7 @@ O `content-visibility: auto` aplica implicitamente `contain: size layout paint`,
 
 <!-- ✅ Seção compacta (CTA) -->
 <section>
-    <div class="container render-auto-small text-center p-40px-tb">
+    <div class="container render-auto-small text-center p-40-tb">
         <h2>Pronto para começar?</h2>
         <button>Cadastre-se</button>
     </div>

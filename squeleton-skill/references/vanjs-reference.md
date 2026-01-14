@@ -152,7 +152,7 @@ const botao = button({
 }, "Clique aqui")
 
 // Elemento com filhos
-const card = div({ class: "card p-20px-all" },
+const card = div({ class: "card p-20-all" },
     h1("Título"),
     p("Descrição do card"),
     button({ onclick: () => {} }, "Ação")

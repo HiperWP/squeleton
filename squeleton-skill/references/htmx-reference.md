@@ -17,7 +17,7 @@ Biblioteca para requisições AJAX declarativas via atributos HTML. Permite atua
 </div>
 
 <!-- Botão com HTMX para carregar mais artigos -->
-<button class="btn alert-info m-20px-t"
+<button class="btn alert-info m-20-t"
         hx-get="/api/artigos?page=2"
         hx-target="#blog"
         hx-swap="beforeend"
@@ -72,7 +72,7 @@ Biblioteca para requisições AJAX declarativas via atributos HTML. Permite atua
     <input class="form-control" type="email" name="email" placeholder="Email">
     <button class="btn alert-success" type="submit">Enviar</button>
 </form>
-<div id="resultado" class="m-15px-t"></div>
+<div id="resultado" class="m-15-t"></div>
 ```
 
 ### Busca em tempo real
@@ -84,7 +84,7 @@ Biblioteca para requisições AJAX declarativas via atributos HTML. Permite atua
        hx-get="/api/busca"
        hx-target="#resultados"
        hx-trigger="keyup changed delay:300ms">
-<div id="resultados" class="m-15px-t"></div>
+<div id="resultados" class="m-15-t"></div>
 ```
 
 ### Infinite Scroll
@@ -92,7 +92,7 @@ Biblioteca para requisições AJAX declarativas via atributos HTML. Permite atua
 <div id="feed" class="row gap-15">
     <!-- Posts carregados -->
 </div>
-<div class="t-center p-20px-all"
+<div class="t-center p-20-all"
      hx-get="/api/posts?page=2"
      hx-target="#feed"
      hx-swap="beforeend"
@@ -109,8 +109,8 @@ Biblioteca para requisições AJAX declarativas via atributos HTML. Permite atua
         hx-indicator="#loading">
     Carregar
 </button>
-<span id="loading" class="htmx-indicator t-muted m-10px-l">Carregando...</span>
-<div id="conteudo" class="m-15px-t"></div>
+<span id="loading" class="htmx-indicator t-muted m-10-l">Carregando...</span>
+<div id="conteudo" class="m-15-t"></div>
 ```
 
 ## Atributos Adicionais

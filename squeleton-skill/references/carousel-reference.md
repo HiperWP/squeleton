@@ -114,26 +114,26 @@ md-gap-{0-50} (intervalo de 5)
     <div class="slide__viewport">
         <div class="slide__row gap-10">
             <div class="slide__item c-xs-12 c-sm-6 c-md-4">
-                <div class="border-all border-rd-8 p-20px-all">
+                <div class="border-all border-rd-8 p-20-all">
                     <h4>Card 1</h4>
                     <p>Descrição do card</p>
                 </div>
             </div>
             <div class="slide__item c-xs-12 c-sm-6 c-md-4">
-                <div class="border-all border-rd-8 p-20px-all">
+                <div class="border-all border-rd-8 p-20-all">
                     <h4>Card 2</h4>
                     <p>Descrição do card</p>
                 </div>
             </div>
             <div class="slide__item c-xs-12 c-sm-6 c-md-4">
-                <div class="border-all border-rd-8 p-20px-all">
+                <div class="border-all border-rd-8 p-20-all">
                     <h4>Card 3</h4>
                     <p>Descrição do card</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="slide__dots m-20px-t"></div>
+    <div class="slide__dots m-20-t"></div>
 </div>
 ```
 

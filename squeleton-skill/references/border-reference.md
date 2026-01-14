@@ -158,7 +158,7 @@ z-index-minus-2 (-2)
 
 ```html
 <!-- Card com borda e radius -->
-<div class="border-all border-rd-8 p-20px-all">
+<div class="border-all border-rd-8 p-20-all">
     Card content
 </div>
 

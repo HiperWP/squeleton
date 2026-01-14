@@ -1,6 +1,6 @@
 # Squeleton
 
-[![Version](https://img.shields.io/badge/version-4.7.2-blue.svg)](https://hiperwp.com.br/squeleton/)
+[![Version](https://img.shields.io/badge/version-4.7.4-blue.svg)](https://hiperwp.com.br/squeleton/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://hiperwp.com.br/squeleton/#guia)
 [![CSS Framework](https://img.shields.io/badge/framework-CSS-1572B6.svg)](https://hiperwp.com.br/squeleton/)
 [![Vanilla JS](https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E.svg)](https://hiperwp.com.br/squeleton/)
@@ -60,7 +60,7 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
     <script src="https://cdn.hiperwp.com.br/squeleton-main.v4.min.js"></script>
 </head>
 <body>
-    <section class="p-80px-tb">          <!-- Section Flex -->
+    <section class="p-80-tb">          <!-- Section Flex -->
         <div class="container">          <!-- Container responsivo -->
             <div class="row">            <!-- Linha Flex -->
                 <div class="c-xs-12 c-md-8">
@@ -82,11 +82,11 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 **Hero Section** - Tipografia fluida + Centralização:
 
 ```html
-<section class="h-100vh f-justify-center f-items-center text-center p-30px-all">
+<section class="h-100vh f-justify-center f-items-center text-center p-30-all">
     <div class="w-max-600px">
-        <h1 class="fs-14 fw-700 m-15px-b">Bem-vindo ao Squeleton</h1>
-        <p class="fs-9 opacity-8 m-25px-b">Boilerplate leve para interfaces modernas</p>
-        <a href="#" class="d-inline-block p-15px-lr p-10px-tb border-rd-8 fw-600">
+        <h1 class="fs-14 fw-700 m-15-b">Bem-vindo ao Squeleton</h1>
+        <p class="fs-9 opacity-8 m-25-b">Boilerplate leve para interfaces modernas</p>
+        <a href="#" class="d-inline-block p-15-lr p-10-tb border-rd-8 fw-600">
             Começar Agora
         </a>
     </div>
@@ -96,28 +96,28 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 **Grid de Cards** - Container + Row + Colunas responsivas:
 
 ```html
-<section class="p-60px-tb xs-p-30px-tb">
+<section class="p-60-tb xs-p-30-tb">
     <div class="container">
-        <h2 class="fs-12 fw-600 text-center m-40px-b">Recursos</h2>
+        <h2 class="fs-12 fw-600 text-center m-40-b">Recursos</h2>
         <div class="row gap-20">
             <div class="c-xs-12 c-md-6 c-lg-4">
-                <div class="border-all border-rd-10 p-25px-all h-100">
-                    <i class="iccon-rocket-1 fs-13 m-15px-b d-block"></i>
-                    <h3 class="fs-10 fw-600 m-10px-b">Performance</h3>
+                <div class="border-all border-rd-10 p-25-all h-100">
+                    <i class="iccon-rocket-1 fs-13 m-15-b d-block"></i>
+                    <h3 class="fs-10 fw-600 m-10-b">Performance</h3>
                     <p class="fs-7 opacity-7">Otimizado para 99+ no PageSpeed</p>
                 </div>
             </div>
             <div class="c-xs-12 c-md-6 c-lg-4">
-                <div class="border-all border-rd-10 p-25px-all h-100 wow fadeInUp">
-                    <i class="iccon-layer-1 fs-13 m-15px-b d-block"></i>
-                    <h3 class="fs-10 fw-600 m-10px-b">400+ Classes</h3>
+                <div class="border-all border-rd-10 p-25-all h-100 wow fadeInUp">
+                    <i class="iccon-layer-1 fs-13 m-15-b d-block"></i>
+                    <h3 class="fs-10 fw-600 m-10-b">400+ Classes</h3>
                     <p class="fs-7 opacity-7">Grid, spacing, flexbox e mais</p>
                 </div>
             </div>
             <div class="c-xs-12 c-md-6 c-lg-4">
-                <div class="border-all border-rd-10 p-25px-all h-100 wow fadeInUp" data-wow-delay="0.1s">
-                    <i class="iccon-speed-1 fs-13 m-15px-b d-block"></i>
-                    <h3 class="fs-10 fw-600 m-10px-b">Zero Build</h3>
+                <div class="border-all border-rd-10 p-25-all h-100 wow fadeInUp" data-wow-delay="0.1s">
+                    <i class="iccon-speed-1 fs-13 m-15-b d-block"></i>
+                    <h3 class="fs-10 fw-600 m-10-b">Zero Build</h3>
                     <p class="fs-7 opacity-7">CDN e pronto para usar</p>
                 </div>
             </div>
@@ -129,7 +129,7 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 **Footer** - Flexbox com distribuição:
 
 ```html
-<footer class="p-30px-tb border-t">
+<footer class="p-30-tb border-t">
     <div class="container">
         <div class="d-flex f-justify-between f-items-center xs-f-col xs-f-gap-15">
             <p class="fs-6 opacity-7">© 2026 Meu Projeto</p>
@@ -153,7 +153,7 @@ O Squeleton adota uma **abordagem híbrida única** que combina o melhor dos doi
 - Suporta 4 breakpoints: `xs-`, `sm-`, `md-`, `lg-`
 
 **Classes Utilitárias → Desktop-First** (`max-width`)
-- Escreva para desktop primeiro, ajuste para mobile: `p-60px-tb xs-p-30px-tb`
+- Escreva para desktop primeiro, ajuste para mobile: `p-60-tb xs-p-30-tb`
 - Prático porque a maioria do desenvolvimento é feita em desktop
 - Não existe `lg-` para utilitários - desktop já é o padrão
 

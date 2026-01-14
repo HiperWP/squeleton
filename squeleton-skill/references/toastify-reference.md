@@ -86,10 +86,10 @@ function showInfoToast() {
 ## Exemplo Completo com HTML
 
 ```html
-<button onclick="showSuccessToast()" class="btn alert-success m-10px-r">
+<button onclick="showSuccessToast()" class="btn alert-success m-10-r">
     Sucesso
 </button>
-<button onclick="showErrorToast()" class="btn alert-danger m-10px-r">
+<button onclick="showErrorToast()" class="btn alert-danger m-10-r">
     Erro
 </button>
 <button onclick="showInfoToast()" class="btn alert-info">
