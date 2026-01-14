@@ -20,10 +20,10 @@
 	<link rel="icon" href="https://hiperwp.com.br/squeleton/favicon.webp" sizes="256x256" />
 
 	<!-- Squeleton CSS -->
-	<link rel="stylesheet" href="https://cdn.hiperwp.com.br/squeleton.v4.min.css?ver=4.7.1">
+	<link rel="stylesheet" href="https://cdn.hiperwp.com.br/squeleton.v4.min.css?ver=4.7.2">
 
 	<!-- Squeleton JavaScript Header -->
-	<script src="https://cdn.hiperwp.com.br/squeleton-main.v4.min.js?ver=4.7.1"></script>
+	<script src="https://cdn.hiperwp.com.br/squeleton-main.v4.min.js?ver=4.7.2"></script>
 
 	<!-- Prism.js CSS para syntax highlighting -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
@@ -718,7 +718,7 @@
 						<h1 class="squeleton-title m-25px-tb animated slideIn">Squeleton</h1>
 						<div
 							class="version-badge d-inline-block p-5px-lr m-5px-l border-rd-4 fs-3 fw-600 animated magnetIn delay-800">
-							v4.7.1</div>
+							v4.7.2</div>
 					</div>
 					<p class="fs-11 p-20px-tb xs-p-10px-t animated delay-500 fadeInUp">
 						Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid responsivo, animações
@@ -1456,11 +1456,18 @@ class="xs-p-10px-all md-p-20px-tb sm-m-10px-lr"</textarea>
 									<h5>Larguras em Pixels</h5>
 									<div class="code-block min-line-4">
 										<textarea class="prism-code" data-lang="css">
-.w-5px, .w-10px, .w-15px
-.w-20px, .w-25px, .w-30px
-.w-50px, .w-100px, .w-150px
-.w-200px, .w-250px, .w-300px
-...até .w-700px
+/* 5px até 100px (intervalo de 5px) */
+.w-5px, .w-10px, .w-15px, .w-20px
+.w-25px, .w-30px... até .w-100px
+
+/* 100px até 300px (intervalo de 10px) */
+.w-110px, .w-120px... até .w-300px
+
+/* 300px até 700px (intervalo de 50px) */
+.w-350px, .w-400px... até .w-700px
+
+/* Responsivos (mesmo padrão) */
+md-w-{valor}px, sm-w-{valor}px, xs-w-{valor}px
 
 <!-- Exemplo -->
 <div class="w-50px">50px de largura</div>
@@ -1472,14 +1479,20 @@ class="xs-p-10px-all md-p-20px-tb sm-m-10px-lr"</textarea>
 									<h5>Alturas Dinâmicas</h5>
 									<div class="code-block min-line-4">
 										<textarea class="prism-code" data-lang="css">
-.h-50px, .h-100px, .h-150px
-.h-200px, .h-250px, .h-300px
-.h-400px, .h-450px, .h-500px
-.h-550px, .h-600px, .h-650px
-...até .w-700px
+/* 5px até 100px (intervalo de 10px) */
+.h-5px, .h-10px, .h-20px, .h-30px
+.h-40px, .h-50px, .h-60px, .h-70px
+.h-80px, .h-90px, .h-100px
+
+/* 100px até 700px (intervalo de 50px) */
+.h-150px, .h-200px, .h-250px...
+...até .h-700px
+
+/* Responsivos (mesmo padrão) */
+md-h-{valor}px, sm-h-{valor}px, xs-h-{valor}px
 
 <!-- Exemplo -->
-<div class="w-200px">200px de altura</div>
+<div class="h-200px">200px de altura</div>
 										</textarea>
 									</div>
 								</div>
@@ -2237,7 +2250,7 @@ Altura total da viewport
 						<div class="feature-card m-20px-b">
 							<h4>Font Size - Escala Numérica</h4>
 							<p>Escala completa de tamanhos de fonte (fs-1 a fs-16). Classes fs-1 a fs-6 são fixas, fs-7 a fs-16 usam
-								<code>clamp()</code> para tipografia fluida:
+								<code>clamp()</code> para tipografia fluida. Todas disponíveis com prefixos responsivos, usando as mesmas escalas: <code>md-fs-{1-16}</code>, <code>sm-fs-{1-16}</code>, <code>xs-fs-{1-16}</code>
 							</p>
 
 							<div class="row gap-15">
@@ -4373,7 +4386,7 @@ body {
 					<div class="f-grid f-items-center f-justify-center p-15px-b">
 						<span class="iccon-rocket-1 p-10px-r"></span>
 						<h3 class="m-0-b p-5px-r">Squeleton</h3>
-						<span class="version-badge d-inline-block p-5px-lr m-5px-l border-rd-4 fs-3 fw-600">4.7.1</span>
+						<span class="version-badge d-inline-block p-5px-lr m-5px-l border-rd-4 fs-3 fw-600">4.7.2</span>
 					</div>
 					<p class="minus-20 opacity-7">Desenvolvido por HiperWP</p>
 					<p>Um boilerplate leve e funcional para interfaces modernas e intuitivas</p>
@@ -4388,7 +4401,7 @@ body {
 	</footer>
 
 	<!-- Squeleton JavaScript Footer -->
-	<script src="https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js?ver=4.7.1"></script>
+	<script src="https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js?ver=4.7.2"></script>
 
 	<!-- Prism.js para syntax highlighting -->
 	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>

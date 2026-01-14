@@ -5369,10 +5369,6 @@ fieldset[disabled] a.btn {
   width: auto !important
 }
 
-.h-1px {
-  min-height: 1px
-}
-
 .h-5px {
   min-height: 5px
 }
@@ -5381,8 +5377,36 @@ fieldset[disabled] a.btn {
   min-height: 10px
 }
 
+.h-20px {
+  min-height: 20px
+}
+
+.h-30px {
+  min-height: 30px
+}
+
+.h-40px {
+  min-height: 40px
+}
+
 .h-50px {
   min-height: 50px
+}
+
+.h-60px {
+  min-height: 60px
+}
+
+.h-70px {
+  min-height: 70px
+}
+
+.h-80px {
+  min-height: 80px
+}
+
+.h-90px {
+  min-height: 90px
 }
 
 .h-100px {
@@ -9737,8 +9761,44 @@ button.vbox-link-btn:hover {
     height: auto
   }
 
+  .md-h-5px {
+    min-height: 5px
+  }
+
+  .md-h-10px {
+    min-height: 10px
+  }
+
+  .md-h-20px {
+    min-height: 20px
+  }
+
+  .md-h-30px {
+    min-height: 30px
+  }
+
+  .md-h-40px {
+    min-height: 40px
+  }
+
   .md-h-50px {
-    height: 50px
+    min-height: 50px
+  }
+
+  .md-h-60px {
+    min-height: 60px
+  }
+
+  .md-h-70px {
+    min-height: 70px
+  }
+
+  .md-h-80px {
+    min-height: 80px
+  }
+
+  .md-h-90px {
+    min-height: 90px
   }
 
   .md-h-100px {
@@ -9895,6 +9955,70 @@ button.vbox-link-btn:hover {
 
   .md-no-bg-img {
     background-image: none !important
+  }
+
+  .md-fs-1 {
+    font-size: 10px
+  }
+
+  .md-fs-2 {
+    font-size: 11px
+  }
+
+  .md-fs-3 {
+    font-size: 12px
+  }
+
+  .md-fs-4 {
+    font-size: 13px
+  }
+
+  .md-fs-5 {
+    font-size: 14px
+  }
+
+  .md-fs-6 {
+    font-size: 15px
+  }
+
+  .md-fs-7 {
+    font-size: clamp(15px, 0.5vw + 13px, 16px)
+  }
+
+  .md-fs-8 {
+    font-size: clamp(16px, 0.5vw + 14px, 17px)
+  }
+
+  .md-fs-9 {
+    font-size: clamp(17px, 0.5vw + 15px, 18px)
+  }
+
+  .md-fs-10 {
+    font-size: clamp(18px, 1vw + 14px, 20px)
+  }
+
+  .md-fs-11 {
+    font-size: clamp(21px, 1.5vw + 15px, 24px)
+  }
+
+  .md-fs-12 {
+    font-size: clamp(24px, 2vw + 16px, 28px)
+  }
+
+  .md-fs-13 {
+    font-size: clamp(28px, 2vw + 20px, 32px)
+  }
+
+  .md-fs-14 {
+    font-size: clamp(34px, 3vw + 22px, 40px)
+  }
+
+  .md-fs-15 {
+    font-size: clamp(40px, 4vw + 24px, 48px)
+  }
+
+  .md-fs-16 {
+    font-size: clamp(52px, 6vw + 28px, 64px)
   }
 }
 
@@ -13304,8 +13428,44 @@ button.vbox-link-btn:hover {
     min-height: auto
   }
 
+  .sm-h-5px {
+    min-height: 5px
+  }
+
+  .sm-h-10px {
+    min-height: 10px
+  }
+
+  .sm-h-20px {
+    min-height: 20px
+  }
+
+  .sm-h-30px {
+    min-height: 30px
+  }
+
+  .sm-h-40px {
+    min-height: 40px
+  }
+
   .sm-h-50px {
     min-height: 50px
+  }
+
+  .sm-h-60px {
+    min-height: 60px
+  }
+
+  .sm-h-70px {
+    min-height: 70px
+  }
+
+  .sm-h-80px {
+    min-height: 80px
+  }
+
+  .sm-h-90px {
+    min-height: 90px
   }
 
   .sm-h-100px {
@@ -13478,6 +13638,70 @@ button.vbox-link-btn:hover {
 
   .sm-no-bg-img {
     background-image: none !important
+  }
+
+  .sm-fs-1 {
+    font-size: 10px
+  }
+
+  .sm-fs-2 {
+    font-size: 11px
+  }
+
+  .sm-fs-3 {
+    font-size: 12px
+  }
+
+  .sm-fs-4 {
+    font-size: 13px
+  }
+
+  .sm-fs-5 {
+    font-size: 14px
+  }
+
+  .sm-fs-6 {
+    font-size: 15px
+  }
+
+  .sm-fs-7 {
+    font-size: clamp(15px, 0.5vw + 13px, 16px)
+  }
+
+  .sm-fs-8 {
+    font-size: clamp(16px, 0.5vw + 14px, 17px)
+  }
+
+  .sm-fs-9 {
+    font-size: clamp(17px, 0.5vw + 15px, 18px)
+  }
+
+  .sm-fs-10 {
+    font-size: clamp(18px, 1vw + 14px, 20px)
+  }
+
+  .sm-fs-11 {
+    font-size: clamp(21px, 1.5vw + 15px, 24px)
+  }
+
+  .sm-fs-12 {
+    font-size: clamp(24px, 2vw + 16px, 28px)
+  }
+
+  .sm-fs-13 {
+    font-size: clamp(28px, 2vw + 20px, 32px)
+  }
+
+  .sm-fs-14 {
+    font-size: clamp(34px, 3vw + 22px, 40px)
+  }
+
+  .sm-fs-15 {
+    font-size: clamp(40px, 4vw + 24px, 48px)
+  }
+
+  .sm-fs-16 {
+    font-size: clamp(52px, 6vw + 28px, 64px)
   }
 
   .toastify {
@@ -16859,8 +17083,44 @@ button.vbox-link-btn:hover {
     min-height: auto
   }
 
+  .xs-h-5px {
+    min-height: 5px
+  }
+
+  .xs-h-10px {
+    min-height: 10px
+  }
+
+  .xs-h-20px {
+    min-height: 20px
+  }
+
+  .xs-h-30px {
+    min-height: 30px
+  }
+
+  .xs-h-40px {
+    min-height: 40px
+  }
+
   .xs-h-50px {
     min-height: 50px
+  }
+
+  .xs-h-60px {
+    min-height: 60px
+  }
+
+  .xs-h-70px {
+    min-height: 70px
+  }
+
+  .xs-h-80px {
+    min-height: 80px
+  }
+
+  .xs-h-90px {
+    min-height: 90px
   }
 
   .xs-h-100px {
@@ -17017,6 +17277,70 @@ button.vbox-link-btn:hover {
 
   .xs-c-center {
     margin: 0 auto
+  }
+
+  .xs-fs-1 {
+    font-size: 10px
+  }
+
+  .xs-fs-2 {
+    font-size: 11px
+  }
+
+  .xs-fs-3 {
+    font-size: 12px
+  }
+
+  .xs-fs-4 {
+    font-size: 13px
+  }
+
+  .xs-fs-5 {
+    font-size: 14px
+  }
+
+  .xs-fs-6 {
+    font-size: 15px
+  }
+
+  .xs-fs-7 {
+    font-size: clamp(15px, 0.5vw + 13px, 16px)
+  }
+
+  .xs-fs-8 {
+    font-size: clamp(16px, 0.5vw + 14px, 17px)
+  }
+
+  .xs-fs-9 {
+    font-size: clamp(17px, 0.5vw + 15px, 18px)
+  }
+
+  .xs-fs-10 {
+    font-size: clamp(18px, 1vw + 14px, 20px)
+  }
+
+  .xs-fs-11 {
+    font-size: clamp(21px, 1.5vw + 15px, 24px)
+  }
+
+  .xs-fs-12 {
+    font-size: clamp(24px, 2vw + 16px, 28px)
+  }
+
+  .xs-fs-13 {
+    font-size: clamp(28px, 2vw + 20px, 32px)
+  }
+
+  .xs-fs-14 {
+    font-size: clamp(34px, 3vw + 22px, 40px)
+  }
+
+  .xs-fs-15 {
+    font-size: clamp(40px, 4vw + 24px, 48px)
+  }
+
+  .xs-fs-16 {
+    font-size: clamp(52px, 6vw + 28px, 64px)
   }
 }
 

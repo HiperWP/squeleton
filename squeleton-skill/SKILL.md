@@ -61,6 +61,8 @@ Somente crie CSS ou JavaScript novo quando **não existir** uma classe ou biblio
 [squeleton-main.v4.min.js](https://cdn.hiperwp.com.br/squeleton-main.v4.min.js) – JavaScript principal (~17KB gzip)
 [squeleton-scripts.v4.min.js](https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js) – JavaScript secundário (~20KB gzip)
 
+**Consulta direta ao CSS:** Em caso de dúvida sobre a existência de uma classe específica ou para ter uma visão completa da estrutura do framework, consulte diretamente o arquivo `squeleton.v4.css` (versão não-minificada). Isso permite verificar todas as classes disponíveis, seus valores exatos e a organização das media queries.
+
 ---
 
 ## Estrutura Base CSS
@@ -289,13 +291,16 @@ Consulte `references/padding-reference.md` e `references/margin-reference.md` pa
 - 5px até 100px (intervalo de 5px)
 - 100px até 300px (intervalo de 10px)
 - 300px até 700px (intervalo de 50px)
+- Responsivos: `md-w-{valor}px`, `sm-w-{valor}px`, `xs-w-{valor}px`
 
 **Width Percentual** - `w-{valor}` (sem unidade):
 - 10% até 100% (intervalo de 5%)
+- Responsivos: `md-w-{valor}`, `sm-w-{valor}`, `xs-w-{valor}`
 
 **Width Especiais**:
 - `w-auto` - largura automática
 - `w-max-{100-900}px` - max-width de 100px até 900px (intervalo de 50px)
+- Responsivos: `md-w-auto`, `sm-w-auto`, `xs-w-auto`
 
 ```html
 <!-- Largura fixa -->
@@ -315,8 +320,9 @@ Consulte `references/width-reference.md` para lista completa de valores.
 ## Classes Utilitárias de Height (h-)
 
 **Height em Pixels** - `h-{valor}px`:
-- Valores: 1px, 5px, 10px, 50px
-- 50px até 700px (intervalo de 50px)
+- 5px até 100px (intervalo de 10px): 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100
+- 100px até 700px (intervalo de 50px): 150, 200, 250... 700
+- Responsivos: `md-h-{valor}px`, `sm-h-{valor}px`, `xs-h-{valor}px`
 
 **Height Percentual e Especiais**:
 - `h-50` (min-height: 50%)
@@ -444,6 +450,7 @@ Consulte `references/flex-reference.md` para mais informações e exemplos.
 **Font Size - Escala Numérica (fs-1 a fs-16)**:
 - `.fs-1` a `.fs-6` - tamanhos fixos (10px a 15px)
 - `.fs-7` a `.fs-16` - tamanhos fluidos com clamp() (16px a 64px)
+- Responsivos: `md-fs-{1-16}`, `sm-fs-{1-16}`, `xs-fs-{1-16}`
 
 | Classe | Tamanho | Uso |
 |--------|---------|-----|
@@ -464,6 +471,11 @@ Consulte `references/flex-reference.md` para mais informações e exemplos.
 | `.fs-15` | 40→48px | Hero |
 | `.fs-16` | 52→64px | Display |
 
+**Exemplo responsivo**:
+```html
+<h1 class="fs-14 md-fs-12 sm-fs-10 xs-fs-8">Título que escala com a tela</h1>
+```
+
 **Font Weight e Espaçamento**:
 - `.fw-{300-900}` - font-weight (300, 400, 500, 600, 700, 800, 900)
 - `.ls-{0-5}` - letter-spacing positivo
@@ -481,7 +493,6 @@ Consulte `references/flex-reference.md` para mais informações e exemplos.
 ## Classes Utilitárias de Posicionamento
 - `.ps-relative`, `.ps-absolute`, `.ps-fixed`, `.ps-sticky`, `.ps-static`
 - `.top-0`, `.bottom-0`, `.left-0`, `.right-0`, `.top-auto`, `.bottom-auto` - valores de posição
-- `.z-index-{0-5}`, `.z-index-111`, `.z-index-1111`
 - `.absolute-xy` - centraliza absoluto (transform translate -50%)
 
 ## Outras Classes Utilitárias
@@ -563,25 +574,7 @@ Modais com classe `.modal-dialog` já vêm com scroll lock automático (eventos 
 | `data-a11y-dialog-show` | `data-modal-show` |
 | `data-a11y-dialog-hide` | `data-modal-hide` |
 
-```html
-<!-- Trigger -->
-<a data-modal-show="meu-modal" href="#">Abrir</a>
-
-<!-- Modal -->
-<div data-modal="meu-modal" class="modal-dialog" aria-modal="true" role="dialog" aria-hidden="true" tabindex="-1">
-    <div class="dialog-content">
-        <div class="dialog-backdrop" data-modal-hide></div>
-        <div class="dialog-inline w-max-500px">
-            <button class="dialog-close" aria-label="Fechar" data-modal-hide></button>
-            <div class="modal-popup border-rd-10 p-30px-all">
-                Conteúdo...
-            </div>
-        </div>
-    </div>
-</div>
-```
-
-Consulte `references/modal-reference.md` para mais informações e exemplos.
+Veja exemplo completo em "Padrões Comuns de Uso" > "Modal Centralizado". Consulte `references/modal-reference.md` para mais opções.
 
 ---
 
@@ -684,7 +677,7 @@ Embla Carousel **requer inicialização via JavaScript**. Estrutura HTML:
 
 ```html
 <div class="slide__viewport">
-    <div class="slide__row cursor-grab">
+    <div class="slide__row gap-15">
         <div class="slide__item c-xs-12 c-sm-6 c-md-4">
             <img src="slide1.jpg" class="w-100">
         </div>

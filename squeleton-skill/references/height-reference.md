@@ -2,47 +2,60 @@
 
 ## Height - Pixels
 
-Padrão: `{breakpoint-}h-{valor}px`
+Padrao: `{breakpoint-}h-{valor}px`
 
-### Valores pequenos
-
-```
-h-1px, h-5px, h-10px, h-50px
-```
-
-### 50px até 700px (intervalo de 50px)
+### 5px ate 100px (intervalo de 10px)
 
 ```
-h-50px, h-100px, h-150px, h-200px, h-250px
-h-300px, h-350px, h-400px, h-450px, h-500px
+h-5px, h-10px, h-20px, h-30px, h-40px
+h-50px, h-60px, h-70px, h-80px, h-90px, h-100px
+```
+
+### 100px ate 700px (intervalo de 50px)
+
+```
+h-150px, h-200px, h-250px, h-300px
+h-350px, h-400px, h-450px, h-500px
 h-550px, h-600px, h-650px, h-700px
 ```
 
 ### Responsivos
 
 ```
-xs-h-{valor}px (mesmo padrão)
-sm-h-{valor}px (mesmo padrão)
-md-h-{valor}px (mesmo padrão)
+md-h-{valor}px (mesmo padrao)
+sm-h-{valor}px (mesmo padrao)
+xs-h-{valor}px (mesmo padrao)
 ```
 
-## Height - Percentual e Especiais
+## Height - Percentual
 
-**Importante**: Todas as classes de height percentual usam `min-height` (não `height`) para melhor compatibilidade.
+Padrao: `{breakpoint-}h-{valor}` (sem unidade = porcentagem)
 
 ```
-h-50 (min-height: 50%)
-h-100 (min-height: 100%)
-h-100vh (min-height: 100vh) - altura total da viewport
-h-auto (min-height: auto) - remove min-height
+h-50, h-100
 ```
 
 ### Responsivos
 
 ```
-md-h-50, md-h-100, md-h-auto
-sm-h-50, sm-h-100, sm-h-auto
-xs-h-50, xs-h-100, xs-h-auto
+md-h-{valor} (mesmo padrao)
+sm-h-{valor} (mesmo padrao)
+xs-h-{valor} (mesmo padrao)
+```
+
+## Height - Viewport
+
+```
+h-100vh
+```
+
+## Height - Auto
+
+```
+h-auto
+md-h-auto
+sm-h-auto
+xs-h-auto
 ```
 
 ## Exemplos de Uso
@@ -51,17 +64,24 @@ xs-h-50, xs-h-100, xs-h-auto
 <!-- Altura fixa -->
 <div class="h-300px">300px de altura</div>
 
-<!-- Altura 100vh para seção hero -->
-<section class="h-100vh f-items-center">
-    Hero Section
-</section>
+<!-- Altura percentual -->
+<div class="h-100">100% de altura</div>
 
-<!-- Altura 100% do container -->
-<div class="h-100">Preenche o container</div>
+<!-- Altura viewport -->
+<div class="h-100vh">100% da viewport</div>
 
 <!-- Altura responsiva -->
-<div class="xs-h-200px md-h-400px">Altura adaptativa</div>
+<div class="h-400px md-h-300px sm-h-200px xs-h-100px">
+  Altura adaptativa por breakpoint
+</div>
 
-<!-- Equalizar altura de cards -->
-<div class="min-line-3">Título do card com altura mínima</div>
+<!-- Container full height -->
+<main class="h-100vh d-flex f-col">
+  <header class="h-60px">Header</header>
+  <section class="f-grow-1">Conteudo</section>
+  <footer class="h-80px">Footer</footer>
+</main>
+
+<!-- Card com altura minima -->
+<div class="h-200px">Card com altura minima de 200px</div>
 ```
