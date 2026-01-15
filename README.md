@@ -13,10 +13,10 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 
 - **Hybrid-First**: Abordagem única - Grid mobile-first + Utilitários desktop-first
 - **Grid Flexível**: 12 colunas com containers responsivos
-- **Utilitários Completos**: Mais de 400 classes para espaçamento, design e layouts
-- **JavaScript Pronto**: 9 micro-bibliotecas integradas (HTMX, VanJS, Embla, VenoBox, a11y-dialog, Toastify, Wow2 Animation, Counter-Up2, js-cookie)
+- **Utilitários Completos**: Mais de 400 classes para espaçamento, grids, flex, design e layouts
+- **Bibliotecas Vanilla**: 9 micro-bibliotecas integradas (HTMX, VanJS, Embla, VenoBox, a11y-dialog, Toastify, Wow2 Animation, Counter-Up2, js-cookie)
 - **Animações Suaves**: 30+ efeitos com controle de exibição e repetição
-- **Biblioteca de Ícones**: 300+ ícones vetoriais customizados com IcoMoon
+- **Kit de Ícones**: 300+ ícones vetoriais customizados com IcoMoon
 - **Performance**: Otimizado para 99+ no PageSpeed Insights
 - **Zero Configuração**: Adicione via CDN e comece a usar imediatamente
 
@@ -42,10 +42,10 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 
 ### Arquivos para Download
 
-- [squeleton.v4.css](https://cdn.hiperwp.com.br/squeleton.v4.css) – Versão completa para desenvolvimento (~30KB gzip)
+- [squeleton.v4.css](https://cdn.hiperwp.com.br/squeleton.v4.css) – Versão completa para desenvolvimento (~35KB gzip)
 - [squeleton.v4.min.css](https://cdn.hiperwp.com.br/squeleton.v4.min.css) – Versão minificada para produção (~25KB gzip)
-- [squeleton-main.v4.min.js](https://cdn.hiperwp.com.br/squeleton-main.v4.min.js) – JavaScript principal (~17KB gzip)
-- [squeleton-scripts.v4.min.js](https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js) – JavaScript secundário (~20KB gzip)
+- [squeleton-main.v4.min.js](https://cdn.hiperwp.com.br/squeleton-main.v4.min.js) – JavaScript principal (~12KB gzip)
+- [squeleton-scripts.v4.min.js](https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js) – JavaScript secundário (~18KB gzip)
 
 ### Template HTML Básico
 
@@ -237,7 +237,7 @@ Use com WOW para ativar no scroll: `<div class="wow anima-personalizada">Conteú
 <details>
 <summary><strong>Por que não há sistema de build/compilação?</strong></summary>
 
-Decisão deliberada baseada em simplicidade: todo o Squeleton (65kb gzip) é menor que uma imagem JPG média. Arquivos unificados facilitam manutenção, otimizam cache em navegação multi-página e eliminam complexidade de ferramentas de build.
+Decisão deliberada baseada em simplicidade: todo o Squeleton (~55KB gzip) é menor que uma imagem JPG média. Arquivos unificados facilitam manutenção, otimizam cache em navegação multi-página e eliminam complexidade de ferramentas de build.
 
 </details>
 

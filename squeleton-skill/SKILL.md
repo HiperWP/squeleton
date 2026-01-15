@@ -56,10 +56,10 @@ Somente crie CSS ou JavaScript novo quando **não existir** uma classe ou biblio
 
 ### Arquivos para Download
 
-[squeleton.v4.css](https://cdn.hiperwp.com.br/squeleton.v4.css) – Versão completa para desenvolvimento (~30KB gzip)
+[squeleton.v4.css](https://cdn.hiperwp.com.br/squeleton.v4.css) – Versão completa para desenvolvimento (~35KB gzip)
 [squeleton.v4.min.css](https://cdn.hiperwp.com.br/squeleton.v4.min.css) – Versão minificada para produção (~25KB gzip)
-[squeleton-main.v4.min.js](https://cdn.hiperwp.com.br/squeleton-main.v4.min.js) – JavaScript principal (~17KB gzip)
-[squeleton-scripts.v4.min.js](https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js) – JavaScript secundário (~20KB gzip)
+[squeleton-main.v4.min.js](https://cdn.hiperwp.com.br/squeleton-main.v4.min.js) – JavaScript principal (~12KB gzip)
+[squeleton-scripts.v4.min.js](https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js) – JavaScript secundário (~18KB gzip)
 
 **Consulta direta ao CSS:** Em caso de dúvida sobre a existência de uma classe específica ou para ter uma visão completa da estrutura do framework, consulte diretamente o arquivo `squeleton.v4.css` (versão não-minificada). Isso permite verificar todas as classes disponíveis, seus valores exatos e a organização das media queries.
 
