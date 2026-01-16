@@ -1,0 +1,266 @@
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Squeleton2Bricks - Convert HTML, CSS & JS to Bricks Builder Format</title>
+  <meta name="description"
+    content="Squeleton2Bricks is a powerful tool that converts your HTML, CSS, and JavaScript code into Bricks Builder format, making web development faster and more efficient." />
+  <meta name="keywords"
+    content="code converter, bricks builder, html to bricks, css to bricks, web development tool, Squeleton2Bricks" />
+  <meta name="author" content="Squeleton2Bricks" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://hiperwp.com.br/squeleton/favicon.webp" />
+  <link rel="apple-touch-icon" href="https://hiperwp.com.br/squeleton/favicon.webp" />
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hiperwp.com.br/squeleton/bricks/" />
+  <meta property="og:title" content="Skeleton2Bricks - Transforme seu código Skeleton em formato Bricks Builder" />
+  <meta property="og:description"
+    content="Transforme seu código Skeleton em formato Bricks Builder com o Skeleton2Bricks. Uma ferramenta poderosa para desenvolvedores web otimizarem seu fluxo de trabalho." />
+  <meta property="og:image" content="assets/images/Squeleton2Bricks_preview.jpg" />
+
+  <!-- External libs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.2/Sortable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/css/css.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/format/formatting.min.js"></script>
+
+  <!-- CodeMirror UX add-ons – safe append -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closetag.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/selection/active-line.min.js"></script>
+  <!-- Moved search addon to load before app.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/search/searchcursor.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/search/search.min.js"></script>
+
+  <script src="https://unpkg.com/split.js/dist/split.min.js  "></script>
+  <script src="https://unpkg.com/@popperjs/core@2  "></script>
+  <script src="https://unpkg.com/tippy.js@6  "></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css" />
+  <link rel="stylesheet" href="assets/css/main.css?ver=1.7.6" />
+</head>
+
+<body>
+  <div id="app-container">
+    <header class="main-header">
+      <!-- START: New left-side wrapper for logo and new buttons -->
+      <div class="header-left">
+        <h1 class="code-heading">
+          <span class="tag open">
+            <svg width="22" height="27" viewBox="0 0 22 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M21.3542 23.3541L6.57292 13.4999L21.3542 3.64575L19.5625 0.958252L0.750006 13.4999L19.5625 26.0416L21.3542 23.3541Z"
+                fill="black" />
+            </svg>
+          </span>
+          <span class="hack-text" data-value="Squeleton2Bricks">Squeleton2Bricks</span>
+          <span class="tag close">
+            <svg width="22" height="27" viewBox="0 0 22 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M0.645828 23.3541L15.4271 13.4999L0.645828 3.64575L2.43749 0.958252L21.25 13.4999L2.43749 26.0416L0.645828 23.3541Z"
+                fill="black" />
+            </svg>
+          </span>
+        </h1>
+      </div>
+      <!-- END: New left-side wrapper -->
+      <!-- This is the original right-side container which is now correctly justified to the right -->
+      <div class="header-actions">
+        <div class="css-mode-toggle">
+          <label for="css-style-mode-checkbox">Apply Styles to:</label>
+          <div class="toggle-switch">
+            <input type="checkbox" id="css-style-mode-checkbox" checked />
+            <span class="slider"></span>
+            <span class="label-element">Raw CSS</span>
+            <span class="label-global">GUI</span>
+          </div>
+        </div>
+        <div class="css-mode-toggle">
+          <label for="css-mode-checkbox">Apply Class to:</label>
+          <div class="toggle-switch">
+            <input type="checkbox" id="css-mode-checkbox" checked />
+            <span class="slider"></span>
+            <span class="label-element">Element</span>
+            <span class="label-global">Global Class</span>
+          </div>
+        </div>
+        
+        <!-- NEW: Dependencies button -->
+        <button id="dependencies-btn" class="dependencies-btn disabled" >
+          <i id="icon-dependencies" class="icon"></i>
+          Dependencies
+          <span id="dependency-badge" class="dependency-badge hidden">0</span>
+        </button>
+        
+        <!-- Dependencies Lock Button -->
+        <button id="lock-dependencies-btn" class="icon-btn-tertiary" title="Lock dependencies">
+          <i id="icon-lock" class="icon"></i>
+        </button>
+        
+        <button id="copy-bricks-btn" class="btn btn-primary">
+          Copy Bricks structure
+        </button>
+      </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+      <div id="code-panel" class="panel code-panel">
+        <header class="panel-header">
+          <div class="panel-title">Code editor</div>
+          <div class="panel-actions">
+            <button id="run-code-btn" class="btn btn-secondary">
+              Run code
+            </button>
+            <button id="clear-code-btn" class="btn btn-danger">Clear</button>
+          </div>
+        </header>
+        <div id="code-editors-wrapper" class="code-editors-wrapper">
+          <div id="html-editor-container" class="editor-container">
+            <div class="editor-header">
+              <div class="editor-title">
+                <i id="icon-html" class="icon"></i> HTML
+              </div>
+              <div class="editor-actions">
+                <!-- Auto-scroll checkbox with unified design -->
+                <label class="checkbox-label" for="auto-html-scroll">
+                  <div class="checkbox-container">
+                    <input type="checkbox" id="auto-html-scroll" class="primary-checkbox" checked />
+                    <label for="auto-html-scroll" class="primary-checkbox-label"></label>
+                  </div>
+                  <span>Auto-scroll</span>
+                </label>
+                <!-- Disable highlights checkbox with unified design -->
+                <label class="checkbox-label" for="disable-preview-highlights">
+                  <div class="checkbox-container">
+                    <input type="checkbox" id="disable-preview-highlights" class="primary-checkbox" />
+                    <label for="disable-preview-highlights" class="primary-checkbox-label"></label>
+                  </div>
+                  <span>Disable Highlights</span>
+                </label>
+                <button id="format-html-btn" class="format-btn">
+                  <i id="icon-format" class="icon"></i> Format
+                </button>
+              </div>
+            </div>
+            <textarea id="html-editor"></textarea>
+          </div>
+          <div id="css-editor-container" class="editor-container">
+            <div class="editor-header">
+              <div class="editor-title">
+                <i id="icon-css" class="icon"></i> CSS
+              </div>
+              <button id="format-css-btn" class="format-btn">
+                <i id="icon-format-css" class="icon"></i> Format
+              </button>
+            </div>
+            <textarea id="css-editor"></textarea>
+          </div>
+          <div id="js-editor-container" class="editor-container">
+            <div class="editor-header">
+              <div class="editor-title">
+                <i id="icon-js" class="icon"></i> JavaScript
+              </div>
+              <button id="format-js-btn" class="format-btn">
+                <i id="icon-format-js" class="icon"></i> Format
+              </button>
+            </div>
+            <textarea id="js-editor"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div id="preview-panel" class="panel preview-panel">
+        <iframe id="preview-iframe" title="Code Preview"></iframe>
+      </div>
+
+      <div id="layers-panel" class="panel layers-panel">
+        <header class="panel-header">
+          <h3 class="panel-title">Layers</h3>
+          <div class="layer-actions">
+            <div class="select-all-container">
+              <input type="checkbox" id="select-all-checkbox" class="primary-checkbox"
+                aria-label="Select/Deselect All" />
+              <label for="select-all-checkbox" class="primary-checkbox-label"></label>
+            </div>
+            <!-- UNDO/REDO BUTTONS -->
+            <button class="icon-btn" id="undo-btn" disabled></button>
+            <button class="icon-btn" id="redo-btn" disabled></button>
+            <button class="icon-btn" id="toggle-all-btn">
+              <i id="icon-expand" class="icon"></i>
+              <i id="icon-collapse" class="icon"></i>
+            </button>
+            <button class="icon-btn" id="delete-selected-layer-btn">
+              <i id="icon-delete-layer" class="icon"></i>
+            </button>
+          </div>
+        </header>
+        <div id="panel-content" class="panel-content">
+          <ul id="layer-tree" class="layer-tree"></ul>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Context, Toast, Modal containers (unchanged) -->
+  <div id="context-menu" class="context-menu">
+    <ul>
+      <li data-action="rename">Rename</li>
+      <li data-action="duplicate">Duplicate</li>
+      <li data-action="copy-json">Copy Element JSON</li>
+      <li data-action="view-html">View HTML</li>
+      <li data-action="view-css">View CSS</li>
+      <li class="separator"></li>
+      <li data-action="delete" class="danger">Delete</li>
+    </ul>
+  </div>
+  <div id="toast-container"></div>
+  <div id="modal-overlay" class="modal-overlay">
+    <div id="modal-content" class="modal-content"></div>
+  </div>
+
+  <div id="clear-modal-overlay" class="modal-overlay">
+    <div class="modal-content modal-content-small">
+      <div class="modal-header">
+        <h2 class="modal-title">Clear all code?</h2>
+        <button class="modal-close-btn" data-close-clear-modal>×</button>
+      </div>
+      <div class="modal-body clear-modal-body">
+        This will permanently erase everything in the HTML, CSS and JS
+        editors.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-close-clear-modal>
+          Cancel
+        </button>
+        <button id="confirm-clear-btn" class="btn btn-danger">Clear</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- --- START: ADD NEW MODAL CONTAINERS --- -->
+  <div id="support-modal-overlay" class="modal-overlay">
+    <!-- Content will be injected by JS -->
+  </div>
+
+  <div id="info-modal-overlay" class="modal-overlay">
+    <!-- Content will be injected by JS -->
+  </div>
+  <!-- --- END: ADD NEW MODAL CONTAINERS --- -->
+
+  <script type="module" src="assets/js/main.js?ver=1.7.6"></script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+/**
+ * Components - Tooltip System (Tippy.js themes)
+ */
+
+/* Default translucent theme */
+.tippy-box[data-theme~="translucent"] {
+  background-color: var(--bg-overlay);
+  color: var(--text-primary);
+  border: 1px solid var(--border-primary);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+  padding: var(--space-2) var(--space-3);
+}
+
+.tippy-box[data-theme~="translucent"][data-placement^="top"]
+  > .tippy-arrow::before {
+  border-top-color: var(--bg-overlay);
+}
+
+.tippy-box[data-theme~="translucent"][data-placement^="bottom"]
+  > .tippy-arrow::before {
+  border-bottom-color: var(--bg-overlay);
+}
+
+.tippy-box[data-theme~="translucent"][data-placement^="left"]
+  > .tippy-arrow::before {
+  border-left-color: var(--bg-overlay);
+}
+
+.tippy-box[data-theme~="translucent"][data-placement^="right"]
+  > .tippy-arrow::before {
+  border-right-color: var(--bg-overlay);
+}
+
+/* Danger theme for warnings */
+.tippy-box[data-theme~="translucent-danger"] {
+  background-color: rgba(15, 23, 42, 0.9);
+  color: var(--state-error);
+  border: 1px solid var(--color-error-700);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+  padding: var(--space-2) var(--space-3);
+}
+
+.tippy-box[data-theme~="translucent-danger"][data-placement^="top"]
+  > .tippy-arrow::before {
+  border-top-color: rgba(15, 23, 42, 0.9);
+}
+
+.tippy-box[data-theme~="translucent-danger"][data-placement^="bottom"]
+  > .tippy-arrow::before {
+  border-bottom-color: rgba(15, 23, 42, 0.9);
+}
+
+.tippy-box[data-theme~="translucent-danger"][data-placement^="left"]
+  > .tippy-arrow::before {
+  border-left-color: rgba(15, 23, 42, 0.9);
+}
+
+.tippy-box[data-theme~="translucent-danger"][data-placement^="right"]
+  > .tippy-arrow::before {
+  border-right-color: rgba(15, 23, 42, 0.9);
+}

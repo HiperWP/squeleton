@@ -1,0 +1,78 @@
+/**
+ * Components - Hacker Logo Effect
+ */
+
+.code-heading {
+  display: flex;
+  align-items: center;
+  font-family: "Space Mono", monospace;
+  font-size: 24px;
+  color: var(--text-primary);
+  cursor: pointer;
+  user-select: none;
+  transition: all var(--transition-fast);
+}
+
+.code-heading svg path {
+    fill: currentColor;
+  }
+
+.code-heading .tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.code-heading:hover .tag.open {
+  transform: translateX(-5px);
+}
+
+.code-heading:hover .tag.close {
+  transform: translateX(5px);
+}
+
+/* Color for the opening tag */
+.tag.open {
+  color: #ff8c00; /* Orange */
+}
+
+/* Color for the closing tag */
+.tag.close {
+  color: #32cd32; /* Lime */
+}
+
+.hack-text {
+  margin: 0 var(--space-2);
+  font-weight: 700;
+  letter-spacing: normal;
+}
+
+/* SVG sizing */
+.code-heading .tag svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Responsive adjustments */
+/* @media (max-width: 768px) {
+  .code-heading {
+    font-size: 1.8em;
+  }
+
+  .code-heading .tag svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .code-heading {
+    font-size: 1.4em;
+  }
+
+  .code-heading .tag svg {
+    width: 20px;
+    height: 20px;
+  }
+} */

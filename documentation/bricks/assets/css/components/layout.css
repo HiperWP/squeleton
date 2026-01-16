@@ -1,0 +1,167 @@
+/**
+ * Components - Layout System
+ */
+
+/* Main application container */
+#app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  height: 100vh;
+}
+
+/* Header */
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-6);
+  height: 60px;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-primary);
+  flex-shrink: 0;
+}
+
+/* Header title is now handled by the logo component */
+
+.header-actions {
+  display: flex;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+/* Main content area */
+.main-content {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+/* Panels */
+.panel {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-panel);
+  overflow: hidden;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--space-4);
+  height: 50px;
+  background-color: var(--bg-panel-header);
+  border-bottom: 1px solid var(--border-primary);
+  flex-shrink: 0;
+}
+
+.panel-title {
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+  white-space: nowrap;
+  margin-right: auto;
+  color: var(--text-primary);
+}
+
+.panel-actions,
+.layer-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.panel-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: var(--space-2);
+}
+
+/* Splitter */
+.gutter {
+  background-color: var(--bg-primary);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transition: background-color var(--transition-fast);
+}
+
+.gutter:hover {
+  background-color: var(--border-primary);
+}
+
+.gutter.gutter-horizontal {
+  cursor: col-resize;
+}
+
+.gutter.gutter-vertical {
+  cursor: row-resize;
+}
+
+/* Specific panel configurations */
+.code-panel {
+  min-width: 300px;
+}
+
+.preview-panel {
+  background-color: var(--color-white);
+  min-width: 300px;
+}
+
+.layers-panel {
+  min-width: 250px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.layers-panel .panel-content {
+  padding-block-start: 12px;
+  padding-block-end: 24px;
+}
+
+/* Utility classes */
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+.items-center {
+  align-items: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-center {
+  justify-content: center;
+}
+.flex-grow {
+  flex-grow: 1;
+}
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+/* Spacing utilities */
+.gap-1 {
+  gap: var(--space-1);
+}
+.gap-2 {
+  gap: var(--space-2);
+}
+.gap-3 {
+  gap: var(--space-3);
+}
+.gap-4 {
+  gap: var(--space-4);
+}
+.gap-6 {
+  gap: var(--space-6);
+}
+.gap-8 {
+  gap: var(--space-8);
+}

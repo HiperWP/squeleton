@@ -1,0 +1,100 @@
+/**
+ * Base - Typography System
+ */
+
+/* Font sizes */
+.text-xs {
+  font-size: var(--text-xs);
+  line-height: var(--text-xs-lh);
+}
+.text-sm {
+  font-size: var(--text-sm);
+  line-height: var(--text-sm-lh);
+}
+.text-base {
+  font-size: var(--text-base);
+  line-height: var(--text-base-lh);
+}
+.text-lg {
+  font-size: var(--text-lg);
+  line-height: var(--text-lg-lh);
+}
+.text-xl {
+  font-size: var(--text-xl);
+  line-height: var(--text-xl-lh);
+}
+.text-2xl {
+  font-size: var(--text-2xl);
+  line-height: var(--text-2xl-lh);
+}
+
+/* Font weights */
+.font-normal {
+  font-weight: var(--font-normal);
+}
+.font-medium {
+  font-weight: var(--font-medium);
+}
+.font-semibold {
+  font-weight: var(--font-semibold);
+}
+.font-bold {
+  font-weight: var(--font-bold);
+}
+
+/* Text colors */
+.text-primary {
+  color: var(--text-primary);
+}
+.text-secondary {
+  color: var(--text-secondary);
+}
+.text-tertiary {
+  color: var(--text-tertiary);
+}
+.text-muted {
+  color: var(--text-muted);
+}
+.text-accent {
+  color: var(--accent-primary);
+}
+.text-success {
+  color: var(--state-success);
+}
+.text-warning {
+  color: var(--state-warning);
+}
+.text-error {
+  color: var(--state-error);
+}
+
+/* Text alignment */
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+/* Text utilities */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+.text-wrap {
+  white-space: normal;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--accent-primary);
+  color: var(--color-white);
+}
