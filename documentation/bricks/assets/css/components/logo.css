@@ -5,8 +5,7 @@
 .code-heading {
   display: flex;
   align-items: center;
-  font-family: "Space Mono", monospace;
-  font-size: 24px;
+  font-size: 22px;
   color: var(--text-primary);
   cursor: pointer;
   user-select: none;
