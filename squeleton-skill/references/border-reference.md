@@ -1,30 +1,39 @@
 # Border Reference
 
-## Border Completo
+## Sufixos de Direção
+
+| Sufixo | Aplicação |
+|--------|-----------|
+| `-all` | Todos os lados |
+| `-t` | Top |
+| `-b` | Bottom |
+| `-l` | Left |
+| `-r` | Right |
+| `-tb` | Top + Bottom |
+| `-lr` | Left + Right |
+
+---
+
+## Border (aplicar borda)
 
 ```
-border-all (border: 1px solid)
-```
-
-## Border por Lado
-
-```
-border-t (border-t: 1px solid)
-border-b (border-b: 1px solid)
-border-l (border-l: 1px solid)
-border-r (border-r: 1px solid)
-border-lr (border-l + border-r: 1px solid)
-border-tb (border-t + border-b: 1px solid)
+border-all    → border: 1px solid
+border-t      → border-top: 1px solid
+border-b      → border-bottom: 1px solid
+border-l      → border-left: 1px solid
+border-r      → border-right: 1px solid
+border-tb     → border-top + border-bottom: 1px solid
+border-lr     → border-left + border-right: 1px solid
 ```
 
 ## Border Width
 
 ```
-border-w-1 (1px)
-border-w-2 (2px)
-border-w-3 (3px)
-border-w-4 (4px)
-border-w-5 (5px)
+border-w-1    → 1px
+border-w-2    → 2px
+border-w-3    → 3px
+border-w-4    → 4px
+border-w-5    → 5px
 ```
 
 ## Border Style
@@ -41,104 +50,96 @@ border-transparent
 ## Remover Border
 
 ```
-border-0-t
-border-0-b
-border-0-l
-border-0-r
-border-0-all
+border-0-t, border-0-b, border-0-l, border-0-r, border-0-all
 ```
 
 Responsivos:
 ```
-xs-border-0-t, xs-border-0-b, xs-border-0-l, xs-border-0-r, xs-border-0-all
-sm-border-0-t, sm-border-0-b, sm-border-0-l, sm-border-0-r, sm-border-0-all
-md-border-0-t, md-border-0-b, md-border-0-l, md-border-0-r, md-border-0-all
+{xs|sm|md}-border-0-{t|b|l|r|all}
 ```
+
+---
 
 ## Border Radius
 
-### Valores 1-20
+### Todos os cantos (0-20px, de 1 em 1)
 
 ```
-border-rd-1 (1px)
-border-rd-2 (2px)
-border-rd-3 (3px)
-border-rd-4 (4px)
-border-rd-5 (5px)
-border-rd-6 (6px)
-border-rd-7 (7px)
-border-rd-8 (8px)
-border-rd-9 (9px)
-border-rd-10 (10px)
-border-rd-11 (11px)
-border-rd-12 (12px)
-border-rd-13 (13px)
-border-rd-14 (14px)
-border-rd-15 (15px)
-border-rd-16 (16px)
-border-rd-17 (17px)
-border-rd-18 (18px)
-border-rd-19 (19px)
-border-rd-20 (20px)
+border-rd-{0-20}    → 0px até 20px
+```
+
+Responsivos:
+```
+{xs|sm|md}-border-rd-{0-20}
 ```
 
 ### Circular
 
 ```
-border-rd-50 (50%)
-border-rd-100 (50%)
-img-circle (50%)
+border-rd-50     → 50%
+border-rd-100    → 50%
 ```
 
-### Cantos Específicos - Top
-
+Responsivos:
 ```
-border-rd-4-t (top-l + top-r: 4px)
-border-rd-6-t (top-l + top-r: 6px)
-border-rd-8-t (top-l + top-r: 8px)
-border-rd-10-t (top-l + top-r: 10px)
-border-rd-12-t (top-l + top-r: 12px)
+{xs|sm|md}-border-rd-100
 ```
 
-### Cantos Específicos - Bottom
+### Cantos superiores (valores pares: 0, 2, 4... 20)
 
 ```
-border-rd-4-b (bottom-l + bottom-r: 4px)
-border-rd-6-b (bottom-l + bottom-r: 6px)
-border-rd-8-b (bottom-l + bottom-r: 8px)
-border-rd-10-b (bottom-l + bottom-r: 10px)
-border-rd-12-b (bottom-l + bottom-r: 12px)
+border-rd-{valor}-t    → border-top-left-radius + border-top-right-radius
 ```
+
+Responsivos:
+```
+{xs|sm|md}-border-rd-{0|2|4|6|8|10|12|14|16|18|20}-t
+```
+
+### Cantos inferiores (valores pares: 0, 2, 4... 20)
+
+```
+border-rd-{valor}-b    → border-bottom-left-radius + border-bottom-right-radius
+```
+
+Responsivos:
+```
+{xs|sm|md}-border-rd-{0|2|4|6|8|10|12|14|16|18|20}-b
+```
+
+---
 
 ## Opacity
 
 ```
-opacity-1 (0.15)
-opacity-2 (0.25)
-opacity-3 (0.35)
-opacity-4 (0.45)
-opacity-5 (0.55)
-opacity-6 (0.65)
-opacity-7 (0.75)
-opacity-8 (0.85)
-opacity-9 (0.9)
+opacity-1    → 0.15
+opacity-2    → 0.25
+opacity-3    → 0.35
+opacity-4    → 0.45
+opacity-5    → 0.55
+opacity-6    → 0.65
+opacity-7    → 0.75
+opacity-8    → 0.85
+opacity-9    → 0.9
 ```
 
 ## Opacity Background (overlay absoluto)
 
 ```
-opacity-bg-0 (1)
-opacity-bg-1 (0.9)
-opacity-bg-2 (0.85)
-opacity-bg-3 (0.75)
-opacity-bg-4 (0.65)
-opacity-bg-5 (0.55)
-opacity-bg-6 (0.45)
-opacity-bg-7 (0.35)
-opacity-bg-8 (0.25)
-opacity-bg-9 (0.15)
-opacity-bg-10 (0)
+opacity-bg-0     → opacity: 1 (opaco)
+opacity-bg-1     → opacity: 0.9
+opacity-bg-2     → opacity: 0.85
+opacity-bg-3     → opacity: 0.75
+opacity-bg-4     → opacity: 0.65
+opacity-bg-5     → opacity: 0.55
+opacity-bg-6     → opacity: 0.45
+opacity-bg-7     → opacity: 0.35
+opacity-bg-8     → opacity: 0.25
+opacity-bg-9     → opacity: 0.15
+opacity-bg-10    → opacity: 0 (transparente)
 ```
+
+---
 
 ## Z-Index
 
@@ -151,8 +152,10 @@ z-index-4
 z-index-5
 z-index-111
 z-index-1111
-z-index-minus-2 (-2)
+z-index-minus-2    → -2
 ```
+
+---
 
 ## Exemplos de Uso
 
@@ -173,6 +176,11 @@ z-index-minus-2 (-2)
 <!-- Tab com radius só em cima -->
 <div class="border-rd-8-t border-all border-0-b">
     Tab ativa
+</div>
+
+<!-- Border radius responsivo: 12px desktop, 8px tablet, 4px mobile -->
+<div class="border-rd-12 md-border-rd-8 xs-border-rd-4">
+    Card responsivo
 </div>
 
 <!-- Overlay escuro sobre imagem -->

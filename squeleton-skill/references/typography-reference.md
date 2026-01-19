@@ -9,12 +9,7 @@ text-right
 text-justify
 ```
 
-Responsivos:
-```
-md-text-left, md-text-center, md-text-right
-sm-text-left, sm-text-center, sm-text-right
-xs-text-left, xs-text-center, xs-text-right
-```
+Responsivos: `{xs|sm|md}-text-*`
 
 ## Text Transform
 
@@ -66,6 +61,8 @@ fs-14  (34px → 40px)         Headline
 fs-15  (40px → 48px)         Hero
 fs-16  (52px → 64px)         Display
 ```
+
+Responsivos: `{xs|sm|md}-fs-{1-16}`
 
 **Exemplos**:
 ```html
@@ -127,6 +124,9 @@ ls-minus-3 (-3px)
 ## Line Height
 
 ```
+lh-0-7 (0.7)
+lh-0-8 (0.8)
+lh-0-9 (0.9)
 lh-1-0 (1.0)
 lh-1-1 (1.1)
 lh-1-2 (1.2)
@@ -139,12 +139,7 @@ lh-1-8 (1.8)
 lh-1-9 (1.9)
 ```
 
-Responsivos:
-```
-md-lh-1-0, md-lh-1-1, md-lh-1-2, md-lh-1-3, md-lh-1-4, md-lh-1-5, md-lh-1-6, md-lh-1-7, md-lh-1-8, md-lh-1-9
-sm-lh-1-0, sm-lh-1-1, sm-lh-1-2, sm-lh-1-3, sm-lh-1-4, sm-lh-1-5, sm-lh-1-6, sm-lh-1-7, sm-lh-1-8, sm-lh-1-9
-xs-lh-1-0, xs-lh-1-1, xs-lh-1-2, xs-lh-1-3, xs-lh-1-4, xs-lh-1-5, xs-lh-1-6, xs-lh-1-7, xs-lh-1-8, xs-lh-1-9
-```
+Responsivos: `{xs|sm|md}-lh-{valor}` (mesmos valores acima)
 
 ## White Space
 

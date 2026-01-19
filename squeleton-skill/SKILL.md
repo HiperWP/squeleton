@@ -426,14 +426,15 @@ Consulte `references/flex-reference.md` para mais informações e exemplos.
 - `.border-none`, `.border-hidden`, `.border-transparent`
 
 **Remover Border**:
-- `.border-0-all`, `.border-0-t`, `.border-0-b`, `.border-0-l`, `.border-0-r`
-- Breakpoints: `xs-border-0-{t|b|l|r|all}`, `sm-border-0-{t|b|l|r|all}`, `md-border-0-{t|b|l|r|all}`
+- `.border-0-{t|b|l|r|all}`
+- Responsivos: `{xs|sm|md}-border-0-*`
 
 **Border Radius**:
-- `.border-rd-{1-20}` - 1px a 20px
-- `.border-rd-50`, `.border-rd-100`, `.img-circle` - circular (50%)
-- `.border-rd-{4|6|8|10|12}-t` - só cantos superiores
-- `.border-rd-{4|6|8|10|12}-b` - só cantos inferiores
+- `.border-rd-{0-20}` - 0px a 20px (1 em 1)
+- `.border-rd-50`, `.border-rd-100` - circular (50%)
+- `.border-rd-{valor}-t` - só cantos superiores (valores pares: 0, 2, 4... 20)
+- `.border-rd-{valor}-b` - só cantos inferiores (valores pares: 0, 2, 4... 20)
+- Responsivos: `{xs|sm|md}-border-rd-*` (mesmos padrões acima)
 
 ## Classes Utilitárias de Opacity
 
