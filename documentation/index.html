@@ -963,6 +963,34 @@
 									</tr>
 								</tbody>
 							</table>
+
+							<div class="p-20-t">
+								<h5>Lógica de uso com Grid Mobile-First</h5>
+								<div class="code-block">
+									<textarea class="prism-code" data-lang="markup"><!-- ✅ SEMPRE comece com c-xs-12 -->
+<div class="c-xs-12 c-sm-6 c-md-4 c-lg-3">
+    Extra Small: 100% → Small: 50% → Medium: 33% → Large: 25%
+</div>
+
+<!-- ❌ Nunca omita o breakpoint base -->
+<div class="c-md-6">Falta c-xs-</div></textarea>
+								</div>
+
+								<h5>Lógica de uso com Utilitários Desktop-First</h5>
+								<div class="code-block">
+									<textarea class="prism-code" data-lang="markup"><!-- ✅ Escreva para desktop, ajuste para mobile -->
+<div class="p-60-tb xs-p-30-tb">
+    Desktop: 60px | Mobile: 30px
+</div>
+
+<!-- ❌ Não existe lg- porque desktop já é o padrão -->
+<div class="d-flex xs-d-block">
+	Flex em desktop, block em mobile
+</div>
+									</textarea>
+								</div>
+							</div>
+
 						</div>
 					</section>
 
@@ -996,7 +1024,7 @@
 							</div>
 
 							<div class="p-30-t">
-								<h5>Demonstração Visual:</h5>
+								<h5>Demonstração Visual</h5>
 								<div class="row gap-5 text-center">
 									<div class="c-xs-1">
 										<div class="alert-info border-rd-8 p-10-tb">1</div>
@@ -1077,31 +1105,6 @@
 								</div>
 							</div>
 
-							<div class="p-30-t">
-								<h5>⚡ Grid Mobile-First (colunas):</h5>
-								<div class="code-block">
-									<textarea class="prism-code" data-lang="markup"><!-- ✅ SEMPRE comece com c-xs-12 -->
-<div class="c-xs-12 c-sm-6 c-md-4 c-lg-3">
-    Extra Small: 100% → Small: 50% → Medium: 33% → Large: 25%
-</div>
-
-<!-- ❌ Nunca omita o breakpoint base -->
-<div class="c-md-6">Falta c-xs-</div></textarea>
-								</div>
-							</div>
-
-							<div class="p-30-t">
-								<h5>⚡ Utilitários Desktop-First:</h5>
-								<div class="code-block">
-									<textarea class="prism-code" data-lang="markup"><!-- ✅ Escreva para desktop, ajuste para mobile -->
-<div class="p-60-tb xs-p-30-tb">
-    Desktop: 60px | Mobile: 30px
-</div>
-
-<!-- ❌ Não existe lg- porque desktop já é o padrão -->
-<div class="d-flex xs-d-block">Flex em desktop, block em mobile</div></textarea>
-								</div>
-							</div>
 						</div>
 
 						<div class="feature-card m-20-b">
@@ -1164,7 +1167,7 @@
 							</div>
 
 							<div class="p-20-t">
-								<h5>Demonstração Visual:</h5>
+								<h5>Demonstração Visual</h5>
 								<div class="row gap-15">
 									<div class="c-xs-12 c-md-6">
 										<div class="demo-box">
@@ -1223,7 +1226,7 @@
 							</div>
 
 							<div class="p-20-t">
-								<h5>Exemplos de uso de Gap com Grid Responsivo:</h5>
+								<h5>Exemplos de uso de Gap com Grid Responsivo</h5>
 								<div class="code-block">
 									<textarea class="prism-code" data-lang="markup"><!-- Gap padrão (15px) - Uso geral -->
 <div class="container">
@@ -1417,7 +1420,7 @@ class="xs-p-10-all md-p-20-tb sm-m-10-lr"</textarea>
 							</div>
 
 							<div class="p-20-t">
-								<h5>Demonstração Visual:</h5>
+								<h5>Demonstração Visual</h5>
 								<div class="row f-items-center">
 									<div class="c-xs-12 c-md-4">
 										<div class="demo-box">
@@ -1606,7 +1609,7 @@ Altura total da viewport
 							</div>
 
 							<div class="p-20-t">
-								<h5>Demonstração Visual:</h5>
+								<h5>Demonstração Visual</h5>
 								<div class="row f-items-center">
 									<div class="c-xs-12 c-md-4">
 										<div class="demo-box">
@@ -1939,7 +1942,7 @@ Altura total da viewport
 							</div>
 
 							<div class="p-20-t">
-								<h5>Demonstração Visual:</h5>
+								<h5>Demonstração Visual</h5>
 								<div class="row gap-15">
 									<div class="c-xs-12 c-md-6">
 										<div class="demo-box">
@@ -2019,7 +2022,7 @@ Altura total da viewport
 							</div>
 
 							<div class="p-20-t">
-								<h5>Referência Rápida - Classes Essenciais:</h5>
+								<h5>Referência Rápida - Classes Essenciais</h5>
 								<div class="code-block">
 									<textarea class="prism-code" data-lang="markup"><!-- Container -->
 .d-flex             /* Display Flexbox */
@@ -2100,7 +2103,7 @@ Altura total da viewport
 							</div>
 
 							<div class="p-20-t">
-								<h5>Demonstração Visual:</h5>
+								<h5>Demonstração Visual</h5>
 								<div class="row">
 									<div class="c-xs-12 c-md-4">
 										<div class="demo-box">
@@ -2145,7 +2148,7 @@ Altura total da viewport
 							</div>
 
 							<div class="p-20-t">
-								<h5>Exemplos Práticos:</h5>
+								<h5>Exemplos Práticos</h5>
 								<div class="code-block">
 									<textarea class="prism-code" data-lang="markup"><!-- Cards modernos -->
 <div class="border-rd-12">Card moderno</div>
@@ -2192,7 +2195,7 @@ Altura total da viewport
 							</div>
 
 							<div class="p-20-t">
-								<h5>Demonstração Visual:</h5>
+								<h5>Demonstração Visual</h5>
 								<div class="row">
 									<div class="c-xs-12 c-md-4">
 										<div class="demo-box">
@@ -2225,7 +2228,7 @@ Altura total da viewport
 							</div>
 
 							<div class="p-20-t">
-								<h5>Casos de Uso Práticos:</h5>
+								<h5>Casos de Uso Práticos</h5>
 								<div class="code-block">
 									<textarea class="prism-code" data-lang="markup"><!-- Overlays e modais -->
 <div class="opacity-3">Overlay escuro</div>
@@ -2283,7 +2286,7 @@ Altura total da viewport
 							</div>
 
 							<div class="p-20-t">
-								<h5>Demonstração Visual:</h5>
+								<h5>Demonstração Visual</h5>
 								<div class="demo-box">
 									<div class="fs-1 m-5-b">fs-1: Micro label (10px)</div>
 									<div class="fs-3 m-5-b">fs-3: Small text (12px)</div>
@@ -2392,7 +2395,7 @@ Altura total da viewport
 							</div>
 
 							<div class="p-20-t">
-								<h5>Demonstração Visual:</h5>
+								<h5>Demonstração Visual</h5>
 								<div class="row gap-15">
 									<div class="c-xs-12 c-md-6 m-15-b">
 										<div class="demo-box">
@@ -2442,7 +2445,7 @@ Altura total da viewport
 							</div>
 
 							<div class="p-20-t">
-								<h5>Exemplos Práticos:</h5>
+								<h5>Exemplos Práticos</h5>
 								<div class="code-block">
 									<textarea class="prism-code" data-lang="markup"><!-- Títulos e logotipos -->
 <h1 class="ls-5 fw-700">LOGOTIPO</h1>
@@ -2675,9 +2678,9 @@ Altura total da viewport
 							</div>
 
 							<div class="p-20-t">
-								<h5>Categorias Completas:</h5>
-								<div class="row">
-									<div class="c-xs-12 c-md-6">
+								<h5>Categorias Completas</h5>
+								<div class="row sm-gap-5">
+									<div class="c-xs-12 c-sm-6">
 										<ul class="list-style">
 											<li><strong>Navegação:</strong> arrows, chevrons, points</li>
 											<li><strong>Interface:</strong> home, user, settings, menu</li>
@@ -2685,7 +2688,7 @@ Altura total da viewport
 											<li><strong>Mídia:</strong> play, pause, stop, volume</li>
 										</ul>
 									</div>
-									<div class="c-xs-12 c-md-6">
+									<div class="c-xs-12 c-sm-6">
 										<ul class="list-style">
 											<li><strong>Comércio:</strong> cart, money, credit, ticket</li>
 											<li><strong>Arquivo:</strong> file, folder, download, upload</li>
