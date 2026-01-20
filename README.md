@@ -33,13 +33,13 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 ## Instalação Via CDN
 
 ```html
-<!-- CSS (no <head>) -->
+<!-- CSS (Head) -->
 <link rel="stylesheet" href="https://cdn.squeleton.dev/squeleton.v4.min.css">
 
-<!-- JavaScript Principal (no <head>) -->
+<!-- JavaScript (Head) -->
 <script src="https://cdn.squeleton.dev/squeleton-main.v4.min.js"></script>
 
-<!-- JavaScript Scripts (antes do </body>) -->
+<!-- JavaScript (Footer) -->
 <script src="https://cdn.squeleton.dev/squeleton-scripts.v4.min.js"></script>
 ```
 
@@ -64,8 +64,8 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 </head>
 <body>
     <section class="p-80-tb">          <!-- Section Flex -->
-        <div class="container">          <!-- Container responsivo -->
-            <div class="row">            <!-- Linha Flex -->
+        <div class="container">        <!-- Container responsivo -->
+            <div class="row">          <!-- Linha Flex -->
                 <div class="c-xs-12 c-md-8">
                     Conteúdo Principal
                 </div>
