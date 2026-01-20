@@ -19,13 +19,16 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 - **Kit de Ícones**: 300+ ícones vetoriais customizados com IcoMoon
 - **Performance**: Otimizado para 99+ no PageSpeed Insights
 - **Zero Configuração**: Adicione via CDN e comece a usar imediatamente
+- **IA-Ready**: Skill dedicada para desenvolvimento com Claude Code e outras IAs
+- **Bricks Builder**: Conversor Squeleton2Bricks para integração com WordPress
 
 ## Documentação
 
 - **[Documentação Web](https://hiperwp.com.br/squeleton/)** - Guias interativos e exemplos
 - **[Guias de Referência](squeleton-skill/SKILL.md)** - 15 guias detalhados para Skill sobre cada recurso
-- **[squeleton-skill.zip](https://github.com/HiperWP/squeleton/raw/refs/heads/main/skills/squeleton-skill.zip)** - Arquivo Skill em formato .zip para desenvolvimento com Claude Code e outras IAs
 - **[Biblioteca de Ícones](https://hiperwp.com.br/squeleton/icones/)** - Lista de ícones disponíveis
+- **[Squeleton2Bricks](https://squeleton.dev/bricks/)** - Conversor de código Squeleton para JSON do Bricks Builder
+- **[squeleton-skill.zip](https://github.com/HiperWP/squeleton/raw/refs/heads/main/skills/squeleton-skill.zip)** - Arquivo Skill em formato .zip para desenvolvimento com Claude Code e outras IAs
 
 ## Instalação Via CDN
 
@@ -278,6 +281,30 @@ Ao instalar esta skill, a IA ganha:
 3. **Desenvolva com IA**: A IA agora conhece todo o Squeleton e priorizará suas classes e componentes ao invés de criar CSS e JS personalizado
 
 Para mais detalhes sobre Skills, consulte a [documentação do Claude Agent SDK](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) ou do seu assistente de IA preferido.
+
+</details>
+
+<details>
+<summary><strong>Como usar Squeleton no WordPress e manter a edição visual?</strong></summary>
+
+Para essa finalidade foi desenvolvido o **[Squeleton2Bricks](https://squeleton.dev/bricks/)**, um conversor online que transforma HTML com classes Squeleton em JSON pronto para colar no Bricks Builder, o melhor editor de páginas do WordPress!
+
+### Fluxo de trabalho
+
+1. Crie seu layout com Squeleton (manualmente ou via IA com squeleton-skill)
+2. Cole o código no conversor
+3. Copie o JSON gerado e cole no Bricks Builder
+4. Continue editando visualmente no WordPress
+
+### Recursos do conversor
+
+| Recurso | Descrição |
+|---------|-----------|
+| Conversão instantânea | Cole HTML e obtenha JSON imediatamente |
+| Painel de camadas | Reordene e renomeie elementos com drag-and-drop |
+| Sincronização tripla | Clique na pré-visualização para destacar no código |
+| Edição de CSS | Botão direito nas camadas para editar estilos |
+| Nomeação automática | Camadas nomeadas com base em classes e IDs |
 
 </details>
 
