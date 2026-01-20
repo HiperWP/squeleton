@@ -24,7 +24,7 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 
 - **[Documentação Web](https://hiperwp.com.br/squeleton/)** - Guias interativos e exemplos
 - **[Guias de Referência](squeleton-skill/SKILL.md)** - 15 guias detalhados para Skill sobre cada recurso
-- **[squeleton-skill.zip](https://github.com/HiperWP/squeleton/raw/refs/heads/main/squeleton-skill.zip)** - Arquivo Skill em formato .zip para desenvolvimento com Claude Code e outras IAs
+- **[squeleton-skill.zip](https://github.com/HiperWP/squeleton/raw/refs/heads/main/skills/squeleton-skill.zip)** - Arquivo Skill em formato .zip para desenvolvimento com Claude Code e outras IAs
 - **[Biblioteca de Ícones](https://hiperwp.com.br/squeleton/icones/)** - Lista de ícones disponíveis
 
 ## Instalação Via CDN
@@ -273,7 +273,7 @@ Ao instalar esta skill, a IA ganha:
 
 ### Como usar?
 
-1. **Baixe a skill**: [squeleton-skill.zip](https://github.com/HiperWP/squeleton/raw/refs/heads/main/squeleton-skill.zip)
+1. **Baixe a skill**: [squeleton-skill.zip](https://github.com/HiperWP/squeleton/raw/refs/heads/main/skills/squeleton-skill.zip)
 2. **Instale no seu IDE** (Claude for VSCode, Cursor, Windsurf, etc.) seguindo a documentação da ferramenta
 3. **Desenvolva com IA**: A IA agora conhece todo o Squeleton e priorizará suas classes e componentes ao invés de criar CSS e JS personalizado
 
