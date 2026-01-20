@@ -87,8 +87,8 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 ```html
 <section class="p-60-tb xs-p-30-tb">
     <div class="container">
-        <h2 class="fs-12 fw-600 text-center m-40-b">Recursos</h2>
-        <div class="row gap-20">
+        <h2 class="fs-12 fw-600 m-40-b">Recursos</h2>
+        <div class="row gap-20 text-center">
             <div class="c-xs-12 c-md-6 c-lg-4">
                 <div class="border-all border-rd-10 p-25-all h-100">
                     <i class="iccon-rocket-1 fs-13 m-15-b d-block"></i>
