@@ -1,9 +1,9 @@
 # Squeleton
 
-[![Version](https://img.shields.io/badge/version-4.1.4-blue.svg)](https://hiperwp.com.br/squeleton/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://hiperwp.com.br/squeleton/#guia)
-[![CSS Framework](https://img.shields.io/badge/framework-CSS-1572B6.svg)](https://hiperwp.com.br/squeleton/)
-[![Vanilla JS](https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E.svg)](https://hiperwp.com.br/squeleton/)
+[![Version](https://img.shields.io/badge/version-4.1.4-blue.svg)](https://squeleton.dev/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://squeleton.dev/#guia)
+[![CSS Framework](https://img.shields.io/badge/framework-CSS-1572B6.svg)](https://squeleton.dev/)
+[![Vanilla JS](https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E.svg)](https://squeleton.dev/)
 [![HTMX](https://img.shields.io/badge/powered%20by-HTMX-3366CC.svg)](https://htmx.org/)
 [![VanJS](https://img.shields.io/badge/reactive-VanJS-00ADD8.svg)](https://vanjs.org/)
 
@@ -24,9 +24,9 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 
 ## Documentação
 
-- **[Documentação Web](https://hiperwp.com.br/squeleton/)** - Guias interativos e exemplos
+- **[Documentação Web](https://squeleton.dev/)** - Guias interativos e exemplos
 - **[Guias de Referência](squeleton-skill/SKILL.md)** - 15 guias detalhados para Skill sobre cada recurso
-- **[Biblioteca de Ícones](https://hiperwp.com.br/squeleton/icones/)** - Lista de ícones disponíveis
+- **[Biblioteca de Ícones](https://squeleton.dev/icones/)** - Lista de ícones disponíveis
 - **[Squeleton2Bricks](https://squeleton.dev/bricks/)** - Conversor de código Squeleton para JSON do Bricks Builder
 - **[squeleton-skill.zip](https://github.com/HiperWP/squeleton/raw/refs/heads/main/skills/squeleton-skill.zip)** - Arquivo Skill em formato .zip para desenvolvimento com Claude Code e outras IAs
 
