@@ -45,21 +45,21 @@ Somente crie CSS ou JavaScript novo quando **não existir** uma classe ou biblio
 
 ```html
 <!-- CSS (Head) -->
-<link rel="stylesheet" href="https://cdn.hiperwp.com.br/squeleton.v4.min.css">
+<link rel="stylesheet" href="https://cdn.squeleton.dev/squeleton.v4.min.css">
 
 <!-- JavaScript (Head) -->
-<script src="https://cdn.hiperwp.com.br/squeleton-main.v4.min.js"></script>
+<script src="https://cdn.squeleton.dev/squeleton-main.v4.min.js"></script>
 
 <!-- JavaScript (Footer) -->
-<script src="https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js"></script>
+<script src="https://cdn.squeleton.dev/squeleton-scripts.v4.min.js"></script>
 ```
 
 ### Arquivos para Download
 
-[squeleton.v4.css](https://cdn.hiperwp.com.br/squeleton.v4.css) – Versão completa para desenvolvimento (~35KB gzip)
-[squeleton.v4.min.css](https://cdn.hiperwp.com.br/squeleton.v4.min.css) – Versão minificada para produção (~25KB gzip)
-[squeleton-main.v4.min.js](https://cdn.hiperwp.com.br/squeleton-main.v4.min.js) – JavaScript principal (~12KB gzip)
-[squeleton-scripts.v4.min.js](https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js) – JavaScript secundário (~18KB gzip)
+[squeleton.v4.css](https://cdn.squeleton.dev/squeleton.v4.css) – Versão completa para desenvolvimento (~35KB gzip)
+[squeleton.v4.min.css](https://cdn.squeleton.dev/squeleton.v4.min.css) – Versão minificada para produção (~25KB gzip)
+[squeleton-main.v4.min.js](https://cdn.squeleton.dev/squeleton-main.v4.min.js) – JavaScript principal (~12KB gzip)
+[squeleton-scripts.v4.min.js](https://cdn.squeleton.dev/squeleton-scripts.v4.min.js) – JavaScript secundário (~18KB gzip)
 
 **Consulta direta ao CSS:** Em caso de dúvida sobre a existência de uma classe específica ou para ter uma visão completa da estrutura do framework, consulte diretamente o arquivo `squeleton.v4.css` (versão não-minificada). Isso permite verificar todas as classes disponíveis, seus valores exatos e a organização das media queries.
 

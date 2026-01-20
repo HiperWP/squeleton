@@ -5,8 +5,8 @@
 import { stripDataC2bId } from '../utils/helpers.js';
 
 // Squeleton Framework - Always loaded in preview
-const squeletonCSS = '<link rel="stylesheet" href="https://cdn.hiperwp.com.br/squeleton.v4.min.css">';
-const squeletonJSFooter = '<script src="https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js"><\/script>';
+const squeletonCSS = '<link rel="stylesheet" href="https://cdn.squeleton.dev/squeleton.v4.min.css">';
+const squeletonJSFooter = '<script src="https://cdn.squeleton.dev/squeleton-scripts.v4.min.js"><\/script>';
 
 export function renderPreview(html, css, js, dom, externalCSS = '', externalJS = '') {
   const iFrameScript = `

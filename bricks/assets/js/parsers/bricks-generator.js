@@ -321,7 +321,7 @@ export function generateBricksJson(layersToProcess, state, cssText, jsText) {
   return {
     content: bricksContent,
     source: "bricksCopiedElements",
-    sourceUrl: "https://Squeleton2Bricks.app",
+    sourceUrl: "https://squeleton.dev",
     version: "1.12.4",
     globalClasses,
     globalElements: [],
@@ -393,7 +393,7 @@ export function generateStructuralBricksJson(layersToProcess, state) {
   return {
     content: bricksContent,
     source: "bricksCopiedElements",
-    sourceUrl: "https://Squeleton2Bricks.app",
+    sourceUrl: "https://squeleton.dev",
     version: "1.12.4",
     globalClasses,
     globalElements: [],

@@ -31,21 +31,21 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 
 ```html
 <!-- CSS (no <head>) -->
-<link rel="stylesheet" href="https://cdn.hiperwp.com.br/squeleton.v4.min.css">
+<link rel="stylesheet" href="https://cdn.squeleton.dev/squeleton.v4.min.css">
 
 <!-- JavaScript Principal (no <head>) -->
-<script src="https://cdn.hiperwp.com.br/squeleton-main.v4.min.js"></script>
+<script src="https://cdn.squeleton.dev/squeleton-main.v4.min.js"></script>
 
 <!-- JavaScript Scripts (antes do </body>) -->
-<script src="https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js"></script>
+<script src="https://cdn.squeleton.dev/squeleton-scripts.v4.min.js"></script>
 ```
 
 ### Arquivos para Download
 
-- [squeleton.v4.css](https://cdn.hiperwp.com.br/squeleton.v4.css) – Versão completa para desenvolvimento (~35KB gzip)
-- [squeleton.v4.min.css](https://cdn.hiperwp.com.br/squeleton.v4.min.css) – Versão minificada para produção (~25KB gzip)
-- [squeleton-main.v4.min.js](https://cdn.hiperwp.com.br/squeleton-main.v4.min.js) – JavaScript principal (~12KB gzip)
-- [squeleton-scripts.v4.min.js](https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js) – JavaScript secundário (~18KB gzip)
+- [squeleton.v4.css](https://cdn.squeleton.dev/squeleton.v4.css) – Versão completa para desenvolvimento (~35KB gzip)
+- [squeleton.v4.min.css](https://cdn.squeleton.dev/squeleton.v4.min.css) – Versão minificada para produção (~25KB gzip)
+- [squeleton-main.v4.min.js](https://cdn.squeleton.dev/squeleton-main.v4.min.js) – JavaScript principal (~12KB gzip)
+- [squeleton-scripts.v4.min.js](https://cdn.squeleton.dev/squeleton-scripts.v4.min.js) – JavaScript secundário (~18KB gzip)
 
 ### Template HTML Básico
 
@@ -56,8 +56,8 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Site - Squeleton</title>
-    <link rel="stylesheet" href="https://cdn.hiperwp.com.br/squeleton.v4.min.css">
-    <script src="https://cdn.hiperwp.com.br/squeleton-main.v4.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.squeleton.dev/squeleton.v4.min.css">
+    <script src="https://cdn.squeleton.dev/squeleton-main.v4.min.js"></script>
 </head>
 <body>
     <section class="p-80-tb">          <!-- Section Flex -->
@@ -72,7 +72,7 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
             </div>
         </div>
     </section>
-    <script src="https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js"></script>
+    <script src="https://cdn.squeleton.dev/squeleton-scripts.v4.min.js"></script>
 </body>
 </html>
 ```
@@ -245,7 +245,7 @@ Decisão deliberada baseada em simplicidade: todo o Squeleton (~55KB gzip) é me
 <summary><strong>Como descobrir todas as classes e possibilidades?</strong></summary>
 
 Com mais de 400 classes utilitárias, a melhor forma é explorar:
-- **Código-fonte**: Examine o [CSS não-minificado](https://cdn.hiperwp.com.br/squeleton.v4.css) para descobrir padrões
+- **Código-fonte**: Examine o [CSS não-minificado](https://cdn.squeleton.dev/squeleton.v4.css) para descobrir padrões
 - **Documentações originais**: HTMX, a11y-dialog, Embla Carousel têm recursos avançados
 - **Experimentação**: Classes foram projetadas para funcionar em conjunto
 
