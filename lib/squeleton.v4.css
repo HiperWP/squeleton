@@ -3414,19 +3414,23 @@ fieldset[disabled] a.btn {
   pointer-events: auto
 }
 
-.ov-hidden {
+.ov-hidden,
+.overflow-hidden {
   overflow: hidden !important
 }
 
-.ov-visible {
+.ov-visible,
+.overflow-visible {
   overflow: visible !important
 }
 
-.ov-auto {
+.ov-auto,
+.overflow-auto {
   overflow: auto !important
 }
 
-.ov-scroll {
+.ov-scroll,
+.overflow-scroll {
   overflow: scroll !important
 }
 
@@ -7201,15 +7205,23 @@ button.vbox-link-btn:hover {
     display: table-cell !important
   }
 
-  .md-ov-hidden {
+  .md-ov-hidden,
+  .md-overflow-hidden {
     overflow: hidden !important
   }
 
-  .md-ov-auto {
+  .md-ov-visible,
+  .md-overflow-visible {
+    overflow: visible !important
+  }
+
+  .md-ov-auto,
+  .md-overflow-auto {
     overflow: auto !important
   }
 
-  .md-ov-scroll {
+  .md-ov-scroll,
+  .md-overflow-scroll {
     overflow: scroll !important
   }
 
@@ -9633,15 +9645,23 @@ button.vbox-link-btn:hover {
     display: table-cell !important
   }
 
-  .sm-ov-hidden {
+  .sm-ov-hidden,
+  .sm-overflow-hidden {
     overflow: hidden !important
   }
 
-  .sm-ov-auto {
+  .sm-ov-visible,
+  .sm-overflow-visible {
+    overflow: visible !important
+  }
+
+  .sm-ov-auto,
+  .sm-overflow-auto {
     overflow: auto !important
   }
 
-  .sm-ov-scroll {
+  .sm-ov-scroll,
+  .sm-overflow-scroll {
     overflow: scroll !important
   }
 
@@ -12144,15 +12164,23 @@ button.vbox-link-btn:hover {
     display: table-cell !important
   }
 
-  .xs-ov-hidden {
+  .xs-ov-hidden,
+  .xs-overflow-hidden {
     overflow: hidden !important
   }
 
-  .xs-ov-auto {
+  .xs-ov-visible,
+  .xs-overflow-visible {
+    overflow: visible !important
+  }
+
+  .xs-ov-auto,
+  .xs-overflow-auto {
     overflow: auto !important
   }
 
-  .xs-ov-scroll {
+  .xs-ov-scroll,
+  .xs-overflow-scroll {
     overflow: scroll !important
   }
 

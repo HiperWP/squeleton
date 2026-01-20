@@ -1,6 +1,6 @@
 # Squeleton
 
-[![Version](https://img.shields.io/badge/version-4.1.4-blue.svg)](https://squeleton.dev/)
+[![Version](https://img.shields.io/badge/version-4.1.5-blue.svg)](https://squeleton.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://squeleton.dev/#guia)
 [![CSS Framework](https://img.shields.io/badge/framework-CSS-1572B6.svg)](https://squeleton.dev/)
 [![Vanilla JS](https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E.svg)](https://squeleton.dev/)
@@ -126,7 +126,7 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
           <i class="fs-12 iccon-rocket-1 p-15-r animated delay-800 floatIn"></i>
           <h1 class="fs-16 m-25-tb fw-700 animated slideIn">Squeleton</h1>
           <div class="fs-3 m-10-l p-5-lr border-rd-4 border-all animated magnetIn delay-800">
-            v4.1.4
+            v4.1.5
           </div>
         </div>
         <p class="fs-10 p-20-tb text-center animated delay-500 fadeInUp">
