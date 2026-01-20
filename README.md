@@ -82,20 +82,6 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 
 ## Exemplos Básicos
 
-**Hero Section** - Tipografia fluida + Centralização:
-
-```html
-<section class="h-100vh f-justify-center f-items-center text-center p-30-all">
-    <div class="w-max-600px">
-        <h1 class="fs-14 fw-700 m-15-b">Bem-vindo ao Squeleton</h1>
-        <p class="fs-9 opacity-8 m-25-b">Boilerplate leve para interfaces modernas</p>
-        <a href="#" class="d-inline-block p-15-lr p-10-tb border-rd-8 fw-600">
-            Começar Agora
-        </a>
-    </div>
-</section>
-```
-
 **Grid de Cards** - Container + Row + Colunas responsivas:
 
 ```html
@@ -126,6 +112,25 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
             </div>
         </div>
     </div>
+</section>
+```
+
+**Hero Section** - Tipografia fluida + Centralização + Animações:
+
+```html
+<section class="p-30-tb f-justify-center h-100vh">
+  <div class="container">
+    <div class="row gap-15">
+      <div class="c-xs-12 c-sm-9 c-md-6 c-center">
+        <div class="f-grid f-items-center f-justify-center">
+          <i class="fs-12 iccon-rocket-1 p-15-r animated delay-800 floatIn"></i>
+          <h1 class="fs-16 m-25-tb fw-700 animated slideIn">Squeleton</h1>
+          <div class="fs-3 m-10-l p-5-lr border-rd-4 border-all animated magnetIn delay-800">v4.1.4</div>
+        </div>
+        <p class="fs-10 p-20-tb text-center animated delay-500 fadeInUp">Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid responsivo, animações elegantes e bibliotecas JavaScript essenciais para criar interfaces rápidas e intuitivas.</p>
+      </div>
+    </div>
+  </div>
 </section>
 ```
 
