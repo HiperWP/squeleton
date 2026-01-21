@@ -52,7 +52,7 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 
 ### Sistema Responsivo Híbrido
 
-O Squeleton adota uma **abordagem híbrida única** que combina o melhor dos dois mundos:
+O Squeleton adota uma **abordagem híbrida única** que oferece o equilíbrio ideal de desenvolvimento entre duas técnicas:
 
 **Grid (Colunas) → Mobile-First** (`min-width`)
 - Comece com `c-xs-12` e expanda: `c-xs-12 c-md-6 c-lg-4`
