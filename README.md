@@ -161,13 +161,13 @@ O Squeleton adota uma **abordagem híbrida única** que combina o melhor dos doi
 
 **Grid (Colunas) → Mobile-First** (`min-width`)
 - Comece com `c-xs-12` e expanda: `c-xs-12 c-md-6 c-lg-4`
-- Faz sentido porque layouts empilham em mobile e dividem em desktop
+- Grids naturalmente empilham em mobile e dividem em desktop
 - Suporta 4 breakpoints: `xs-`, `sm-`, `md-`, `lg-`
 
 **Classes Utilitárias → Desktop-First** (`max-width`)
 - Escreva para desktop primeiro, ajuste para mobile: `p-60-tb xs-p-30-tb`
-- Prático porque a maioria do desenvolvimento é feita em desktop
-- Não existe `lg-` para utilitários - desktop já é o padrão
+- Estilização direta no ambiente de desenvolvimento, com ajustes responsivos pontuais
+- Suporta 3 breakpoints: `xs-`, `sm-`, `md-`
 
 | Breakpoint | Grid (min-width) | Utilitários (max-width) |
 |-----------|------------------|------------------------|
