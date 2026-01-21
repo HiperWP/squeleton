@@ -96,24 +96,24 @@ function init() {
   cacheDomElements();
   historyApi = makeHistoryApi();
 
-  // âœ… NEW: Restore dependency state from localStorage
+  // NEW: Restore dependency state from localStorage
   restoreDependencyState(state);
 
-  // âœ… NEW: Initialize lock button visual state
+  // NEW: Initialize lock button visual state
   if (state.dependenciesLocked) {
     dom.lockDependenciesBtn.classList.add("active");
     const iconElement = dom.lockDependenciesBtn.querySelector(".icon");
     if (iconElement) {
       iconElement.innerHTML = ICONS.lockClosed;
     }
-    console.log("ðŸ”’ Dependency lock restored:", state.dependenciesLocked);
+    console.log("Dependency lock restored:", state.dependenciesLocked);
   }
 
   dom.cssStyleModeCheckbox.checked = state.cssStyleMode === "gui";
   dom.cssModeCheckbox.checked = state.cssMode === "global";
 
   injectIcons();
-  initializeLogoEffect(); // Initialize the cool hacker logo effect
+  initializeLogoEffect();
 
   const editors = initializeEditors(dom, state);
   htmlEditor = editors.htmlEditor;
@@ -311,13 +311,13 @@ function runCode(record = true) {
 
   try {
     // ============================================
-    // âœ… STEP 1: Store original HTML BEFORE parsing
+    // STEP 1: Store original HTML BEFORE parsing
     // ============================================
     const originalHtml = html;
     const isCurrentlyFullPage = parseFullPage(html).isFullPage;
 
     // ============================================
-    // âœ… STEP 2: Detect dependencies from ORIGINAL HTML
+    // STEP 2: Detect dependencies from ORIGINAL HTML
     // ============================================
     let newDependencies = [];
     if (isCurrentlyFullPage) {
@@ -326,17 +326,17 @@ function runCode(record = true) {
     }
 
     // ============================================
-    // âœ… STEP 3: Check if dependencies are locked
+    // STEP 3: Check if dependencies are locked
     // ============================================
     if (state.dependenciesLocked && state.dependencies.length > 0) {
       console.log(
-        "ðŸ”’ Dependencies LOCKED - preserving existing:",
+        "Dependencies LOCKED - preserving existing:",
         state.dependencies.length
       );
       // Don't update dependencies, keep existing ones
     } else {
       // ============================================
-      // âœ… STEP 4: Determine if NEW content or EDITING
+      // STEP 4: Determine if NEW content or EDITING
       // ============================================
       const isNewContent = determineIfNewContent(
         state,
@@ -368,7 +368,7 @@ function runCode(record = true) {
     }
 
     // ============================================
-    // âœ… STEP 5: Parse HTML (strips dependencies)
+    // STEP 5: Parse HTML (strips dependencies)
     // ============================================
     const parsed = parseFullPage(html);
 
@@ -385,13 +385,13 @@ function runCode(record = true) {
     }
 
     // ============================================
-    // âœ… STEP 6: Update UI
+    // STEP 6: Update UI
     // ============================================
     updateDependencyButton(dom, state);
     updateDependencyBadge(dom, state);
 
     // ============================================
-    // âœ… STEP 7: Update content hash AFTER processing
+    // STEP 7: Update content hash AFTER processing
     // ============================================
     state.activeContentHash = generateContentHash(html, css, js);
     persistDependencyState(state);
@@ -627,19 +627,19 @@ function setupEventListeners() {
     e.preventDefault();
     e.stopPropagation();
 
-    // âœ… STEP 1: Check if button has disabled class (visual disabled state)
+    // STEP 1: Check if button has disabled class (visual disabled state)
     if (dom.dependenciesBtn.classList.contains("disabled")) {
       showToast("No external dependencies detected in your code", "warning");
       return;
     }
 
-    // âœ… STEP 2: Verify dependencies exist before showing modal
+    // STEP 2: Verify dependencies exist before showing modal
     if (state.dependencies.length === 0) {
       showToast("No external dependencies detected", "info");
       return;
     }
 
-    // âœ… STEP 3: Show modal
+    // STEP 3: Show modal
     showDependencyModal(dom, state);
   });
 
@@ -713,18 +713,18 @@ function setupEventListeners() {
       cssEditor.setValue("");
       jsEditor.setValue("");
 
-      // âœ… Clear all dependencies and external resources
+      // Clear all dependencies and external resources
       clearDependencies(state);
       state.externalCSS = "";
       state.externalJS = "";
       state.originalFullPageHtml = null;
       state.activeContentHash = null;
 
-      // âœ… Update dependency UI
+      // Update dependency UI
       updateDependencyButton(dom, state);
       updateDependencyBadge(dom, state);
 
-      // âœ… Persist cleared state
+      // Persist cleared state
       persistDependencyState(state);
 
       clearModalOverlay.classList.remove("show");
@@ -892,7 +892,7 @@ function handleContextMenuClick(e) {
     return;
   }
 
-  // âœ… ROBUST ERROR CHECKING
+  // ROBUST ERROR CHECKING
   const targetId = state.contextMenuLayerId;
   if (!targetId) {
     console.error("âŒ Context menu: No target layer ID found");
@@ -909,7 +909,7 @@ function handleContextMenuClick(e) {
     return;
   }
 
-  console.log("âœ… Context menu action:", action, "for layer:", layer.label);
+  console.log("Context menu action:", action, "for layer:", layer.label);
 
   try {
     switch (action) {
@@ -946,7 +946,7 @@ function handleContextMenuClick(e) {
         });
         break;
       case "view-html":
-        // âœ… ENHANCED ERROR HANDLING FOR VIEW HTML
+        // ENHANCED ERROR HANDLING FOR VIEW HTML
         if (!layer || !dom || !state || !generateStructuralBricksJson) {
           console.error("âŒ View HTML: Missing required parameters");
           showToast("Error: Cannot show HTML modal", "error");
@@ -956,7 +956,7 @@ function handleContextMenuClick(e) {
         showHtmlModal(layer, dom, state, generateStructuralBricksJson);
         break;
       case "view-css":
-        // âœ… ENHANCED ERROR HANDLING FOR VIEW CSS
+        // ENHANCED ERROR HANDLING FOR VIEW CSS
         if (
           !layer ||
           !dom ||
@@ -987,7 +987,7 @@ function handleContextMenuClick(e) {
     showToast(`Error: ${action} failed`, "error");
   }
 
-  // âœ… ALWAYS CLEANUP
+  // ALWAYS CLEANUP
   state.contextMenuLayerId = null;
   hideContextMenu();
 }
@@ -1122,10 +1122,10 @@ function deleteLayer(layerId) {
 function toggleDependencyLock() {
   state.dependenciesLocked = !state.dependenciesLocked;
 
-  // âœ… Update button visual state
+  // Update button visual state
   dom.lockDependenciesBtn.classList.toggle("active", state.dependenciesLocked);
 
-  // âœ… Update icon
+  // Update icon
   const iconElement = dom.lockDependenciesBtn.querySelector(".icon");
   if (iconElement) {
     iconElement.innerHTML = state.dependenciesLocked
@@ -1133,26 +1133,26 @@ function toggleDependencyLock() {
       : ICONS.lockOpen;
   }
 
-  // âœ… Update badge to show lock status
+  // Update badge to show lock status
   if (state.dependenciesLocked && state.dependencies.length > 0) {
     dom.dependencyBadge.classList.add("locked");
-    dom.dependencyBadge.title = `ðŸ”’ ${state.dependencies.length} dependencies locked`;
+    dom.dependencyBadge.title = `${state.dependencies.length} dependencies locked`;
   } else {
     dom.dependencyBadge.classList.remove("locked");
     dom.dependencyBadge.title = `${state.dependencies.length} dependencies detected`;
   }
 
-  // âœ… Show feedback toast
+  // Show feedback toast
   const message = state.dependenciesLocked
     ? `Dependencies locked (${state.dependencies.length} items)`
     : ` Dependencies unlocked`;
 
   showToast(message, state.dependenciesLocked ? "success" : "info");
 
-  // âœ… Persist state to localStorage
+  // Persist state to localStorage
   persistDependencyState(state);
 
-  console.log("ðŸ”’ Lock toggled:", state.dependenciesLocked);
+  console.log("Lock toggled:", state.dependenciesLocked);
 }
 
 function duplicateLayer(layerId) {

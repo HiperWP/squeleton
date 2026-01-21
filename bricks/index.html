@@ -4,23 +4,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Squeleton2Bricks - Transforme seu código Squeleton em formato Bricks Builder</title>
-  <meta name="description" content="Transforme seu código Squeleton em formato Bricks Builder com o Squeleton2Bricks. Uma ferramenta poderosa para desenvolvedores web otimizarem seu fluxo de trabalho." />
+  <title>Squeleton2Bricks - Transforme seu código Squeleton em blocos Bricks Builder</title>
+  <meta name="description" content="Transforme seu código Squeleton em blocos Bricks Builder com o Squeleton2Bricks." />
   <meta name="keywords" content="Bricks Builder, Squeleton to Bricks, Squeleton2Bricks" />
-  <meta name="author" content="HiperWP" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://hiperwp.com.br/squeleton/favicon.webp" />
-  <link rel="apple-touch-icon" href="https://hiperwp.com.br/squeleton/favicon.webp" />
+  <link rel="icon" type="image/png" href="https://squeleton.dev/favicon.webp" />
+  <link rel="apple-touch-icon" href="https://squeleton.dev/favicon.webp" />
 
-  <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://hiperwp.com.br/squeleton/bricks/" />
-  <meta property="og:title" content="Squeleton2Bricks - Transforme seu código Squeleton em formato Bricks Builder" />
-  <meta property="og:description" content="Transforme seu código Squeleton em formato Bricks Builder com o Squeleton2Bricks. Uma ferramenta poderosa para desenvolvedores web otimizarem seu fluxo de trabalho." />
+  <meta property="og:url" content="https://squeleton.dev/bricks/" />
+  <meta property="og:title" content="Squeleton2Bricks - Transforme seu código Squeleton em blocos Bricks Builder" />
+  <meta property="og:description" content="Transforme seu código Squeleton em blocos Bricks Builder com o Squeleton2Bricks." />
   <meta property="og:image" content="assets/images/Squeleton2Bricks_preview.jpg" />
 
-  <!-- External libs -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.2/Sortable.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
@@ -28,30 +24,28 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/format/formatting.min.js"></script>
 
-  <!-- CodeMirror UX add-ons – safe append -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closetag.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/selection/active-line.min.js"></script>
   
-  <!-- Moved search addon to load before app.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/search/searchcursor.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/search/search.min.js"></script>
 
-  <script src="https://unpkg.com/split.js/dist/split.min.js  "></script>
-  <script src="https://unpkg.com/@popperjs/core@2  "></script>
-  <script src="https://unpkg.com/tippy.js@6  "></script>
+  <script src="https://unpkg.com/split.js/dist/split.min.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css" />
 
-  <link rel="stylesheet" href="assets/css/main.css?ver=1.7.9" />
+  <link rel="stylesheet" href="assets/css/main.css?ver=1.8.0" />
 </head>
 
 <body>
   <div id="app-container">
     <header class="main-header">
-      <!-- START: New left-side wrapper for logo and new buttons -->
+
       <div class="header-left">
         <h1 class="code-heading">
           <span class="tag open">
@@ -71,8 +65,7 @@
           </span>
         </h1>
       </div>
-      <!-- END: New left-side wrapper -->
-      <!-- This is the original right-side container which is now correctly justified to the right -->
+
       <div class="header-actions">
         <div class="css-mode-toggle">
           <label for="css-style-mode-checkbox">Apply Styles to:</label>
@@ -93,14 +86,12 @@
           </div>
         </div>
         
-        <!-- NEW: Dependencies button -->
         <button id="dependencies-btn" class="dependencies-btn disabled" >
           <i id="icon-dependencies" class="icon"></i>
           Dependencies
           <span id="dependency-badge" class="dependency-badge hidden">0</span>
         </button>
         
-        <!-- Dependencies Lock Button -->
         <button id="lock-dependencies-btn" class="icon-btn-tertiary" title="Lock dependencies">
           <i id="icon-lock" class="icon"></i>
         </button>
@@ -129,7 +120,6 @@
                 <i id="icon-html" class="icon"></i> HTML
               </div>
               <div class="editor-actions">
-                <!-- Auto-scroll checkbox with unified design -->
                 <label class="checkbox-label" for="auto-html-scroll">
                   <div class="checkbox-container">
                     <input type="checkbox" id="auto-html-scroll" class="primary-checkbox" checked />
@@ -137,7 +127,6 @@
                   </div>
                   <span>Auto-scroll</span>
                 </label>
-                <!-- Disable highlights checkbox with unified design -->
                 <label class="checkbox-label" for="disable-preview-highlights">
                   <div class="checkbox-container">
                     <input type="checkbox" id="disable-preview-highlights" class="primary-checkbox" />
@@ -190,7 +179,6 @@
                 aria-label="Select/Deselect All" />
               <label for="select-all-checkbox" class="primary-checkbox-label"></label>
             </div>
-            <!-- UNDO/REDO BUTTONS -->
             <button class="icon-btn" id="undo-btn" disabled></button>
             <button class="icon-btn" id="redo-btn" disabled></button>
             <button class="icon-btn" id="toggle-all-btn">
@@ -209,7 +197,6 @@
     </main>
   </div>
 
-  <!-- Context, Toast, Modal containers (unchanged) -->
   <div id="context-menu" class="context-menu">
     <ul>
       <li data-action="rename">Rename</li>
@@ -233,8 +220,7 @@
         <button class="modal-close-btn" data-close-clear-modal>×</button>
       </div>
       <div class="modal-body clear-modal-body">
-        This will permanently erase everything in the HTML, CSS and JS
-        editors.
+        This will permanently erase everything in the HTML, CSS and JS editors.
       </div>
       <div class="modal-footer">
         <button class="btn btn-secondary" data-close-clear-modal>
@@ -245,17 +231,13 @@
     </div>
   </div>
 
-  <!-- --- START: ADD NEW MODAL CONTAINERS --- -->
   <div id="support-modal-overlay" class="modal-overlay">
-    <!-- Content will be injected by JS -->
   </div>
 
   <div id="info-modal-overlay" class="modal-overlay">
-    <!-- Content will be injected by JS -->
   </div>
-  <!-- --- END: ADD NEW MODAL CONTAINERS --- -->
 
-  <script type="module" src="assets/js/main.js?ver=1.7.9"></script>
+  <script type="module" src="assets/js/main.js?ver=1.8.0"></script>
 </body>
 
 </html>
