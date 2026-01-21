@@ -50,6 +50,43 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
 - [squeleton-main.v4.min.js](https://cdn.squeleton.dev/squeleton-main.v4.min.js) – JavaScript principal (~12KB gzip)
 - [squeleton-scripts.v4.min.js](https://cdn.squeleton.dev/squeleton-scripts.v4.min.js) – JavaScript secundário (~18KB gzip)
 
+### Sistema Responsivo Híbrido
+
+O Squeleton adota uma **abordagem híbrida única** que combina o melhor dos dois mundos:
+
+**Grid (Colunas) → Mobile-First** (`min-width`)
+- Comece com `c-xs-12` e expanda: `c-xs-12 c-md-6 c-lg-4`
+- Grids naturalmente empilham em mobile e dividem em desktop
+- Suporta 4 breakpoints: `xs-`, `sm-`, `md-`, `lg-`
+
+**Classes Utilitárias → Desktop-First** (`max-width`)
+- Escreva para desktop primeiro, ajuste para mobile: `p-60-tb xs-p-30-tb`
+- Estilização direta no ambiente de desenvolvimento, com ajustes responsivos pontuais
+- Suporta 3 breakpoints: `xs-`, `sm-`, `md-`
+
+| Breakpoint | Grid (min-width) | Utilitários (max-width) |
+|-----------|------------------|------------------------|
+| Extra Small | `c-xs-` (base) | `xs-` (≤639px) |
+| Small | `c-sm-` (≥640px) | `sm-` (≤991px) |
+| Medium | `c-md-` (≥992px) | `md-` (≤1199px) |
+| Large | `c-lg-` (≥1200px) | — (desktop é padrão) |
+
+### Micro-bibliotecas JavaScript
+
+Todas as bibliotecas estão integrada, pré-configuradas e otimizadas. Consulte a documentação específica de cada uma para casos de uso avançados.
+
+| Biblioteca | Descrição |
+|-----------|-----------|
+| HTMX | Biblioteca que oferece acesso a AJAX, CSS Transitions, WebSockets e Server Sent Events diretamente no HTML usando atributos, permitindo interfaces modernas com a simplicidade do hypertext. |
+| VanJS | O menor framework de interface de usuário reativo do mundo. Incrivelmente poderoso, absurdamente pequeno. |
+| Embla Carousel | Biblioteca de carrossel minimalista com movimento fluido e precisão de swipe excepcional. |
+| VenoBox 2 | Biblioteca JavaScript Lightbox para imagens, vídeos, galerias e iFrames. *Auto-inicializado* para `.open-gallery`, `.open-video`, `.open-iframe`. |
+| a11y-dialog | Biblioteca leve e flexível para criação de janelas de diálogo intuitivas. *Scroll lock auto-inicializado* para `.modal-dialog`. |
+| Toastify-js | Biblioteca JavaScript para mensagens de notificação aprimoradas. |
+| Wow2 Animation | Fork otimizado próprio baseado no wow.js para animações on-scroll performáticas. *Auto-inicializado* para classe `.wow`. |
+| Counter-Up2 | Biblioteca leve que conta até um número alvo quando o número se torna visível. |
+| js-cookie | Biblioteca JavaScript simples e leve para gerenciamento de cookies do navegador. |
+
 ### Template HTML Básico
 
 ```html
@@ -154,43 +191,6 @@ Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid respons
     </div>
 </footer>
 ```
-
-### Sistema Responsivo Híbrido
-
-O Squeleton adota uma **abordagem híbrida única** que combina o melhor dos dois mundos:
-
-**Grid (Colunas) → Mobile-First** (`min-width`)
-- Comece com `c-xs-12` e expanda: `c-xs-12 c-md-6 c-lg-4`
-- Grids naturalmente empilham em mobile e dividem em desktop
-- Suporta 4 breakpoints: `xs-`, `sm-`, `md-`, `lg-`
-
-**Classes Utilitárias → Desktop-First** (`max-width`)
-- Escreva para desktop primeiro, ajuste para mobile: `p-60-tb xs-p-30-tb`
-- Estilização direta no ambiente de desenvolvimento, com ajustes responsivos pontuais
-- Suporta 3 breakpoints: `xs-`, `sm-`, `md-`
-
-| Breakpoint | Grid (min-width) | Utilitários (max-width) |
-|-----------|------------------|------------------------|
-| Extra Small | `c-xs-` (base) | `xs-` (≤639px) |
-| Small | `c-sm-` (≥640px) | `sm-` (≤991px) |
-| Medium | `c-md-` (≥992px) | `md-` (≤1199px) |
-| Large | `c-lg-` (≥1200px) | — (desktop é padrão) |
-
-### Micro-bibliotecas JavaScript
-
-Todas as bibliotecas estão integrada, pré-configuradas e otimizadas. Consulte a documentação específica de cada uma para casos de uso avançados.
-
-| Biblioteca | Descrição |
-|-----------|-----------|
-| HTMX | Biblioteca que oferece acesso a AJAX, CSS Transitions, WebSockets e Server Sent Events diretamente no HTML usando atributos, permitindo interfaces modernas com a simplicidade do hypertext. |
-| VanJS | O menor framework de interface de usuário reativo do mundo. Incrivelmente poderoso, absurdamente pequeno. |
-| Embla Carousel | Biblioteca de carrossel minimalista com movimento fluido e precisão de swipe excepcional. |
-| VenoBox 2 | Biblioteca JavaScript Lightbox para imagens, vídeos, galerias e iFrames. *Auto-inicializado* para `.open-gallery`, `.open-video`, `.open-iframe`. |
-| a11y-dialog | Biblioteca leve e flexível para criação de janelas de diálogo intuitivas. *Scroll lock auto-inicializado* para `.modal-dialog`. |
-| Toastify-js | Biblioteca JavaScript para mensagens de notificação aprimoradas. |
-| Wow2 Animation | Fork otimizado próprio baseado no wow.js para animações on-scroll performáticas. *Auto-inicializado* para classe `.wow`. |
-| Counter-Up2 | Biblioteca leve que conta até um número alvo quando o número se torna visível. |
-| js-cookie | Biblioteca JavaScript simples e leve para gerenciamento de cookies do navegador. |
 
 ## FAQ - Perguntas Frequentes
 
