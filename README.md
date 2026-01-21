@@ -73,7 +73,7 @@ O Squeleton adota uma **abordagem híbrida única** que oferece o equilíbrio id
 
 ### Micro-bibliotecas JavaScript
 
-Todas as bibliotecas estão integrada, pré-configuradas e otimizadas. Consulte a documentação específica de cada uma para casos de uso avançados.
+Todas as bibliotecas estão integradas, pré-configuradas e otimizadas. Consulte a documentação específica de cada uma para casos de uso avançados.
 
 | Biblioteca | Descrição |
 |-----------|-----------|
