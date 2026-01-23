@@ -1936,27 +1936,51 @@ fieldset[disabled] a.btn {
 }
 
 .bg-ps-left {
-  background-position: left center !important
+  background-position: left center
 }
 
 .bg-ps-left-bottom {
-  background-position: left bottom !important
+  background-position: left bottom
 }
 
 .bg-ps-right {
-  background-position: right center !important
+  background-position: right center
 }
 
 .bg-ps-top {
-  background-position: center top !important
+  background-position: center top
 }
 
 .bg-ps-bottom {
-  background-position: center bottom !important
+  background-position: center bottom
 }
 
 .bg-ps-x-50 {
-  background-position-x: 50% !important
+  background-position-x: 50%
+}
+
+.bg-repeat {
+  background-repeat: repeat
+}
+
+.bg-repeat-x {
+  background-repeat: repeat-x
+}
+
+.bg-repeat-y {
+  background-repeat: repeat-y
+}
+
+.bg-repeat-space {
+  background-repeat: space
+}
+
+.bg-repeat-round {
+  background-repeat: round
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat
 }
 
 .absolute-y {

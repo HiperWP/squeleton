@@ -153,6 +153,12 @@ bg-ps-right (background-position: right center)
 bg-ps-top (background-position: center top)
 bg-ps-bottom (background-position: center bottom)
 bg-ps-x-50 (background-position-x: 50%)
+bg-repeat (background-repeat: repeat)
+bg-repeat-x (background-repeat: repeat-x)
+bg-repeat-y (background-repeat: repeat-y)
+bg-repeat-space (background-repeat: space)
+bg-repeat-round (background-repeat: round)
+bg-no-repeat (background-repeat: no-repeat)
 ```
 
 ## Embed Responsivo
