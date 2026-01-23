@@ -1509,13 +1509,6 @@ fieldset[disabled] a.btn {
   display: inline-block
 }
 
-.thumbnail a > img,
-.thumbnail > img {
-  display: block;
-  max-width: 100%;
-  height: auto
-}
-
 .border-rd-0 {
   border-radius: 0
 }
