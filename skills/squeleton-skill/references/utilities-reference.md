@@ -1,6 +1,6 @@
 # Utilities Reference
 
-Classes utilitárias diversas para posicionamento, visibilidade, cursor, float e outras propriedades.
+Classes utilitárias diversas para posicionamento, visibilidade, cursor, background, float e outras propriedades.
 
 ## Position
 
@@ -74,8 +74,6 @@ cursor-zoom-in       (lightbox, zoom de imagens)
 cursor-zoom-out      (lightbox em zoom)
 ```
 
-**Nota**: Classes de cursor não possuem variantes responsivas, pois o comportamento do cursor não depende do tamanho da tela.
-
 **Exemplos**:
 ```html
 <!-- Botão disabled -->
@@ -112,26 +110,25 @@ ov-auto (overflow: auto)
 
 Responsivos:
 ```
-md-ov-hidden, md-ov-auto
-sm-ov-hidden, sm-ov-auto
-xs-ov-hidden, xs-ov-auto
+md-ov-hidden, md-ov-visible, md-ov-auto
+sm-ov-hidden, sm-ov-visible, sm-ov-auto
+xs-ov-hidden, xs-ov-visible, xs-ov-auto
 ```
 
-## Float
+## Float e Clear
 
 ```
-float-left, pull-left
-float-right, pull-right
+float-left
+float-right
 float-none
 clear-both
-xs-clear-both
 ```
 
-## Clear
-
+Responsivos:
 ```
-clear-both
-xs-clear-both
+md-float-left, md-float-right, md-float-none, md-clear-both
+sm-float-left, sm-float-right, sm-float-none, sm-clear-both
+xs-float-left, xs-float-right, xs-float-none, xs-clear-both
 ```
 
 ## Vertical Align
@@ -142,17 +139,29 @@ v-align-middle
 v-align-bottom
 ```
 
-## Background
+Responsivos:
+```
+md-v-align-top, md-v-align-middle, md-v-align-bottom
+sm-v-align-top, sm-v-align-middle, sm-v-align-bottom
+xs-v-align-top, xs-v-align-middle, xs-v-align-bottom
+```
+
+## Background Position
 
 ```
-bg-cover (background-size: cover, background-position: center)
-bg-parallax (background-attachment: fixed)
+bg-cover (imagem de fundo com cover e centralizada)
+bg-parallax (imagem de fundo com efeito parallax, inicia do topo)
 bg-ps-left (background-position: left center)
 bg-ps-left-bottom (background-position: left bottom)
 bg-ps-right (background-position: right center)
 bg-ps-top (background-position: center top)
 bg-ps-bottom (background-position: center bottom)
 bg-ps-x-50 (background-position-x: 50%)
+```
+
+## Background Repeat
+
+```
 bg-repeat (background-repeat: repeat)
 bg-repeat-x (background-repeat: repeat-x)
 bg-repeat-y (background-repeat: repeat-y)
@@ -211,21 +220,6 @@ line-clamp-3 (limita a 3 linhas com ellipsis)
 ```
 pe-none (pointer-events: none - ignora cliques)
 pe-auto (pointer-events: auto - comportamento padrão)
-```
-
-## Outros
-
-```
-line-break (display: block - força quebra de linha)
-divider-full (width: 100%, height: 1px, display: inline-block)
-img-circle (border-radius: 50%)
-```
-
-## HTMX Indicator
-
-```html
-<!-- Elemento que aparece durante requisição HTMX -->
-<div class="htmx-indicator">Carregando...</div>
 ```
 
 ## Exemplos de Uso

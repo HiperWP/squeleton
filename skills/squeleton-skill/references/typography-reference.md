@@ -19,12 +19,13 @@ text-uppercase
 text-capitalize
 ```
 
-## Text Decoration Line
+## Text Decoration
 
 ```
 underline
 overline
 line-through
+color-inherit
 ```
 
 ## Font Weight
@@ -69,7 +70,7 @@ Responsivos: `{xs|sm|md}-fs-{1-16}`
 <span class="fs-1">Badge</span>
 <p class="fs-7">Texto padrão do corpo</p>
 <h2 class="fs-12">Título de seção</h2>
-<h1 class="fs-16">Hero headline</h1>
+<h1 class="fs-16 xs-fs-14">Hero headline</h1>
 ```
 
 ## Font Size - Redução
@@ -114,7 +115,7 @@ ls-5 (5px)
 ## Letter Spacing - Negativo
 
 ```
-ls-minus-0-2 (-0.25px)
+ls-minus-0-2 (-0.2px)
 ls-minus-0-5 (-0.5px)
 ls-minus-1 (-1px)
 ls-minus-2 (-2px)
@@ -148,18 +149,19 @@ text-nowrap (white-space: nowrap)
 word-wrap (word-wrap: break-word)
 ```
 
-## Tamanhos de Texto Auxiliar
-
-```
-small, .small (font-size: 75%)
-```
-
 ## Vertical Align
 
 ```
 v-align-top
 v-align-middle
 v-align-bottom
+```
+
+Responsivos:
+```
+md-v-align-top, md-v-align-middle, md-v-align-bottom
+sm-v-align-top, sm-v-align-middle, sm-v-align-bottom
+xs-v-align-top, xs-v-align-middle, xs-v-align-bottom
 ```
 
 ## Exemplos de Uso

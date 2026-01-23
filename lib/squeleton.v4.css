@@ -908,10 +908,6 @@ blockquote ul:last-child {
   background-color: #fff
 }
 
-.form-group {
-  margin-bottom: 15px
-}
-
 .checkbox,
 .radio {
   position: relative;
@@ -937,40 +933,9 @@ fieldset[disabled] .radio label {
 }
 
 .checkbox input[type=checkbox],
-.checkbox-inline input[type=checkbox],
-.radio input[type=radio],
-.radio-inline input[type=radio] {
+.radio input[type=radio] {
   position: absolute;
   margin-left: -20px
-}
-
-.checkbox + .checkbox,
-.radio + .radio {
-  margin-top: -5px
-}
-
-.checkbox-inline,
-.radio-inline {
-  position: relative;
-  display: inline-block;
-  padding-left: 20px;
-  margin-bottom: 0;
-  font-weight: 400;
-  vertical-align: middle;
-  cursor: pointer
-}
-
-.checkbox-inline.disabled,
-.radio-inline.disabled,
-fieldset[disabled] .checkbox-inline,
-fieldset[disabled] .radio-inline {
-  cursor: not-allowed
-}
-
-.checkbox-inline + .checkbox-inline,
-.radio-inline + .radio-inline {
-  margin-top: 0;
-  margin-left: 10px
 }
 
 .btn {
@@ -1053,14 +1018,6 @@ fieldset[disabled] a.btn {
   display: table-cell
 }
 
-.extra-large-icon,
-.extra-small-icon,
-.large-icon,
-.medium-icon,
-.small-icon {
-  margin: 0
-}
-
 .pagination {
   display: inline-block;
   padding-left: 0;
@@ -1140,11 +1097,6 @@ fieldset[disabled] a.btn {
   border-radius: 4px
 }
 
-.alert h4 {
-  margin-top: 0;
-  color: inherit
-}
-
 .alert .alert-link {
   font-weight: 700
 }
@@ -1158,27 +1110,10 @@ fieldset[disabled] a.btn {
   margin-top: 5px
 }
 
-.alert-dismissable,
-.alert-dismissible {
-  padding-right: 35px
-}
-
-.alert-dismissable .close,
-.alert-dismissible .close {
-  position: relative;
-  top: -2px;
-  right: -21px;
-  color: inherit
-}
-
 .alert-success {
   color: #3c763d;
   background-color: #dff0d8;
   border-color: #d6e9c6
-}
-
-.alert-success hr {
-  border-top-color: #c9e2b3
 }
 
 .alert-success .alert-link {
@@ -1191,10 +1126,6 @@ fieldset[disabled] a.btn {
   border-color: #bce8f1
 }
 
-.alert-info hr {
-  border-top-color: #a6e1ec
-}
-
 .alert-info .alert-link {
   color: #245269
 }
@@ -1205,10 +1136,6 @@ fieldset[disabled] a.btn {
   border-color: #faebcc
 }
 
-.alert-warning hr {
-  border-top-color: #f7e1b5
-}
-
 .alert-warning .alert-link {
   color: #66512c
 }
@@ -1217,10 +1144,6 @@ fieldset[disabled] a.btn {
   color: #a94442;
   background-color: #f2dede;
   border-color: #ebccd1
-}
-
-.alert-danger hr {
-  border-top-color: #e4b9c0
 }
 
 .alert-danger .alert-link {
@@ -1923,7 +1846,9 @@ fieldset[disabled] a.btn {
   position: relative;
   background-size: cover;
   overflow: hidden;
-  background-attachment: fixed
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: top center
 }
 
 .bg-cover {
@@ -3466,13 +3391,11 @@ fieldset[disabled] a.btn {
   visibility: hidden
 }
 
-.float-left,
-.pull-left {
+.float-left {
   float: left
 }
 
-.float-right,
-.pull-right {
+.float-right {
   float: right
 }
 
@@ -5196,6 +5119,10 @@ button.vbox-link-btn:hover {
 
   .md-float-none {
     float: none
+  }
+
+  .md-clear-both {
+    clear: both
   }
 
   .md-v-align-middle {
