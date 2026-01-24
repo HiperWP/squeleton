@@ -1,0 +1,806 @@
+<!DOCTYPE html><html><head>
+      <title>README</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css">
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:table;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="squeleton-estudo-comparativo-com-frameworks-css">Squeleton: Estudo Comparativo com Frameworks CSS </h1>
+<h2 id="introdução">Introdução </h2>
+<p>Este documento apresenta uma análise comparativa do Squeleton em relação aos principais frameworks CSS utilizados no desenvolvimento de interfaces web: Bootstrap, Tailwind CSS, Pico CSS e Bulma. O estudo avalia aspectos técnicos como tamanho de arquivos, dependências, arquitetura de grid, funcionalidades inclusas e casos de uso.</p>
+<p>Os dados apresentados foram coletados a partir da documentação oficial de cada projeto e medições de tamanho de arquivo em formato gzip, padrão de transferência utilizado por CDNs. O objetivo é fornecer informações objetivas para auxiliar na escolha de ferramentas adequadas a diferentes contextos de desenvolvimento.</p>
+<h3 id="metodologia">Metodologia </h3>
+<ul>
+<li><strong>Tamanho dos arquivos</strong>: medido em formato gzip (compressão padrão de CDNs)</li>
+<li><strong>Funcionalidades</strong>: catalogadas a partir da documentação oficial de cada projeto</li>
+<li><strong>Arquitetura técnica</strong>: analisada através do código-fonte disponível publicamente</li>
+</ul>
+<hr>
+<h2 id="visão-geral-comparativa">Visão Geral Comparativa </h2>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Bootstrap</th>
+<th>Bulma</th>
+<th>Tailwind</th>
+<th>Pico</th>
+<th>Squeleton</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lançamento</strong></td>
+<td>2011</td>
+<td>2016</td>
+<td>2017</td>
+<td>2021</td>
+<td>2025</td>
+</tr>
+<tr>
+<td><strong>Tamanho (gzip)</strong></td>
+<td>~70KB (CSS) + ~60KB (JS)</td>
+<td>~25KB</td>
+<td>~30KB*</td>
+<td>~10KB</td>
+<td>~55KB (CSS+JS)</td>
+</tr>
+<tr>
+<td><strong>Build step</strong></td>
+<td>Opcional</td>
+<td>Não requer</td>
+<td>Recomendado</td>
+<td>Não requer</td>
+<td>Não requer</td>
+</tr>
+<tr>
+<td><strong>Filosofia</strong></td>
+<td>Components + Vanilla JS</td>
+<td>Components</td>
+<td>Utility-first</td>
+<td>Classless/Semantic</td>
+<td>Utility + Vanilla JS</td>
+</tr>
+<tr>
+<td><strong>Grid</strong></td>
+<td>12 colunas, margens negativas</td>
+<td>12 colunas</td>
+<td>Flex/Grid utilities</td>
+<td>CSS Grid básico (limitado)</td>
+<td>12 colunas, flexbox gap</td>
+</tr>
+<tr>
+<td><strong>JS incluso</strong></td>
+<td>Componentes próprios</td>
+<td>Não inclui</td>
+<td>Não inclui</td>
+<td>Não inclui</td>
+<td>9 micro-bibliotecas</td>
+</tr>
+<tr>
+<td><strong>Customização</strong></td>
+<td>Sass variables</td>
+<td>Sass variables</td>
+<td>Config + purge</td>
+<td>CSS variables</td>
+<td>CSS variables externo</td>
+</tr>
+</tbody>
+</table>
+<p><em>*Tailwind após purge/minificação; sem processamento, o arquivo completo ultrapassa 3MB</em></p>
+<hr>
+<h2 id="bootstrap">Bootstrap </h2>
+<p><strong>Lançamento:</strong> 2011 | <strong>Licença:</strong> MIT</p>
+<p>Bootstrap é o framework CSS mais utilizado globalmente, com ampla documentação e ecossistema de temas e plugins.</p>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tamanho CSS</td>
+<td>~70KB gzip</td>
+</tr>
+<tr>
+<td>Tamanho JS</td>
+<td>~60KB gzip</td>
+</tr>
+<tr>
+<td>Sistema de grid</td>
+<td>12 colunas com margens negativas, gap via <code>.g-0</code> a <code>.g-5</code> (6 valores)</td>
+</tr>
+<tr>
+<td>Componentes visuais</td>
+<td>Inclusos e estilizados (botões, cards, modais, navegação)</td>
+</tr>
+<tr>
+<td>Design visual (cores/fontes)</td>
+<td>Tema padrão incluso, customizável via Sass</td>
+</tr>
+<tr>
+<td>Tipografia</td>
+<td><code>.fs-1</code> a <code>.fs-6</code> (6 tamanhos fixos), <code>.fw-bold</code>, <code>.fw-light</code>, <code>.lh-1</code> a <code>.lh-lg</code></td>
+</tr>
+<tr>
+<td>Margin/Padding</td>
+<td><code>.p-{0-5}</code>, <code>.m-{0-5}</code> (6 valores), direções: <code>t</code>, <code>b</code>, <code>s</code>, <code>e</code>, <code>x</code>, <code>y</code></td>
+</tr>
+<tr>
+<td>Pré-processador</td>
+<td>Sass (opcional)</td>
+</tr>
+<tr>
+<td>Atualizações</td>
+<td>Versões maiores frequentemente introduzem breaking changes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bulma">Bulma </h2>
+<p><strong>Lançamento:</strong> 2016 | <strong>Licença:</strong> MIT</p>
+<p>Bulma oferece componentes visuais prontos com nomenclatura legível, sem dependência de JavaScript.</p>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tamanho</td>
+<td>~25KB gzip</td>
+</tr>
+<tr>
+<td>Sistema de grid</td>
+<td>12 colunas flexbox, gap via variável <code>$column-gap</code> (Sass)</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>Não inclui</td>
+</tr>
+<tr>
+<td>Componentes visuais</td>
+<td>Inclusos e estilizados (botões, cards, navegação)</td>
+</tr>
+<tr>
+<td>Design visual (cores/fontes)</td>
+<td>Tema padrão incluso, customizável via Sass</td>
+</tr>
+<tr>
+<td>Tipografia</td>
+<td><code>.is-size-1</code> a <code>.is-size-7</code> (7 tamanhos fixos), <code>.has-text-weight-*</code></td>
+</tr>
+<tr>
+<td>Margin/Padding</td>
+<td><code>.p-{0-6}</code>, <code>.m-{0-6}</code> (7 valores), direções: <code>t</code>, <code>b</code>, <code>l</code>, <code>r</code></td>
+</tr>
+<tr>
+<td>Interatividade</td>
+<td>Requer JavaScript adicional para componentes dinâmicos</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tailwind-css">Tailwind CSS </h2>
+<p><strong>Lançamento:</strong> 2017 | <strong>Licença:</strong> MIT</p>
+<p>Tailwind popularizou a abordagem utility-first, onde estilos são aplicados através de classes atômicas diretamente no HTML.</p>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tamanho (após purge)</td>
+<td>~30KB gzip</td>
+</tr>
+<tr>
+<td>Tamanho (sem purge)</td>
+<td>~3MB+</td>
+</tr>
+<tr>
+<td>Sistema de grid</td>
+<td>Classes utilitárias flex/grid, gap via <code>gap-0</code> a <code>gap-96</code></td>
+</tr>
+<tr>
+<td>Componentes visuais</td>
+<td>Via composição de utilitários</td>
+</tr>
+<tr>
+<td>Design visual (cores/fontes)</td>
+<td>Configurável via <code>tailwind.config.js</code></td>
+</tr>
+<tr>
+<td>Tipografia</td>
+<td><code>.text-xs</code> a <code>.text-9xl</code>, <code>.font-thin</code> a <code>.font-black</code>, <code>.tracking-*</code>, <code>.leading-*</code></td>
+</tr>
+<tr>
+<td>Margin/Padding</td>
+<td><code>.p-{0-96}</code>, <code>.m-{0-96}</code> (30+ valores), direções: <code>t</code>, <code>b</code>, <code>l</code>, <code>r</code>, <code>x</code>, <code>y</code></td>
+</tr>
+<tr>
+<td>Build step</td>
+<td>Recomendado para remoção de classes não utilizadas</td>
+</tr>
+<tr>
+<td>Verbosidade</td>
+<td>Classes múltiplas por elemento (ex: <code>flex items-center justify-between px-4 py-2</code>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pico-css">Pico CSS </h2>
+<p><strong>Lançamento:</strong> 2021 | <strong>Licença:</strong> MIT</p>
+<p>Pico adota abordagem classless/semantic, onde elementos HTML recebem estilos automaticamente sem necessidade de classes.</p>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tamanho</td>
+<td>~10KB gzip</td>
+</tr>
+<tr>
+<td>Sistema de grid</td>
+<td>CSS Grid básico (auto-layout apenas, sem breakpoints ou colunas definidas)</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>Não inclui</td>
+</tr>
+<tr>
+<td>Componentes visuais</td>
+<td>Estilização automática de elementos semânticos</td>
+</tr>
+<tr>
+<td>Design visual (cores/fontes)</td>
+<td>Tema padrão incluso, customizável via CSS variables</td>
+</tr>
+<tr>
+<td>Tipografia</td>
+<td>Automático por elemento semântico</td>
+</tr>
+<tr>
+<td>Margin/Padding</td>
+<td>Automático por elemento semântico</td>
+</tr>
+<tr>
+<td>Controle fino</td>
+<td>Limitado pela natureza classless</td>
+</tr>
+</tbody>
+</table>
+<p><em>A documentação oficial do Pico recomenda o uso de bibliotecas externas como Bootstrap Grid ou Flexbox Grid para layouts complexos.</em></p>
+<h2 id="squeleton">Squeleton </h2>
+<p><strong>Lançamento:</strong> 2025 | <strong>Licença:</strong> MIT</p>
+<p>Squeleton combina classes utilitárias com bibliotecas JavaScript vanilla integradas, focando em manutenção de longo prazo e ausência de build step.</p>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tamanho total</td>
+<td>~55KB gzip (CSS + JS)</td>
+</tr>
+<tr>
+<td>Sistema de grid</td>
+<td>12 colunas com flexbox gap nativo, <code>.gap-0</code> a <code>.gap-50</code> (11 valores, intervalo de 5px)</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>9 micro-bibliotecas integradas</td>
+</tr>
+<tr>
+<td>Build step</td>
+<td>Não requer</td>
+</tr>
+<tr>
+<td>Componentes visuais</td>
+<td>Via composição de utilitários</td>
+</tr>
+<tr>
+<td>Design visual (cores/fontes)</td>
+<td>Agnóstico (definido externamente via CSS variables)</td>
+</tr>
+<tr>
+<td>Tipografia</td>
+<td><code>.fs-1</code> a <code>.fs-16</code> (6 fixos + 10 fluidos com <code>clamp()</code>), <code>.fw-*</code>, <code>.ls-*</code>, <code>.lh-*</code></td>
+</tr>
+<tr>
+<td>Margin/Padding</td>
+<td><code>.p-{5-100}-{dir}</code>, <code>.m-{5-100}-{dir}</code> (valores em pixels), direções: <code>t</code>, <code>b</code>, <code>l</code>, <code>r</code>, <code>tb</code>, <code>lr</code>, <code>all</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="comparativo-técnico-abordagem-responsiva">Comparativo Técnico: Abordagem Responsiva </h2>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Abordagem</th>
+<th>Implementação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bootstrap</td>
+<td>Mobile-first</td>
+<td><code>min-width</code> media queries</td>
+</tr>
+<tr>
+<td>Tailwind</td>
+<td>Mobile-first</td>
+<td><code>min-width</code> media queries</td>
+</tr>
+<tr>
+<td>Bulma</td>
+<td>Mobile-first</td>
+<td><code>min-width</code> media queries</td>
+</tr>
+<tr>
+<td>Pico</td>
+<td>Mobile-first</td>
+<td><code>min-width</code> media queries</td>
+</tr>
+<tr>
+<td>Squeleton</td>
+<td>Híbrida</td>
+<td>Grid: <code>min-width</code> / Utilities: <code>max-width</code></td>
+</tr>
+</tbody>
+</table>
+<p>O Squeleton utiliza uma abordagem híbrida: o sistema de grid segue mobile-first (<code>min-width</code>), enquanto classes utilitárias seguem desktop-first (<code>max-width</code>). Esta combinação é única entre os frameworks analisados. Essa abordagem é justificada por permitir praticidade no desenvolvimento, onde naturalmente grids empilham no mobile e utilitários são ajustados apenas onde necessário para telas menores.</p>
+<hr>
+<h2 id="bibliotecas-javascript-integradas">Bibliotecas JavaScript Integradas </h2>
+<p>Apenas Bootstrap e Squeleton incluem JavaScript como parte do pacote padrão.</p>
+<h3 id="bootstrap-js-60kb-gzip">Bootstrap JS (~60KB gzip) </h3>
+<p>Componentes próprios para: modais, dropdowns, tooltips, popovers, collapse, carousel, offcanvas, tabs, toasts, scrollspy.</p>
+<h3 id="squeleton-js-30kb-gzip">Squeleton JS (~30KB gzip) </h3>
+<p>9 micro-bibliotecas de terceiros integradas:</p>
+<table>
+<thead>
+<tr>
+<th>Biblioteca</th>
+<th>Função</th>
+<th>Tamanho aproximado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTMX</td>
+<td>Requisições AJAX via atributos HTML</td>
+<td>~10KB</td>
+</tr>
+<tr>
+<td>VanJS</td>
+<td>Reatividade minimalista</td>
+<td>~1KB</td>
+</tr>
+<tr>
+<td>Embla Carousel</td>
+<td>Carrossel com suporte a touch</td>
+<td>~7KB</td>
+</tr>
+<tr>
+<td>a11y-dialog</td>
+<td>Modais acessíveis (WCAG)</td>
+<td>~2KB</td>
+</tr>
+<tr>
+<td>VenoBox 2</td>
+<td>Lightbox para mídia</td>
+<td>~5KB</td>
+</tr>
+<tr>
+<td>Toastify</td>
+<td>Notificações toast</td>
+<td>~2KB</td>
+</tr>
+<tr>
+<td>Counter-Up2</td>
+<td>Animação de contagem numérica</td>
+<td>~1KB</td>
+</tr>
+<tr>
+<td>js-cookie</td>
+<td>Gerenciamento de cookies</td>
+<td>~1KB</td>
+</tr>
+<tr>
+<td>WOW2</td>
+<td>Animações acionadas por scroll</td>
+<td>~2KB</td>
+</tr>
+</tbody>
+</table>
+<h3 id="comparativo-de-funcionalidades-js">Comparativo de Funcionalidades JS </h3>
+<table>
+<thead>
+<tr>
+<th>Funcionalidade</th>
+<th>Bootstrap</th>
+<th>Squeleton</th>
+<th>Tailwind/Bulma/Pico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modais</td>
+<td>Incluído</td>
+<td>Incluído (a11y-dialog)</td>
+<td>Não incluído</td>
+</tr>
+<tr>
+<td>Carrossel</td>
+<td>Incluído</td>
+<td>Incluído (Embla)</td>
+<td>Não incluído</td>
+</tr>
+<tr>
+<td>AJAX declarativo</td>
+<td>Não incluído</td>
+<td>Incluído (HTMX)</td>
+<td>Não incluído</td>
+</tr>
+<tr>
+<td>Reatividade</td>
+<td>Não incluído</td>
+<td>Incluído (VanJS)</td>
+<td>Não incluído</td>
+</tr>
+<tr>
+<td>Lightbox</td>
+<td>Não incluído</td>
+<td>Incluído (VenoBox)</td>
+<td>Não incluído</td>
+</tr>
+<tr>
+<td>Toasts</td>
+<td>Incluído</td>
+<td>Incluído (Toastify)</td>
+<td>Não incluído</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="elementos-de-design-incorporados">Elementos de Design Incorporados </h2>
+<h3 id="ícones">Ícones </h3>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Ícones inclusos</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bootstrap</td>
+<td>Não (Bootstrap Icons separado)</td>
+<td>Pacote adicional ~80KB</td>
+</tr>
+<tr>
+<td>Tailwind</td>
+<td>Não (Heroicons separado)</td>
+<td>Pacote adicional</td>
+</tr>
+<tr>
+<td>Bulma</td>
+<td>Não</td>
+<td>Requer biblioteca externa</td>
+</tr>
+<tr>
+<td>Pico</td>
+<td>Não</td>
+<td>Requer biblioteca externa</td>
+</tr>
+<tr>
+<td>Squeleton</td>
+<td>300+ ícones integrados</td>
+<td>Via classes CSS (<code>iccon-*</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="animações">Animações </h3>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Animações inclusas</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bootstrap</td>
+<td>Transições básicas</td>
+<td>Fade, collapse</td>
+</tr>
+<tr>
+<td>Tailwind</td>
+<td>Classes de transição</td>
+<td>Requer configuração</td>
+</tr>
+<tr>
+<td>Bulma</td>
+<td>Não</td>
+<td>Requer biblioteca externa</td>
+</tr>
+<tr>
+<td>Pico</td>
+<td>Não</td>
+<td>Requer biblioteca externa</td>
+</tr>
+<tr>
+<td>Squeleton</td>
+<td>30+ animações</td>
+<td>Integração com WOW.js pattern</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tooltips">Tooltips </h3>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Tooltips</th>
+<th>Implementação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bootstrap</td>
+<td>JavaScript</td>
+<td>Requer inicialização</td>
+</tr>
+<tr>
+<td>Tailwind</td>
+<td>Não incluído</td>
+<td>Requer biblioteca externa</td>
+</tr>
+<tr>
+<td>Bulma</td>
+<td>Não incluído</td>
+<td>Requer biblioteca externa</td>
+</tr>
+<tr>
+<td>Pico</td>
+<td>Não incluído</td>
+<td>Requer biblioteca externa</td>
+</tr>
+<tr>
+<td>Squeleton</td>
+<td>CSS puro</td>
+<td>Balloon.css integrado</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="origens-e-influências-técnicas">Origens e Influências Técnicas </h2>
+<p>A análise do código-fonte e documentação do Squeleton revela influências de diferentes frameworks:</p>
+<table>
+<thead>
+<tr>
+<th>Origem</th>
+<th>Elemento incorporado</th>
+<th>Implementação no Squeleton</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bootstrap</td>
+<td>Grid de 12 colunas</td>
+<td>Classes <code>c-xs-*</code>, <code>c-sm-*</code>, <code>c-md-*</code>, <code>c-lg-*</code></td>
+</tr>
+<tr>
+<td>Bootstrap</td>
+<td>Estrutura container/row</td>
+<td><code>.container</code>, <code>.row</code></td>
+</tr>
+<tr>
+<td>Bootstrap</td>
+<td>Classes de display</td>
+<td><code>d-flex</code>, <code>d-block</code>, <code>d-none</code></td>
+</tr>
+<tr>
+<td>Tailwind</td>
+<td>Filosofia utility-first</td>
+<td>Classes atômicas de espaçamento e layout</td>
+</tr>
+<tr>
+<td>Tailwind</td>
+<td>Nomenclatura descritiva</td>
+<td>Valor na classe reflete pixels (<code>p-20-all</code> = 20px)</td>
+</tr>
+<tr>
+<td>Pico</td>
+<td>Reset semântico</td>
+<td>Elementos <code>body</code>, <code>main</code>, <code>section</code> pré-estilizados</td>
+</tr>
+<tr>
+<td>Pico</td>
+<td>Agnosticismo visual</td>
+<td>Sem cores ou fontes impostas</td>
+</tr>
+<tr>
+<td>Bulma</td>
+<td>Nomenclatura legível</td>
+<td>Classes autodescritivas (<code>border-rd-8</code>, <code>fw-700</code>)</td>
+</tr>
+<tr>
+<td>Animate.css</td>
+<td>Nomes de animação</td>
+<td><code>fadeIn</code>, <code>fadeInUp</code>, <code>bounceIn</code>, <code>zoomIn</code></td>
+</tr>
+<tr>
+<td>HTMX</td>
+<td>Filosofia hypermedia</td>
+<td>Integração direta da biblioteca</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="diferenciadores-técnicos-do-squeleton">Diferenciadores Técnicos do Squeleton </h2>
+<h3 id="sistema-responsivo-híbrido">Sistema Responsivo Híbrido </h3>
+<p>Único entre os frameworks analisados a combinar:</p>
+<ul>
+<li>Grid com media queries <code>min-width</code> (mobile-first)</li>
+<li>Utilities com media queries <code>max-width</code> (desktop-first)</li>
+</ul>
+<h3 id="nomenclatura-de-espaçamento">Nomenclatura de Espaçamento </h3>
+<table>
+<thead>
+<tr>
+<th>Tailwind</th>
+<th>Squeleton</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pt-4 pb-4</code></td>
+<td><code>p-20-tb</code></td>
+<td>padding top e bottom</td>
+</tr>
+<tr>
+<td><code>px-4</code></td>
+<td><code>p-20-lr</code></td>
+<td>padding left e right</td>
+</tr>
+<tr>
+<td><code>p-4</code></td>
+<td><code>p-20-all</code></td>
+<td>padding todos os lados</td>
+</tr>
+<tr>
+<td><code>mt-4</code></td>
+<td><code>m-20-t</code></td>
+<td>margin top</td>
+</tr>
+</tbody>
+</table>
+<p>O Squeleton utiliza valores em pixels diretamente na classe, enquanto Tailwind usa escala numérica abstrata.</p>
+<h3 id="escala-tipográfica">Escala Tipográfica </h3>
+<ul>
+<li>Classes <code>fs-1</code> a <code>fs-6</code>: valores fixos (10px a 15px)</li>
+<li>Classes <code>fs-7</code> a <code>fs-16</code>: valores fluidos com <code>clamp()</code></li>
+</ul>
+<h3 id="elementos-base-pré-configurados">Elementos Base Pré-configurados </h3>
+<p>Os elementos <code>body</code>, <code>main</code> e <code>section</code> são definidos como flex containers com <code>flex-direction: column</code>, reduzindo declarações repetitivas.</p>
+<hr>
+<h2 id="comparativo-de-tamanho-stack-equivalente">Comparativo de Tamanho: Stack Equivalente </h2>
+<p>Para atingir funcionalidades equivalentes às oferecidas pelo Squeleton (CSS + Grid + Modais + Carrossel + Interatividade Reativa + Toasts + Lightbox), seria necessário:</p>
+<table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Alternativa comum</th>
+<th>Tamanho aproximado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Framework CSS</td>
+<td>Tailwind (purged)</td>
+<td>~30KB</td>
+</tr>
+<tr>
+<td>Modais</td>
+<td>Micromodal</td>
+<td>~2KB</td>
+</tr>
+<tr>
+<td>Carrossel</td>
+<td>Swiper</td>
+<td>~40KB</td>
+</tr>
+<tr>
+<td>Interatividade/AJAX</td>
+<td>React ou Vue</td>
+<td>~45KB (React) / ~33KB (Vue)</td>
+</tr>
+<tr>
+<td>Toasts</td>
+<td>Notyf</td>
+<td>~3KB</td>
+</tr>
+<tr>
+<td>Lightbox</td>
+<td>GLightbox</td>
+<td>~10KB</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>~130KB+ (com React)</strong></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Squeleton</th>
+<th>Tamanho</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pacote completo</td>
+<td>CSS + JS</td>
+<td><strong>~55KB</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="fontes">Fontes </h2>
+<ul>
+<li>Bootstrap: <a href="https://getbootstrap.com/docs/">https://getbootstrap.com/docs/</a></li>
+<li>Tailwind CSS: <a href="https://tailwindcss.com/docs/">https://tailwindcss.com/docs/</a></li>
+<li>Pico CSS: <a href="https://picocss.com/docs/">https://picocss.com/docs/</a></li>
+<li>Bulma: <a href="https://bulma.io/documentation/">https://bulma.io/documentation/</a></li>
+<li>Squeleton: <a href="https://squeleton.dev/">https://squeleton.dev/</a></li>
+<li>HTMX: <a href="https://htmx.org/docs/">https://htmx.org/docs/</a></li>
+<li>VanJS: <a href="https://vanjs.org/">https://vanjs.org/</a></li>
+<li>Embla Carousel: <a href="https://www.embla-carousel.com/">https://www.embla-carousel.com/</a></li>
+<li>a11y-dialog: <a href="https://a11y-dialog.netlify.app/">https://a11y-dialog.netlify.app/</a></li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

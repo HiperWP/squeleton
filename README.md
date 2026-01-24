@@ -202,6 +202,15 @@ O Squeleton nasceu da necessidade de simplificar o desenvolvimento web, evitando
 </details>
 
 <details>
+<summary><strong>Como o Squeleton se compara com outros Frameworks CSS?</strong></summary>
+
+O Squeleton foi projetado como um **boilerplate** — uma base estrutural leve e pronta para uso — diferente dos frameworks CSS tradicionais que impõem padrões visuais. Ele não define cores, fontes ou componentes estilizados, fornecendo apenas a estrutura essencial e integrando bibliotecas JavaScript curadas de terceiros sem necessidade de build.
+
+Ainda assim, devido à sua composição de grids, breakpoints e classes utilitárias únicas, o Squeleton também pode ser comparado tecnicamente com frameworks como Bootstrap, Tailwind, Bulma e Pico. [Consulte o estudo comparativo](docs/comparativo/README.md) que analisa tamanhos, funcionalidades e abordagens responsivas.
+
+</details>
+
+<details>
 <summary><strong>Como personalizar a paleta de cores e família de fontes?</strong></summary>
 
 O Squeleton é intencionalmente neutro. Crie uma folha de estilos separada com variáveis CSS customizadas no `:root`:
