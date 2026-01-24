@@ -3759,208 +3759,24 @@ fieldset[disabled] a.btn {
   max-width: 100%
 }
 
-.w-max-5px {
-  max-width: 5px
+.w-750px {
+  width: 750px;
+  max-width: 100%
 }
 
-.w-max-10px {
-  max-width: 10px
+.w-800px {
+  width: 800px;
+  max-width: 100%
 }
 
-.w-max-15px {
-  max-width: 15px
+.w-850px {
+  width: 850px;
+  max-width: 100%
 }
 
-.w-max-20px {
-  max-width: 20px
-}
-
-.w-max-25px {
-  max-width: 25px
-}
-
-.w-max-30px {
-  max-width: 30px
-}
-
-.w-max-35px {
-  max-width: 35px
-}
-
-.w-max-40px {
-  max-width: 40px
-}
-
-.w-max-50px {
-  max-width: 50px
-}
-
-.w-max-55px {
-  max-width: 55px
-}
-
-.w-max-60px {
-  max-width: 60px
-}
-
-.w-max-65px {
-  max-width: 65px
-}
-
-.w-max-70px {
-  max-width: 70px
-}
-
-.w-max-75px {
-  max-width: 75px
-}
-
-.w-max-80px {
-  max-width: 80px
-}
-
-.w-max-85px {
-  max-width: 85px
-}
-
-.w-max-90px {
-  max-width: 90px
-}
-
-.w-max-95px {
-  max-width: 95px
-}
-
-.w-max-100px {
-  max-width: 100px
-}
-
-.w-max-110px {
-  max-width: 110px
-}
-
-.w-max-120px {
-  max-width: 120px
-}
-
-.w-max-130px {
-  max-width: 130px
-}
-
-.w-max-140px {
-  max-width: 140px
-}
-
-.w-max-150px {
-  max-width: 150px
-}
-
-.w-max-160px {
-  max-width: 160px
-}
-
-.w-max-170px {
-  max-width: 170px
-}
-
-.w-max-180px {
-  max-width: 180px
-}
-
-.w-max-190px {
-  max-width: 190px
-}
-
-.w-max-200px {
-  max-width: 200px
-}
-
-.w-max-210px {
-  max-width: 210px
-}
-
-.w-max-220px {
-  max-width: 220px
-}
-
-.w-max-230px {
-  max-width: 230px
-}
-
-.w-max-240px {
-  max-width: 240px
-}
-
-.w-max-250px {
-  max-width: 250px
-}
-
-.w-max-260px {
-  max-width: 260px
-}
-
-.w-max-270px {
-  max-width: 270px
-}
-
-.w-max-280px {
-  max-width: 280px
-}
-
-.w-max-290px {
-  max-width: 290px
-}
-
-.w-max-300px {
-  max-width: 300px
-}
-
-.w-max-350px {
-  max-width: 350px
-}
-
-.w-max-400px {
-  max-width: 400px
-}
-
-.w-max-450px {
-  max-width: 450px
-}
-
-.w-max-500px {
-  max-width: 500px
-}
-
-.w-max-550px {
-  max-width: 550px
-}
-
-.w-max-600px {
-  max-width: 600px
-}
-
-.w-max-650px {
-  max-width: 650px
-}
-
-.w-max-700px {
-  max-width: 700px
-}
-
-.w-max-750px {
-  max-width: 750px
-}
-
-.w-max-800px {
-  max-width: 800px
-}
-
-.w-max-850px {
-  max-width: 850px
-}
-
-.w-max-900px {
-  max-width: 900px
+.w-900px {
+  width: 900px;
+  max-width: 100%
 }
 
 .w-10 {
@@ -4051,12 +3867,24 @@ fieldset[disabled] a.btn {
   min-height: 10px
 }
 
+.h-15px {
+  min-height: 15px
+}
+
 .h-20px {
   min-height: 20px
 }
 
+.h-25px {
+  min-height: 25px
+}
+
 .h-30px {
   min-height: 30px
+}
+
+.h-35px {
+  min-height: 35px
 }
 
 .h-40px {
@@ -4067,36 +3895,120 @@ fieldset[disabled] a.btn {
   min-height: 50px
 }
 
+.h-55px {
+  min-height: 55px
+}
+
 .h-60px {
   min-height: 60px
+}
+
+.h-65px {
+  min-height: 65px
 }
 
 .h-70px {
   min-height: 70px
 }
 
+.h-75px {
+  min-height: 75px
+}
+
 .h-80px {
   min-height: 80px
+}
+
+.h-85px {
+  min-height: 85px
 }
 
 .h-90px {
   min-height: 90px
 }
 
+.h-95px {
+  min-height: 95px
+}
+
 .h-100px {
   min-height: 100px
+}
+
+.h-110px {
+  min-height: 110px
+}
+
+.h-120px {
+  min-height: 120px
+}
+
+.h-130px {
+  min-height: 130px
+}
+
+.h-140px {
+  min-height: 140px
 }
 
 .h-150px {
   min-height: 150px
 }
 
+.h-160px {
+  min-height: 160px
+}
+
+.h-170px {
+  min-height: 170px
+}
+
+.h-180px {
+  min-height: 180px
+}
+
+.h-190px {
+  min-height: 190px
+}
+
 .h-200px {
   min-height: 200px
 }
 
+.h-210px {
+  min-height: 210px
+}
+
+.h-220px {
+  min-height: 220px
+}
+
+.h-230px {
+  min-height: 230px
+}
+
+.h-240px {
+  min-height: 240px
+}
+
 .h-250px {
   min-height: 250px
+}
+
+.h-260px {
+  min-height: 260px
+}
+
+.h-270px {
+  min-height: 270px
+}
+
+.h-280px {
+  min-height: 280px
+}
+
+.h-290px {
+  min-height: 290px
 }
 
 .h-300px {
@@ -4133,6 +4045,22 @@ fieldset[disabled] a.btn {
 
 .h-700px {
   min-height: 700px
+}
+
+.h-750px {
+  min-height: 750px
+}
+
+.h-800px {
+  min-height: 800px
+}
+
+.h-850px {
+  min-height: 850px
+}
+
+.h-900px {
+  min-height: 900px
 }
 
 .h-50 {
@@ -7009,6 +6937,26 @@ button.vbox-link-btn:hover {
     max-width: 100%
   }
 
+  .md-w-750px {
+    width: 750px;
+    max-width: 100%
+  }
+
+  .md-w-800px {
+    width: 800px;
+    max-width: 100%
+  }
+
+  .md-w-850px {
+    width: 850px;
+    max-width: 100%
+  }
+
+  .md-w-900px {
+    width: 900px;
+    max-width: 100%
+  }
+
   .md-h-100 {
     height: 100%
   }
@@ -7025,12 +6973,24 @@ button.vbox-link-btn:hover {
     min-height: 10px
   }
 
+  .md-h-15px {
+    min-height: 15px
+  }
+
   .md-h-20px {
     min-height: 20px
   }
 
+  .md-h-25px {
+    min-height: 25px
+  }
+
   .md-h-30px {
     min-height: 30px
+  }
+
+  .md-h-35px {
+    min-height: 35px
   }
 
   .md-h-40px {
@@ -7041,36 +7001,120 @@ button.vbox-link-btn:hover {
     min-height: 50px
   }
 
+  .md-h-55px {
+    min-height: 55px
+  }
+
   .md-h-60px {
     min-height: 60px
+  }
+
+  .md-h-65px {
+    min-height: 65px
   }
 
   .md-h-70px {
     min-height: 70px
   }
 
+  .md-h-75px {
+    min-height: 75px
+  }
+
   .md-h-80px {
     min-height: 80px
+  }
+
+  .md-h-85px {
+    min-height: 85px
   }
 
   .md-h-90px {
     min-height: 90px
   }
 
+  .md-h-95px {
+    min-height: 95px
+  }
+
   .md-h-100px {
     min-height: 100px
+  }
+
+  .md-h-110px {
+    min-height: 110px
+  }
+
+  .md-h-120px {
+    min-height: 120px
+  }
+
+  .md-h-130px {
+    min-height: 130px
+  }
+
+  .md-h-140px {
+    min-height: 140px
   }
 
   .md-h-150px {
     min-height: 150px
   }
 
+  .md-h-160px {
+    min-height: 160px
+  }
+
+  .md-h-170px {
+    min-height: 170px
+  }
+
+  .md-h-180px {
+    min-height: 180px
+  }
+
+  .md-h-190px {
+    min-height: 190px
+  }
+
   .md-h-200px {
     min-height: 200px
   }
 
+  .md-h-210px {
+    min-height: 210px
+  }
+
+  .md-h-220px {
+    min-height: 220px
+  }
+
+  .md-h-230px {
+    min-height: 230px
+  }
+
+  .md-h-240px {
+    min-height: 240px
+  }
+
   .md-h-250px {
     min-height: 250px
+  }
+
+  .md-h-260px {
+    min-height: 260px
+  }
+
+  .md-h-270px {
+    min-height: 270px
+  }
+
+  .md-h-280px {
+    min-height: 280px
+  }
+
+  .md-h-290px {
+    min-height: 290px
   }
 
   .md-h-300px {
@@ -7107,6 +7151,22 @@ button.vbox-link-btn:hover {
 
   .md-h-700px {
     min-height: 700px
+  }
+
+  .md-h-750px {
+    min-height: 750px
+  }
+
+  .md-h-800px {
+    min-height: 800px
+  }
+
+  .md-h-850px {
+    min-height: 850px
+  }
+
+  .md-h-900px {
+    min-height: 900px
   }
 
   .md-d-block {
@@ -9445,6 +9505,26 @@ button.vbox-link-btn:hover {
     max-width: 100%
   }
 
+  .sm-w-750px {
+    width: 750px;
+    max-width: 100%
+  }
+
+  .sm-w-800px {
+    width: 800px;
+    max-width: 100%
+  }
+
+  .sm-w-850px {
+    width: 850px;
+    max-width: 100%
+  }
+
+  .sm-w-900px {
+    width: 900px;
+    max-width: 100%
+  }
+
   .sm-h-50 {
     min-height: 50%
   }
@@ -9465,12 +9545,24 @@ button.vbox-link-btn:hover {
     min-height: 10px
   }
 
+  .sm-h-15px {
+    min-height: 15px
+  }
+
   .sm-h-20px {
     min-height: 20px
   }
 
+  .sm-h-25px {
+    min-height: 25px
+  }
+
   .sm-h-30px {
     min-height: 30px
+  }
+
+  .sm-h-35px {
+    min-height: 35px
   }
 
   .sm-h-40px {
@@ -9481,36 +9573,120 @@ button.vbox-link-btn:hover {
     min-height: 50px
   }
 
+  .sm-h-55px {
+    min-height: 55px
+  }
+
   .sm-h-60px {
     min-height: 60px
+  }
+
+  .sm-h-65px {
+    min-height: 65px
   }
 
   .sm-h-70px {
     min-height: 70px
   }
 
+  .sm-h-75px {
+    min-height: 75px
+  }
+
   .sm-h-80px {
     min-height: 80px
+  }
+
+  .sm-h-85px {
+    min-height: 85px
   }
 
   .sm-h-90px {
     min-height: 90px
   }
 
+  .sm-h-95px {
+    min-height: 95px
+  }
+
   .sm-h-100px {
     min-height: 100px
+  }
+
+  .sm-h-110px {
+    min-height: 110px
+  }
+
+  .sm-h-120px {
+    min-height: 120px
+  }
+
+  .sm-h-130px {
+    min-height: 130px
+  }
+
+  .sm-h-140px {
+    min-height: 140px
   }
 
   .sm-h-150px {
     min-height: 150px
   }
 
+  .sm-h-160px {
+    min-height: 160px
+  }
+
+  .sm-h-170px {
+    min-height: 170px
+  }
+
+  .sm-h-180px {
+    min-height: 180px
+  }
+
+  .sm-h-190px {
+    min-height: 190px
+  }
+
   .sm-h-200px {
     min-height: 200px
   }
 
+  .sm-h-210px {
+    min-height: 210px
+  }
+
+  .sm-h-220px {
+    min-height: 220px
+  }
+
+  .sm-h-230px {
+    min-height: 230px
+  }
+
+  .sm-h-240px {
+    min-height: 240px
+  }
+
   .sm-h-250px {
     min-height: 250px
+  }
+
+  .sm-h-260px {
+    min-height: 260px
+  }
+
+  .sm-h-270px {
+    min-height: 270px
+  }
+
+  .sm-h-280px {
+    min-height: 280px
+  }
+
+  .sm-h-290px {
+    min-height: 290px
   }
 
   .sm-h-300px {
@@ -9547,6 +9723,22 @@ button.vbox-link-btn:hover {
 
   .sm-h-700px {
     min-height: 700px
+  }
+
+  .sm-h-750px {
+    min-height: 750px
+  }
+
+  .sm-h-800px {
+    min-height: 800px
+  }
+
+  .sm-h-850px {
+    min-height: 850px
+  }
+
+  .sm-h-900px {
+    min-height: 900px
   }
 
   .sm-d-block {
@@ -9960,17 +10152,6 @@ button.vbox-link-btn:hover {
 
   .hidden-xs {
     display: none
-  }
-
-  .w-max-600px,
-  .w-max-650px,
-  .w-max-700px,
-  .w-max-750px,
-  .w-max-800px,
-  .w-max-800px,
-  .w-max-850px,
-  .w-max-900px {
-    max-width: 100%
   }
 
   .slide__button.slide__prev {
@@ -11964,6 +12145,26 @@ button.vbox-link-btn:hover {
     max-width: 100%
   }
 
+  .xs-w-750px {
+    width: 750px;
+    max-width: 100%
+  }
+
+  .xs-w-800px {
+    width: 800px;
+    max-width: 100%
+  }
+
+  .xs-w-850px {
+    width: 850px;
+    max-width: 100%
+  }
+
+  .xs-w-900px {
+    width: 900px;
+    max-width: 100%
+  }
+
   .xs-h-50 {
     min-height: 50%
   }
@@ -11984,12 +12185,24 @@ button.vbox-link-btn:hover {
     min-height: 10px
   }
 
+  .xs-h-15px {
+    min-height: 15px
+  }
+
   .xs-h-20px {
     min-height: 20px
   }
 
+  .xs-h-25px {
+    min-height: 25px
+  }
+
   .xs-h-30px {
     min-height: 30px
+  }
+
+  .xs-h-35px {
+    min-height: 35px
   }
 
   .xs-h-40px {
@@ -12000,36 +12213,120 @@ button.vbox-link-btn:hover {
     min-height: 50px
   }
 
+  .xs-h-55px {
+    min-height: 55px
+  }
+
   .xs-h-60px {
     min-height: 60px
+  }
+
+  .xs-h-65px {
+    min-height: 65px
   }
 
   .xs-h-70px {
     min-height: 70px
   }
 
+  .xs-h-75px {
+    min-height: 75px
+  }
+
   .xs-h-80px {
     min-height: 80px
+  }
+
+  .xs-h-85px {
+    min-height: 85px
   }
 
   .xs-h-90px {
     min-height: 90px
   }
 
+  .xs-h-95px {
+    min-height: 95px
+  }
+
   .xs-h-100px {
     min-height: 100px
+  }
+
+  .xs-h-110px {
+    min-height: 110px
+  }
+
+  .xs-h-120px {
+    min-height: 120px
+  }
+
+  .xs-h-130px {
+    min-height: 130px
+  }
+
+  .xs-h-140px {
+    min-height: 140px
   }
 
   .xs-h-150px {
     min-height: 150px
   }
 
+  .xs-h-160px {
+    min-height: 160px
+  }
+
+  .xs-h-170px {
+    min-height: 170px
+  }
+
+  .xs-h-180px {
+    min-height: 180px
+  }
+
+  .xs-h-190px {
+    min-height: 190px
+  }
+
   .xs-h-200px {
     min-height: 200px
   }
 
+  .xs-h-210px {
+    min-height: 210px
+  }
+
+  .xs-h-220px {
+    min-height: 220px
+  }
+
+  .xs-h-230px {
+    min-height: 230px
+  }
+
+  .xs-h-240px {
+    min-height: 240px
+  }
+
   .xs-h-250px {
     min-height: 250px
+  }
+
+  .xs-h-260px {
+    min-height: 260px
+  }
+
+  .xs-h-270px {
+    min-height: 270px
+  }
+
+  .xs-h-280px {
+    min-height: 280px
+  }
+
+  .xs-h-290px {
+    min-height: 290px
   }
 
   .xs-h-300px {
@@ -12066,6 +12363,22 @@ button.vbox-link-btn:hover {
 
   .xs-h-700px {
     min-height: 700px
+  }
+
+  .xs-h-750px {
+    min-height: 750px
+  }
+
+  .xs-h-800px {
+    min-height: 800px
+  }
+
+  .xs-h-850px {
+    min-height: 850px
+  }
+
+  .xs-h-900px {
+    min-height: 900px
   }
 
   .xs-d-block {

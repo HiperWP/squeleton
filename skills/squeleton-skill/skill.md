@@ -295,7 +295,7 @@ Consulte `references/padding-reference.md` e `references/margin-reference.md` pa
 **Width em Pixels** - `w-{valor}px`:
 - 5px até 100px (intervalo de 5px)
 - 100px até 300px (intervalo de 10px)
-- 300px até 700px (intervalo de 50px)
+- 300px até 900px (intervalo de 50px)
 - Responsivos: `md-w-{valor}px`, `sm-w-{valor}px`, `xs-w-{valor}px`
 
 **Width Percentual** - `w-{valor}` (sem unidade):
@@ -304,8 +304,9 @@ Consulte `references/padding-reference.md` e `references/margin-reference.md` pa
 
 **Width Especiais**:
 - `w-auto` - largura automática
-- `w-max-{100-900}px` - max-width de 100px até 900px (intervalo de 50px)
 - Responsivos: `md-w-auto`, `sm-w-auto`, `xs-w-auto`
+
+> Todas as classes `w-*px` incluem `max-width: 100%` automaticamente, evitando overflow horizontal em telas menores.
 
 ```html
 <!-- Largura fixa -->
@@ -314,8 +315,8 @@ Consulte `references/padding-reference.md` e `references/margin-reference.md` pa
 <!-- Largura percentual responsiva -->
 <div class="w-50 xs-w-100">50% desktop, 100% mobile</div>
 
-<!-- Modal com max-width -->
-<div class="w-max-600px">Modal centrado</div>
+<!-- Modal com largura controlada -->
+<div class="w-600px">Modal centrado</div>
 ```
 
 Consulte `references/width-reference.md` para lista completa de valores.
@@ -325,8 +326,9 @@ Consulte `references/width-reference.md` para lista completa de valores.
 ## Classes Utilitárias de Height (h-)
 
 **Height em Pixels** - `h-{valor}px`:
-- 5px até 100px (intervalo de 10px): 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100
-- 100px até 700px (intervalo de 50px): 150, 200, 250... 700
+- 5px até 100px (intervalo de 5px)
+- 100px até 300px (intervalo de 10px)
+- 300px até 900px (intervalo de 50px)
 - Responsivos: `md-h-{valor}px`, `sm-h-{valor}px`, `xs-h-{valor}px`
 
 **Height Percentual e Especiais**:
@@ -614,7 +616,7 @@ Consulte `references/tooltips-reference.md` para mais opções.
 ### Hero Section Full Height
 ```html
 <section class="h-100vh f-items-center f-justify-center text-center p-30-all">
-    <div class="w-max-600px">
+    <div class="w-600px">
         <h1 class="fs-13 fw-700 m-20-b">Título Principal</h1>
         <p class="fs-9 opacity-8">Subtítulo descritivo</p>
     </div>
@@ -666,7 +668,7 @@ Consulte `references/tooltips-reference.md` para mais opções.
 <div data-modal="exemplo-modal" class="modal-dialog" aria-hidden="true">
     <div class="dialog-content">
         <div class="dialog-backdrop" data-modal-hide></div>
-        <div class="dialog-inline w-max-500px">
+        <div class="dialog-inline w-500px">
             <button class="dialog-close" data-modal-hide></button>
             <div class="modal-popup border-rd-10 p-30-all">
                 <h3 class="fs-11 m-20-b">Título do Modal</h3>

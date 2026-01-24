@@ -20,10 +20,10 @@
 	<link rel="icon" href="https://squeleton.dev/favicon.webp" sizes="256x256" />
 
 	<!-- Squeleton CSS -->
-	<link rel="stylesheet" href="https://cdn.squeleton.dev/squeleton.v4.min.css?ver=4.1.5">
+	<link rel="stylesheet" href="https://cdn.squeleton.dev/squeleton.v4.min.css?ver=4.1.6">
 
 	<!-- Squeleton JavaScript Header -->
-	<script src="https://cdn.squeleton.dev/squeleton-main.v4.min.js?ver=4.1.5"></script>
+	<script src="https://cdn.squeleton.dev/squeleton-main.v4.min.js?ver=4.1.6"></script>
 
 	<!-- Prism.js CSS para syntax highlighting -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
@@ -714,7 +714,7 @@
 						<h1 class="squeleton-title m-25-tb animated slideIn">Squeleton</h1>
 						<div
 							class="version-badge d-inline-block p-5-lr m-5-l border-rd-4 fs-3 fw-600 animated magnetIn delay-800">
-							v4.1.5</div>
+							v4.1.6</div>
 					</div>
 					<p class="fs-11 p-20-tb xs-p-10-t animated delay-500 fadeInUp">
 						Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid responsivo, animações
@@ -1161,7 +1161,7 @@
 										<div class="demo-box">
 											<strong>Containers</strong>
 											<div class="m-10-tb">
-												<div class="demo-primary p-10-all m-5-b w-max-300px c-center">
+												<div class="demo-primary p-10-all m-5-b w-300px c-center">
 													.container (max-width: 1250px)
 												</div>
 												<div class="demo-success p-10-all w-100">
@@ -1450,8 +1450,8 @@ class="xs-p-10-all md-p-20-tb sm-m-10-lr"</textarea>
 /* 100px até 300px (intervalo de 10px) */
 .w-110px, .w-120px... até .w-300px
 
-/* 300px até 700px (intervalo de 50px) */
-.w-350px, .w-400px... até .w-700px
+/* 300px até 900px (intervalo de 50px) */
+.w-350px, .w-400px... até .w-900px
 
 /* Responsivos (mesmo padrão) */
 md-w-{valor}px, sm-w-{valor}px, xs-w-{valor}px
@@ -1489,48 +1489,50 @@ md-w-{valor}, sm-w-{valor}, xs-w-{valor}
 								</div>
 
 								<div class="c-xs-12 c-md-6">
-									<h5>Max-Width Classes</h5>
+									<h5>Alturas em Pixels</h5>
 									<div class="code-block min-line-5">
-										<textarea class="prism-code" data-lang="css">/* 5px até 100px (intervalo de 5px) */
-.w-max-5px, .w-max-10px... até .w-max-100px
+										<textarea class="prism-code" data-lang="css">
+/* 5px até 100px (intervalo de 5px) */
+.h-5px, .h-10px, .h-15px, .h-20px
+.h-25px, .h-30px... até .h-100px
 
 /* 100px até 300px (intervalo de 10px) */
-.w-max-110px, .w-max-120px... até .w-max-300px
+.h-110px, .h-120px... até .h-300px
 
 /* 300px até 900px (intervalo de 50px) */
-.w-max-350px, .w-max-400px... até .w-max-900px
+.h-350px, .h-400px... até .h-900px
+
+/* Responsivos (mesmo padrão) */
+md-h-{valor}px, sm-h-{valor}px, xs-h-{valor}px
 
 <!-- Exemplo -->
-<div class="w-max-600px">
-	Largura máxima de 600px
+<div class="h-200px">200px de altura</div>
+<div class="h-300px sm-h-150px">
+	300px no desktop, 150px no mobile
 </div>
 										</textarea>
 									</div>
 								</div>
 
 								<div class="c-xs-12 c-md-6">
-									<h5>Alturas Dinâmicas</h5>
+									<h5>Alturas Especiais</h5>
 									<div class="code-block min-line-5">
 										<textarea class="prism-code" data-lang="css">
-/* 10px até 100px (intervalo de 10px) */
-.h-10px, .h-20px, .h-30px... até .h-100px
-
-/* 100px até 700px (intervalo de 50px) */
-.h-150px, .h-200px, .h-250px... até .h-700px
-
-/* Responsivos (mesmo padrão) */
-md-h-{valor}px, sm-h-{valor}px, xs-h-{valor}px
-
-/* Classes Especiais de Altura */
+/* Porcentagem */
 .h-50			/* min-height: 50% */
 .h-100			/* min-height: 100% */
+
+/* Viewport */
 .h-100vh		/* min-height: 100vh */
 .h-100dvh		/* min-height: 100dvh */
+
+/* Auto */
 .h-auto			/* height: auto */
+md-h-auto, sm-h-auto, xs-h-auto
 
 <!-- Exemplo -->
-<div class="h-200px">200px de altura</div>
 <div class="h-100vh">Altura total da viewport</div>
+<div class="h-100dvh">Viewport dinâmica (mobile)</div>
 										</textarea>
 									</div>
 								</div>
@@ -3271,7 +3273,7 @@ md-h-{valor}px, sm-h-{valor}px, xs-h-{valor}px
 								tabindex="-1">
 								<div class="dialog-content">
 									<div class="dialog-backdrop" data-modal-hide></div>
-									<div class="dialog-inline w-max-500px">
+									<div class="dialog-inline w-500px">
 										<button class="dialog-close" aria-label="Fechar (Esc)" data-modal-hide></button>
 										<div class="modal-popup bg-white text-center border-rd-10 p-30-all">
 											<h3>Título do Modal</h3>
@@ -3291,7 +3293,7 @@ md-h-{valor}px, sm-h-{valor}px, xs-h-{valor}px
 <div data-modal="popup" class="modal-dialog" aria-modal="true" role="dialog" aria-hidden="true" tabindex="-1">
     <div class="dialog-content">
         <div class="dialog-backdrop" data-modal-hide></div>
-        <div class="dialog-inline w-max-500px">
+        <div class="dialog-inline w-500px">
             <button class="dialog-close" aria-label="Fechar (Esc)" data-modal-hide></button>
             <div class="modal-popup bg-white text-center border-rd-10 p-30-all">
                 <h3>Título do Modal</h3>
@@ -4413,7 +4415,7 @@ body {
 					<div class="f-grid f-items-center f-justify-center">
 						<span class="iccon-rocket-1 p-10-r"></span>
 						<h3 class="fs-14 m-0-b p-5-r">Squeleton</h3>
-						<span class="version-badge d-inline-block p-5-lr m-5-l border-rd-4 fs-3 fw-600">4.1.5</span>
+						<span class="version-badge d-inline-block p-5-lr m-5-l border-rd-4 fs-3 fw-600">4.1.6</span>
 					</div>
 					<div class="p-15-tb">
 						<p class="fs-5 m-5-b">Um boilerplate leve e funcional para interfaces modernas e intuitivas</p>
@@ -4432,7 +4434,7 @@ body {
 	</footer>
 
 	<!-- Squeleton JavaScript Footer -->
-	<script src="https://cdn.squeleton.dev/squeleton-scripts.v4.min.js?ver=4.1.5"></script>
+	<script src="https://cdn.squeleton.dev/squeleton-scripts.v4.min.js?ver=4.1.6"></script>
 
 	<!-- Prism.js para syntax highlighting -->
 	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>

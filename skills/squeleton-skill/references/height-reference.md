@@ -4,19 +4,30 @@
 
 Padrao: `{breakpoint-}h-{valor}px`
 
-### 5px ate 100px (intervalo de 10px)
+### 5px ate 100px (intervalo de 5px)
 
 ```
-h-5px, h-10px, h-20px, h-30px, h-40px
-h-50px, h-60px, h-70px, h-80px, h-90px, h-100px
+h-5px, h-10px, h-15px, h-20px, h-25px
+h-30px, h-35px, h-40px, h-50px
+h-55px, h-60px, h-65px, h-70px, h-75px
+h-80px, h-85px, h-90px, h-95px, h-100px
 ```
 
-### 100px ate 700px (intervalo de 50px)
+### 100px ate 300px (intervalo de 10px)
 
 ```
-h-150px, h-200px, h-250px, h-300px
+h-110px, h-120px, h-130px, h-140px, h-150px
+h-160px, h-170px, h-180px, h-190px, h-200px
+h-210px, h-220px, h-230px, h-240px, h-250px
+h-260px, h-270px, h-280px, h-290px, h-300px
+```
+
+### 300px ate 900px (intervalo de 50px)
+
+```
 h-350px, h-400px, h-450px, h-500px
 h-550px, h-600px, h-650px, h-700px
+h-750px, h-800px, h-850px, h-900px
 ```
 
 ### Responsivos

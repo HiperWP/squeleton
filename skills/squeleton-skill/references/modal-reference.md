@@ -63,7 +63,7 @@ modal-popup (área do conteúdo estilizado)
 <div data-modal="modal-exemplo" class="modal-dialog" aria-hidden="true" aria-modal="true" role="dialog" tabindex="-1">
     <div class="dialog-content">
         <div class="dialog-backdrop" data-modal-hide></div>
-        <div class="dialog-inline w-max-500px">
+        <div class="dialog-inline w-500px">
             <button class="dialog-close" data-modal-hide aria-label="Fechar">
                 <span class="iccon-close-1"></span>
             </button>
@@ -82,13 +82,13 @@ modal-popup (área do conteúdo estilizado)
 
 ## Larguras do Modal
 
-Use classes `w-max-*` no `dialog-inline`:
+Use classes `w-*` no `dialog-inline`:
 
 ```html
-<div class="dialog-inline w-max-400px">...</div>  <!-- Pequeno -->
-<div class="dialog-inline w-max-500px">...</div>  <!-- Médio -->
-<div class="dialog-inline w-max-600px">...</div>  <!-- Grande -->
-<div class="dialog-inline w-max-800px">...</div>  <!-- Extra grande -->
+<div class="dialog-inline w-400px">...</div>  <!-- Pequeno -->
+<div class="dialog-inline w-500px">...</div>  <!-- Médio -->
+<div class="dialog-inline w-600px">...</div>  <!-- Grande -->
+<div class="dialog-inline w-800px">...</div>  <!-- Extra grande -->
 ```
 
 ## Múltiplos Triggers
@@ -123,7 +123,7 @@ Vários elementos podem abrir o mesmo modal:
 <div data-modal="confirmar-exclusao" class="modal-dialog" aria-hidden="true">
     <div class="dialog-content">
         <div class="dialog-backdrop" data-modal-hide></div>
-        <div class="dialog-inline w-max-400px">
+        <div class="dialog-inline w-400px">
             <div class="modal-popup border-rd-10 p-30-all text-center">
                 <span class="iccon-exclamation-1 more-50 m-15-b d-block"></span>
                 <h4 class="m-10-b">Confirmar exclusão?</h4>
@@ -146,7 +146,7 @@ Vários elementos podem abrir o mesmo modal:
 <div data-modal="modal-contato" class="modal-dialog" aria-hidden="true">
     <div class="dialog-content">
         <div class="dialog-backdrop" data-modal-hide></div>
-        <div class="dialog-inline w-max-500px">
+        <div class="dialog-inline w-500px">
             <button class="dialog-close" data-modal-hide aria-label="Fechar">
                 <span class="iccon-close-1"></span>
             </button>
@@ -181,7 +181,7 @@ Vários elementos podem abrir o mesmo modal:
 <div data-modal="modal-imagem" class="modal-dialog" aria-hidden="true">
     <div class="dialog-content">
         <div class="dialog-backdrop" data-modal-hide></div>
-        <div class="dialog-inline w-max-900px">
+        <div class="dialog-inline w-900px">
             <button class="dialog-close" data-modal-hide aria-label="Fechar">
                 <span class="iccon-close-1"></span>
             </button>
