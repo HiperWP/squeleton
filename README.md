@@ -127,24 +127,24 @@ Todas as bibliotecas estão integradas, pré-configuradas e otimizadas. Consulte
         <h2 class="fs-12 fw-600 m-40-b">Recursos</h2>
         <div class="row gap-20 text-center">
             <div class="c-xs-12 c-md-6 c-lg-4">
-                <div class="border-all border-rd-10 p-25-all h-100">
+                <div class="border-all border-rd-10 p-25-all h-100 wow fadeInUp">
                     <i class="iccon-rocket-1 fs-13 m-15-b d-block"></i>
                     <h3 class="fs-10 fw-600 m-10-b">Performance</h3>
-                    <p class="fs-7 opacity-7">Otimizado para 99+ no PageSpeed</p>
+                    <p class="fs-7">Otimizado para 99+ no PageSpeed</p>
                 </div>
             </div>
             <div class="c-xs-12 c-md-6 c-lg-4">
                 <div class="border-all border-rd-10 p-25-all h-100 wow fadeInUp">
                     <i class="iccon-layer-1 fs-13 m-15-b d-block"></i>
                     <h3 class="fs-10 fw-600 m-10-b">400+ Classes</h3>
-                    <p class="fs-7 opacity-7">Grid, spacing, flexbox e mais</p>
+                    <p class="fs-7">Grid, spacing, flexbox e mais</p>
                 </div>
             </div>
             <div class="c-xs-12 c-md-6 c-lg-4">
-                <div class="border-all border-rd-10 p-25-all h-100 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="border-all border-rd-10 p-25-all h-100 wow fadeInUp">
                     <i class="iccon-speed-1 fs-13 m-15-b d-block"></i>
                     <h3 class="fs-10 fw-600 m-10-b">Zero Build</h3>
-                    <p class="fs-7 opacity-7">CDN e pronto para usar</p>
+                    <p class="fs-7">CDN e pronto para usar</p>
                 </div>
             </div>
         </div>
@@ -162,13 +162,9 @@ Todas as bibliotecas estão integradas, pré-configuradas e otimizadas. Consulte
         <div class="f-grid f-items-center f-justify-center">
           <i class="fs-12 iccon-rocket-1 p-15-r animated delay-800 floatIn"></i>
           <h1 class="fs-16 m-25-tb fw-700 animated slideIn">Squeleton</h1>
-          <div class="fs-3 m-10-l p-5-lr border-rd-4 border-all animated magnetIn delay-800">
-            v4.1.6
-          </div>
+          <div class="fs-3 m-10-l p-5-lr border-rd-4 border-all animated magnetIn delay-800">v4.1.6</div>
         </div>
-        <p class="fs-10 p-20-tb text-center animated delay-500 fadeInUp">
-            Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid responsivo, animações elegantes e bibliotecas JavaScript essenciais para criar interfaces rápidas e intuitivas.
-        </p>
+        <p class="fs-10 p-20-tb text-center animated delay-500 fadeInUp">Boilerplate leve e moderno que combina o melhor do CSS utilitário, grid responsivo, animações elegantes e bibliotecas JavaScript essenciais para criar interfaces rápidas e intuitivas.</p>
       </div>
     </div>
   </div>
