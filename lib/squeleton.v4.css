@@ -12150,33 +12150,13 @@ button.vbox-link-btn:hover {
     max-width: 100%
   }
 
-  .xs-w-650px {
-    width: 650px;
-    max-width: 100%
-  }
-
-  .xs-w-700px {
-    width: 700px;
-    max-width: 100%
-  }
-
-  .xs-w-750px {
-    width: 750px;
-    max-width: 100%
-  }
-
-  .xs-w-800px {
-    width: 800px;
-    max-width: 100%
-  }
-
-  .xs-w-850px {
-    width: 850px;
-    max-width: 100%
-  }
-
+  .xs-w-650px,
+  .xs-w-700px,
+  .xs-w-750px,
+  .xs-w-800px,
+  .xs-w-850px,
   .xs-w-900px {
-    width: 900px;
+    width: 100%;
     max-width: 100%
   }
 
