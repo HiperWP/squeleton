@@ -335,7 +335,9 @@ Consulte `references/width-reference.md` para lista completa de valores.
 - `h-50` (min-height: 50%)
 - `h-100` (min-height: 100%)
 - `h-100vh` (min-height: 100vh) - **útil para hero sections**
+- `h-100dvh` (min-height: 100dvh) - **melhor para mobile**
 - `h-auto` (min-height: auto)
+- Responsivos: `md-h-{valor}`, `sm-h-{valor}`, `xs-h-{valor}`
 
 ```html
 <!-- Hero section altura total -->

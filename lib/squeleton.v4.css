@@ -6960,6 +6960,14 @@ button.vbox-link-btn:hover {
     height: 100%
   }
 
+  .md-h-100vh {
+    min-height: 100vh
+  }
+
+  .md-h-100dvh {
+    min-height: 100dvh
+  }
+
   .md-h-auto {
     height: auto
   }
@@ -9530,6 +9538,14 @@ button.vbox-link-btn:hover {
 
   .sm-h-100 {
     min-height: 100%
+  }
+
+  .sm-h-100vh {
+    min-height: 100vh
+  }
+
+  .sm-h-100dvh {
+    min-height: 100dvh
   }
 
   .sm-h-auto {
@@ -12170,6 +12186,14 @@ button.vbox-link-btn:hover {
 
   .xs-h-100 {
     min-height: 100%
+  }
+
+  .xs-h-100vh {
+    min-height: 100vh
+  }
+
+  .xs-h-100dvh {
+    min-height: 100dvh
   }
 
   .xs-h-auto {

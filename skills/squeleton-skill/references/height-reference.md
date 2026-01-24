@@ -58,7 +58,14 @@ xs-h-{valor} (mesmo padrao)
 
 ```
 h-100vh
+md-h-100vh
+sm-h-100vh
+xs-h-100vh
+
 h-100dvh
+md-h-100dvh
+sm-h-100dvh
+xs-h-100dvh
 ```
 
 ## Height - Auto

@@ -24,7 +24,7 @@ Os atributos originais `data-a11y-dialog-*` foram renomeados para `data-modal-*`
 <div data-modal="meu-modal" class="modal-dialog" aria-hidden="true">
     <div class="dialog-content">
         <div class="dialog-backdrop" data-modal-hide></div>
-        <div class="dialog-inline">
+        <div class="dialog-inline w-500px">
             <button class="dialog-close" data-modal-hide aria-label="Fechar"></button>
             <div class="modal-popup">
                 Conteúdo do modal
