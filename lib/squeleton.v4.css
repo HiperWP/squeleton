@@ -4622,7 +4622,6 @@ button.vbox-link-btn:hover {
 
 .dialog-inline {
   position: relative;
-  width: 100%;
   margin: 25px auto;
   z-index: 2;
   animation: fadeModal .3s 150ms both, scaleModal .3s 150ms both
