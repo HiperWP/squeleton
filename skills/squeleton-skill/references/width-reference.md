@@ -69,24 +69,30 @@ xs-w-auto
 
 ## Max-Width
 
+### 5px até 100px (intervalo de 5px)
+
 ```
-w-max-100px
-w-max-150px
-w-max-200px
-w-max-250px
-w-max-300px
-w-max-350px
-w-max-400px
-w-max-450px
-w-max-500px
-w-max-550px
-w-max-600px
-w-max-650px
-w-max-700px
-w-max-750px
-w-max-800px
-w-max-850px
-w-max-900px
+w-max-5px, w-max-10px, w-max-15px, w-max-20px, w-max-25px
+w-max-30px, w-max-35px, w-max-40px, w-max-50px
+w-max-55px, w-max-60px, w-max-65px, w-max-70px, w-max-75px
+w-max-80px, w-max-85px, w-max-90px, w-max-95px, w-max-100px
+```
+
+### 100px até 300px (intervalo de 10px)
+
+```
+w-max-110px, w-max-120px, w-max-130px, w-max-140px, w-max-150px
+w-max-160px, w-max-170px, w-max-180px, w-max-190px, w-max-200px
+w-max-210px, w-max-220px, w-max-230px, w-max-240px, w-max-250px
+w-max-260px, w-max-270px, w-max-280px, w-max-290px, w-max-300px
+```
+
+### 300px até 900px (intervalo de 50px)
+
+```
+w-max-350px, w-max-400px, w-max-450px, w-max-500px
+w-max-550px, w-max-600px, w-max-650px, w-max-700px
+w-max-750px, w-max-800px, w-max-850px, w-max-900px
 ```
 
 ## Exemplos de Uso

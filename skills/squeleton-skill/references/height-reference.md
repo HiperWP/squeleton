@@ -47,6 +47,7 @@ xs-h-{valor} (mesmo padrao)
 
 ```
 h-100vh
+h-100dvh
 ```
 
 ## Height - Auto

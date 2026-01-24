@@ -1458,28 +1458,32 @@ md-w-{valor}px, sm-w-{valor}px, xs-w-{valor}px
 
 <!-- Exemplo -->
 <div class="w-50px">50px de largura</div>
+<div class="w-300px sm-w-200px">
+	300px no desktop, 200px no mobile
+</div>
 										</textarea>
 									</div>
 								</div>
 
 								<div class="c-xs-12 c-md-6">
-									<h5>Alturas Dinâmicas</h5>
+									<h5>Larguras em Porcentagem</h5>
 									<div class="code-block min-line-4">
 										<textarea class="prism-code" data-lang="css">
-/* 5px até 100px (intervalo de 10px) */
-.h-5px, .h-10px, .h-20px, .h-30px
-.h-40px, .h-50px, .h-60px, .h-70px
-.h-80px, .h-90px, .h-100px
-
-/* 100px até 700px (intervalo de 50px) */
-.h-150px, .h-200px, .h-250px...
-...até .h-700px
+/* 10% até 100% (intervalo de 5%) */
+.w-10, .w-15, .w-20, .w-25, .w-30
+.w-35, .w-40, .w-45... até .w-100
 
 /* Responsivos (mesmo padrão) */
-md-h-{valor}px, sm-h-{valor}px, xs-h-{valor}px
+md-w-{valor}, sm-w-{valor}, xs-w-{valor}
+
+/* Width Auto */
+.w-auto, md-w-auto, sm-w-auto, xs-w-auto
 
 <!-- Exemplo -->
-<div class="h-200px">200px de altura</div>
+<div class="w-50">50% de largura</div>
+<div class="xs-w-100 md-w-50">
+	100% no mobile, 50% no desktop
+</div>
 										</textarea>
 									</div>
 								</div>
@@ -1487,35 +1491,47 @@ md-h-{valor}px, sm-h-{valor}px, xs-h-{valor}px
 								<div class="c-xs-12 c-md-6">
 									<h5>Max-Width Classes</h5>
 									<div class="code-block min-line-5">
-										<textarea class="prism-code" data-lang="css">/* Max-Width (100900px, intervalo de 50px) */
-.w-max-100px, .w-max-150px
-.w-max-200px, .w-max-250px
-.w-max-300px, .w-max-350px
-.w-max-400px, .w-max-450px
-.w-max-500px, .w-max-550px
-.w-max-600px, .w-max-650px
-.w-max-700px, .w-max-750px
-.w-max-800px, .w-max-850px
-.w-max-900px
+										<textarea class="prism-code" data-lang="css">/* 5px até 100px (intervalo de 5px) */
+.w-max-5px, .w-max-10px... até .w-max-100px
+
+/* 100px até 300px (intervalo de 10px) */
+.w-max-110px, .w-max-120px... até .w-max-300px
+
+/* 300px até 900px (intervalo de 50px) */
+.w-max-350px, .w-max-400px... até .w-max-900px
 
 <!-- Exemplo -->
 <div class="w-max-600px">
 	Largura máxima de 600px
-</div></textarea>
+</div>
+										</textarea>
 									</div>
 								</div>
 
 								<div class="c-xs-12 c-md-6">
-									<h5>Height Special Classes</h5>
+									<h5>Alturas Dinâmicas</h5>
 									<div class="code-block min-line-5">
-										<textarea class="prism-code" data-lang="css">.h-100 /* min-height: 100% */
-.h-100vh /* min-height: 100vh */
-.h-auto /* height: auto */
+										<textarea class="prism-code" data-lang="css">
+/* 10px até 100px (intervalo de 10px) */
+.h-10px, .h-20px, .h-30px... até .h-100px
+
+/* 100px até 700px (intervalo de 50px) */
+.h-150px, .h-200px, .h-250px... até .h-700px
+
+/* Responsivos (mesmo padrão) */
+md-h-{valor}px, sm-h-{valor}px, xs-h-{valor}px
+
+/* Classes Especiais de Altura */
+.h-50			/* min-height: 50% */
+.h-100			/* min-height: 100% */
+.h-100vh		/* min-height: 100vh */
+.h-100dvh		/* min-height: 100dvh */
+.h-auto			/* height: auto */
 
 <!-- Exemplo -->
-<div class="h-100vh">
-	Altura total da viewport
-</div></textarea>
+<div class="h-200px">200px de altura</div>
+<div class="h-100vh">Altura total da viewport</div>
+										</textarea>
 									</div>
 								</div>
 
