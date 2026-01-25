@@ -2,7 +2,7 @@
 
 ## Introdução
 
-Este documento apresenta uma análise comparativa do Squeleton em relação aos principais frameworks CSS utilizados no desenvolvimento de interfaces web: Bootstrap, Tailwind CSS, Pico CSS e Bulma. O estudo avalia aspectos técnicos como tamanho de arquivos, dependências, arquitetura de grid, funcionalidades inclusas e casos de uso.
+Este documento apresenta uma análise comparativa do Squeleton em relação aos principais frameworks CSS utilizados no desenvolvimento de interfaces web: Bootstrap, Tailwind CSS, Pico CSS e Bulma. O estudo avalia aspectos técnicos como tamanho de arquivos, dependências, arquitetura de grid e funcionalidades.
 
 Os dados apresentados foram coletados a partir da documentação oficial de cada projeto e medições de tamanho de arquivo em formato gzip, padrão de transferência utilizado por CDNs. O objetivo é fornecer informações objetivas para auxiliar na escolha de ferramentas adequadas a diferentes contextos de desenvolvimento.
 
@@ -172,18 +172,6 @@ Componentes próprios para: modais, dropdowns, tooltips, popovers, collapse, car
 
 ---
 
-## Elementos de Design Incorporados
-
-### Ícones
-
-| Framework | Ícones inclusos | Observação |
-|-----------|-----------------|------------|
-| Bootstrap | Não (Bootstrap Icons separado) | Pacote adicional ~80KB |
-| Tailwind | Não (Heroicons separado) | Pacote adicional |
-| Bulma | Não | Requer biblioteca externa |
-| Pico | Não | Requer biblioteca externa |
-| Squeleton | 300+ ícones integrados | Via classes CSS (`iccon-*`) |
-
 ### Animações
 
 | Framework | Animações inclusas | Observação |
@@ -192,7 +180,7 @@ Componentes próprios para: modais, dropdowns, tooltips, popovers, collapse, car
 | Tailwind | Classes de transição | Requer configuração |
 | Bulma | Não | Requer biblioteca externa |
 | Pico | Não | Requer biblioteca externa |
-| Squeleton | 30+ animações | Integração com WOW.js pattern |
+| Squeleton | 30+ animações | Integração com WOW2 Animated pattern |
 
 ### Tooltips
 
