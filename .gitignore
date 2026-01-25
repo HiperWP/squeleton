@@ -1,3 +1,7 @@
 # Demo Folders
 demo/
 .well-known/
+
+# Fonts - ignorar todas exceto icomoon
+lib/fonts/*.woff2
+!lib/fonts/icomoon.woff2
